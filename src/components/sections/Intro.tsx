@@ -15,7 +15,7 @@ export default function Intro() {
             International Testing Alliance plans, runs and reports on examinations for awarding bodies, universities and training providers.
           </p>
           <p className="mt-5 text-[16px] leading-[1.75] text-body">
-            When the same organisation teaches, registers and invigilates, nobody can call the result fully impartial. We sit between the institution and the candidate, apply the awarding body’s own procedures, and hand back a record of everything that happened. We play no part in teaching or in marking.
+            When the same organisation teaches, registers and invigilates, nobody can call the result fully impartial. We sit between the institution and the candidate, apply the awarding body’s own procedures and hand back a record of everything that happened. We play no part in teaching or in marking.
           </p>
           <Link href="/about-us/" className="group mt-7 inline-flex items-center gap-2 text-[15px] font-semibold text-blue">
             How independent delivery works <Arrow />
