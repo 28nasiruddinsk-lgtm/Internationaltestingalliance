@@ -20,6 +20,10 @@ select { appearance: auto; }
 }
 .navlink:hover::after { transform: scaleX(1); }
 
+/* one calm focus ring for keyboard users; none after a mouse click */
+a:focus-visible, button:focus-visible { outline: 2px solid #0b4ca1; outline-offset: 3px; border-radius: 2px; }
+a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
+
 .swap { animation: swap 0.45s ease both; }
 @keyframes swap { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .pulse { animation: pulse 2s ease-out infinite; }
