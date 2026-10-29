@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           {site.footer.map((col) => (
             <div key={col.title}>
-              <h4 className="mb-4 text-[15px] font-semibold text-white">{col.title}</h4>
+              <h3 className="mb-4 text-[15px] font-semibold text-white">{col.title}</h3>
               <ul className="space-y-2 text-[14px]">
                 {col.links.map(([label, href]) => (
                   <li key={label}><Link href={href} className="hover:text-white">{label}</Link></li>
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
           ))}
           <div>
-            <h4 className="mb-4 text-[15px] font-semibold text-white">Offices</h4>
+            <h3 className="mb-4 text-[15px] font-semibold text-white">Offices</h3>
             <ul className="space-y-2 text-[14px]">
               {site.offices.map((o) => <li key={o}>{o}</li>)}
               <li><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>

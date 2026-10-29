@@ -11,6 +11,12 @@ const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '600'], variabl
 export const metadata: Metadata = {
   title: { default: 'International Testing Alliance', template: '%s | ITA' },
   description: 'Independent examination delivery and invigilation in Pakistan, Dubai and international markets.',
+  openGraph: {
+    title: 'International Testing Alliance',
+    description: 'Independent examination delivery and invigilation in Pakistan, Dubai and international markets.',
+    type: 'website',
+    images: ['/images/hall.jpg'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

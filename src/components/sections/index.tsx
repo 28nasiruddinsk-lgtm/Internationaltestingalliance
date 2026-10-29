@@ -12,6 +12,8 @@ import Gallery from './Gallery';
 import Operate from './Operate';
 import News from './News';
 import Contact from './Contact';
+import AboutIntro from './AboutIntro';
+import Structure from './Structure';
 import Cards from './Cards';
 import Milestones from './Milestones';
 import Prose from './Prose';
@@ -31,6 +33,8 @@ const registry = {
   operate: Operate,
   news: News,
   contact: Contact,
+  aboutIntro: AboutIntro,
+  structure: Structure,
   cards: Cards,
   milestones: Milestones,
   prose: Prose,

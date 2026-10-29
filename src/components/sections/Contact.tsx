@@ -27,8 +27,15 @@ export default function Contact() {
             Tell us about your candidates and locations. Our partnerships team replies within one working day.
           </p>
           <div className="mt-8 space-y-1 text-[15px]">
-            <div>{site.email}</div>
-            <div className="text-white/80">Pakistan {site.phones.Pakistan} · Dubai {site.phones.Dubai}</div>
+            <a href={`mailto:${site.email}`} className="block underline">{site.email}</a>
+            <div className="text-white/85">
+              {Object.entries(site.phones).map(([place, num], i) => (
+                <span key={place}>
+                  {i > 0 && ' · '}
+                  {place} <a href={`tel:${num.replace(/\s/g, '')}`} className="whitespace-nowrap underline">{num}</a>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <div className="lg:col-span-6 lg:col-start-7">

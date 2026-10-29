@@ -30,28 +30,27 @@ const cards = (props: Record<string, unknown>): SectionConfig => ({ type: 'cards
 // TODO: policy PDFs, FAQ answers, Arabic copy.
 export const pages: Record<string, SectionConfig[]> = {
   about: [
-    header('About ITA', 'An independent examination services organisation, supported by International Testing Services.', 'About'),
-    prose({
-      title: 'Purpose, vision and mission',
-      paragraphs: [
-        'Purpose: to advance fair, secure and accessible assessment by enabling learners to take part in trusted examinations, wherever they are.',
-        'Vision: to be a globally trusted examination services partner, setting the standard for secure, independent and technology-enabled assessment delivery across international markets.',
-        'Mission: to protect the integrity of every examination through independent delivery, rigorous standards, trained professionals and technology, giving institutions and awarding bodies confidence, transparency and reliable outcomes.',
-      ],
-      image: 'centre_room',
-    }),
+    header('About International Testing Alliance', 'Independent examination delivery: planned, run and reported by a neutral operating partner.', 'About ITA'),
+    { type: 'aboutIntro' },
+    { type: 'structure' },
+    { type: 'model' },
+    cards({ kicker: 'Purpose, vision and mission', title: 'Why we exist and where we are heading', items: p.pillars, tint: true }),
+    cards({ kicker: 'Operating controls', title: 'Assessment integrity depends on consistent execution', intro: 'ITA provides a neutral operating layer and an auditable record for each exam sitting.', items: p.controls }),
     prose({
       tint: true,
-      kicker: 'Corporate structure',
-      title: 'A new name built on an established foundation',
+      kicker: 'Trust and governance',
+      title: 'Formally registered, formally recognised.',
       paragraphs: [
-        'International Testing Services (ITS) is the parent company. It holds the group registrations, recognitions and track record, and is a recognised exam delivery partner for international institutions.',
-        'International Testing Alliance (ITA) is the operating subsidiary: IBCC-registered exam delivery across Pakistan, with independent invigilation and no stake in grading or teaching candidates. ITA uses the ITS group accreditations to deliver conflict-free exam administration in nine cities across Pakistan.',
+        'ITA is registered with the Inter Boards Coordination Commission (IBCC), reference IBCC/RC-1/Impl-2/2025/758. The Pakistan Bar Council listed International Testing Services (ITS) as an approved foreign exam agency in its September 2026 directive.',
+        'Operating controls include documented SOPs, chain of custody for materials, incident reporting and quality assurance checks. ITA writes its own policies and forms in-house.',
       ],
+      points: ['Safeguarding', 'Code of conduct and confidentiality', 'Exam security', 'Incident reporting', 'Staff performance evaluation'],
+      image: 'ibcc_registered',
+      contain: true,
     }),
-    { type: 'model' },
     { type: 'milestones' },
-    cards({ kicker: 'Growth', title: 'A repeatable delivery model creates room to expand', items: p.growth, tint: true }),
+    cards({ kicker: 'Looking ahead', title: 'A repeatable delivery model creates room to expand', items: p.growth, tint: true }),
+    { type: 'contact' },
   ],
   services: [
     header('Services', 'Choose individual services or entrust ITA with end-to-end examination delivery.', 'Our services'),
@@ -101,6 +100,7 @@ export const pages: Record<string, SectionConfig[]> = {
         'Controls include documented SOPs, chain of custody for materials, incident reporting and quality assurance checks.',
       ],
       image: 'ibcc_registered',
+      contain: true,
     }),
     cards({ kicker: 'In-house governance', title: 'ITA develops its operating policies and forms in-house', intro: 'Policy areas: safeguarding, code of conduct and confidentiality, exam security, incident reporting, and staff performance evaluation.', items: p.governanceSteps, tint: true }),
     { type: 'milestones' },

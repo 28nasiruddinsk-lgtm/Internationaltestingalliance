@@ -72,3 +72,29 @@ export const milestones = [
   { date: 'September 2026', title: 'Pakistan Bar Council recognition', text: 'Recognised among the approved agencies for foreign law examination delivery.' },
   { date: '2026', title: 'Expanding assessment delivery', text: 'Continuing to build partnerships with universities, awarding bodies and professional institutions globally.' },
 ];
+
+export const pillars: Card[] = [
+  { title: 'Our purpose', text: 'To advance fair, secure and accessible assessment by enabling learners to take part in trusted examinations, wherever they are.' },
+  { title: 'Our vision', text: 'To be a globally trusted examination services partner, setting the standard for secure, independent and technology-enabled assessment delivery across international markets.' },
+  { title: 'Our mission', text: 'To protect the integrity of every examination through independent delivery, rigorous standards, trained professionals and technology, giving institutions and awarding bodies confidence, transparency and reliable outcomes.' },
+];
+
+export const aboutFacts = [
+  { value: 'April 2025', label: 'ITA established as part of the ITS Group' },
+  { value: '9 cities', label: 'Examination delivery across Pakistan' },
+  { value: '9 markets', label: 'Pakistan, UAE, Saudi Arabia, Iraq, Egypt, Bahrain, Malaysia, Uzbekistan, UK' },
+  { value: 'IBCC', label: 'Registered, ref. IBCC/RC-1/Impl-2/2025/758' },
+];
+
+export const structure = [
+  {
+    role: 'Parent company',
+    name: 'International Testing Services (ITS)',
+    points: ['Holds the group registrations, recognitions and track record', 'Recognised exam delivery partner for international institutions', 'Listed by the Pakistan Bar Council as an approved foreign exam agency (September 2026)'],
+  },
+  {
+    role: 'Operating subsidiary',
+    name: 'International Testing Alliance (ITA)',
+    points: ['IBCC-registered exam delivery across Pakistan', 'Independent invigilation with no stake in grading or teaching candidates', 'Uses the ITS group accreditations to deliver conflict-free exam administration in nine cities'],
+  },
+];

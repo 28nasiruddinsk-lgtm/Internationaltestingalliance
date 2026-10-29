@@ -12,7 +12,7 @@ export default {
         line: '#DCE3EC',
         ink: '#14202E',
         body: '#46505C',
-        muted: '#6B7480',
+        muted: '#5F6975',
       },
       fontFamily: {
         serif: ['var(--font-caslon)', 'Georgia', 'serif'],
