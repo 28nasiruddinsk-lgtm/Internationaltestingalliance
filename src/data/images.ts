@@ -46,4 +46,6 @@ const files = {
 } as const;
 
 export type ImageKey = keyof typeof files;
-export const img = (key: ImageKey) => `/images/${files[key]}`;
+// prefix for a sub-path deploy (GitHub Pages preview); empty in normal builds
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+export const img = (key: ImageKey) => `${basePath}/images/${files[key]}`;

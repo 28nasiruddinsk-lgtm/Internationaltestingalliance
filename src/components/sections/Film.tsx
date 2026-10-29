@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { filmChapters, filmSeconds } from '@/data/sitting';
-import { img } from '@/data/images';
+import { basePath, img } from '@/data/images';
 import { H2, Kicker, Rise, Wrap, prefersReducedMotion, useInView } from '../ui';
 
 const fmt = (s: number) => `0:${String(Math.floor(s)).padStart(2, '0')}`;
@@ -49,8 +49,8 @@ export default function Film() {
               <video ref={video} poster={img('entrance')} muted loop playsInline preload="metadata"
                 onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)} onClick={toggle}
                 className="absolute inset-0 h-full w-full cursor-pointer object-cover" aria-label="Film of an ITA exam sitting">
-                <source src="/film/sitting.mp4" type="video/mp4" />
-                <source src="/film/sitting.webm" type="video/webm" />
+                <source src={`${basePath}/film/sitting.mp4`} type="video/mp4" />
+                <source src={`${basePath}/film/sitting.webm`} type="video/webm" />
               </video>
               {!playing && (
                 <button onClick={toggle} aria-label="Play film" className="absolute inset-0 m-auto flex h-24 w-24 items-center justify-center rounded-full bg-white/95 text-blue shadow-2xl transition-transform hover:scale-105">
