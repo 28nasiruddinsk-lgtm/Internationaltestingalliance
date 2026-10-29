@@ -12,7 +12,7 @@ export default function NotFound() {
         <p className="mt-5 max-w-[520px] text-[17px] leading-[1.7] text-body">The page you are looking for is not available. Try the homepage or the About page.</p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link href="/" className="rounded-full bg-blue px-7 py-3.5 text-[15px] font-semibold text-white hover:bg-navy">Homepage</Link>
-          <Link href="/about/" className="rounded-full border border-blue px-7 py-3.5 text-[15px] font-semibold text-blue hover:bg-tint">About ITA</Link>
+          <Link href="/about-us/" className="rounded-full border border-blue px-7 py-3.5 text-[15px] font-semibold text-blue hover:bg-tint">About ITA</Link>
         </div>
       </Wrap>
     </section>

@@ -18,6 +18,11 @@ import Cards from './Cards';
 import Milestones from './Milestones';
 import Prose from './Prose';
 import PageHeader from './PageHeader';
+import Split from './Split';
+import Band from './Band';
+import Strip from './Strip';
+import ContactForm from './ContactForm';
+import Offices from './Offices';
 
 const registry = {
   hero: Hero,
@@ -39,6 +44,11 @@ const registry = {
   milestones: Milestones,
   prose: Prose,
   pageHeader: PageHeader,
+  split: Split,
+  band: Band,
+  strip: Strip,
+  contactForm: ContactForm,
+  offices: Offices,
 };
 
 export type SectionType = keyof typeof registry;

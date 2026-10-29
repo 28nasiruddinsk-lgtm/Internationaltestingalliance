@@ -34,7 +34,9 @@ export default function Footer() {
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/15 pt-6 text-[12.5px] text-white/70">
           <span>© {new Date().getFullYear()} International Testing Alliance · {site.ibccRef}</span>
-          <span>{site.policies.join(' · ')}</span>
+          <span className="flex gap-5">
+            {site.legal.map(([label, href]) => <Link key={label} href={href} className="hover:text-white">{label}</Link>)}
+          </span>
         </div>
       </Wrap>
     </footer>

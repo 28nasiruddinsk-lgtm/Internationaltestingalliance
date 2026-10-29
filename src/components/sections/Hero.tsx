@@ -26,12 +26,14 @@ export default function Hero() {
             </div>
             <div key={key} className="swap">
               <h1 className="mt-10 font-serif text-[32px] leading-[1.15] md:text-[56px]">{a.heading}</h1>
-              <p className="mt-6 max-w-[500px] text-[17px] leading-[1.7] text-white/85">{a.text}</p>
+              {/* TODO: line pending client confirmation (SEO brief) */}
+              <p className="mt-5 text-[17px] font-semibold text-white">An IBCC-registered testing service in Pakistan and the UAE.</p>
+              <p className="mt-4 max-w-[500px] text-[17px] leading-[1.7] text-white/85">{a.text}</p>
               <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link href={a.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-[15px] font-semibold text-blue hover:bg-tint">
                   {a.cta} <Arrow />
                 </Link>
-                <a href="#contact-us"className="inline-flex items-center gap-2 text-[15px] font-semibold text-white underline decoration-white/40 underline-offset-[6px] hover:decoration-white">
+                <a href="#contact-us" className="inline-flex items-center gap-2 text-[15px] font-semibold text-white underline decoration-white/40 underline-offset-[6px] hover:decoration-white">
                   Contact us
                 </a>
               </div>

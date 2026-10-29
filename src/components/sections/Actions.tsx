@@ -64,7 +64,7 @@ export default function Actions() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" aria-hidden="true">{icons[l.icon]}</svg>
               </span>
               <span className="mt-4 font-serif text-[19px] text-ink">{l.title}</span>
-              <span className="mt-1.5 text-[14px] leading-relaxed text-body">{l.text}</span>
+              <span className="mt-1.5 text-[16px] leading-relaxed text-body">{l.text}</span>
               <span className="mt-auto flex items-center gap-2 pt-5 text-[14px] font-semibold text-blue">Open <Arrow /></span>
             </Link>
           ))}

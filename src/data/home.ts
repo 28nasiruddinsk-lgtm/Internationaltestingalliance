@@ -10,21 +10,21 @@ export const audiences: Record<AudienceKey, {
     heading: 'Your examinations, delivered independently and to your protocols.',
     text: 'We verify every candidate, run every session and send you a complete record afterwards. We never teach, mark or grade.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
-    image: 'hall_rows', alt: 'Rows of desks set for a large sitting',
+    image: 'hall_rows', alt: 'Rows of numbered desks set out in an ITA exam hall for a large sitting',
   },
   uni: {
     tab: 'Universities',
     heading: 'One standard across every campus and every city.',
     text: 'Paper and computer-based sittings with registration, payment collection and live attendance in one partner portal.',
     cta: 'Plan a multi-campus sitting', href: '/services/',
-    image: 'centre_gems', alt: 'ITA hall set for the GEMS scholarship programme',
+    image: 'centre_gems', alt: 'ITA exam hall set up for a partner sitting in Pakistan',
   },
   cand: {
     tab: 'Candidates',
     heading: 'Sit your exam close to home, in a properly run centre.',
     text: 'Register, pay and download your Statement of Entry online, then sit in one of our venues across Pakistan or in Dubai.',
     cta: 'Book your exam', href: '/candidates/',
-    image: 'exam_sitting', alt: 'Candidates sitting an examination under ITA invigilators',
+    image: 'exam_sitting', alt: 'Invigilators supervising candidates in an ITA exam hall',
   },
 };
 
@@ -34,18 +34,23 @@ export const quickLinks = [
   { title: 'Exam day guide', text: 'What to bring and when to arrive.', href: '/#day', icon: 'guide' },
 ] as const;
 
-export const stats = [
-  { value: 9, suffix: '', label: 'Core markets', text: 'Pakistan, UAE, Saudi Arabia, Iraq, Egypt, Bahrain, Malaysia, Uzbekistan and the UK' },
+// `word` replaces the count-up for a figure that is not a number
+export const stats: { value: number; suffix: string; word?: string; label: string; text: string }[] = [
+  { value: 9, suffix: '', label: 'Core markets', text: 'Pakistan, Iraq, UAE, Saudi Arabia, Egypt, Bahrain, Malaysia, Uzbekistan and the UK' },
   { value: 9, suffix: '', label: 'Cities in Pakistan', text: 'Karachi to Gilgit, with venues confirmed for each sitting' },
-  { value: 3, suffix: '', label: 'International awarding bodies', text: 'University of Greenwich, City & Guilds and NCC Education' },
-  { value: 24, suffix: 'h', label: 'Report turnaround', text: 'Full session record to the awarding body within a day' },
+  { value: 4, suffix: '', label: 'International awarding bodies', text: 'NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways' },
+  { value: 0, suffix: '', word: 'Immediate', label: 'Reports after every sitting', text: 'The full session record goes to the awarding body as soon as the sitting closes' },
 ];
 
-export const services: { title: string; text: string; image: ImageKey }[] = [
-  { title: 'Exam management', text: 'Scheduling, venue preparation, candidate checks and post-session reporting.', image: 's_sheet14' },
-  { title: 'Professional invigilation', text: 'Trained, impartial staff supervise every session from start to finish.', image: 's_teacher11' },
-  { title: 'Secure venues', text: 'Controlled access, CCTV oversight and secure storage of materials.', image: 'n_cctv' },
-  { title: 'Technology and quality', text: 'Digital ID and QR verification, incident reporting and a full audit trail.', image: 'n_tech' },
+export const services: { title: string; text: string; image: ImageKey; alt: string; href: string }[] = [
+  { title: 'Exam management', text: 'Scheduling, venue preparation, candidate checks and post-session reporting.', image: 's_sheet14', href: '/exam-management/',
+    alt: 'Exam paperwork being checked against a candidate list' },
+  { title: 'Secure venues', text: 'Controlled access, CCTV oversight and secure storage of materials.', image: 'n_cctv', href: '/exam-venues/',
+    alt: 'CCTV camera covering an ITA exam hall' },
+  { title: 'Technology and quality assurance', text: 'Digital ID and QR verification, incident reporting and a full audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
+    alt: 'Digital identity check on a screen at an ITA registration desk' },
+  { title: 'Professional invigilation', text: 'Trained, impartial staff supervise every session from start to finish.', image: 's_teacher11', href: '/professional-invigilation/',
+    alt: 'Invigilator supervising candidates during an exam' },
 ];
 
 export const parties = [

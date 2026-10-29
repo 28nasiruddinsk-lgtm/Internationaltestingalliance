@@ -23,7 +23,7 @@ export default function Header() {
         <div className="bg-navy text-[13px] text-white">
           <Wrap className="flex min-h-[40px] items-center gap-4 py-2">
             <span className="flex-none rounded-full bg-blue px-3 py-0.5 text-[12px] font-semibold">Announcement</span>
-            <Link href="/news/" className="group truncate hover:underline">
+            <Link href="/news-events/" className="group truncate hover:underline">
               {site.announcement} <Arrow className="ml-1" />
             </Link>
             <button aria-label="Dismiss announcement" onClick={() => setAnnounce(false)}
@@ -46,10 +46,11 @@ export default function Header() {
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-2 xl:ml-6">
-            <Link href="/#work" className="hidden whitespace-nowrap rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue hover:bg-tint md:inline-block">
-              Contact us
+            {/* TODO: point at the live partner portal address once the client supplies it */}
+            <Link href="/become-a-partner/" className="hidden whitespace-nowrap rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue hover:bg-tint md:inline-block">
+              Partner portal
             </Link>
-            <Link href="/candidates/" className="hidden whitespace-nowrap rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-navy sm:inline-block">
+            <Link href="/book-an-exam/" className="hidden whitespace-nowrap rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-navy sm:inline-block">
               Book an exam
             </Link>
             <button aria-label={menu ? 'Close menu' : 'Open menu'} aria-expanded={menu} onClick={() => setMenu(!menu)} className="flex h-11 w-11 items-center justify-center xl:hidden">
@@ -69,8 +70,9 @@ export default function Header() {
               </Link>
             ))}
             <div className="flex flex-wrap gap-3 py-5">
-              <Link href="/candidates/" onClick={() => setMenu(false)} className="rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white">Book an exam</Link>
-              <Link href="/#work" onClick={() => setMenu(false)} className="rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue">Contact us</Link>
+              <Link href="/book-an-exam/" onClick={() => setMenu(false)} className="rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white">Book an exam</Link>
+              <Link href="/become-a-partner/" onClick={() => setMenu(false)} className="rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue">Partner portal</Link>
+              <Link href="/contact/" onClick={() => setMenu(false)} className="rounded-full border border-line px-5 py-2.5 text-[14px] font-semibold text-ink">Contact us</Link>
             </div>
           </Wrap>
         </div>
