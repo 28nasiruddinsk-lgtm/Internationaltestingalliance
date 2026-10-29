@@ -16,16 +16,16 @@ export default function Hero() {
       <div className="grid lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)]">
         <div className="relative z-10 bg-navy text-white">
           <div className="flex h-full flex-col px-6 pb-28 pt-14 md:px-12 lg:pl-[max(48px,calc((100vw-1520px)/2+56px))] lg:pr-14 lg:pt-20">
-            <div className="flex flex-wrap gap-1 self-start rounded-full border border-white/40 p-1" role="tablist" aria-label="Choose who you are">
+            <div className="flex max-w-full gap-1 self-start overflow-x-auto rounded-full border border-white/40 p-1 [scrollbar-width:none]" role="tablist" aria-label="Choose who you are">
               {entries.map(([k, v]) => (
                 <button key={k} role="tab" aria-selected={key === k} onClick={() => setKey(k)}
-                  className={`rounded-full px-4 py-2 text-[13.5px] font-semibold transition-colors ${key === k ? 'bg-white text-blue' : 'text-white hover:bg-white/10'}`}>
+                  className={`flex-none whitespace-nowrap rounded-full px-3.5 py-2 text-[13.5px] sm:px-4 font-semibold transition-colors ${key === k ? 'bg-white text-blue' : 'text-white hover:bg-white/10'}`}>
                   {v.tab}
                 </button>
               ))}
             </div>
             <div key={key} className="swap">
-              <h1 className="mt-10 font-serif text-[32px] leading-[1.15] md:text-[42px]">{a.heading}</h1>
+              <h1 className="mt-10 font-serif text-[32px] leading-[1.15] md:text-[56px]">{a.heading}</h1>
               <p className="mt-6 max-w-[500px] text-[17px] leading-[1.7] text-white/85">{a.text}</p>
               <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link href={a.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-[15px] font-semibold text-blue hover:bg-tint">
@@ -36,7 +36,7 @@ export default function Hero() {
                 </a>
               </div>
             </div>
-            <div className="mt-auto flex items-center gap-5 pt-14 text-[13px] text-white/75">
+            <div className="mt-auto flex items-center gap-5 pt-14 text-[13px] text-white/85">
               <span className="border-r border-white/30 pr-5">
                 IBCC registration<br /><b className="font-semibold text-white">Ref. {site.ibccRef}</b>
               </span>

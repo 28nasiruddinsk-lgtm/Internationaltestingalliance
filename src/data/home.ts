@@ -10,21 +10,21 @@ export const audiences: Record<AudienceKey, {
     heading: 'Your examinations, delivered independently and to your protocols.',
     text: 'We verify every candidate, run every session and send you a complete record afterwards. We never teach, mark or grade.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
-    image: 'n_inst', alt: 'Institutional examination building',
+    image: 'hall_rows', alt: 'Rows of desks set for a large sitting',
   },
   uni: {
     tab: 'Universities',
     heading: 'One standard across every campus and every city.',
     text: 'Paper and computer-based sittings with registration, payment collection and live attendance in one partner portal.',
     cta: 'Plan a multi-campus sitting', href: '/services/',
-    image: 's_lecture12', alt: 'University examination hall',
+    image: 'centre_gems', alt: 'ITA hall set for the GEMS scholarship programme',
   },
   cand: {
     tab: 'Candidates',
     heading: 'Sit your exam close to home, in a properly run centre.',
     text: 'Register, pay and download your Statement of Entry online, then sit in one of our venues across Pakistan or in Dubai.',
     cta: 'Book your exam', href: '/candidates/',
-    image: 'n_teen', alt: 'Candidate during a listening paper',
+    image: 'exam_sitting', alt: 'Candidates sitting an examination under ITA invigilators',
   },
 };
 

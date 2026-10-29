@@ -92,7 +92,7 @@ export default function Hall() {
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_340px]">
           <div className="overflow-x-auto border border-line bg-white">
-            <svg viewBox="0 0 900 560" className="block h-auto w-full min-w-[640px]" role="img"
+            <svg viewBox="0 0 900 560" className="block h-auto w-full" role="img"
               aria-label={`Exam hall seating plan. ${phase}. ${filled} of 48 candidates checked in.`}>
               <defs>
                 <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v6" stroke="#DCE3EC" strokeWidth="2" /></pattern>

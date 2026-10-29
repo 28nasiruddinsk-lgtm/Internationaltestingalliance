@@ -46,14 +46,16 @@ export default function Header() {
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-2 xl:ml-6">
-            <Link href="/contact/" className="hidden whitespace-nowrap rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue hover:bg-tint md:inline-block">
+            <Link href="/#work" className="hidden whitespace-nowrap rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue hover:bg-tint md:inline-block">
               Contact us
             </Link>
             <Link href="/candidates/" className="hidden whitespace-nowrap rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-navy sm:inline-block">
               Book an exam
             </Link>
-            <button aria-label="Menu" aria-expanded={menu} onClick={() => setMenu(!menu)} className="flex h-11 w-11 items-center justify-center xl:hidden">
-              <svg width="22" height="14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="#0E2240" strokeWidth="1.6" /></svg>
+            <button aria-label={menu ? 'Close menu' : 'Open menu'} aria-expanded={menu} onClick={() => setMenu(!menu)} className="flex h-11 w-11 items-center justify-center xl:hidden">
+              <svg width="22" height="14" aria-hidden="true">
+                <path d={menu ? 'M3 1l16 12M19 1L3 13' : 'M0 1h22M0 7h22M0 13h22'} stroke="#0E2240" strokeWidth="1.6" />
+              </svg>
             </button>
           </div>
         </Wrap>
@@ -66,6 +68,10 @@ export default function Header() {
                 {n.label}
               </Link>
             ))}
+            <div className="flex flex-wrap gap-3 py-5">
+              <Link href="/candidates/" onClick={() => setMenu(false)} className="rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white">Book an exam</Link>
+              <Link href="/#work" onClick={() => setMenu(false)} className="rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue">Contact us</Link>
+            </div>
           </Wrap>
         </div>
       )}

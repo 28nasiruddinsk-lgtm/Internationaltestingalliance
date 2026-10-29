@@ -8,7 +8,7 @@ export default function NotFound() {
     <section className="py-24 md:py-40">
       <Wrap>
         <p className="text-[14px] font-semibold text-blue">404</p>
-        <h1 className="mt-4 max-w-[640px] font-serif text-[32px] leading-[1.15] md:text-[42px]">This page does not exist.</h1>
+        <h1 className="mt-4 max-w-[640px] font-serif text-[32px] leading-[1.15] md:text-[56px]">This page does not exist.</h1>
         <p className="mt-5 max-w-[520px] text-[17px] leading-[1.7] text-body">The page you are looking for is not available. Try the homepage or the About page.</p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link href="/" className="rounded-full bg-blue px-7 py-3.5 text-[15px] font-semibold text-white hover:bg-navy">Homepage</Link>

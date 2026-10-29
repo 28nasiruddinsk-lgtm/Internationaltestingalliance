@@ -3,7 +3,7 @@ export type Country = {
   cities: string; approvals: string; contact: string; photo: 's_group5' | 's_walk3' | 'n_walk';
 };
 
-const tbc = 'To be confirmed with ITA.'; // TODO: client to confirm status of each market
+const tbc = ''; // TODO: client to confirm approvals and status for each market
 const email = 'info@intltestingalliance.com';
 const partner = 'Partner venues arranged per sitting';
 

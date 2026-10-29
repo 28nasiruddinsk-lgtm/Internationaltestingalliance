@@ -23,7 +23,7 @@ export default function Contact() {
         <div className="lg:col-span-5">
           <Kicker light>Work with us</Kicker>
           <H2>Talk to us about your next sitting.</H2>
-          <p className="mt-5 max-w-[440px] text-[16px] leading-[1.7] text-white/80">
+          <p className="mt-5 max-w-[440px] text-[16px] leading-[1.7] text-white/85">
             Tell us about your candidates and locations. Our partnerships team replies within one working day.
           </p>
           <div className="mt-8 space-y-1 text-[15px]">
@@ -42,7 +42,7 @@ export default function Contact() {
           {sent ? (
             <div className="swap border-l-[3px] border-sky bg-white/10 p-8" role="status">
               <div className="font-serif text-[22px]">Thank you.</div>
-              <p className="mt-2 text-white/80">Your email app should open with the enquiry ready to send.</p>
+              <p className="mt-2 text-white/85">Your email app should open with the enquiry ready to send.</p>
             </div>
           ) : (
             <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
