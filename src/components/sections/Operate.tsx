@@ -24,7 +24,8 @@ export default function Operate() {
           <Kicker>Where we work</Kicker>
           <H2 className="max-w-[640px]">Centres in Pakistan and Dubai. Candidates across nine markets.</H2>
         </Rise>
-        <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div className="mt-12 grid items-stretch gap-12 lg:grid-cols-[1.4fr_1fr]">
+          <div className="flex flex-col gap-6">
           <div className="border border-line bg-white">
             <svg viewBox="0 30 1000 470" preserveAspectRatio="xMidYMid meet" className="block h-auto w-full" role="img" aria-label="Map of ITA markets">
               <path d={map.bg} fill="#F4F8FD" stroke="#DCE6F2" strokeWidth=".8" />
@@ -44,7 +45,22 @@ export default function Operate() {
               ))}
             </svg>
           </div>
-          <div>
+          <div key={`d${sel}`} className="swap border-t-[3px] border-blue bg-white p-7">
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-serif text-[24px] text-ink">{c.name}</h3>
+              <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${c.operating ? 'bg-blue text-white' : 'bg-white text-blue'}`}>{c.status}</span>
+            </div>
+            <dl className="mt-4 text-[14.5px]">
+              {([['Cities', c.cities], ['Approvals', c.approvals], ['Contact', c.contact]] as const).map(([k, v]) => (
+                <div key={k} className="border-t border-[#D3E0F0] py-3">
+                  <dt className="font-semibold text-ink">{k}</dt>
+                  <dd className="mt-0.5 leading-relaxed text-body">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          </div>
+          <div className="flex flex-col">
             <label htmlFor="country" className="text-[14px] font-semibold text-ink">Choose a country</label>
             <select id="country" value={sel} onChange={(e) => setSel(e.target.value)} className="mt-2 h-12 w-full border border-line bg-white px-3 text-[15px] text-ink">
               {countries.map((x) => <option key={x.code} value={x.code}>{x.name}</option>)}
@@ -57,23 +73,9 @@ export default function Operate() {
                 </button>
               ))}
             </div>
-            <div key={`i${sel}`} className="swap h-[220px] overflow-hidden">
+            <div key={`i${sel}`} className="swap relative min-h-[260px] flex-1 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(c.photo)} alt="" className="h-full w-full object-cover" />
-            </div>
-            <div key={`d${sel}`} className="swap border-t-[3px] border-blue bg-white p-7">
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="font-serif text-[24px] text-ink">{c.name}</h3>
-                <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${c.operating ? 'bg-blue text-white' : 'bg-white text-blue'}`}>{c.status}</span>
-              </div>
-              <dl className="mt-4 text-[14.5px]">
-                {([['Cities', c.cities], ['Approvals', c.approvals], ['Contact', c.contact]] as const).map(([k, v]) => (
-                  <div key={k} className="border-t border-[#D3E0F0] py-3">
-                    <dt className="font-semibold text-ink">{k}</dt>
-                    <dd className="mt-0.5 leading-relaxed text-body">{v}</dd>
-                  </div>
-                ))}
-              </dl>
+              <img src={img(c.photo)} alt="" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>
         </div>
