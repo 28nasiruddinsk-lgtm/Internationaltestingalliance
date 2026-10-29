@@ -39,7 +39,7 @@ export const stats: { value: number; suffix: string; word?: string; label: strin
   { value: 9, suffix: '', label: 'Core markets', text: 'Pakistan, Iraq, UAE, Saudi Arabia, Egypt, Bahrain, Malaysia, Uzbekistan and the UK' },
   { value: 9, suffix: '', label: 'Cities in Pakistan', text: 'Karachi to Gilgit, with venues confirmed for each sitting' },
   { value: 4, suffix: '', label: 'International awarding bodies', text: 'NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways' },
-  { value: 0, suffix: '', word: 'Immediate', label: 'Reports after every sitting', text: 'The full session record goes to the awarding body as soon as the sitting closes' },
+  { value: 24, suffix: 'h', label: 'Report turnaround', text: 'Full session record to the awarding body within a day' },
 ];
 
 export const services: { title: string; text: string; image: ImageKey; alt: string; href: string }[] = [
