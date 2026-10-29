@@ -21,13 +21,13 @@ export default function Model({ kicker = 'Independence', title = 'Three parties,
           {parties.map(([title, text], n) => (
             <div key={title} className="relative text-center" style={{ opacity: seen ? 1 : 0, transition: `opacity .6s ${n * 300}ms` }}>
               <div className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full font-serif text-[18px] ${n === 1 ? 'bg-blue text-white' : 'border-2 border-blue bg-white text-blue'}`}>{n + 1}</div>
-              <h3 className={`mt-5 font-serif text-[21px] ${n === 1 ? 'text-blue' : 'text-ink'}`}>{title}</h3>
+              <h3 className={`mt-5 font-serif text-[19px] ${n === 1 ? 'text-blue' : 'text-ink'}`}>{title}</h3>
               <p className="mx-auto mt-2 max-w-[300px] text-[16px] leading-relaxed text-body">{text}</p>
             </div>
           ))}
         </div>
         <Rise delay={300} className="mx-auto mt-16 max-w-[820px] border-y border-line py-8 text-center">
-          <p className="font-serif text-[22px] italic leading-snug text-navy md:text-[32px]">“No teaching. No marking. No influence over the outcome.”</p>
+          <p className="font-serif text-[20px] italic leading-snug text-navy md:text-[26px]">“No teaching. No marking. No influence over the outcome.”</p>
         </Rise>
       </Wrap>
     </section>

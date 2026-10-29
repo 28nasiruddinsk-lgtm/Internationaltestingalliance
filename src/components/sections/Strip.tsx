@@ -9,7 +9,7 @@ export default function Strip({ title, text, links }: Props) {
     <section className="bg-tint py-14">
       <Wrap className="flex flex-wrap items-center justify-between gap-6">
         <div className="max-w-[640px]">
-          <h2 className="font-serif text-[24px] text-ink">{title}</h2>
+          <h2 className="font-serif text-[22px] text-ink">{title}</h2>
           <p className="mt-2 text-[16px] leading-[1.7] text-body">{text}</p>
         </div>
         <div className="flex flex-wrap gap-x-8 gap-y-3">

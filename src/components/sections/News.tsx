@@ -22,7 +22,7 @@ export default function News({ limit = 4 }: { limit?: number }) {
                   <img loading="lazy" decoding="async" src={img(n.image)} alt="" className={`h-full w-full transition-transform duration-700 group-hover:scale-[1.04] ${n.graphic ? 'object-contain' : 'object-cover'}`} />
                 </div>
                 <div className="mt-5 text-[13.5px] font-semibold text-blue">{n.date}</div>
-                <h3 className="mt-2 font-serif text-[19px] leading-snug text-ink group-hover:text-blue">{n.title}</h3>
+                <h3 className="mt-2 font-serif text-[18px] leading-snug text-ink group-hover:text-blue">{n.title}</h3>
               </Link>
             </Rise>
           ))}

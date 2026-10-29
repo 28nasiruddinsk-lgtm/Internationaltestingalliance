@@ -15,7 +15,7 @@ export default function Offices() {
           {offices.map((o, n) => (
             <Rise key={o.city} delay={n * 90} className="h-full">
               <div className="h-full border-t-[3px] border-blue bg-tint p-8">
-                <h3 className="font-serif text-[24px] text-ink">{o.city}</h3>
+                <h3 className="font-serif text-[20px] text-ink">{o.city}</h3>
                 <p className="mt-3 text-[16px] leading-[1.7] text-body">{o.address}</p>
                 <a href={o.map} target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-[15px] font-semibold text-blue underline-offset-4 hover:underline">
                   View on Google Maps<span className="sr-only"> (opens in a new tab)</span>

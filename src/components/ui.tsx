@@ -58,7 +58,7 @@ export const Arrow = ({ className = '' }: { className?: string }) => (
 );
 
 export const H2 = ({ children, className = '' }: { children: ReactNode; className?: string }) => (
-  <h2 className={`mt-5 font-serif text-[24px] leading-[1.15] md:text-[36px] ${className}`}>{children}</h2>
+  <h2 className={`mt-5 font-serif text-[22px] leading-[1.2] md:text-[30px] ${className}`}>{children}</h2>
 );
 
 // seeded random, so the hall replay is identical on every load

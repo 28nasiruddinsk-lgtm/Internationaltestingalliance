@@ -20,8 +20,8 @@ export default function PageHeader({ title, intro, kicker, headline, image, alt 
       <Wrap className={image ? 'grid items-center gap-12 lg:grid-cols-2' : ''}>
         <div>
           {kicker && <Kicker light={!light}>{kicker}</Kicker>}
-          <h1 className="mt-5 max-w-[860px] font-serif text-[32px] leading-[1.15] md:text-[56px]">{title}</h1>
-          {headline && <p className="mt-6 max-w-[620px] font-serif text-[22px] leading-[1.3] md:text-[28px]">{headline}</p>}
+          <h1 className="mt-5 max-w-[860px] font-serif text-[28px] leading-[1.15] md:text-[42px]">{title}</h1>
+          {headline && <p className="mt-6 max-w-[620px] font-serif text-[20px] leading-[1.3] md:text-[24px]">{headline}</p>}
           {intro && <p className={`mt-5 max-w-[620px] text-[17px] leading-[1.7] ${sub}`}>{intro}</p>}
         </div>
         {image && (

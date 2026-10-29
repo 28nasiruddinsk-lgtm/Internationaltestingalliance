@@ -23,7 +23,7 @@ export default function Services() {
                   <span className="absolute left-0 top-0 bg-blue px-3 py-1.5 text-[13px] font-semibold text-white">0{n + 1}</span>
                 </div>
                 <div className="flex flex-1 flex-col border-t-[3px] border-blue p-6">
-                  <h3 className="min-h-[2.5em] font-serif text-[19px] leading-[1.25] text-ink group-hover:text-blue">{s.title}</h3>
+                  <h3 className="min-h-[2.5em] font-serif text-[18px] leading-[1.25] text-ink group-hover:text-blue">{s.title}</h3>
                   <p className="mt-2 text-[16px] leading-relaxed text-body">{s.text}</p>
                   <span className="mt-auto inline-block pt-5 text-blue"><Arrow /></span>
                 </div>

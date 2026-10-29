@@ -54,7 +54,7 @@ export default function Actions() {
   return (
     <section id="contact-us" className="relative z-20 -mt-16" style={{ background: 'linear-gradient(to bottom,transparent 0,transparent 64px,#EEF3FA 64px)' }}>
       <Wrap>
-        <div className="grid border border-line bg-white shadow-[0_24px_60px_rgba(14,34,64,.12)] lg:grid-cols-[1.55fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-[minmax(0,1fr)] border border-line bg-white shadow-[0_24px_60px_rgba(14,34,64,.12)] lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]">
           <ContactCell />
           {quickLinks.map((l, n) => (
             <Link key={l.title} href={l.href}
@@ -63,7 +63,7 @@ export default function Actions() {
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-tint text-blue transition-colors group-hover:bg-blue group-hover:text-white">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" aria-hidden="true">{icons[l.icon]}</svg>
               </span>
-              <span className="mt-4 font-serif text-[19px] text-ink">{l.title}</span>
+              <span className="mt-4 font-serif text-[18px] text-ink">{l.title}</span>
               <span className="mt-1.5 text-[16px] leading-relaxed text-body">{l.text}</span>
               <span className="mt-auto flex items-center gap-2 pt-5 text-[14px] font-semibold text-blue">Open <Arrow /></span>
             </Link>
