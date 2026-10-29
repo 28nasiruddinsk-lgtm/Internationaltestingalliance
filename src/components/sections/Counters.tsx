@@ -19,13 +19,22 @@ function Count({ to, run, delay }: { to: number; run: boolean; delay: number }) 
       };
       raf = requestAnimationFrame(tick);
     }, delay);
-    return () => { clearTimeout(timer); cancelAnimationFrame(raf); };
+    // safety net: if animation frames are throttled, still end on the real figure
+    const settle = setTimeout(() => setN(to), delay + 3200);
+    return () => { clearTimeout(timer); clearTimeout(settle); cancelAnimationFrame(raf); };
   }, [run, to, delay]);
   return <>{n}</>;
 }
 
 export default function Counters() {
-  const [ref, seen] = useInView<HTMLElement>(0.35);
+  const [ref, inView] = useInView<HTMLElement>(0.35);
+  // never leave the figures at 0: start anyway if the scroll trigger has not fired after 5 s
+  const [late, setLate] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setLate(true), 5000);
+    return () => clearTimeout(t);
+  }, []);
+  const seen = inView || late;
   return (
     <section ref={ref} className="bg-tint pb-24 pt-20 md:pb-32 md:pt-24">
       <Wrap>

@@ -11,11 +11,21 @@ export function useInView<T extends HTMLElement>(threshold = 0.2) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setSeen(true); io.disconnect(); }
-    }, { threshold });
+    const stop = () => { io.disconnect(); window.removeEventListener('scroll', check); window.removeEventListener('resize', check); };
+    const done = () => { setSeen(true); stop(); };
+    // the observer is the main trigger; the scroll check is a backup for browsers and window
+    // sizes where a tall section can never reach the full threshold
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) done(); }, { threshold });
+    const check = () => {
+      const r = el.getBoundingClientRect();
+      const visible = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+      if (visible > 0 && visible >= Math.min(r.height * threshold, innerHeight * 0.4)) done();
+    };
     io.observe(el);
-    return () => io.disconnect();
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    check();
+    return stop;
   }, [threshold]);
   return [ref, seen || prefersReducedMotion()] as const;
 }
