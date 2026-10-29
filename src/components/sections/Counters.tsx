@@ -48,7 +48,7 @@ export default function Counters() {
         <div className="mt-14 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, k) => (
             <div key={s.label} className="group relative bg-white p-8 transition-colors hover:bg-[#F7FAFE]">
-              <div className="flex items-baseline gap-1 font-serif text-[40px] leading-none text-blue tabular-nums md:text-[46px]">
+              <div className="flex min-h-[48px] items-baseline gap-1 font-serif text-[40px] leading-none text-blue tabular-nums md:min-h-[56px] md:text-[46px]">
                 {s.word ? <span className="text-[30px] md:text-[34px]">{s.word}</span> : <Count to={s.value} run={seen} delay={k * 180} />}
                 <span className="text-[24px] text-navy">{s.suffix}</span>
               </div>
