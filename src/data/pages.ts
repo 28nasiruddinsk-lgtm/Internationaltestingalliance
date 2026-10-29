@@ -28,28 +28,66 @@ const cards = (props: Record<string, unknown>): SectionConfig => ({ type: 'cards
 // Inner pages by path; news articles are added at the bottom
 // TODO: policy PDFs, FAQ, Arabic
 export const pages: Record<string, SectionConfig[]> = {
-  about: [
-    header('About International Testing Alliance', 'Independent examination delivery: planned, run and reported by a neutral operating partner.', 'About ITA'),
-    { type: 'aboutIntro' },
-    { type: 'structure' },
-    { type: 'model' },
-    cards({ kicker: 'Purpose, vision and mission', title: 'Why we exist and where we are heading', items: p.pillars, tint: true }),
-    cards({ kicker: 'Operating controls', title: 'Assessment integrity depends on consistent execution', intro: 'ITA provides a neutral operating layer and an auditable record for each exam sitting.', items: p.controls }),
+  'about-us': [
+    { type: 'pageHeader', props: {
+      kicker: 'About ITA',
+      title: 'About International Testing Alliance',
+      headline: 'We run the exam. We have nothing riding on the result.',
+      intro: 'International Testing Alliance plans, runs and reports on examinations for awarding bodies, universities and training providers. We never teach and we never mark.',
+      image: 'hall_rows', alt: 'Rows of numbered desks set out in an ITA exam hall',
+    } },
     prose({
-      tint: true,
-      kicker: 'Trust and governance',
-      title: 'Formally registered, formally recognised.',
+      kicker: 'An exam morning',
+      title: 'The quiet hour before the doors open',
       paragraphs: [
-        'ITA is registered with the Inter Boards Coordination Commission (IBCC), reference IBCC/RC-1/Impl-2/2025/758. The Pakistan Bar Council listed International Testing Services (ITS) as an approved foreign exam agency in its September 2026 directive.',
-        'Operating controls include documented SOPs, chain of custody for materials, incident reporting and quality assurance checks. ITA writes its own policies and forms in-house.',
+        'On a typical exam day our venue supervisor is in the hall before 07:30. The desks are numbered, the rules go up at the door and the sealed papers are checked against the log. By the time the first candidate walks in, the room is ready and everyone in it knows their job.',
+        'That quiet hour before the doors open is most of what we do. When it goes right, nobody notices. That’s the idea.',
       ],
-      points: ['Safeguarding', 'Code of conduct and confidentiality', 'Exam security', 'Incident reporting', 'Staff performance evaluation'],
-      image: 'ibcc_registered',
-      contain: true,
+      image: 'row', alt: 'ITA team setting out desks and row markers in an exam hall',
     }),
-    { type: 'milestones' },
-    cards({ kicker: 'Looking ahead', title: 'A repeatable delivery model creates room to expand', items: p.growth, tint: true }),
-    { type: 'contact' },
+    { type: 'split', props: {
+      kicker: 'Who we are',
+      title: 'An independent examination services company',
+      tint: true,
+      paragraphs: [
+        'ITA is an independent examination services company and part of the International Testing Services (ITS) group. We were set up in April 2025 to do one thing well: deliver exams for other organisations. That covers everything from onboarding a new partner and checking candidates in to supervising the session and sending back a full record.',
+        'We work across nine markets: Pakistan, the UAE, Saudi Arabia, Iraq, Egypt, Bahrain, Malaysia, Uzbekistan and the UK.',
+      ],
+    } },
+    { type: 'model', props: {
+      kicker: 'Independence',
+      title: 'Why we stay out of teaching and marking',
+      intro: 'When the same organisation teaches, registers and supervises its own candidates, it’s hard for anyone to call the result fully impartial. So we keep to the middle of the room. The institution sets the rules. The awarding body sets and marks the paper. We run everything in between and write down exactly what happened.',
+    } },
+    cards({
+      kicker: 'The people in the room',
+      title: 'Three roles run every hall',
+      items: p.aboutRoles,
+      tint: true,
+      outro: 'Every member of our venue staff is checked for their role, goes through induction and signs our safeguarding and confidentiality commitments. After each session the supervisor reviews how it went: readiness, conduct, communication, security and safety.',
+    }),
+    { type: 'split', props: {
+      kicker: 'Where we work',
+      title: 'Nine cities, from Karachi to Gilgit.',
+      paragraphs: [
+        'Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad and Gilgit. Candidates sit close to home in rooms run to the same standard. When a partner needs us somewhere new, such as Quetta, Peshawar or a hard-to-reach area, we set up in partner premises or an external venue.',
+        'Our offices are in Karachi and Dubai.',
+      ],
+    } },
+    { type: 'operate' },
+    { type: 'milestones', props: { kicker: 'Our progress', title: 'How we got here' } },
+    cards({ kicker: 'What we’re here for', title: 'Purpose, vision and mission', items: p.pillars, tint: true, numbered: false }),
+    { type: 'split', props: {
+      kicker: 'Our parent company',
+      title: 'ITS is our parent company',
+      paragraphs: ['ITS holds the group’s registrations, recognitions and long track record in examination and assessment services. Where a registration or approval belongs to ITS, we say so on this website.'],
+      link: { label: 'Meet our board and management', href: '/our-board-and-management/' },
+    } },
+    { type: 'band', props: {
+      title: 'Want to see how we’d run your exam?',
+      text: 'Tell us about your candidates and where they sit. Our partnerships team replies within one working day.',
+      buttons: [{ label: 'Discuss a partnership', href: '/become-a-partner/' }, { label: 'Find a centre', href: '/centres/' }],
+    } },
   ],
   services: [
     header('Services', 'Choose individual services or entrust ITA with end-to-end examination delivery.', 'Our services'),
@@ -105,11 +143,35 @@ export const pages: Record<string, SectionConfig[]> = {
     { type: 'milestones' },
   ],
   news: [header('News', 'Updates from ITA.', 'News and announcements'), { type: 'news', props: { limit: 99 } }],
-  contact: [header('Contact us', 'Send an email query. Offices in Karachi and Dubai.', 'Contact'), { type: 'contact' }],
+  contact: [
+    { type: 'pageHeader', props: { title: 'Contact us', intro: 'A real person reads every message. Tell us what you need and we’ll get back to you.', light: true } },
+    { type: 'contactForm' },
+    { type: 'offices' },
+    { type: 'strip', props: {
+      title: 'Sitting an exam?',
+      text: 'Most candidate questions are answered on these pages. If yours isn’t, send us a message and choose “A candidate” in the form.',
+      links: [{ label: 'Book an exam', href: '/book-an-exam/' }, { label: 'Exam day guidelines', href: '/exam-day-guidelines/' }],
+    } },
+  ],
   ...Object.fromEntries(
     news.map((n) => [
       `news/${n.slug}`,
       [header(n.title, undefined, n.date), prose({ title: 'Details', paragraphs: n.body, image: n.image })],
     ]),
   ),
+};
+
+// Pages that go live. Everything else 404s; add a key of `pages` here to publish it.
+export const published = ['about-us', 'contact'];
+
+// Title tag and meta description per published page (SEO brief). The home page is set in app/layout.tsx.
+export const meta: Record<string, { title: string; description: string }> = {
+  'about-us': {
+    title: 'About International Testing Alliance | ITA Exams Pakistan',
+    description: 'International Testing Alliance runs independent and secure exams for universities and awarding bodies across Pakistan, the UAE and seven more markets.',
+  },
+  contact: {
+    title: 'Contact International Testing Alliance | Karachi and Dubai',
+    description: 'Get in touch with ITA about exam delivery, invigilation or venues. Offices in Karachi and Dubai. A real person reads every message.',
+  },
 };

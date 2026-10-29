@@ -1,5 +1,7 @@
 // Copy from the ITA Company Profile 2026
-export type Card = { title: string; text: string; tag?: string };
+import type { ImageKey } from './images';
+
+export type Card = { title: string; text: string; tag?: string; image?: ImageKey };
 
 export const offers: Card[] = [
   { title: 'Partner portal', text: 'Real-time visibility of registrations, candidate numbers, schedules, attendance and examination activity, from registration to final reporting.' },
@@ -41,7 +43,7 @@ export const partners: Card[] = [
   { tag: 'NCC Education', title: 'Partner-premises flexibility', text: 'Independent record-keeping for each sitting, including sessions hosted on partner premises.' },
   { tag: 'City & Guilds', title: 'Protocol-led delivery', text: 'Standardised session reporting aligned with formal examination protocols.' },
   { tag: 'University of Greenwich, UK', title: 'Multi-campus operations', text: 'Computer and paper-based delivery with candidate registration, payment collection and real-time attendance.' },
-  { tag: 'GEMS Pathway', title: 'International standards', text: 'We manage the examination process for GEMS Pathway in Pakistan: planning, candidate coordination, invigilation and secure delivery.' },
+  { tag: 'GEMS Pathways', title: 'International standards', text: 'We manage the examination process for GEMS Pathways in Pakistan: planning, candidate coordination, invigilation and secure delivery.' },
 ];
 
 export const governanceSteps: Card[] = [
@@ -66,17 +68,24 @@ export const growth: Card[] = [
 ];
 
 export const milestones = [
-  { date: 'April 2025', title: 'ITA established', text: 'ITA is established as part of the ITS Group, a dedicated platform for examination and assessment delivery.' },
-  { date: 'June 2025', title: 'IBCC registration', text: 'Registered with the Inter Boards Coordination Commission as an approved examination delivery partner.' },
-  { date: 'July 2025', title: 'IBCC notification', text: 'IBCC issues a formal notification confirming ITA’s recognition for examination delivery.' },
-  { date: 'September 2026', title: 'Pakistan Bar Council recognition', text: 'Recognised among the approved agencies for foreign law examination delivery.' },
-  { date: '2026', title: 'Expanding assessment delivery', text: 'Continuing to build partnerships with universities, awarding bodies and professional institutions globally.' },
+  { date: 'April 2025', title: 'ITA established', text: 'ITA is established within the ITS group.' },
+  { date: 'June 2025', title: 'IBCC registration', text: 'Registered with the Inter Boards Coordination Commission (IBCC).' },
+  { date: 'July 2025', title: 'IBCC notification', text: 'IBCC issues its formal notification for examination delivery.' },
+  { date: 'September 2026', title: 'Pakistan Bar Council', text: 'The Pakistan Bar Council lists ITS among approved agencies for foreign law examinations.' },
+  { date: 'Today', title: 'Delivering for four awarding bodies', text: 'NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways.' },
 ];
 
 export const pillars: Card[] = [
-  { title: 'Our purpose', text: 'To advance fair, secure and accessible assessment by enabling learners to take part in trusted examinations, wherever they are.' },
-  { title: 'Our vision', text: 'To be a globally trusted examination services partner, setting the standard for secure, independent and technology-enabled assessment delivery across international markets.' },
-  { title: 'Our mission', text: 'To protect the integrity of every examination through independent delivery, rigorous standards, trained professionals and technology, giving institutions and awarding bodies confidence, transparency and reliable outcomes.' },
+  { title: 'Purpose', text: 'To advance fair, secure and accessible assessment by enabling learners to participate in trusted examinations, wherever they are.' },
+  { title: 'Vision', text: 'To be a globally trusted examination services partner, setting the standard for secure, independent and technology-enabled assessment delivery across international markets.' },
+  { title: 'Mission', text: 'To protect the integrity of every examination through independent delivery, rigorous standards, trained professionals and technology, while providing institutions and awarding bodies with confidence, transparency and reliable outcomes.' },
+];
+
+// About Us page: the three people who run a hall
+export const aboutRoles: Card[] = [
+  { title: 'Venue supervisor', text: 'Opens the venue, briefs the team and makes the call when something unexpected happens.', image: 'briefing' },
+  { title: 'Invigilators', text: 'Check candidates in, explain the rules, watch the room and log anything unusual the moment it happens.', image: 'invigilators' },
+  { title: 'Materials and records', text: 'Keeps papers sealed and counted, tracks attendance and break logs and hands over the session record.', image: 'board' },
 ];
 
 export const aboutFacts = [

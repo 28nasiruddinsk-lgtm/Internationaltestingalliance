@@ -27,7 +27,7 @@ export default function AboutIntro() {
             {aboutFacts.map((f) => (
               <div key={f.value} className="bg-white p-5">
                 <dt className="font-serif text-[26px] text-blue">{f.value}</dt>
-                <dd className="mt-1 text-[15px] leading-relaxed text-body">{f.label}</dd>
+                <dd className="mt-1 text-[16px] leading-relaxed text-body">{f.label}</dd>
               </div>
             ))}
           </dl>

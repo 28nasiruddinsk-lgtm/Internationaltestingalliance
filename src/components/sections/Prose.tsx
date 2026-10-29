@@ -8,11 +8,12 @@ export type ProseProps = {
   paragraphs: string[];
   points?: string[];
   image?: ImageKey;
+  alt?: string;
   tint?: boolean;
   contain?: boolean;
 };
 
-export default function Prose({ kicker, title, paragraphs, points, image, tint, contain }: ProseProps) {
+export default function Prose({ kicker, title, paragraphs, points, image, alt = '', tint, contain }: ProseProps) {
   return (
     <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
       <Wrap className={`grid gap-12 ${image ? 'lg:grid-cols-2' : ''}`}>
@@ -31,7 +32,7 @@ export default function Prose({ kicker, title, paragraphs, points, image, tint, 
         {image && (
           <Rise delay={120}>
             <div className={`h-[320px] overflow-hidden md:h-[440px] ${contain ? 'border border-line bg-white' : ''}`}>
-              <img loading="lazy" decoding="async" src={img(image)} alt="" className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />
+              <img loading="lazy" decoding="async" src={img(image)} alt={alt} className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />
             </div>
           </Rise>
         )}
