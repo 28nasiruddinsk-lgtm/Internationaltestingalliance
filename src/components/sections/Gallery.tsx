@@ -53,7 +53,7 @@ export default function Gallery() {
               <img loading="lazy" decoding="async" src={img(image)} alt={title} draggable={false} className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" style={{ filter: 'saturate(.9)' }} />
             </div>
             <figcaption className="mt-3 flex items-baseline justify-between gap-4 border-t border-line pt-3">
-              <span className="font-serif text-[19px] text-ink">{title}</span>
+              <span className="font-serif text-[18px] text-ink">{title}</span>
               <span className="text-[13px] text-muted">{place}</span>
             </figcaption>
           </figure>

@@ -13,7 +13,7 @@ export default function Hero() {
 
   return (
     <section className="relative bg-white">
-      <div className="grid lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)]">
         <div className="relative z-10 bg-navy text-white">
           <div className="flex h-full flex-col px-6 pb-28 pt-14 md:px-12 lg:pl-[max(48px,calc((100vw-1520px)/2+56px))] lg:pr-14 lg:pt-20">
             <div className="flex max-w-full gap-1 self-start overflow-x-auto rounded-full border border-white/40 p-1 [scrollbar-width:none]" role="tablist" aria-label="Choose who you are">
@@ -25,7 +25,7 @@ export default function Hero() {
               ))}
             </div>
             <div key={key} className="swap">
-              <h1 className="mt-10 font-serif text-[32px] leading-[1.15] md:text-[56px]">{a.heading}</h1>
+              <h1 className="mt-10 font-serif text-[28px] leading-[1.15] md:text-[42px]">{a.heading}</h1>
               {/* TODO: line pending client confirmation (SEO brief) */}
               <p className="mt-5 text-[17px] font-semibold text-white">An IBCC-registered testing service in Pakistan and the UAE.</p>
               <p className="mt-4 max-w-[500px] text-[17px] leading-[1.7] text-white/85">{a.text}</p>
@@ -38,7 +38,7 @@ export default function Hero() {
                 </a>
               </div>
             </div>
-            <div className="mt-auto flex items-center gap-5 pt-14 text-[13px] text-white/85">
+            <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-14 text-[13px] text-white/85">
               <span className="border-r border-white/30 pr-5">
                 IBCC registration<br /><b className="font-semibold text-white">Ref. {site.ibccRef}</b>
               </span>

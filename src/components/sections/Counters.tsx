@@ -39,14 +39,14 @@ export default function Counters() {
         <div className="mt-14 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, k) => (
             <div key={s.label} className="group relative bg-white p-8 transition-colors hover:bg-[#F7FAFE]">
-              <div className="flex items-baseline gap-1 font-serif text-[48px] leading-none text-blue tabular-nums md:text-[58px]">
-                {s.word ? <span className="text-[38px] md:text-[44px]">{s.word}</span> : <Count to={s.value} run={seen} delay={k * 180} />}
-                <span className="text-[28px] text-navy">{s.suffix}</span>
+              <div className="flex items-baseline gap-1 font-serif text-[40px] leading-none text-blue tabular-nums md:text-[46px]">
+                {s.word ? <span className="text-[30px] md:text-[34px]">{s.word}</span> : <Count to={s.value} run={seen} delay={k * 180} />}
+                <span className="text-[24px] text-navy">{s.suffix}</span>
               </div>
               <div className="mt-5 h-[3px] w-full bg-line">
                 <div className="h-full bg-blue" style={{ width: seen ? '100%' : '0%', transition: `width 1.6s cubic-bezier(.2,.7,.2,1) ${k * 180}ms` }} />
               </div>
-              <h3 className="mt-5 font-serif text-[19px] text-ink">{s.label}</h3>
+              <h3 className="mt-5 font-serif text-[18px] text-ink">{s.label}</h3>
               <p className="mt-2 text-[16px] leading-relaxed text-body">{s.text}</p>
             </div>
           ))}

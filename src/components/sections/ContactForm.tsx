@@ -56,7 +56,7 @@ export default function ContactForm() {
           )}
         </Rise>
         <Rise delay={120} className="lg:col-span-4 lg:col-start-9">
-          <h2 className="font-serif text-[24px] text-ink md:text-[30px]">Talk to us directly</h2>
+          <h2 className="font-serif text-[22px] text-ink md:text-[26px]">Talk to us directly</h2>
           <dl className="mt-6 space-y-5 text-[16px]">
             <div>
               <dt className="text-[14px] font-semibold text-muted">Email</dt>

@@ -47,7 +47,7 @@ export default function Operate() {
           </div>
           <div key={`d${sel}`} className="swap border-t-[3px] border-blue bg-white p-7">
             <div className="flex items-center justify-between gap-3">
-              <h3 className="font-serif text-[24px] text-ink">{c.name}</h3>
+              <h3 className="font-serif text-[20px] text-ink">{c.name}</h3>
               <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${c.operating ? 'bg-blue text-white' : 'bg-white text-blue'}`}>{c.status}</span>
             </div>
             <dl className="mt-4 text-[15px]">
