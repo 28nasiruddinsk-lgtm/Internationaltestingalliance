@@ -55,7 +55,7 @@ export const services: { title: string; text: string; image: ImageKey; alt: stri
 
 export const parties = [
   ['Institution', 'Sets the exam protocols and confirms candidate requirements.'],
-  ['ITA', 'Verifies candidates, manages venues and invigilation, and records the session.'],
+  ['ITA', 'Verifies candidates, manages venues and invigilation and records the session.'],
   ['Awarding body', 'Sets the assessment, marks it and issues the results.'],
 ];
 
