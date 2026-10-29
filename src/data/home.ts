@@ -55,6 +55,11 @@ export const parties = [
 ];
 
 export const gallery: [ImageKey, string, string][] = [
+  ['centre_gems', 'Hall set for the GEMS scholarship programme', 'Partner sitting'],
+  ['exam_sitting', 'Supervised sitting, invigilators on the floor', 'In progress'],
+  ['hall_rows', 'Rows set to the seating plan', 'Large hall'],
+  ['invigilators', 'Staff check-in desk', 'Registration'],
+  ['centre_room', 'Folding desks and session wall', 'Exam room'],
   ['hall', 'Halls set in advance', 'Karachi'],
   ['entrance', 'Walk-through screening', 'Entrance'],
   ['verify', 'Photo ID and QR checks', 'Registration'],
@@ -63,5 +68,4 @@ export const gallery: [ImageKey, string, string][] = [
   ['exam', 'Supervised sitting', 'In progress'],
   ['row', 'Row and desk markers', 'Seating plan'],
   ['signage', 'Code of conduct', 'Every venue'],
-  ['registration', 'Staff check-in desk', 'Registration'],
 ];

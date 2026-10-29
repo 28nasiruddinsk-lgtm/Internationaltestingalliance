@@ -9,6 +9,10 @@ const files = {
   s_teacher11: 's_teacher11.jpg', s_lecture12: 's_lecture12.jpg', s_answer13: 's_answer13.jpg',
   s_sheet14: 's_sheet14.jpg', s_student15: 's_student15.jpg', s_passport17: 's_passport17.jpg',
   s_board18: 's_board18.jpg', s_hall19: 's_hall19.jpg',
+  // ITA's own centre photos
+  centre_room: 'centre-room.webp', centre_gems: 'centre-gems.webp', hall_rows: 'hall-rows.webp',
+  exam_sitting: 'exam-sitting.webp', invigilators: 'invigilators.webp', qr_scan: 'qr-scan.webp',
+  ibcc_registered: 'ibcc-registered.png',
   n_inst: 'n_inst.jpg', n_teen: 'n_teen.jpg', n_tech: 'n_tech.jpg', n_cctv: 'n_cctv.jpg', n_qr: 'n_qr.jpg',
   n_walk: 'n_walk.jpg', n_team: 'n_team.jpg', n_ncc: 'n_ncc.jpg',
   n_pbc: 'n_pbc.png', n_ibccr: 'n_ibccr.png', n_ibccb: 'n_ibccb.png',

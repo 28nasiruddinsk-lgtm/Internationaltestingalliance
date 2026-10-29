@@ -2,7 +2,7 @@ import type { ImageKey } from './images';
 
 export const day: [time: string, title: string, text: string, image: ImageKey][] = [
   ['07:30', 'Venue opened and checked', 'The hall is inspected, desks numbered at regulation spacing and rules posted at the entrance.', 's_hall19'],
-  ['08:15', 'Candidates arrive', 'Walk-through screening, photo ID and QR verification for every candidate before entry.', 'n_qr'],
+  ['08:15', 'Candidates arrive', 'Walk-through screening, photo ID and QR verification for every candidate before entry.', 'qr_scan'],
   ['08:45', 'Briefing and seating', 'Candidates are briefed on the rules and seated to the plan. Personal items are stored away.', 's_teacher11'],
   ['09:00', 'Papers opened', 'Sealed papers are opened in front of candidates. Start and end times are posted on the board.', 's_answer13'],
   ['09:05', 'Live invigilation', 'Invigilators patrol the room, log anything unusual and escalate incidents immediately.', 's_student15'],

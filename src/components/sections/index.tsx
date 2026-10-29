@@ -12,6 +12,8 @@ import Gallery from './Gallery';
 import Operate from './Operate';
 import News from './News';
 import Contact from './Contact';
+import Cards from './Cards';
+import Milestones from './Milestones';
 import Prose from './Prose';
 import PageHeader from './PageHeader';
 
@@ -29,6 +31,8 @@ const registry = {
   operate: Operate,
   news: News,
   contact: Contact,
+  cards: Cards,
+  milestones: Milestones,
   prose: Prose,
   pageHeader: PageHeader,
 };
