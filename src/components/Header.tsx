@@ -1,25 +1,17 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { site } from '@/data/site';
 import { img } from '@/data/images';
 import { Arrow, Wrap } from './ui';
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
   const [announce, setAnnounce] = useState(true);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <header className="sticky top-0 z-50 bg-white">
-      {announce && !scrolled && (
+    <>
+      {announce && (
         <div className="bg-navy text-[13px] text-white">
           <Wrap className="flex min-h-[40px] items-center gap-4 py-2">
             <span className="flex-none rounded-full bg-blue px-3 py-0.5 text-[12px] font-semibold">Announcement</span>
@@ -33,14 +25,15 @@ export default function Header() {
           </Wrap>
         </div>
       )}
+      <header className="sticky top-0 z-50 bg-white">
       <div className="border-b border-line">
-        <Wrap className={`flex items-center transition-all duration-300 ${scrolled ? 'h-[68px]' : 'h-[92px]'}`}>
+        <Wrap className="flex h-[80px] items-center">
           <Link href="/" aria-label="International Testing Alliance home">
-            <img src={img('logo')} alt={site.name} className={`max-w-none transition-all duration-300 ${scrolled ? 'h-8 sm:h-9' : 'h-8 sm:h-11'}`} />
+            <img src={img('logo')} alt={site.name} className="h-8 max-w-none sm:h-10" />
           </Link>
           <nav className="ml-auto hidden items-center xl:flex" aria-label="Main">
             {site.nav.map((n) => (
-              <Link key={n.href} href={n.href} className="navlink relative whitespace-nowrap px-3 py-8 text-[15px] text-ink hover:text-blue">
+              <Link key={n.href} href={n.href} className="navlink relative whitespace-nowrap px-3 py-7 text-[15px] text-ink hover:text-blue">
                 {n.label}
               </Link>
             ))}
@@ -77,6 +70,7 @@ export default function Header() {
           </Wrap>
         </div>
       )}
-    </header>
+      </header>
+    </>
   );
 }
