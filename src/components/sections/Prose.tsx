@@ -12,7 +12,6 @@ export type ProseProps = {
   contain?: boolean;
 };
 
-// Generic text block for inner pages.
 export default function Prose({ kicker, title, paragraphs, points, image, tint, contain }: ProseProps) {
   return (
     <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
@@ -31,9 +30,8 @@ export default function Prose({ kicker, title, paragraphs, points, image, tint, 
         </Rise>
         {image && (
           <Rise delay={120}>
-            <div className={`h-[320px] overflow-hidden md:h-[440px] ${contain ? "border border-line bg-white" : ""}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img(image)} alt="" className={`h-full w-full ${contain ? "object-contain" : "object-cover"}`} />
+            <div className={`h-[320px] overflow-hidden md:h-[440px] ${contain ? 'border border-line bg-white' : ''}`}>
+              <img src={img(image)} alt="" className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />
             </div>
           </Rise>
         )}

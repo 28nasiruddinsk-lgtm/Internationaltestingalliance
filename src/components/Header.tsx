@@ -36,7 +36,6 @@ export default function Header() {
       <div className="border-b border-line">
         <Wrap className={`flex items-center transition-all duration-300 ${scrolled ? 'h-[68px]' : 'h-[92px]'}`}>
           <Link href="/" aria-label="International Testing Alliance home">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img('logo')} alt={site.name} className={`max-w-none transition-all duration-300 ${scrolled ? 'h-9' : 'h-11'}`} />
           </Link>
           <nav className="ml-auto hidden items-center xl:flex" aria-label="Main">

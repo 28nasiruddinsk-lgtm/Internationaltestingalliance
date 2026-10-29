@@ -10,7 +10,6 @@ export default function AboutIntro() {
           <Kicker>Who we are</Kicker>
           <H2>The neutral party in the examination room.</H2>
           <div className="mt-8 h-[320px] overflow-hidden md:h-[420px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img('invigilators')} alt="ITA invigilators at the registration desk" className="h-full w-full object-cover" />
           </div>
         </Rise>

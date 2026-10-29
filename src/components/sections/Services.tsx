@@ -19,7 +19,6 @@ export default function Services() {
             <Rise key={s.title} delay={n * 90} className="h-full">
               <Link href="/services/" className="group flex h-full flex-col bg-white">
                 <div className="relative h-[220px] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(s.image)} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" style={{ filter: 'saturate(.9)' }} />
                   <span className="absolute left-0 top-0 bg-blue px-3 py-1.5 text-[13px] font-semibold text-white">0{n + 1}</span>
                 </div>

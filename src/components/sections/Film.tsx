@@ -13,7 +13,7 @@ export default function Film() {
   const [touched, setTouched] = useState(false);
   const [ref, seen] = useInView<HTMLElement>(0.45);
 
-  // Autoplay (muted) the first time the section is seen, unless the visitor already used the controls.
+  // start muted playback once, unless the visitor already used the controls
   useEffect(() => {
     const el = video.current;
     if (!el) return;

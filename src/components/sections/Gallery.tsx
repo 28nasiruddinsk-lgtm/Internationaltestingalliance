@@ -50,7 +50,6 @@ export default function Gallery() {
         {gallery.map(([image, title, place], n) => (
           <figure key={image} className={`flex-none select-none ${n % 3 === 0 ? 'w-[78vw] md:w-[560px]' : 'w-[64vw] md:w-[380px]'}`}>
             <div className="h-[300px] overflow-hidden md:h-[400px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(image)} alt={title} draggable={false} className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" style={{ filter: 'saturate(.9)' }} />
             </div>
             <figcaption className="mt-3 flex items-baseline justify-between gap-4 border-t border-line pt-3">

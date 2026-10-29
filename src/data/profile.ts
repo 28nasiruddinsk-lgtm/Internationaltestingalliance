@@ -1,4 +1,4 @@
-// Content taken from the ITA Company Profile 2026 (V2). Each list feeds the generic "cards" section.
+// Copy from the ITA Company Profile 2026
 export type Card = { title: string; text: string; tag?: string };
 
 export const offers: Card[] = [

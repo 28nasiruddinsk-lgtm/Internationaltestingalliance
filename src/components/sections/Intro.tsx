@@ -25,13 +25,11 @@ export default function Intro() {
       <Wrap className="mt-16 grid gap-6 md:grid-cols-[1.45fr_1fr]">
         <Rise>
           <div className="h-[300px] overflow-hidden md:h-[400px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img('s_team2')} alt="Partner team reviewing a sitting plan" className="h-full w-full object-cover" />
           </div>
         </Rise>
         <Rise delay={120}>
           <div className="h-[300px] overflow-hidden md:h-[400px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img('s_dubai1')} alt="Colleagues in Dubai" className="h-full w-full object-cover object-[60%_center]" />
           </div>
         </Rise>

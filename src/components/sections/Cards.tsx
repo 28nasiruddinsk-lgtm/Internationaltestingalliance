@@ -10,7 +10,6 @@ type Props = {
   numbered?: boolean;
 };
 
-// Generic grid of short cards. Used for offers, controls, process, partners and similar lists.
 export default function Cards({ kicker, title, intro, items, tint, numbered = true }: Props) {
   const cols = items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
   return (

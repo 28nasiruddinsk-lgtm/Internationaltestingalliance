@@ -44,7 +44,7 @@ const registry = {
 export type SectionType = keyof typeof registry;
 export type SectionConfig = { type: SectionType; props?: Record<string, unknown> };
 
-// A page is a list of section configs (see data/pages.ts): order and content live in data, not JSX.
+// Pages are lists of section configs (data/pages.ts); each type maps to a component here.
 export function Sections({ list }: { list: SectionConfig[] }) {
   return (
     <>

@@ -2,8 +2,7 @@ import { notFound } from 'next/navigation';
 import { Sections } from '@/components/sections';
 import { pages } from '@/data/pages';
 
-// Only these inner pages are published for now; every other path returns the 404 page.
-// Add a key from data/pages.ts here to publish it.
+// Published inner pages. Everything else 404s; add a key from data/pages.ts to publish it.
 const published = ['about'];
 
 export const dynamicParams = false;

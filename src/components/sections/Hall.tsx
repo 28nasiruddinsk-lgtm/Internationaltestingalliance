@@ -8,7 +8,7 @@ const deskXY = (c: number, r: number) => [X0 + c * (DW + GX), Y0 + r * (DH + GY)
 const aisle = (k: number) => X0 + DW * (k + 1) + GX * k + GX / 2;
 const INCIDENT_DESK = 2 * COLS + 3;
 
-// Session clock for a progress point t (0-100): check-in, a pause, three hours of paper, collection.
+// clock for progress t (0-100): check-in, pause, three-hour paper, collection
 const clock = (t: number) => {
   let m: number;
   if (t < 60) m = 8 * 60 + 15 + (t / 60) * 44;
@@ -19,7 +19,7 @@ const clock = (t: number) => {
   return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
 };
 
-// Position of an invigilator walking a closed loop; u is fractional laps.
+// point on a closed loop; u is the fraction of laps
 function along(pts: number[][], u: number) {
   const segs = pts.map((a, i) => { const b = pts[(i + 1) % pts.length]; return { a, b, len: Math.hypot(b[0] - a[0], b[1] - a[1]) }; });
   let d = (u % 1) * segs.reduce((n, s) => n + s.len, 0);
@@ -36,7 +36,7 @@ export default function Hall() {
   const [playing, setPlaying] = useState(true);
   const [run, setRun] = useState(0);
 
-  // Order in which desks fill during check-in (shuffled once, same every load).
+  // desk fill order, shuffled once with a fixed seed
   const order = useMemo(() => {
     const rand = seeded(7);
     const a = [...Array(48).keys()];

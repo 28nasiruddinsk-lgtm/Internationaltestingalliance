@@ -39,7 +39,6 @@ export default function Day() {
           <div>
             <div className="relative h-[300px] overflow-hidden md:h-[420px]">
               {day.map(([t, , , image], n) => (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img key={t} src={img(image)} alt="" className="absolute inset-0 h-full w-full object-cover"
                   style={{ opacity: n === active ? 1 : 0, transition: 'opacity .8s ease', filter: 'saturate(.9)' }} />
               ))}

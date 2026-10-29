@@ -19,7 +19,6 @@ export default function News({ limit = 4 }: { limit?: number }) {
             <Rise key={n.slug} delay={k * 100}>
               <Link href={`/news/${n.slug}/`} className="group block">
                 <div className="h-[200px] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img(n.image)} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" style={{ filter: 'saturate(.9)' }} />
                 </div>
                 <div className="mt-5 text-[13.5px] font-semibold text-blue">{n.date}</div>

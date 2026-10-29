@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 export const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// True once the element has scrolled into view (always true with reduced motion).
+// true once the element is on screen (or motion is reduced)
 export function useInView<T extends HTMLElement>(threshold = 0.2) {
   const ref = useRef<T>(null);
   const [seen, setSeen] = useState(false);
@@ -61,7 +61,7 @@ export const H2 = ({ children, className = '' }: { children: ReactNode; classNam
   <h2 className={`mt-5 font-serif text-[24px] leading-[1.15] md:text-[36px] ${className}`}>{children}</h2>
 );
 
-// Seeded random so the hall replay is the same on every load.
+// seeded random, so the hall replay is identical on every load
 export function seeded(seed: number) {
   let s = seed;
   return () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };

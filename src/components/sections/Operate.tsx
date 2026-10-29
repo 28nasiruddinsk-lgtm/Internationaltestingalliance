@@ -74,7 +74,6 @@ export default function Operate() {
               ))}
             </div>
             <div key={`i${sel}`} className="swap relative min-h-[260px] flex-1 overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img(c.photo)} alt="" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>

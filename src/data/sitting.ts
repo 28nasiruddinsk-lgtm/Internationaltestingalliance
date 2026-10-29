@@ -10,7 +10,7 @@ export const day: [time: string, title: string, text: string, image: ImageKey][]
   ['Same day', 'Report sent', 'Attendance, incident logs and evidence go to the awarding body in one record.', 's_meet4'],
 ];
 
-// Film: start second, title, caption. TODO: replace with the real film when supplied.
+// film chapters: start second, title, caption (TODO: real film)
 export const filmChapters: [number, string, string][] = [
   [0, 'Doors and screening', 'Walk-through screening at the entrance'],
   [3.4, 'Identity and QR check', 'Photo ID and QR verified at registration'],
@@ -21,7 +21,7 @@ export const filmChapters: [number, string, string][] = [
 ];
 export const filmSeconds = 21;
 
-// Session log for the hall replay: progress point (0-100), clock, text. Illustrative data.
+// hall replay log: progress point, clock, text (illustrative)
 export const hallLog: [number, string, string][] = [
   [0, '08:15', 'Doors opened. Screening and ID checks begin.'],
   [7, '08:19', 'First candidate verified with photo ID and QR.'],

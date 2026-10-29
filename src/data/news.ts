@@ -2,7 +2,7 @@ import type { ImageKey } from './images';
 
 export type NewsItem = { slug: string; date: string; title: string; image: ImageKey; body: string[] };
 
-// Newest first.
+// newest first
 export const news: NewsItem[] = [
   {
     slug: 'ncc-education-partnership', date: 'October 2026', image: 'n_ncc',

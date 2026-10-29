@@ -46,7 +46,6 @@ export default function Hero() {
         </div>
         <div className="relative h-[420px] overflow-hidden bg-navy lg:h-auto lg:min-h-[680px]">
           {entries.map(([k, v]) => (
-            // eslint-disable-next-line @next/next/no-img-element
             <img key={k} src={img(v.image)} alt={v.alt} className="absolute inset-0 h-full w-full object-cover"
               style={{ opacity: key === k ? 1 : 0, transform: key === k ? 'scale(1)' : 'scale(1.04)', transition: 'opacity .9s ease, transform 1.4s cubic-bezier(.2,.7,.2,1)' }} />
           ))}

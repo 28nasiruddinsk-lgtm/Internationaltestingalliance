@@ -14,8 +14,7 @@ const icons = {
 
 const input = 'h-11 min-w-0 flex-1 rounded-full bg-transparent px-4 text-[15px] text-ink outline-none placeholder:text-muted';
 
-// Replaces the prototype's "Verify a result" box: an email query that opens the visitor's mail app.
-// TODO: static export has no server; swap mailto for a form endpoint when the client chooses one.
+// Email enquiry box. Opens the visitor's mail app (static site, no server).
 function ContactCell() {
   const [sent, setSent] = useState(false);
 

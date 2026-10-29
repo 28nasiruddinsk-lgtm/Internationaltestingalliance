@@ -2,8 +2,7 @@ import type { SectionConfig } from '@/components/sections';
 import { news } from './news';
 import * as p from './profile';
 
-// Homepage order: the approved prototype plus two sections from the 2026 company profile
-// ("cards" with what ITA offers, and "milestones"). Reorder, remove or add entries here.
+// Homepage section order
 export const home: SectionConfig[] = [
   { type: 'hero' },
   { type: 'actions' },
@@ -26,8 +25,8 @@ const header = (title: string, intro?: string, kicker?: string): SectionConfig =
 const prose = (props: Record<string, unknown>): SectionConfig => ({ type: 'prose', props });
 const cards = (props: Record<string, unknown>): SectionConfig => ({ type: 'cards', props });
 
-// Inner pages, keyed by path. News articles are added below from data/news.ts.
-// TODO: policy PDFs, FAQ answers, Arabic copy.
+// Inner pages by path; news articles are added at the bottom
+// TODO: policy PDFs, FAQ, Arabic
 export const pages: Record<string, SectionConfig[]> = {
   about: [
     header('About International Testing Alliance', 'Independent examination delivery: planned, run and reported by a neutral operating partner.', 'About ITA'),
