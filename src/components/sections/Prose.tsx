@@ -31,7 +31,7 @@ export default function Prose({ kicker, title, paragraphs, points, image, tint, 
         {image && (
           <Rise delay={120}>
             <div className={`h-[320px] overflow-hidden md:h-[440px] ${contain ? 'border border-line bg-white' : ''}`}>
-              <img src={img(image)} alt="" className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />
+              <img loading="lazy" decoding="async" src={img(image)} alt="" className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />
             </div>
           </Rise>
         )}

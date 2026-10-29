@@ -5,11 +5,11 @@ import { Wrap } from './ui';
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white/75">
+    <footer className="bg-navy text-white/85">
       <Wrap className="pb-10 pt-16">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <img src={img('logoW')} alt={site.name} className="h-10" />
+            <img loading="lazy" decoding="async" src={img('logoW')} alt={site.name} className="h-10" />
             <p className="mt-5 max-w-[320px] text-[14px] leading-relaxed">
               Independent examination delivery and invigilation. A subsidiary of International Testing Services.
             </p>
@@ -32,7 +32,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/15 pt-6 text-[12.5px] text-white/55">
+        <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/15 pt-6 text-[12.5px] text-white/70">
           <span>© {new Date().getFullYear()} International Testing Alliance · {site.ibccRef}</span>
           <span>{site.policies.join(' · ')}</span>
         </div>

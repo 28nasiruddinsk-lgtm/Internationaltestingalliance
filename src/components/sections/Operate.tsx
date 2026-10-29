@@ -39,7 +39,7 @@ export default function Operate() {
                 <g key={name}>
                   <circle cx={x} cy={y} r="4" fill="#0E2240" stroke="#fff" strokeWidth="1.5" />
                   {((sel === 'PAK' && name !== 'Dubai') || (sel === 'ARE' && name === 'Dubai')) && (
-                    <text x={x + 8} y={y + 4} fontSize="13" fill="#0E2240" fontWeight="600">{name}</text>
+                    <text x={name === 'Dubai' ? x - 9 : x + 9} y={y + 5} textAnchor={name === 'Dubai' ? 'end' : 'start'} fontSize="16" fill="#0E2240" fontWeight="600" stroke="#fff" strokeWidth="4" paintOrder="stroke">{name}</text>
                   )}
                 </g>
               ))}
@@ -50,8 +50,8 @@ export default function Operate() {
               <h3 className="font-serif text-[24px] text-ink">{c.name}</h3>
               <span className={`rounded-full px-3 py-1 text-[12px] font-semibold ${c.operating ? 'bg-blue text-white' : 'bg-white text-blue'}`}>{c.status}</span>
             </div>
-            <dl className="mt-4 text-[14.5px]">
-              {([['Cities', c.cities], ['Approvals', c.approvals], ['Contact', c.contact]] as const).map(([k, v]) => (
+            <dl className="mt-4 text-[15px]">
+              {([['Cities', c.cities], ['Approvals', c.approvals], ['Contact', c.contact]] as const).filter(([, v]) => v).map(([k, v]) => (
                 <div key={k} className="border-t border-[#D3E0F0] py-3">
                   <dt className="font-semibold text-ink">{k}</dt>
                   <dd className="mt-0.5 leading-relaxed text-body">{v}</dd>
@@ -74,7 +74,7 @@ export default function Operate() {
               ))}
             </div>
             <div key={`i${sel}`} className="swap relative min-h-[260px] flex-1 overflow-hidden">
-              <img src={img(c.photo)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              <img loading="lazy" decoding="async" src={img(c.photo)} alt="" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>
         </div>

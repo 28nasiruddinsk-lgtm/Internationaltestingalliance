@@ -3,7 +3,7 @@ export const site = {
   email: 'info@intltestingalliance.com',
   phones: { Pakistan: '+92 322 8490221', Dubai: '+971 55 978 1353' },
   ibccRef: 'IBCC/RC-1/Impl-2/2025/758',
-  announcement: 'Pakistan Bar Council lists ITS among approved agencies for foreign law examinations, September 2026',
+  announcement: 'Pakistan Bar Council lists ITS, our parent company, among approved agencies for foreign law examinations, September 2026',
   nav: [
     { label: 'About', href: '/about/' },
     { label: 'Services', href: '/services/' },

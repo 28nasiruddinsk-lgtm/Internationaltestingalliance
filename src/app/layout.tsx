@@ -9,6 +9,8 @@ const caslon = Libre_Caslon_Text({ subsets: ['latin'], weight: '400', style: ['n
 const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '600'], variable: '--font-open-sans' });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://intltestingalliance.com'), // TODO: confirm the live domain
+  alternates: { canonical: './' },
   title: { default: 'International Testing Alliance', template: '%s | ITA' },
   description: 'Independent examination delivery and invigilation in Pakistan, Dubai and international markets.',
   openGraph: {
@@ -23,9 +25,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${caslon.variable} ${openSans.variable}`}>
       <body>
+        <a href="#main" className="sr-only z-[80] bg-white px-4 py-2 text-blue focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
+          Skip to content
+        </a>
         <Progress />
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>

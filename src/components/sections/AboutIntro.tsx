@@ -10,7 +10,7 @@ export default function AboutIntro() {
           <Kicker>Who we are</Kicker>
           <H2>The neutral party in the examination room.</H2>
           <div className="mt-8 h-[320px] overflow-hidden md:h-[420px]">
-            <img src={img('invigilators')} alt="ITA invigilators at the registration desk" className="h-full w-full object-cover" />
+            <img loading="lazy" decoding="async" src={img('invigilators')} alt="ITA invigilators at the registration desk" className="h-full w-full object-cover" />
           </div>
         </Rise>
         <Rise delay={120} className="lg:col-span-6 lg:col-start-7">
@@ -27,7 +27,7 @@ export default function AboutIntro() {
             {aboutFacts.map((f) => (
               <div key={f.value} className="bg-white p-5">
                 <dt className="font-serif text-[26px] text-blue">{f.value}</dt>
-                <dd className="mt-1 text-[14.5px] leading-relaxed text-body">{f.label}</dd>
+                <dd className="mt-1 text-[15px] leading-relaxed text-body">{f.label}</dd>
               </div>
             ))}
           </dl>

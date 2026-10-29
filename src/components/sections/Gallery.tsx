@@ -45,12 +45,12 @@ export default function Gallery() {
           </button>
         </div>
       </Wrap>
-      <div ref={track} onScroll={onScroll} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerLeave={up}
+      <div ref={track} tabIndex={0} aria-label="Photo gallery, scroll sideways" onScroll={onScroll} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerLeave={up}
         className="gal mt-10 flex cursor-grab gap-5 overflow-x-auto px-6 pb-4 md:px-[max(48px,calc((100vw-1520px)/2+56px))]">
         {gallery.map(([image, title, place], n) => (
           <figure key={image} className={`flex-none select-none ${n % 3 === 0 ? 'w-[78vw] md:w-[560px]' : 'w-[64vw] md:w-[380px]'}`}>
             <div className="h-[300px] overflow-hidden md:h-[400px]">
-              <img src={img(image)} alt={title} draggable={false} className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" style={{ filter: 'saturate(.9)' }} />
+              <img loading="lazy" decoding="async" src={img(image)} alt={title} draggable={false} className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" style={{ filter: 'saturate(.9)' }} />
             </div>
             <figcaption className="mt-3 flex items-baseline justify-between gap-4 border-t border-line pt-3">
               <span className="font-serif text-[19px] text-ink">{title}</span>

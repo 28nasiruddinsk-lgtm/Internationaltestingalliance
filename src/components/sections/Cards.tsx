@@ -27,7 +27,7 @@ export default function Cards({ kicker, title, intro, items, tint, numbered = tr
                 {c.tag && <div className="text-[13px] font-semibold text-blue">{c.tag}</div>}
                 {numbered && !c.tag && <div className="text-[13px] font-semibold tabular-nums text-blue">0{n + 1}</div>}
                 <h3 className="mt-2 font-serif text-[20px] leading-[1.25] text-ink">{c.title}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-body">{c.text}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-body">{c.text}</p>
               </div>
             </Rise>
           ))}

@@ -76,24 +76,23 @@ export default function Film() {
                       : <svg width="10" height="12" aria-hidden="true"><path d="M0 0l10 6-10 6z" fill="#0E2240" /></svg>}
                   </button>
                   <span className="tabular-nums text-white/85">{fmt(time)} / {fmt(filmSeconds)}</span>
-                  <span className="hidden text-white/60 sm:inline">No sound</span>
+                  <span className="hidden text-white/70 sm:inline">No sound</span>
                   <button onClick={() => video.current?.requestFullscreen?.()} aria-label="Full screen" className="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-white/40 hover:bg-white/10">
                     <svg width="14" height="14" aria-hidden="true"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9" fill="none" stroke="#fff" strokeWidth="1.6" /></svg>
                   </button>
                 </div>
               </div>
             </div>
-            <p className="mt-3 text-[12.5px] text-white/50">Cut from photographs taken at ITA centres in Karachi. Final film to follow.</p>
           </div>
           <ol className="border-t border-white/15">
             {filmChapters.map(([start, title, caption], n) => (
               <li key={start}>
                 <button onClick={() => seek(start + 0.05)}
                   className={`group flex w-full items-start gap-4 border-b border-white/15 py-4 pl-4 text-left transition-colors ${n === current && playing ? 'bg-white/[.07] shadow-[inset_3px_0_0_#8DB8EE]' : 'hover:bg-white/[.04]'}`}>
-                  <span className={`mt-0.5 w-10 flex-none text-[13px] font-semibold tabular-nums ${n === current ? 'text-sky' : 'text-white/50'}`}>{fmt(start)}</span>
+                  <span className={`mt-0.5 w-10 flex-none text-[13px] font-semibold tabular-nums ${n === current ? 'text-sky' : 'text-white/70'}`}>{fmt(start)}</span>
                   <span>
-                    <span className={`block font-serif text-[18px] ${n === current ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>{title}</span>
-                    <span className="mt-0.5 block text-[13px] text-white/55">{caption}</span>
+                    <span className={`block font-serif text-[18px] ${n === current ? 'text-white' : 'text-white/85 group-hover:text-white'}`}>{title}</span>
+                    <span className="mt-0.5 block text-[13px] text-white/70">{caption}</span>
                   </span>
                 </button>
               </li>

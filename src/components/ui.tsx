@@ -43,7 +43,7 @@ export const Wrap = ({ children, className = '' }: { children: ReactNode; classN
 
 export function Kicker({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <div className={`flex items-center gap-3 text-[14px] font-semibold ${light ? 'text-sky' : 'text-blue'}`}>
+    <div className={`flex items-center gap-3 text-[14px] font-semibold ${light ? 'text-white' : 'text-blue'}`}>
       <span className={`h-[3px] w-7 ${light ? 'bg-sky' : 'bg-blue'}`} />
       {children}
     </div>
