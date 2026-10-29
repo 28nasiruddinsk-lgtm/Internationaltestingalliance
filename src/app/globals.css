@@ -2,30 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html { scroll-behavior: smooth; }
-  body { @apply bg-white font-sans text-body antialiased; }
-  h1, h2, h3, h4 { @apply font-serif font-normal text-ink; }
-  h1 { @apply text-[32px] leading-[1.25] md:text-[42px]; }
-  h2 { @apply text-2xl leading-snug md:text-4xl; }
-  :focus-visible { @apply outline outline-2 outline-offset-2 outline-blue; }
+:root { color-scheme: light; }
+html { scroll-padding-top: 100px; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #14202e;
+  font-family: var(--font-open-sans), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+select { appearance: auto; }
 
-@layer components {
-  .container-page { @apply mx-auto w-full max-w-page px-6 md:px-14; }
-  .section { @apply py-24 md:py-32; }
-  .btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200; }
-  .btn-primary { @apply btn bg-blue text-white hover:bg-navy; }
-  .btn-light { @apply btn bg-white text-navy hover:bg-tint; }
-  .btn-outline { @apply btn border border-line text-ink hover:border-blue hover:text-blue; }
-  .field { @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-blue; }
+.navlink::after {
+  content: ''; position: absolute; left: 14px; right: 14px; bottom: -1px; height: 3px;
+  background: #0b4ca1; transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
 }
+.navlink:hover::after { transform: scaleX(1); }
 
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: none; }
+.swap { animation: swap 0.45s ease both; }
+@keyframes swap { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.pulse { animation: pulse 2s ease-out infinite; }
+@keyframes pulse { from { transform: scale(1); opacity: 0.7; } to { transform: scale(1.6); opacity: 0; } }
+
+.gal { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.gal::-webkit-scrollbar { display: none; }
+.gal.dragging { cursor: grabbing; }
+.gal.dragging img { pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

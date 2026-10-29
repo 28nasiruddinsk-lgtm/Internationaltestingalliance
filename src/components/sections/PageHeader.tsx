@@ -1,10 +1,13 @@
-export default function PageHeader({ title, intro }: { title: string; intro: string }) {
+import { Kicker, Wrap } from '../ui';
+
+export default function PageHeader({ title, intro, kicker }: { title: string; intro?: string; kicker?: string }) {
   return (
     <section className="bg-navy py-20 text-white md:py-28">
-      <div className="container-page">
-        <h1 className="max-w-3xl text-white">{title}</h1>
-        <p className="mt-5 max-w-2xl text-white/80">{intro}</p>
-      </div>
+      <Wrap>
+        {kicker && <Kicker light>{kicker}</Kicker>}
+        <h1 className="mt-5 max-w-[860px] font-serif text-[32px] leading-[1.15] md:text-[42px]">{title}</h1>
+        {intro && <p className="mt-5 max-w-[620px] text-[17px] leading-[1.7] text-white/80">{intro}</p>}
+      </Wrap>
     </section>
   );
 }

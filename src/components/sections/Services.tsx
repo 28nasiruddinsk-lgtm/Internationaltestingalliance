@@ -1,29 +1,38 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { services } from '@/data/services';
-import Reveal from '../Reveal';
+import { services } from '@/data/home';
+import { img } from '@/data/images';
+import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 export default function Services() {
   return (
-    <section className="section">
-      <div className="container-page">
-        <h2 className="max-w-xl">Four services, chosen individually or together</h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <Reveal key={s.slug} className="h-full">
-              <Link href={`/services/${s.slug}/`} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line">
-                <div className="relative aspect-[4/3]">
-                  <Image src={s.image} alt="" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+    <section className="bg-tint py-24 md:py-32">
+      <Wrap>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <Rise>
+            <Kicker>Our services</Kicker>
+            <H2 className="max-w-[620px]">Take one service, or hand us the whole sitting.</H2>
+          </Rise>
+          <Link href="/services/" className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">All services <Arrow /></Link>
+        </div>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((s, n) => (
+            <Rise key={s.title} delay={n * 90} className="h-full">
+              <Link href="/services/" className="group flex h-full flex-col bg-white">
+                <div className="relative h-[220px] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img(s.image)} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" style={{ filter: 'saturate(.9)' }} />
+                  <span className="absolute left-0 top-0 bg-blue px-3 py-1.5 text-[13px] font-semibold text-white">0{n + 1}</span>
                 </div>
-                <div className="flex flex-1 flex-col gap-2 p-6">
-                  <h3 className="text-xl">{s.title}</h3>
-                  <p className="text-sm">{s.summary}</p>
+                <div className="flex flex-1 flex-col border-t-[3px] border-blue p-6">
+                  <h3 className="min-h-[2.5em] font-serif text-[19px] leading-[1.25] text-ink group-hover:text-blue">{s.title}</h3>
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-body">{s.text}</p>
+                  <span className="mt-auto inline-block pt-5 text-blue"><Arrow /></span>
                 </div>
               </Link>
-            </Reveal>
+            </Rise>
           ))}
         </div>
-      </div>
+      </Wrap>
     </section>
   );
 }

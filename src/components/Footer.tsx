@@ -1,33 +1,43 @@
 import Link from 'next/link';
 import { site } from '@/data/site';
+import { img } from '@/data/images';
+import { Wrap } from './ui';
 
 export default function Footer() {
   return (
-    <footer className="bg-navy py-16 text-sm text-white/80">
-      <div className="container-page grid gap-10 md:grid-cols-3">
-        <div>
-          <p className="font-serif text-2xl text-white">{site.name}</p>
-          <p className="mt-3 max-w-xs">
-            Independent examination delivery. A subsidiary of International Testing Services (ITS).
-          </p>
-        </div>
-        <ul className="space-y-2">
-          {site.nav.map((n) => (
-            <li key={n.href}><Link href={n.href} className="hover:text-white">{n.label}</Link></li>
+    <footer className="bg-navy text-white/75">
+      <Wrap className="pb-10 pt-16">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={img('logoW')} alt={site.name} className="h-10" />
+            <p className="mt-5 max-w-[320px] text-[14px] leading-relaxed">
+              Independent examination delivery and invigilation. A subsidiary of International Testing Services.
+            </p>
+          </div>
+          {site.footer.map((col) => (
+            <div key={col.title}>
+              <h4 className="mb-4 text-[15px] font-semibold text-white">{col.title}</h4>
+              <ul className="space-y-2 text-[14px]">
+                {col.links.map(([label, href]) => (
+                  <li key={label}><Link href={href} className="hover:text-white">{label}</Link></li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
-        <div className="space-y-2">
-          <a href={`mailto:${site.email}`} className="block hover:text-white">{site.email}</a>
-          {site.phones.map((p) => (
-            <p key={p.label}>{p.label}: {p.value}</p>
-          ))}
-          <p>Offices: {site.offices.join(' and ')}</p>
-          <p>IBCC ref {site.ibccRef}</p>
+          <div>
+            <h4 className="mb-4 text-[15px] font-semibold text-white">Offices</h4>
+            <ul className="space-y-2 text-[14px]">
+              {site.offices.map((o) => <li key={o}>{o}</li>)}
+              <li><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div className="container-page mt-12 border-t border-white/15 pt-6 text-white/60">
-        © {new Date().getFullYear()} International Testing Alliance
-      </div>
+        <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/15 pt-6 text-[12.5px] text-white/55">
+          <span>© {new Date().getFullYear()} International Testing Alliance · {site.ibccRef}</span>
+          <span>{site.policies.join(' · ')}</span>
+        </div>
+      </Wrap>
     </footer>
   );
 }

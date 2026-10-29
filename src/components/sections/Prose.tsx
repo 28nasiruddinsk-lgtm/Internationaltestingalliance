@@ -1,32 +1,42 @@
-import Image from 'next/image';
+import type { ImageKey } from '@/data/images';
+import { img } from '@/data/images';
+import { H2, Kicker, Rise, Wrap } from '../ui';
 
 export type ProseProps = {
+  kicker?: string;
   title: string;
   paragraphs: string[];
   points?: string[];
-  image?: string;
+  image?: ImageKey;
+  tint?: boolean;
 };
 
-// Generic text block used by inner pages.
-export default function Prose({ title, paragraphs, points, image }: ProseProps) {
+// Generic text block for inner pages.
+export default function Prose({ kicker, title, paragraphs, points, image, tint }: ProseProps) {
   return (
-    <section className="section">
-      <div className={`container-page grid gap-12 ${image ? 'md:grid-cols-2' : 'max-w-4xl'}`}>
-        <div>
-          <h2>{title}</h2>
-          {paragraphs.map((p) => <p key={p} className="mt-5">{p}</p>)}
+    <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
+      <Wrap className={`grid gap-12 ${image ? 'lg:grid-cols-2' : ''}`}>
+        <Rise className={image ? '' : 'max-w-[820px]'}>
+          {kicker && <Kicker>{kicker}</Kicker>}
+          <H2>{title}</H2>
+          {paragraphs.map((p) => <p key={p} className="mt-5 text-[16px] leading-[1.75] text-body">{p}</p>)}
           {points && (
-            <ul className="mt-6 list-disc space-y-2 pl-5">
-              {points.map((p) => <li key={p}>{p}</li>)}
+            <ul className="mt-6 space-y-3 text-[16px] text-body">
+              {points.map((p) => (
+                <li key={p} className="flex gap-3"><span className="mt-[11px] h-[3px] w-4 flex-none bg-blue" />{p}</li>
+              ))}
             </ul>
           )}
-        </div>
+        </Rise>
         {image && (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image src={image} alt="" fill sizes="50vw" className="object-cover" />
-          </div>
+          <Rise delay={120}>
+            <div className="h-[320px] overflow-hidden md:h-[440px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img(image)} alt="" className="h-full w-full object-cover" />
+            </div>
+          </Rise>
         )}
-      </div>
+      </Wrap>
     </section>
   );
 }

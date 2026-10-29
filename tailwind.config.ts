@@ -16,10 +16,8 @@ export default {
       },
       fontFamily: {
         serif: ['var(--font-caslon)', 'Georgia', 'serif'],
-        sans: ['var(--font-open-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-open-sans)', 'Arial', 'sans-serif'],
       },
-      maxWidth: { page: '1520px' },
     },
   },
-  plugins: [],
 } satisfies Config;

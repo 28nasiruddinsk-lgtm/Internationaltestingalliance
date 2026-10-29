@@ -1,68 +1,65 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-
-const audiences = [
-  {
-    key: 'Awarding bodies',
-    title: 'Independent delivery of your examinations',
-    text: 'We plan, manage and deliver your sittings, then return one consolidated record. You keep control of the exam, the marking and the result.',
-    image: '/images/hall-rows.webp',
-    href: '/awarding-bodies/',
-  },
-  {
-    key: 'Universities',
-    title: 'Examinations on your premises or ours',
-    text: 'Use your own venue or an external one. ITA runs verification, invigilation and reporting to the standard you set.',
-    image: '/images/centre-gems.webp',
-    href: '/services/',
-  },
-  {
-    key: 'Candidates',
-    title: 'Sit your exam close to home',
-    text: 'Register, pay and download your Statement of Entry online. On the day, a three-step identity check gets you seated quickly.',
-    image: '/images/sitting.webp',
-    href: '/candidates/',
-  },
-];
+import { audiences, type AudienceKey } from '@/data/home';
+import { img } from '@/data/images';
+import { site } from '@/data/site';
+import { Arrow } from '../ui';
 
 export default function Hero() {
-  const [i, setI] = useState(0);
-  const a = audiences[i];
+  const [key, setKey] = useState<AudienceKey>('bodies');
+  const a = audiences[key];
+  const entries = Object.entries(audiences) as [AudienceKey, (typeof audiences)[AudienceKey]][];
+
   return (
-    <section className="bg-navy text-white">
-      <div className="container-page grid items-center gap-10 pb-40 pt-14 md:grid-cols-2 md:pb-48 md:pt-20">
-        <div>
-          <div role="tablist" aria-label="Audience" className="mb-8 flex flex-wrap gap-2">
-            {audiences.map((x, n) => (
-              <button
-                key={x.key}
-                role="tab"
-                aria-selected={n === i}
-                onClick={() => setI(n)}
-                className={`rounded-full px-4 py-2 text-sm transition-colors ${n === i ? 'bg-white text-navy' : 'border border-white/30 hover:bg-white/10'}`}
-              >
-                {x.key}
-              </button>
-            ))}
+    <section className="relative bg-white">
+      <div className="grid lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)]">
+        <div className="relative z-10 bg-navy text-white">
+          <div className="flex h-full flex-col px-6 pb-28 pt-14 md:px-12 lg:pl-[max(48px,calc((100vw-1520px)/2+56px))] lg:pr-14 lg:pt-20">
+            <div className="flex flex-wrap gap-1 self-start rounded-full border border-white/40 p-1" role="tablist" aria-label="Choose who you are">
+              {entries.map(([k, v]) => (
+                <button key={k} role="tab" aria-selected={key === k} onClick={() => setKey(k)}
+                  className={`rounded-full px-4 py-2 text-[13.5px] font-semibold transition-colors ${key === k ? 'bg-white text-blue' : 'text-white hover:bg-white/10'}`}>
+                  {v.tab}
+                </button>
+              ))}
+            </div>
+            <div key={key} className="swap">
+              <h1 className="mt-10 font-serif text-[32px] leading-[1.15] md:text-[42px]">{a.heading}</h1>
+              <p className="mt-6 max-w-[500px] text-[17px] leading-[1.7] text-white/85">{a.text}</p>
+              <div className="mt-9 flex flex-wrap items-center gap-6">
+                <Link href={a.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-[15px] font-semibold text-blue hover:bg-tint">
+                  {a.cta} <Arrow />
+                </Link>
+                <a href="#contact-us"className="inline-flex items-center gap-2 text-[15px] font-semibold text-white underline decoration-white/40 underline-offset-[6px] hover:decoration-white">
+                  Contact us
+                </a>
+              </div>
+            </div>
+            <div className="mt-auto flex items-center gap-5 pt-14 text-[13px] text-white/75">
+              <span className="border-r border-white/30 pr-5">
+                IBCC registration<br /><b className="font-semibold text-white">Ref. {site.ibccRef}</b>
+              </span>
+              <span>A subsidiary of<br /><b className="font-semibold text-white">International Testing Services</b></span>
+            </div>
           </div>
-          <h1 className="text-white">{a.title}</h1>
-          <p className="mt-5 max-w-lg text-white/80">{a.text}</p>
-          <Link href={a.href} className="btn-light mt-8">Learn more</Link>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-          {audiences.map((x, n) => (
-            <Image
-              key={x.image}
-              src={x.image}
-              alt=""
-              fill
-              priority={n === 0}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className={`object-cover transition-opacity duration-500 ${n === i ? 'opacity-100' : 'opacity-0'}`}
-            />
+        <div className="relative h-[420px] overflow-hidden bg-navy lg:h-auto lg:min-h-[680px]">
+          {entries.map(([k, v]) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={k} src={img(v.image)} alt={v.alt} className="absolute inset-0 h-full w-full object-cover"
+              style={{ opacity: key === k ? 1 : 0, transform: key === k ? 'scale(1)' : 'scale(1.04)', transition: 'opacity .9s ease, transform 1.4s cubic-bezier(.2,.7,.2,1)' }} />
           ))}
+          <a href="#film" className="group absolute bottom-24 left-6 flex items-center gap-4 rounded-full bg-white/95 py-2 pl-2 pr-6 text-ink shadow-[0_10px_30px_rgba(14,34,64,.25)] hover:bg-white">
+            <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-blue">
+              <span className="pulse absolute inset-0 rounded-full bg-blue/40" />
+              <svg width="14" height="16" aria-hidden="true" className="relative ml-1"><path d="M0 0l14 8-14 8z" fill="#fff" /></svg>
+            </span>
+            <span>
+              <span className="block text-[12px] text-muted">Film · 21 seconds</span>
+              <span className="block text-[15px] font-semibold">Watch a sitting at ITA</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
