@@ -22,6 +22,8 @@ const files = {
   svc_venue: 'svc-venue.webp',
   svc_inv: 'svc-invigilation.webp',
   svc_qr: 'svc-qr.webp',
+  hero_cand: 'hero-candidate.jpg',
+  hero_uni: 'hero-university.jpg',
   ibcc_registered: 'ibcc-registered.png',
 
   // stock photos

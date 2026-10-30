@@ -17,14 +17,14 @@ export const audiences: Record<AudienceKey, {
     heading: 'One standard across every campus and every city.',
     text: 'Paper and computer-based sittings with registration, payment collection and live attendance in one partner portal.',
     cta: 'Plan a multi-campus sitting', href: '/services/',
-    image: 'centre_gems', alt: 'ITA exam hall set up for a partner sitting in Pakistan',
+    image: 'hero_uni', alt: 'A lecture hall set out for a campus exam sitting',
   },
   cand: {
     tab: 'Candidates',
     heading: 'Sit your exam close to home, in a properly run centre.',
     text: 'Register, pay and download your Statement of Entry online, then sit in one of our venues across Pakistan or in Dubai.',
     cta: 'Book your exam', href: '/candidates/',
-    image: 'exam_sitting', alt: 'Invigilators supervising candidates in an ITA exam hall',
+    image: 'hero_cand', alt: 'A candidate sitting an exam at an ITA centre',
   },
 };
 
