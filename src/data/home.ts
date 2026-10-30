@@ -43,14 +43,14 @@ export const stats: { value: number; suffix: string; word?: string; label: strin
 ];
 
 export const services: { title: string; text: string; image: ImageKey; alt: string; href: string }[] = [
-  { title: 'Exam management', text: 'Scheduling, venue preparation, candidate checks and post-session reporting.', image: 's_sheet14', href: '/exam-management/',
-    alt: 'Exam paperwork being checked against a candidate list' },
-  { title: 'Secure venues', text: 'Controlled access, CCTV oversight and secure storage of materials.', image: 'n_cctv', href: '/exam-venues/',
-    alt: 'CCTV camera covering an ITA exam hall' },
-  { title: 'Technology and quality assurance', text: 'Digital ID and QR verification, incident reporting and a full audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
-    alt: 'Digital identity check on a screen at an ITA registration desk' },
-  { title: 'Professional invigilation', text: 'Trained, impartial staff supervise every session from start to finish.', image: 's_teacher11', href: '/professional-invigilation/',
-    alt: 'Invigilator supervising candidates during an exam' },
+  { title: 'Exam management', text: 'Scheduling, venue preparation, candidate checks and post-session reporting.', image: 'svc_exam', href: '/exam-management/',
+    alt: 'ITA invigilators checking in candidates at the registration desk' },
+  { title: 'Secure venues', text: 'Controlled access, CCTV oversight and secure storage of materials.', image: 'svc_venue', href: '/exam-venues/',
+    alt: 'An ITA exam room set out with desks for a sitting' },
+  { title: 'Technology and quality assurance', text: 'Digital ID and QR verification, incident reporting and a full audit trail.', image: 'svc_qr', href: '/technology-driven-solutions/',
+    alt: 'Candidate QR code being scanned at an ITA check-in' },
+  { title: 'Professional invigilation', text: 'Trained, impartial staff supervise every session from start to finish.', image: 'svc_inv', href: '/professional-invigilation/',
+    alt: 'ITA invigilators supervising candidates during an exam' },
 ];
 
 export const parties = [
