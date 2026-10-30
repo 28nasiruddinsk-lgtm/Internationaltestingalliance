@@ -18,7 +18,7 @@ export const countries: Country[] = [
   { code: 'IRQ', name: 'Iraq', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
   { code: 'EGY', name: 'Egypt', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
   { code: 'BHR', name: 'Bahrain', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
-  { code: 'MYS', name: 'Malaysia', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
+  { code: 'MYS', name: 'Malaysia', status: 'Core market', operating: false, photo: 's_walk3', cities: partner, approvals: tbc, contact: email },
   { code: 'UZB', name: 'Uzbekistan', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
   { code: 'GBR', name: 'United Kingdom', status: 'Core market', operating: false, photo: 'n_walk', cities: 'Awarding body relationships', approvals: tbc, contact: 'WhatsApp +44 7401 137464' },
 ];
