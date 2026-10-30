@@ -2,7 +2,7 @@ export type Country = {
   code: string; name: string; status: string; operating: boolean;
   cities: string; approvals: string; contact: string;
   photo:
-    | 's_group5' | 's_walk3' | 'n_walk'
+    | 's_group5' | 's_walk3' | 'n_walk' | 'invigilators'
     | 'market_malaysia' | 'market_egypt' | 'market_iraq'
     | 'market_saudi' | 'market_uk' | 'market_uzbekistan';
 };
@@ -16,7 +16,7 @@ export const countries: Country[] = [
     cities: 'Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad, Gilgit',
     approvals: 'IBCC registration. Pakistan Bar Council approval for foreign law examinations.',
     contact: '101 Marine Point, DC-1, Block 9, Clifton, Karachi · +92 322 8490221' },
-  { code: 'ARE', name: 'United Arab Emirates', status: 'Operating centre', operating: true, photo: 's_walk3',
+  { code: 'ARE', name: 'United Arab Emirates', status: 'Operating centre', operating: true, photo: 'invigilators',
     cities: 'Dubai', approvals: tbc, contact: 'Level 21, Al Habtoor Business Tower, Dubai Marina · +971 55 978 1353' },
   { code: 'SAU', name: 'Saudi Arabia', status: 'Core market', operating: false, photo: 'market_saudi', cities: partner, approvals: tbc, contact: email },
   { code: 'IRQ', name: 'Iraq', status: 'Core market', operating: false, photo: 'market_iraq', cities: partner, approvals: tbc, contact: email },
