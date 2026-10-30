@@ -38,6 +38,12 @@ const files = {
   s_sheet14: 's_sheet14.jpg',
   s_student15: 's_student15.jpg',
   s_hall19: 's_hall19.jpg',
+  market_malaysia: 'country-malaysia.webp',
+  market_egypt: 'country-egypt.webp',
+  market_iraq: 'country-iraq.webp',
+  market_saudi: 'country-saudi.webp',
+  market_uk: 'country-uk.webp',
+  market_uzbekistan: 'country-uzbekistan.webp',
 
   // hero, services and news
   n_inst: 'n_inst.jpg',

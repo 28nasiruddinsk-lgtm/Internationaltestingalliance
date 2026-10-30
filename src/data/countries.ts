@@ -1,6 +1,10 @@
 export type Country = {
   code: string; name: string; status: string; operating: boolean;
-  cities: string; approvals: string; contact: string; photo: 's_group5' | 's_walk3' | 'n_walk';
+  cities: string; approvals: string; contact: string;
+  photo:
+    | 's_group5' | 's_walk3' | 'n_walk'
+    | 'market_malaysia' | 'market_egypt' | 'market_iraq'
+    | 'market_saudi' | 'market_uk' | 'market_uzbekistan';
 };
 
 const tbc = ''; // TODO: client to confirm approvals and status for each market
@@ -14,11 +18,11 @@ export const countries: Country[] = [
     contact: '101 Marine Point, DC-1, Block 9, Clifton, Karachi · +92 322 8490221' },
   { code: 'ARE', name: 'United Arab Emirates', status: 'Operating centre', operating: true, photo: 's_walk3',
     cities: 'Dubai', approvals: tbc, contact: 'Level 21, Al Habtoor Business Tower, Dubai Marina · +971 55 978 1353' },
-  { code: 'SAU', name: 'Saudi Arabia', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
-  { code: 'IRQ', name: 'Iraq', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
-  { code: 'EGY', name: 'Egypt', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
+  { code: 'SAU', name: 'Saudi Arabia', status: 'Core market', operating: false, photo: 'market_saudi', cities: partner, approvals: tbc, contact: email },
+  { code: 'IRQ', name: 'Iraq', status: 'Core market', operating: false, photo: 'market_iraq', cities: partner, approvals: tbc, contact: email },
+  { code: 'EGY', name: 'Egypt', status: 'Core market', operating: false, photo: 'market_egypt', cities: partner, approvals: tbc, contact: email },
   { code: 'BHR', name: 'Bahrain', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
-  { code: 'MYS', name: 'Malaysia', status: 'Core market', operating: false, photo: 's_walk3', cities: partner, approvals: tbc, contact: email },
-  { code: 'UZB', name: 'Uzbekistan', status: 'Core market', operating: false, photo: 'n_walk', cities: partner, approvals: tbc, contact: email },
-  { code: 'GBR', name: 'United Kingdom', status: 'Core market', operating: false, photo: 'n_walk', cities: 'Awarding body relationships', approvals: tbc, contact: 'WhatsApp +44 7401 137464' },
+  { code: 'MYS', name: 'Malaysia', status: 'Core market', operating: false, photo: 'market_malaysia', cities: partner, approvals: tbc, contact: email },
+  { code: 'UZB', name: 'Uzbekistan', status: 'Core market', operating: false, photo: 'market_uzbekistan', cities: partner, approvals: tbc, contact: email },
+  { code: 'GBR', name: 'United Kingdom', status: 'Core market', operating: false, photo: 'market_uk', cities: 'Awarding body relationships', approvals: tbc, contact: 'WhatsApp +44 7401 137464' },
 ];
