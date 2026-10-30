@@ -30,7 +30,7 @@ export default function Intro() {
         </Rise>
         <Rise delay={120}>
           <div className="h-[300px] overflow-hidden md:h-[400px]">
-            <img loading="lazy" decoding="async" src={img('s_dubai1')} alt="ITA invigilators checking in a candidate at the registration desk" className="h-full w-full object-cover object-[60%_center]" />
+            <img loading="lazy" decoding="async" src={`${img('s_dubai1')}?v=check-in-desk`} alt="ITA invigilators checking in a candidate at the registration desk" className="h-full w-full object-cover object-[60%_center]" />
           </div>
         </Rise>
       </Wrap>
