@@ -44,6 +44,7 @@ const files = {
   market_saudi: 'country-saudi.webp',
   market_uk: 'country-uk.webp',
   market_uzbekistan: 'country-uzbekistan.webp',
+  market_uae: 'country-uae.webp',
 
   // hero, services and news
   n_inst: 'n_inst.jpg',
