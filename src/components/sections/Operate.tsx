@@ -7,7 +7,20 @@ import { H2, Kicker, Rise, Wrap } from '../ui';
 
 const byCode = Object.fromEntries(countries.map((c) => [c.code, c]));
 const markets = map.mk as Record<string, string>;
-const pins: Record<string, number[]> = map.pins;
+
+// Callout label anchors: dot = geographic point, off = box top-left offset (×S)
+const S = 2.3;
+const labels: Record<string, { dot: [number, number]; off: [number, number] }> = {
+  GBR: { dot: [70, 118], off: [-118, -60] },
+  UZB: { dot: [572, 235], off: [36, -66] },
+  IRQ: { dot: [415, 315], off: [-92, -40] },
+  PAK: { dot: [612, 345], off: [66, -16] },
+  EGY: { dot: [320, 372], off: [-140, -6] },
+  SAU: { dot: [430, 392], off: [-140, 56] },
+  BHR: { dot: [470, 386], off: [-14, 100] },
+  ARE: { dot: [500, 396], off: [104, 30] },
+  MYS: { dot: [905, 545], off: [40, 46] },
+};
 
 export default function Operate() {
   const [sel, setSel] = useState('PAK');
@@ -15,7 +28,7 @@ export default function Operate() {
   const c = byCode[sel];
 
   const fill = (code: string) =>
-    code === sel ? '#0B4CA1' : byCode[code].operating ? '#5E8FD0' : code === hover ? '#A9C4E6' : '#C9DAEF';
+    code === sel ? '#0B4CA1' : code === hover ? '#B9C0C8' : '#CCD0D5';
 
   return (
     <section id="operate" className="bg-tint py-24 md:py-32">
@@ -27,22 +40,29 @@ export default function Operate() {
         <div className="mt-12 grid items-stretch gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div className="flex flex-col gap-6">
           <div className="border border-line bg-white">
-            <svg viewBox="0 30 1000 470" preserveAspectRatio="xMidYMid meet" className="block h-auto w-full" role="img" aria-label="Map of ITA markets">
-              <path d={map.bg} fill="#F4F8FD" stroke="#DCE6F2" strokeWidth=".8" />
+            <svg viewBox="-540 -30 2250 1010" preserveAspectRatio="xMidYMid meet" className="block h-auto w-full" role="img" aria-label="Map of ITA markets">
+              <path d={map.bg} fill="#CCD0D5" stroke="#fff" strokeWidth=".8" />
               {countries.map(({ code, name }) => markets[code] && (
-                <path key={code} d={markets[code]} fill={fill(code)} stroke="#fff" strokeWidth="1" className="cursor-pointer" style={{ transition: 'fill .25s' }}
+                <path key={code} d={markets[code]} fill={fill(code)} stroke="#fff" strokeWidth=".8" className="cursor-pointer" style={{ transition: 'fill .2s' }}
                   onClick={() => setSel(code)} onMouseEnter={() => setHover(code)} onMouseLeave={() => setHover(null)}>
                   <title>{name}</title>
                 </path>
               ))}
-              {Object.entries(pins).map(([name, [x, y]]) => (
-                <g key={name}>
-                  <circle cx={x} cy={y} r="4" fill="#0E2240" stroke="#fff" strokeWidth="1.5" />
-                  {((sel === 'PAK' && name !== 'Dubai') || (sel === 'ARE' && name === 'Dubai')) && (
-                    <text x={name === 'Dubai' ? x - 9 : x + 9} y={y + 5} textAnchor={name === 'Dubai' ? 'end' : 'start'} fontSize="16" fill="#0E2240" fontWeight="600" stroke="#fff" strokeWidth="4" paintOrder="stroke">{name}</text>
-                  )}
-                </g>
-              ))}
+              {countries.map(({ code, name }) => {
+                const L = labels[code];
+                if (!L) return null;
+                const [dx, dy] = L.dot;
+                const w = (name.length * 7.2 + 18) * S, h = 22 * S;
+                const bx = dx + L.off[0] * S, by = dy + L.off[1] * S;
+                return (
+                  <g key={code} className="cursor-pointer" onClick={() => setSel(code)}>
+                    <line x1={dx} y1={dy} x2={bx + w / 2} y2={by + h / 2} stroke="#15497a" strokeWidth={1.4 * S} />
+                    <rect x={bx} y={by} width={w} height={h} rx={4 * S} fill={code === sel ? '#0B4CA1' : '#15497a'} />
+                    <text x={bx + w / 2} y={by + h * 0.68} textAnchor="middle" fontSize={12.5 * S} fill="#fff" fontWeight="600">{name}</text>
+                    <circle cx={dx} cy={dy} r={5 * S} fill="#15497a" stroke="#fff" strokeWidth={1.6 * S} />
+                  </g>
+                );
+              })}
             </svg>
           </div>
           <div key={`d${sel}`} className="swap border-t-[3px] border-blue bg-white p-7">

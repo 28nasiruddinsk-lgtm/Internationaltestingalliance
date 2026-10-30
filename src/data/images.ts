@@ -18,6 +18,10 @@ const files = {
   exam_sitting: 'exam-sitting.webp',
   invigilators: 'invigilators.webp',
   qr_scan: 'qr-scan.webp',
+  svc_exam: 'svc-exam-mgmt.webp',
+  svc_venue: 'svc-venue.webp',
+  svc_inv: 'svc-invigilation.webp',
+  svc_qr: 'svc-qr.webp',
   ibcc_registered: 'ibcc-registered.png',
 
   // stock photos
