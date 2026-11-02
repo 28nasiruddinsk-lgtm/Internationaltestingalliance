@@ -5,9 +5,16 @@ import { site } from '@/data/site';
 import { img } from '@/data/images';
 import { Arrow, Wrap } from './ui';
 
+const Chevron = ({ open }: { open: boolean }) => (
+  <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
+    <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+  </svg>
+);
+
 export default function Header() {
   const [menu, setMenu] = useState(false);
   const [announce, setAnnounce] = useState(true);
+  const [open, setOpen] = useState<string | null>(null); // label of the open desktop dropdown
 
   return (
     <>
@@ -31,9 +38,29 @@ export default function Header() {
           <Link href="/" aria-label="International Testing Alliance home">
             <img src={img('logo')} alt={site.name} className="h-8 max-w-none sm:h-10" />
           </Link>
-          <nav className="ml-auto hidden items-center xl:flex" aria-label="Main">
-            {site.nav.map((n) => (
-              <Link key={n.href} href={n.href} className="navlink relative whitespace-nowrap px-3 py-7 text-[15px] text-ink hover:text-blue">
+          <nav className="ml-auto hidden items-center xl:flex" aria-label="Main" onKeyDown={(e) => { if (e.key === 'Escape') setOpen(null); }}>
+            {site.nav.map((n) => n.items ? (
+              <div key={n.label} className="relative"
+                onMouseEnter={() => setOpen(n.label)} onMouseLeave={() => setOpen(null)}
+                onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(null); }}>
+                <button aria-expanded={open === n.label} aria-haspopup="true" onClick={() => setOpen(open === n.label ? null : n.label)}
+                  className={`navlink relative flex items-center gap-1.5 whitespace-nowrap px-3 py-7 text-[15px] hover:text-blue ${open === n.label ? 'text-blue' : 'text-ink'}`}>
+                  {n.label} <Chevron open={open === n.label} />
+                </button>
+                {open === n.label && (
+                  <div className="absolute left-0 top-full z-50 min-w-[280px] border-t-[3px] border-blue bg-white py-3 shadow-[0_18px_40px_rgba(14,34,64,.14)]">
+                    <ul>
+                      {n.items.map(([label, href]) => (
+                        <li key={href}>
+                          <Link href={href} onClick={() => setOpen(null)} className="block whitespace-nowrap px-5 py-2.5 text-[15px] text-ink hover:bg-tint hover:text-blue">{label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link key={n.label} href={n.href!} className="navlink relative whitespace-nowrap px-3 py-7 text-[15px] text-ink hover:text-blue">
                 {n.label}
               </Link>
             ))}
@@ -55,10 +82,26 @@ export default function Header() {
         </Wrap>
       </div>
       {menu && (
-        <div className="border-b border-line bg-white xl:hidden">
+        <div className="max-h-[calc(100vh-80px)] overflow-y-auto border-b border-line bg-white xl:hidden">
           <Wrap className="py-3">
-            {site.nav.map((n) => (
-              <Link key={n.href} href={n.href} onClick={() => setMenu(false)} className="block border-b border-line py-3 text-[17px] text-ink">
+            {site.nav.map((n) => n.items ? (
+              <details key={n.label} className="group border-b border-line">
+                <summary className="flex cursor-pointer list-none items-center justify-between py-3 text-[17px] text-ink [&::-webkit-details-marker]:hidden">
+                  {n.label}
+                  <svg aria-hidden="true" width="12" height="7" viewBox="0 0 12 7" className="text-blue transition-transform duration-200 group-open:rotate-180">
+                    <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                  </svg>
+                </summary>
+                <ul className="mb-3 border-l-[3px] border-blue pl-4">
+                  {n.items.map(([label, href]) => (
+                    <li key={href}>
+                      <Link href={href} onClick={() => setMenu(false)} className="block py-2 text-[15px] text-body hover:text-blue">{label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <Link key={n.label} href={n.href!} onClick={() => setMenu(false)} className="block border-b border-line py-3 text-[17px] text-ink">
                 {n.label}
               </Link>
             ))}
