@@ -24,6 +24,11 @@ const files = {
   svc_qr: 'svc-qr.webp',
   hero_cand: 'hero-candidate.jpg',
   hero_uni: 'hero-university.jpg',
+  about_campus: 'about-campus.jpg',
+  about_library: 'about-library.jpg',
+  about_team: 'about-team.jpg',
+  about_group: 'about-group.jpg',
+  about_lawn: 'about-lawn.jpg',
   ibcc_registered: 'ibcc-registered.png',
 
   // stock photos
