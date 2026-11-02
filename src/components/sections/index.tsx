@@ -24,6 +24,8 @@ import Strip from './Strip';
 import ContactForm from './ContactForm';
 import Offices from './Offices';
 import Mosaic from './Mosaic';
+import Points from './Points';
+import Faq from './Faq';
 
 const registry = {
   hero: Hero,
@@ -51,6 +53,8 @@ const registry = {
   contactForm: ContactForm,
   offices: Offices,
   mosaic: Mosaic,
+  points: Points,
+  faq: Faq,
 };
 
 export type SectionType = keyof typeof registry;

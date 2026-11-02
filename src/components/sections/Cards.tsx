@@ -30,7 +30,7 @@ export default function Cards({ kicker, title, intro, items, tint, numbered = tr
               <div className={`h-full border-t-[3px] p-6 ${dark ? 'border-sky bg-white/5' : 'border-blue bg-white'}`}>
                 {c.image && (
                   <div className="-mx-6 -mt-6 mb-5 h-[200px] overflow-hidden">
-                    <img loading="lazy" decoding="async" src={img(c.image)} alt={`${c.title} at an ITA exam venue`} className="h-full w-full object-cover" />
+                    <img loading="lazy" decoding="async" src={img(c.image)} alt={c.alt ?? `${c.title} at an ITA exam venue`} className="h-full w-full object-cover" />
                   </div>
                 )}
                 {c.tag && <div className={`text-[13px] font-semibold ${dark ? 'text-sky' : 'text-blue'}`}>{c.tag}</div>}
