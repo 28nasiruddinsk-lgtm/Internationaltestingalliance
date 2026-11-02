@@ -68,6 +68,7 @@ export const pages: Record<string, SectionConfig[]> = {
     { type: 'model', props: {
       kicker: 'Independence',
       title: 'Why we stay out of teaching and marking',
+      dark: true,
       intro: 'When the same organisation teaches, registers and supervises its own candidates, it’s hard for anyone to call the result fully impartial. So we keep to the middle of the room. The institution sets the rules. The awarding body sets and marks the paper. We run everything in between and write down exactly what happened.',
     } },
     cards({
@@ -81,13 +82,14 @@ export const pages: Record<string, SectionConfig[]> = {
       kicker: 'Where we work',
       title: 'Nine cities, from Karachi to Gilgit.',
       paragraphs: [
-        'Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad and Gilgit. Candidates sit close to home in rooms run to the same standard. When a partner needs us somewhere new, such as Quetta, Peshawar or a hard-to-reach area, we set up in partner premises or an external venue.',
+        'Candidates sit close to home in rooms run to the same standard. When a partner needs us somewhere new, such as Quetta, Peshawar or a hard-to-reach area, we set up in partner premises or an external venue.',
         'Our offices are in Karachi and Dubai.',
       ],
+      chips: ['Karachi', 'Hyderabad', 'Lahore', 'Islamabad', 'Rawalpindi', 'Gujranwala', 'Multan', 'Faisalabad', 'Gilgit'],
     } },
     { type: 'operate' },
     { type: 'milestones', props: { kicker: 'Our progress', title: 'How we got here' } },
-    cards({ kicker: 'What we’re here for', title: 'Purpose, vision and mission', items: p.pillars, tint: true, numbered: false }),
+    cards({ kicker: 'What we’re here for', title: 'Purpose, vision and mission', items: p.pillars, dark: true, numbered: false }),
     { type: 'split', props: {
       kicker: 'Our parent company',
       title: 'ITS is our parent company',
