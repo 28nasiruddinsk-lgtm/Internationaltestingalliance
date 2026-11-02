@@ -12,15 +12,23 @@ type Props = {
   image?: ImageKey; // photo on the left, text on the right
   alt?: string;
   facts?: { value: string; label: string }[];
+  chips?: string[]; // short tags under the text, e.g. city names
 };
 
 // Heading on the left, text on the right (the home page About layout)
-export default function Split({ kicker, title, paragraphs, link, tint, image, alt = '', facts }: Props) {
+export default function Split({ kicker, title, paragraphs, link, tint, image, alt = '', facts, chips }: Props) {
   const body = (
     <>
       {paragraphs.map((p, i) => (
         <p key={p} className={i === 0 ? 'text-[19px] leading-[1.7] text-ink' : 'mt-5 text-[16px] leading-[1.75] text-body'}>{p}</p>
       ))}
+      {chips && (
+        <ul className="mt-8 flex flex-wrap gap-2">
+          {chips.map((c) => (
+            <li key={c} className="rounded-full border border-blue/25 bg-white px-4 py-2 text-[14px] font-semibold text-blue">{c}</li>
+          ))}
+        </ul>
+      )}
       {facts && (
         <dl className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2">
           {facts.map((f) => (
