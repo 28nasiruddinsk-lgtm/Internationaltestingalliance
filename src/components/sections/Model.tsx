@@ -11,11 +11,14 @@ type Props = {
   highlight?: number; // index of the filled circle
   quote?: string; // empty string hides it
   tint?: boolean;
+  arrows?: boolean; // small arrows on the line between steps
 };
+
+const COLS: Record<number, string> = { 3: 'md:grid-cols-3', 4: 'md:grid-cols-4', 5: 'md:grid-cols-5' };
 
 const QUOTE = '“No teaching. No marking. No influence over the outcome.”';
 
-export default function Model({ kicker = 'Independence', title = 'Three parties, each with one job.', intro, dark, steps = parties, highlight = 1, quote = QUOTE, tint }: Props) {
+export default function Model({ kicker = 'Independence', title = 'Three parties, each with one job.', intro, dark, steps = parties, highlight = 1, quote = QUOTE, tint, arrows }: Props) {
   const [ref, seen] = useInView<HTMLDivElement>(0.3);
   const edge = `${50 / steps.length}%`; // line runs from the first circle's centre to the last
   return (
@@ -26,10 +29,17 @@ export default function Model({ kicker = 'Independence', title = 'Three parties,
           <H2>{title}</H2>
           {intro && <p className={`mt-5 text-[16px] leading-[1.75] ${dark ? 'text-white/80' : 'text-body'}`}>{intro}</p>}
         </Rise>
-        <div ref={ref} className={`relative mt-14 grid gap-10 md:gap-6 ${steps.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
+        <div ref={ref} className={`relative mt-14 grid gap-10 md:gap-6 ${COLS[steps.length] ?? 'md:grid-cols-3'}`}>
           <div className={`absolute top-[27px] hidden h-[2px] md:block ${dark ? 'bg-white/20' : 'bg-line'}`} style={{ left: edge, right: edge }}>
             <div className={`h-full ${dark ? 'bg-sky' : 'bg-blue'}`} style={{ width: seen ? '100%' : '0%', transition: 'width 1.4s cubic-bezier(.2,.7,.2,1) .2s' }} />
           </div>
+          {arrows && steps.slice(1).map((s, k) => (
+            <svg key={s[0]} aria-hidden="true" width="12" height="14" viewBox="0 0 12 14"
+              className={`absolute top-[21px] hidden -translate-x-1/2 md:block ${dark ? 'text-sky' : 'text-blue'}`}
+              style={{ left: `${((k + 1) * 100) / steps.length}%`, opacity: seen ? 1 : 0, transition: `opacity .4s ${(k + 1) * 300}ms` }}>
+              <path d="M2 1l7 6-7 6" fill="none" stroke="currentColor" strokeWidth="2.2" />
+            </svg>
+          ))}
           {steps.map(([title, text], n) => {
             const circle = n === highlight
               ? (dark ? 'bg-sky text-navy' : 'bg-blue text-white')

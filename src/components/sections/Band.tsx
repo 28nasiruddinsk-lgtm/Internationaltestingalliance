@@ -1,15 +1,29 @@
 import Link from 'next/link';
+import type { ImageKey } from '@/data/images';
+import { img } from '@/data/images';
 import { Arrow, H2, Kicker, Wrap } from '../ui';
 
-type Props = { title: string; text: string; buttons: { label: string; href: string }[] };
+type Props = {
+  title: string;
+  text: string;
+  buttons: { label: string; href: string }[];
+  kicker?: string;
+  image?: ImageKey; // photo behind the text with a navy fade
+};
 
 // The blue "Work with us" band that closes a page
-export default function Band({ title, text, buttons }: Props) {
+export default function Band({ title, text, buttons, kicker = 'Work with us', image }: Props) {
   return (
-    <section className="bg-blue py-24 text-white md:py-32">
-      <Wrap className="grid gap-10 lg:grid-cols-12 lg:items-end">
+    <section className={`relative overflow-hidden py-24 text-white md:py-32 ${image ? 'bg-navy' : 'bg-blue'}`}>
+      {image && (
+        <>
+          <img loading="lazy" decoding="async" src={img(image)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
+        </>
+      )}
+      <Wrap className="relative grid gap-10 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">
-          <Kicker light>Work with us</Kicker>
+          <Kicker light>{kicker}</Kicker>
           <H2>{title}</H2>
           <p className="mt-5 max-w-[520px] text-[16px] leading-[1.7] text-white/85">{text}</p>
         </div>

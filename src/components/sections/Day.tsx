@@ -1,10 +1,23 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { day } from '@/data/sitting';
-import { img } from '@/data/images';
+import { day as homeDay } from '@/data/sitting';
+import { img, type ImageKey } from '@/data/images';
 import { H2, Kicker, Rise, Wrap, prefersReducedMotion, useInView } from '../ui';
 
-export default function Day() {
+type Props = {
+  kicker?: string;
+  title?: string;
+  intro?: string;
+  items?: [string, string, string, ImageKey][]; // [time, title, text, image]; defaults to the home page sitting
+};
+
+export default function Day({
+  kicker = 'A sitting, hour by hour',
+  title = 'What happens on exam day.',
+  intro = 'A three-hour paper at one of our centres. Timings are typical and vary by awarding body.',
+  items,
+}: Props) {
+  const day = items ?? homeDay;
   const [active, setActive] = useState(0);
   const [auto, setAuto] = useState(true);
   const [ref, seen] = useInView<HTMLElement>(0.3);
@@ -13,16 +26,16 @@ export default function Day() {
     if (!seen || !auto || prefersReducedMotion()) return;
     const id = setInterval(() => setActive((x) => (x + 1) % day.length), 4200);
     return () => clearInterval(id);
-  }, [seen, auto]);
+  }, [seen, auto, day.length]);
 
-  const [time, title, text] = day[active];
+  const [time, head, text] = day[active];
   return (
     <section id="day" ref={ref} className="bg-navy py-24 text-white md:py-32">
       <Wrap>
         <Rise className="max-w-[720px]">
-          <Kicker light>A sitting, hour by hour</Kicker>
-          <H2>What happens on exam day.</H2>
-          <p className="mt-4 text-[16px] text-white/70">A three-hour paper at one of our centres. Timings are typical and vary by awarding body.</p>
+          <Kicker light>{kicker}</Kicker>
+          <H2>{title}</H2>
+          <p className="mt-4 text-[16px] text-white/70">{intro}</p>
         </Rise>
         <div className="mt-12 grid gap-10 lg:grid-cols-[360px_1fr]">
           <ol>
@@ -45,7 +58,7 @@ export default function Day() {
               <div className="absolute left-0 top-0 bg-sky px-4 py-2 text-[15px] font-semibold text-navy tabular-nums">{time}</div>
             </div>
             <div key={active} className="swap mt-6 max-w-[620px]" aria-live="polite">
-              <h3 className="font-serif text-[20px]">{title}</h3>
+              <h3 className="font-serif text-[20px]">{head}</h3>
               <p className="mt-2 text-[16px] leading-relaxed text-white/85">{text}</p>
             </div>
             <div className="mt-6 h-[2px] bg-white/15"><div className="h-full bg-sky transition-all duration-500" style={{ width: `${((active + 1) / day.length) * 100}%` }} /></div>

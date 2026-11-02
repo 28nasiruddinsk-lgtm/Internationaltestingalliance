@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import type { ImageKey } from '@/data/images';
 import { img } from '@/data/images';
-import { Kicker, Rise, Wrap } from '../ui';
+import { Arrow, Kicker, Rise, Wrap } from '../ui';
 
 type Props = {
   title: string;
@@ -11,9 +12,10 @@ type Props = {
   alt?: string;
   light?: boolean;
   cover?: boolean; // image fills the whole header behind the text
+  buttons?: { label: string; href: string }[]; // first is a white pill, the rest underlined links
 };
 
-export default function PageHeader({ title, intro, kicker, headline, image, alt = '', light, cover }: Props) {
+export default function PageHeader({ title, intro, kicker, headline, image, alt = '', light, cover, buttons }: Props) {
   const tone = light ? 'bg-tint text-ink' : 'bg-navy text-white';
   const sub = light ? 'text-body' : 'text-white/85';
   const text = (
@@ -22,6 +24,19 @@ export default function PageHeader({ title, intro, kicker, headline, image, alt 
       <h1 className="mt-5 max-w-[860px] font-serif text-[28px] leading-[1.15] md:text-[42px]">{title}</h1>
       {headline && <p className="mt-6 max-w-[620px] font-serif text-[20px] leading-[1.3] md:text-[24px]">{headline}</p>}
       {intro && <p className={`mt-5 max-w-[620px] text-[17px] leading-[1.7] ${sub}`}>{intro}</p>}
+      {buttons && (
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          {buttons.map((b, i) => i === 0 ? (
+            <Link key={b.label} href={b.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-blue hover:bg-tint">
+              {b.label} <Arrow />
+            </Link>
+          ) : (
+            <Link key={b.label} href={b.href} className="text-[15px] font-semibold underline decoration-white/40 underline-offset-[6px] hover:decoration-white">
+              {b.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 
