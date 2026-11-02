@@ -168,6 +168,80 @@ export const pages: Record<string, SectionConfig[]> = {
       buttons: [{ label: 'Discuss a partnership', href: '/become-a-partner/' }],
     } },
   ],
+  'exam-management': [
+    { type: 'pageHeader', props: {
+      kicker: 'Exam management',
+      title: 'Exam management, from the first call to the final report',
+      intro: 'You set the rules. We take care of everything that has to happen so a few hours in an exam room can be trusted.',
+      image: 'hall_rows', alt: 'An ITA exam hall set up for a sitting', cover: true,
+      buttons: [{ label: 'Plan a sitting', href: '/contact/' }, { label: 'See an exam day', href: '#day' }],
+    } },
+    { type: 'model', props: {
+      kicker: 'How we work',
+      title: 'One team, five steps',
+      steps: [
+        ['Plan', 'We agree your requirements and protocols with your team.'],
+        ['Prepare', 'We set the venue, schedule, seating plan and staff.'],
+        ['Verify', 'Every candidate goes through a three-step identity check and every paper is checked against the log.'],
+        ['Deliver', 'Our team supervises impartially from the first paper to the last.'],
+        ['Report', 'Attendance, incidents and records come back to you in one place.'],
+      ],
+      highlight: 4,
+      arrows: true,
+      quote: 'Your protocols stay the reference point at every step.',
+    } },
+    { type: 'day', props: {
+      kicker: 'A sitting, hour by hour',
+      title: 'An exam day, hour by hour',
+      intro: 'A three-hour paper at one of our centres. Timings are typical and change with each awarding body.',
+      items: [
+        ['07:30', 'Venue opened and checked', 'The hall is inspected, desks are numbered at the right spacing and the rules go up at the entrance.', 'hall'],
+        ['08:15', 'Candidates arrive', 'Walk-through screening, then a photo ID and QR check at registration.', 'verify'],
+        ['08:45', 'Briefing and seating', 'Phones and bags go into storage. Candidates hear the rules and take their numbered seats.', 'briefing'],
+        ['09:00', 'Papers opened', 'Sealed papers are opened in front of the candidates.', 'board'],
+        ['09:05', 'Live invigilation', 'Invigilators walk the room and log anything unusual with the time it happened.', 'exam_sitting'],
+        ['12:10', 'Papers sealed', 'Scripts are counted, sealed and logged against the attendance register.', 'row'],
+        ['Same day', 'Report sent', 'Attendance, incident logs and evidence go to the awarding body in one record.', 'portal'],
+      ],
+    } },
+    prose({
+      kicker: 'After the session',
+      title: 'What you see afterwards',
+      paragraphs: [
+        'You never have to ask what happened in the room. Attendance registers, incident reports and session logs come back as one consolidated record.',
+        'You can also follow registrations, schedules and attendance in your partner portal as the sitting runs.',
+      ],
+      image: 'portal', alt: 'The ITA partner portal showing a sitting', contain: true,
+    }),
+    { type: 'strip', props: {
+      title: 'Independent by design',
+      text: 'We don’t teach or grade your candidates, so we gain nothing from any result. The same procedures run in every room and every city.',
+      links: [{ label: 'Why independence matters', href: '/about-us/' }],
+    } },
+    { type: 'band', props: {
+      kicker: 'Already running for Greenwich',
+      title: 'University of Greenwich UK',
+      text: 'We run computer and paper-based exams across several campuses. That includes candidate registration, payment collection and live attendance in the portal.',
+      buttons: [{ label: 'See our work with the University of Greenwich', href: '/university-of-greenwich/' }],
+      image: 'hall',
+    } },
+    { type: 'faq', props: {
+      kicker: 'FAQ',
+      title: 'Questions we often hear',
+      items: [
+        ['What is exam management?', 'It’s everything around the exam itself: planning, venues, staff, candidate checks, paper custody and reporting. You focus on the exam and we handle the rest.'],
+        ['Can you run exams in more than one city?', 'Yes. We work in nine cities across Pakistan and set up elsewhere through partner premises or external venues. The procedures are the same everywhere, so results are comparable.'],
+        ['Do you follow our rules or yours?', 'Yours. Your awarding body’s or institution’s protocols are the reference at every step.'],
+        ['What do we receive after a session?', 'One record with attendance, incident logs and supporting evidence.'],
+      ],
+    } },
+    { type: 'services', props: { kicker: 'Keep exploring', title: 'Related services', exclude: '/exam-management/' } },
+    { type: 'band', props: {
+      title: 'Tell us about your next sitting.',
+      text: 'What you’re running, where and when. We’ll come back with a plan for people, venues and reporting.',
+      buttons: [{ label: 'Plan a sitting', href: '/contact/' }],
+    } },
+  ],
   'awarding-bodies': [
     header('Awarding bodies', 'The same delivery standard for every awarding body.', 'Awarding bodies'),
     prose({
@@ -232,7 +306,7 @@ export const pages: Record<string, SectionConfig[]> = {
 };
 
 // Pages that go live. Everything else 404s; add a key of `pages` here to publish it.
-export const published = ['about-us', 'services', 'contact'];
+export const published = ['about-us', 'services', 'exam-management', 'contact'];
 
 // Title tag and meta description per published page (SEO brief). The home page is set in app/layout.tsx.
 export const meta: Record<string, { title: string; description: string }> = {
@@ -243,6 +317,10 @@ export const meta: Record<string, { title: string; description: string }> = {
   services: {
     title: 'Testing Solutions for Universities and Exam Boards | ITA',
     description: 'Exam management, secure venues, technology and invigilation for universities and awarding bodies in Pakistan and the UAE. Take one service or hand us the whole sitting.',
+  },
+  'exam-management': {
+    title: 'Exam Management Services in Pakistan and the UAE | ITA',
+    description: 'ITA plans and runs your exams from the first call to the final report. Exam management for universities and awarding bodies in Pakistan and the UAE.',
   },
   contact: {
     title: 'Contact International Testing Alliance | Karachi and Dubai',
