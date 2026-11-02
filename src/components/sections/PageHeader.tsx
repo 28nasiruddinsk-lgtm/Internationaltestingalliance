@@ -13,9 +13,10 @@ type Props = {
   light?: boolean;
   cover?: boolean; // image fills the whole header behind the text
   buttons?: { label: string; href: string }[]; // first is a white pill, the rest underlined links
+  flip?: boolean; // mirror a cover photo so its subject sits right of the text
 };
 
-export default function PageHeader({ title, intro, kicker, headline, image, alt = '', light, cover, buttons }: Props) {
+export default function PageHeader({ title, intro, kicker, headline, image, alt = '', light, cover, buttons, flip }: Props) {
   const tone = light ? 'bg-tint text-ink' : 'bg-navy text-white';
   const sub = light ? 'text-body' : 'text-white/85';
   const text = (
@@ -43,7 +44,7 @@ export default function PageHeader({ title, intro, kicker, headline, image, alt 
   if (cover && image) {
     return (
       <section className="relative overflow-hidden bg-navy text-white">
-        <img src={img(image)} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
+        <img src={img(image)} alt={alt} className={`absolute inset-0 h-full w-full object-cover ${flip ? '-scale-x-100' : ''}`} />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/20" />
         <Wrap className="relative py-28 md:py-44">
           <div className="max-w-[680px]">{text}</div>

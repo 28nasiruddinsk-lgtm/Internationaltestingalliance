@@ -142,9 +142,9 @@ export const pages: Record<string, SectionConfig[]> = {
       title: 'Who we work with',
       numbered: false,
       items: [
-        { title: 'Awarding bodies', text: 'Your papers and your protocols, delivered by a team with no stake in the result.', image: 'exam_sitting', alt: 'ITA invigilators supervising a sitting' },
+        { title: 'Awarding bodies', text: 'Your papers and your protocols, delivered by a team with no stake in the result.', image: 'em_professional', alt: 'A candidate writing an exam paper on a clipboard desk' },
         { title: 'Universities', text: 'One standard across every campus, for paper and computer-based exams.', image: 'about_campus', alt: 'Students walking out of a University of Greenwich building' },
-        { title: 'Training providers', text: 'An independent record of every sitting, including sessions on your own premises.', image: 'centre_room', alt: 'An ITA exam room with folding desks set for a session' },
+        { title: 'Training providers', text: 'An independent record of every sitting, including sessions on your own premises.', image: 'em_row', alt: 'A row of learners writing at a long desk' },
       ],
       names: { label: 'We deliver for', list: ['NCC Education', 'City & Guilds', 'University of Greenwich UK', 'GEMS Pathways'] },
     }),
@@ -173,7 +173,7 @@ export const pages: Record<string, SectionConfig[]> = {
       kicker: 'Exam management',
       title: 'Exam management, from the first call to the final report',
       intro: 'You set the rules. We take care of everything that has to happen so a few hours in an exam room can be trusted.',
-      image: 'hall_rows', alt: 'An ITA exam hall set up for a sitting', cover: true,
+      image: 'em_candidate', alt: 'A candidate writing an exam while an invigilator supervises', cover: true, flip: true,
       buttons: [{ label: 'Plan a sitting', href: '/contact/' }, { label: 'See an exam day', href: '#day' }],
     } },
     { type: 'model', props: {
@@ -223,7 +223,7 @@ export const pages: Record<string, SectionConfig[]> = {
       title: 'University of Greenwich UK',
       text: 'We run computer and paper-based exams across several campuses. That includes candidate registration, payment collection and live attendance in the portal.',
       buttons: [{ label: 'See our work with the University of Greenwich', href: '/university-of-greenwich/' }],
-      image: 'hall',
+      image: 'em_campus',
     } },
     { type: 'faq', props: {
       kicker: 'FAQ',
