@@ -34,7 +34,7 @@ export const pages: Record<string, SectionConfig[]> = {
       title: 'About International Testing Alliance',
       headline: 'We run the exam. We have nothing riding on the result.',
       intro: 'International Testing Alliance plans, runs and reports on examinations for awarding bodies, universities and training providers. We never teach and we never mark.',
-      image: 'hall_rows', alt: 'Rows of numbered desks set out in an ITA exam hall',
+      image: 'about_campus', alt: 'Students walking out of a University of Greenwich building', cover: true,
     } },
     prose({
       kicker: 'An exam morning',
@@ -43,15 +43,26 @@ export const pages: Record<string, SectionConfig[]> = {
         'On a typical exam day our venue supervisor is in the hall before 07:30. The desks are numbered, the rules go up at the door and the sealed papers are checked against the log. By the time the first candidate walks in, the room is ready and everyone in it knows their job.',
         'That quiet hour before the doors open is most of what we do. When it goes right, nobody notices. That’s the idea.',
       ],
-      image: 'row', alt: 'ITA team setting out desks and row markers in an exam hall',
+      image: 'about_library', alt: 'A student reading quietly in a university library',
     }),
     { type: 'split', props: {
       kicker: 'Who we are',
       title: 'An independent examination services company',
       tint: true,
+      image: 'about_team', alt: 'Students working together around a laptop',
       paragraphs: [
         'ITA is an independent examination services company and part of the International Testing Services (ITS) group. We were set up in April 2025 to do one thing well: deliver exams for other organisations. That covers everything from onboarding a new partner and checking candidates in to supervising the session and sending back a full record.',
         'We work across nine markets: Pakistan, the UAE, Saudi Arabia, Iraq, Egypt, Bahrain, Malaysia, Uzbekistan and the UK.',
+      ],
+    } },
+    { type: 'mosaic', props: {
+      kicker: 'Who we serve',
+      title: 'Universities, awarding bodies and the candidates who sit with us.',
+      text: 'Behind every sitting is a student working towards a qualification. Our job is to make the exam day fair, calm and the same for every one of them.',
+      images: [
+        ['about_group', 'Students from our university partners'],
+        ['about_lawn', 'Candidates working towards UK qualifications'],
+        ['exam_sitting', 'A supervised sitting in an ITA centre'],
       ],
     } },
     { type: 'model', props: {

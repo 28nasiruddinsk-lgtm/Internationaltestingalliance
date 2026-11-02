@@ -23,6 +23,7 @@ import Band from './Band';
 import Strip from './Strip';
 import ContactForm from './ContactForm';
 import Offices from './Offices';
+import Mosaic from './Mosaic';
 
 const registry = {
   hero: Hero,
@@ -49,6 +50,7 @@ const registry = {
   strip: Strip,
   contactForm: ContactForm,
   offices: Offices,
+  mosaic: Mosaic,
 };
 
 export type SectionType = keyof typeof registry;
