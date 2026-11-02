@@ -50,9 +50,9 @@ export const pages: Record<string, SectionConfig[]> = {
       title: 'An independent examination services company',
       tint: true,
       image: 'about_team', alt: 'Students working together around a laptop',
+      facts: p.aboutFacts,
       paragraphs: [
         'ITA is an independent examination services company and part of the International Testing Services (ITS) group. We were set up in April 2025 to do one thing well: deliver exams for other organisations. That covers everything from onboarding a new partner and checking candidates in to supervising the session and sending back a full record.',
-        'We work across nine markets: Pakistan, the UAE, Saudi Arabia, Iraq, Egypt, Bahrain, Malaysia, Uzbekistan and the UK.',
       ],
     } },
     { type: 'mosaic', props: {
