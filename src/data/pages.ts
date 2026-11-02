@@ -107,7 +107,7 @@ export const pages: Record<string, SectionConfig[]> = {
       kicker: 'Our services',
       title: 'Testing solutions for universities and exam boards',
       intro: 'Take one service or hand us the whole sitting. Either way, your rules come first and you get a full record afterwards.',
-      image: 'hall_rows', alt: 'Rows of numbered desks set out in an ITA exam hall',
+      image: 'svc_partners', alt: 'Two people reviewing an exam plan together', cover: true,
     } },
     { type: 'services', props: { kicker: 'What we do', title: 'Our four services', detailed: true } },
     { type: 'model', props: {
@@ -121,11 +121,12 @@ export const pages: Record<string, SectionConfig[]> = {
       ],
       highlight: 3,
       quote: '',
+      dark: true,
     } },
     { type: 'points', props: {
       kicker: 'Working with ITA',
       title: 'What working with us is like',
-      tint: true,
+      image: 'svc_training', alt: 'A candidate writing an answer sheet at a desk',
       items: [
         ['One person to call', 'A dedicated coordinator and priority handling from planning to the final report.'],
         ['Pay for what you use', 'Choose only the services you need and plan your exam budget with confidence.'],
@@ -135,16 +136,17 @@ export const pages: Record<string, SectionConfig[]> = {
         ['We help spread the word', 'We promote your exams on our website and social channels so more candidates hear about them.'],
       ],
     } },
+    { type: 'counters' },
     cards({
       kicker: 'Our partners',
       title: 'Who we work with',
       numbered: false,
       items: [
-        { title: 'Awarding bodies', text: 'Your papers and your protocols, delivered by a team with no stake in the result.', image: 'svc_partners', alt: 'Two people reviewing a report together' },
+        { title: 'Awarding bodies', text: 'Your papers and your protocols, delivered by a team with no stake in the result.', image: 'exam_sitting', alt: 'ITA invigilators supervising a sitting' },
         { title: 'Universities', text: 'One standard across every campus, for paper and computer-based exams.', image: 'about_campus', alt: 'Students walking out of a University of Greenwich building' },
-        { title: 'Training providers', text: 'An independent record of every sitting, including sessions on your own premises.', image: 'svc_training', alt: 'A candidate writing an answer sheet at a desk' },
+        { title: 'Training providers', text: 'An independent record of every sitting, including sessions on your own premises.', image: 'centre_room', alt: 'An ITA exam room with folding desks set for a session' },
       ],
-      outro: 'We deliver for NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways.',
+      names: { label: 'We deliver for', list: ['NCC Education', 'City & Guilds', 'University of Greenwich UK', 'GEMS Pathways'] },
     }),
     { type: 'strip', props: {
       title: 'Sitting an exam with us?',

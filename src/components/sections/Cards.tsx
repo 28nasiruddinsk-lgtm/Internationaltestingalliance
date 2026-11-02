@@ -11,9 +11,10 @@ type Props = {
   numbered?: boolean;
   outro?: string;
   dark?: boolean; // navy section, light text
+  names?: { label: string; list: string[] }; // a row of name tags under the cards, e.g. partners
 };
 
-export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark }: Props) {
+export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark, names }: Props) {
   const cols = items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
   const sub = dark ? 'text-white/75' : 'text-body';
   return (
@@ -42,6 +43,14 @@ export default function Cards({ kicker, title, intro, items, tint, numbered = tr
           ))}
         </div>
         {outro && <p className={`mt-10 max-w-[820px] text-[16px] leading-[1.75] ${sub}`}>{outro}</p>}
+        {names && (
+          <Rise className="mt-12 flex flex-wrap items-center gap-3 border-t border-line pt-8">
+            <span className="mr-3 text-[14px] font-semibold text-muted">{names.label}</span>
+            {names.list.map((n) => (
+              <span key={n} className="border border-line bg-white px-5 py-3 font-serif text-[17px] text-navy">{n}</span>
+            ))}
+          </Rise>
+        )}
       </Wrap>
     </section>
   );
