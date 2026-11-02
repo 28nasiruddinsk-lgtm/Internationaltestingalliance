@@ -103,13 +103,68 @@ export const pages: Record<string, SectionConfig[]> = {
     } },
   ],
   services: [
-    header('Services', 'Choose individual services or entrust ITA with end-to-end examination delivery.', 'Our services'),
-    { type: 'services' },
-    cards({ kicker: 'How a session runs', title: 'A complete examination session, managed by ITA from start to finish', items: p.process, tint: true }),
-    cards({ kicker: 'Delivery model', title: 'One operational team drives the entire examination session', intro: 'A defined workflow links setup, delivery and evidence. Partner protocols remain the reference point at every step.', items: p.deliveryModel }),
-    cards({ kicker: 'Venue staff', title: 'People and process protect the exam experience', intro: 'After each session, supervisors evaluate readiness, conduct, communication, security and safety.', items: p.venueStaff, tint: true }),
-    { type: 'day' },
-    { type: 'contact' },
+    { type: 'pageHeader', props: {
+      kicker: 'Our services',
+      title: 'Testing solutions for universities and exam boards',
+      intro: 'Take one service or hand us the whole sitting. Either way, your rules come first and you get a full record afterwards.',
+      image: 'hall_rows', alt: 'Rows of numbered desks set out in an ITA exam hall',
+    } },
+    { type: 'services', props: { kicker: 'What we do', title: 'Our four services', detailed: true } },
+    { type: 'model', props: {
+      kicker: 'How a session runs',
+      title: 'From the first call to the final report.',
+      steps: [
+        ['We agree the plan', 'We sit down with your team and settle requirements, venues and schedules.'],
+        ['We check everything on site', 'Before the session starts we check candidates, materials and rooms.'],
+        ['We run the session', 'Our team supervises from start to end, calmly and impartially.'],
+        ['You see what happened', 'Attendance, incident logs and evidence come back to you in one record, also visible in your partner portal.'],
+      ],
+      highlight: 3,
+      quote: '',
+    } },
+    { type: 'points', props: {
+      kicker: 'Working with ITA',
+      title: 'What working with us is like',
+      tint: true,
+      items: [
+        ['One person to call', 'A dedicated coordinator and priority handling from planning to the final report.'],
+        ['Pay for what you use', 'Choose only the services you need and plan your exam budget with confidence.'],
+        ['Your own partner portal', 'See registrations, candidate numbers, schedules and attendance in real time.'],
+        ['Less admin for your candidates', 'They register, pay online and download their Statement of Entry themselves.'],
+        ['Reach beyond the big cities', 'Nine cities today, plus partner premises or external venues in places like Quetta and Peshawar.'],
+        ['We help spread the word', 'We promote your exams on our website and social channels so more candidates hear about them.'],
+      ],
+    } },
+    cards({
+      kicker: 'Our partners',
+      title: 'Who we work with',
+      numbered: false,
+      items: [
+        { title: 'Awarding bodies', text: 'Your papers and your protocols, delivered by a team with no stake in the result.', image: 'svc_partners', alt: 'Two people reviewing a report together' },
+        { title: 'Universities', text: 'One standard across every campus, for paper and computer-based exams.', image: 'about_campus', alt: 'Students walking out of a University of Greenwich building' },
+        { title: 'Training providers', text: 'An independent record of every sitting, including sessions on your own premises.', image: 'svc_training', alt: 'A candidate writing an answer sheet at a desk' },
+      ],
+      outro: 'We deliver for NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways.',
+    }),
+    { type: 'strip', props: {
+      title: 'Sitting an exam with us?',
+      text: 'Book your exam or read what to expect on the day.',
+      links: [{ label: 'Book an exam', href: '/candidates/' }, { label: 'Exam day guidelines', href: '/#day' }],
+    } },
+    { type: 'faq', props: {
+      kicker: 'FAQ',
+      title: 'Questions we often hear',
+      items: [
+        ['Can we use just one service?', 'Yes. Choose the services you need and we’ll fit around the rest of your process.'],
+        ['Do you follow our exam rules?', 'Yes. Your awarding body’s or institution’s protocols are the reference at every step.'],
+        ['Do you mark or grade exams?', 'No. We run the sitting. Marking and results stay with the awarding body.'],
+      ],
+    } },
+    { type: 'band', props: {
+      title: 'Not sure what you need?',
+      text: 'Tell us what you’re running, where and when. We’ll suggest the simplest way to run it.',
+      buttons: [{ label: 'Discuss a partnership', href: '/become-a-partner/' }],
+    } },
   ],
   'awarding-bodies': [
     header('Awarding bodies', 'The same delivery standard for every awarding body.', 'Awarding bodies'),
@@ -175,13 +230,17 @@ export const pages: Record<string, SectionConfig[]> = {
 };
 
 // Pages that go live. Everything else 404s; add a key of `pages` here to publish it.
-export const published = ['about-us', 'contact'];
+export const published = ['about-us', 'services', 'contact'];
 
 // Title tag and meta description per published page (SEO brief). The home page is set in app/layout.tsx.
 export const meta: Record<string, { title: string; description: string }> = {
   'about-us': {
     title: 'About International Testing Alliance | ITA Exams Pakistan',
     description: 'International Testing Alliance runs independent and secure exams for universities and awarding bodies across Pakistan, the UAE and seven more markets.',
+  },
+  services: {
+    title: 'Testing Solutions for Universities and Exam Boards | ITA',
+    description: 'Exam management, secure venues, technology and invigilation for universities and awarding bodies in Pakistan and the UAE. Take one service or hand us the whole sitting.',
   },
   contact: {
     title: 'Contact International Testing Alliance | Karachi and Dubai',

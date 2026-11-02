@@ -29,6 +29,8 @@ const files = {
   about_team: 'about-team.jpg',
   about_group: 'about-group.jpg',
   about_lawn: 'about-lawn.jpg',
+  svc_training: 'svc-training.jpg',
+  svc_partners: 'svc-partners.jpg',
   ibcc_registered: 'ibcc-registered.png',
 
   // stock photos

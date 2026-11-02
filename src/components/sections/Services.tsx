@@ -3,16 +3,22 @@ import { services } from '@/data/home';
 import { img } from '@/data/images';
 import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
-export default function Services() {
+type Props = {
+  kicker?: string;
+  title?: string;
+  detailed?: boolean; // Services page: longer text, a labelled link and no "All services" link
+};
+
+export default function Services({ kicker = 'Our services', title = 'Take one service, or hand us the whole sitting.', detailed }: Props) {
   return (
     <section className="bg-tint py-24 md:py-32">
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise>
-            <Kicker>Our services</Kicker>
-            <H2 className="max-w-[620px]">Take one service, or hand us the whole sitting.</H2>
+            <Kicker>{kicker}</Kicker>
+            <H2 className="max-w-[620px]">{title}</H2>
           </Rise>
-          <Link href="/services/" className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">All services <Arrow /></Link>
+          {!detailed && <Link href="/services/" className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">All services <Arrow /></Link>}
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, n) => (
@@ -24,8 +30,8 @@ export default function Services() {
                 </div>
                 <div className="flex flex-1 flex-col border-t-[3px] border-blue p-6">
                   <h3 className="min-h-[2.5em] font-serif text-[18px] leading-[1.25] text-ink group-hover:text-blue">{s.title}</h3>
-                  <p className="mt-2 text-[16px] leading-relaxed text-body">{s.text}</p>
-                  <span className="mt-auto inline-block pt-5 text-blue"><Arrow /></span>
+                  <p className="mt-2 text-[16px] leading-relaxed text-body">{detailed ? s.detail : s.text}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[15px] font-semibold text-blue">{detailed && s.cta} <Arrow /></span>
                 </div>
               </Link>
             </Rise>
