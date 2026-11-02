@@ -31,6 +31,10 @@ const files = {
   about_lawn: 'about-lawn.jpg',
   svc_training: 'svc-training.jpg',
   svc_partners: 'svc-partners.jpg',
+  em_candidate: 'em-candidate.jpg',
+  em_campus: 'em-campus.jpg',
+  em_row: 'em-row.jpg',
+  em_professional: 'em-professional.jpg',
   ibcc_registered: 'ibcc-registered.png',
 
   // stock photos
