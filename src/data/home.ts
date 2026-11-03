@@ -10,7 +10,7 @@ export const audiences: Record<AudienceKey, {
     heading: 'Your examinations, delivered independently and to your protocols.',
     text: 'We verify every candidate, run every session and send you a complete record afterwards. We never teach, mark or grade.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
-    image: 'hall_rows', alt: 'Rows of numbered desks set out in an ITA exam hall for a large sitting',
+    image: 'hero_awarding', alt: 'A historic university building with students walking through its courtyard',
   },
   uni: {
     tab: 'Universities',
