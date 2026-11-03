@@ -35,6 +35,7 @@ const files = {
   em_campus: 'em-campus.jpg',
   em_row: 'em-row.jpg',
   em_professional: 'em-professional.jpg',
+  hero_awarding: 'hero-awarding.jpg',
   ibcc_registered: 'ibcc-registered.png',
 
   // stock photos
