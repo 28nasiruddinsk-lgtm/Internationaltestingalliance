@@ -22,8 +22,10 @@ const labels: Record<string, { dot: [number, number]; off: [number, number] }> =
   MYS: { dot: [905, 545], off: [40, 46] },
 };
 
-export default function Operate() {
-  const [sel, setSel] = useState('PAK');
+type Props = { start?: string; kicker?: string; title?: string };
+
+export default function Operate({ start = 'PAK', kicker = 'Where we work', title = 'Centres in Pakistan and Dubai. Candidates across nine markets.' }: Props) {
+  const [sel, setSel] = useState(start);
   const [hover, setHover] = useState<string | null>(null);
   const c = byCode[sel];
 
@@ -34,8 +36,8 @@ export default function Operate() {
     <section id="operate" className="bg-tint py-24 md:py-32">
       <Wrap>
         <Rise>
-          <Kicker>Where we work</Kicker>
-          <H2 className="max-w-[640px]">Centres in Pakistan and Dubai. Candidates across nine markets.</H2>
+          <Kicker>{kicker}</Kicker>
+          <H2 className="max-w-[640px]">{title}</H2>
         </Rise>
         <div className="mt-12 grid items-stretch gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div className="flex flex-col gap-6">

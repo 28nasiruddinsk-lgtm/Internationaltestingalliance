@@ -28,11 +28,11 @@ export default function PageHeader({ title, intro, kicker, headline, image, alt 
       {buttons && (
         <div className="mt-8 flex flex-wrap items-center gap-6">
           {buttons.map((b, i) => i === 0 ? (
-            <Link key={b.label} href={b.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-blue hover:bg-tint">
+            <Link key={b.label} href={b.href} className={`group inline-flex items-center gap-3 rounded-full px-6 py-3 text-[15px] font-semibold ${light ? 'bg-blue text-white hover:bg-navy' : 'bg-white text-blue hover:bg-tint'}`}>
               {b.label} <Arrow />
             </Link>
           ) : (
-            <Link key={b.label} href={b.href} className="text-[15px] font-semibold underline decoration-white/40 underline-offset-[6px] hover:decoration-white">
+            <Link key={b.label} href={b.href} className={`text-[15px] font-semibold underline underline-offset-[6px] ${light ? 'text-blue decoration-blue/40 hover:decoration-blue' : 'decoration-white/40 hover:decoration-white'}`}>
               {b.label}
             </Link>
           ))}

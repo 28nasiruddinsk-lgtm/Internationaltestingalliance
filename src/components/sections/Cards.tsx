@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import type { Card } from '@/data/profile';
 import { img } from '@/data/images';
-import { H2, Kicker, Rise, Wrap } from '../ui';
+import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 type Props = {
   kicker?: string;
@@ -12,13 +13,15 @@ type Props = {
   outro?: string;
   dark?: boolean; // navy section, light text
   names?: { label: string; list: string[] }; // a row of name tags under the cards, e.g. partners
+  contain?: boolean; // show whole images, e.g. certificates
+  id?: string;
 };
 
-export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark, names }: Props) {
+export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark, names, contain, id }: Props) {
   const cols = items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
   const sub = dark ? 'text-white/75' : 'text-body';
   return (
-    <section className={`py-24 md:py-32 ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
+    <section id={id} className={`scroll-mt-24 py-24 md:py-32 ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
       <Wrap>
         <Rise className="max-w-[720px]">
           {kicker && <Kicker light={dark}>{kicker}</Kicker>}
@@ -28,16 +31,21 @@ export default function Cards({ kicker, title, intro, items, tint, numbered = tr
         <div className={`mt-12 grid gap-5 sm:grid-cols-2 ${cols}`}>
           {items.map((c, n) => (
             <Rise key={c.title} delay={n * 70} className="h-full">
-              <div className={`h-full border-t-[3px] p-6 ${dark ? 'border-sky bg-white/5' : 'border-blue bg-white'}`}>
+              <div className={`relative flex h-full flex-col border-t-[3px] p-6 ${dark ? 'border-sky bg-white/5' : 'border-blue bg-white'}`}>
                 {c.image && (
-                  <div className="-mx-6 -mt-6 mb-5 h-[200px] overflow-hidden">
-                    <img loading="lazy" decoding="async" src={img(c.image)} alt={c.alt ?? `${c.title} at an ITA exam venue`} className="h-full w-full object-cover" />
+                  <div className={`-mx-6 -mt-6 mb-5 h-[200px] overflow-hidden ${contain ? 'bg-tint p-4' : ''}`}>
+                    <img loading="lazy" decoding="async" src={img(c.image)} alt={c.alt ?? `${c.title} at an ITA exam venue`} className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />
                   </div>
                 )}
                 {c.tag && <div className={`text-[13px] font-semibold ${dark ? 'text-sky' : 'text-blue'}`}>{c.tag}</div>}
                 {numbered && !c.tag && <div className={`text-[13px] font-semibold tabular-nums ${dark ? 'text-sky' : 'text-blue'}`}>0{n + 1}</div>}
                 <h3 className={`mt-2 font-serif text-[18px] leading-[1.25] ${dark ? 'text-white' : 'text-ink'}`}>{c.title}</h3>
                 <p className={`mt-2 text-[16px] leading-relaxed ${sub}`}>{c.text}</p>
+                {c.href && (
+                  <Link href={c.href} className={`group mt-auto inline-flex items-center gap-2 pt-5 text-[15px] font-semibold after:absolute after:inset-0 ${dark ? 'text-sky' : 'text-blue'}`}>
+                    {c.cta ?? 'Read more'} <Arrow />
+                  </Link>
+                )}
               </div>
             </Rise>
           ))}

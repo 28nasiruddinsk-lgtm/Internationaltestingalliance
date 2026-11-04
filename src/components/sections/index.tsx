@@ -26,6 +26,8 @@ import Offices from './Offices';
 import Mosaic from './Mosaic';
 import Points from './Points';
 import Faq from './Faq';
+import Lists from './Lists';
+import Verify from './Verify';
 
 const registry = {
   hero: Hero,
@@ -55,6 +57,8 @@ const registry = {
   mosaic: Mosaic,
   points: Points,
   faq: Faq,
+  lists: Lists,
+  verify: Verify,
 };
 
 export type SectionType = keyof typeof registry;

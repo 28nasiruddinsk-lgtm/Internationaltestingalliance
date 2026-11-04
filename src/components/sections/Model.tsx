@@ -1,6 +1,7 @@
 'use client';
+import Link from 'next/link';
 import { parties } from '@/data/home';
-import { H2, Kicker, Rise, Wrap, useInView } from '../ui';
+import { Arrow, H2, Kicker, Rise, Wrap, useInView } from '../ui';
 
 type Props = {
   kicker?: string;
@@ -12,13 +13,15 @@ type Props = {
   quote?: string; // empty string hides it
   tint?: boolean;
   arrows?: boolean; // small arrows on the line between steps
+  note?: string; // plain line under the steps
+  link?: { label: string; href: string }; // button under the steps
 };
 
-const COLS: Record<number, string> = { 3: 'md:grid-cols-3', 4: 'md:grid-cols-4', 5: 'md:grid-cols-5' };
+const COLS: Record<number, string> = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3', 4: 'md:grid-cols-4', 5: 'md:grid-cols-5' };
 
 const QUOTE = '“No teaching. No marking. No influence over the outcome.”';
 
-export default function Model({ kicker = 'Independence', title = 'Three parties, each with one job.', intro, dark, steps = parties, highlight = 1, quote = QUOTE, tint, arrows }: Props) {
+export default function Model({ kicker = 'Independence', title = 'Three parties, each with one job.', intro, dark, steps = parties, highlight = 1, quote = QUOTE, tint, arrows, note, link }: Props) {
   const [ref, seen] = useInView<HTMLDivElement>(0.3);
   const edge = `${50 / steps.length}%`; // line runs from the first circle's centre to the last
   return (
@@ -58,6 +61,14 @@ export default function Model({ kicker = 'Independence', title = 'Three parties,
           <Rise delay={300} className={`mx-auto mt-16 max-w-[820px] border-y py-8 text-center ${dark ? 'border-white/20' : 'border-line'}`}>
             <p className={`font-serif text-[20px] italic leading-snug md:text-[26px] ${dark ? 'text-white' : 'text-navy'}`}>{quote}</p>
           </Rise>
+        )}
+        {note && <p className={`mx-auto mt-14 max-w-[760px] text-center text-[16px] leading-[1.75] ${dark ? 'text-white/75' : 'text-body'}`}>{note}</p>}
+        {link && (
+          <div className="mt-12 text-center">
+            <Link href={link.href} className={`group inline-flex items-center gap-3 rounded-full px-7 py-3.5 text-[15px] font-semibold ${dark ? 'bg-white text-blue hover:bg-tint' : 'bg-blue text-white hover:bg-navy'}`}>
+              {link.label} <Arrow />
+            </Link>
+          </div>
         )}
       </Wrap>
     </section>

@@ -1,6 +1,7 @@
 import type { SectionConfig } from '@/components/sections';
 import { news } from './news';
 import * as p from './profile';
+import { moreMeta, morePages } from './pages-more';
 
 // Homepage section order
 export const home: SectionConfig[] = [
@@ -99,7 +100,7 @@ export const pages: Record<string, SectionConfig[]> = {
     { type: 'band', props: {
       title: 'Want to see how we’d run your exam?',
       text: 'Tell us about your candidates and where they sit. Our partnerships team replies within one working day.',
-      buttons: [{ label: 'Discuss a partnership', href: '/become-a-partner/' }, { label: 'Find a centre', href: '/centres/' }],
+      buttons: [{ label: 'Discuss a partnership', href: '/become-a-partner/' }, { label: 'Find a centre', href: '/exam-venues/' }],
     } },
   ],
   services: [
@@ -151,7 +152,7 @@ export const pages: Record<string, SectionConfig[]> = {
     { type: 'strip', props: {
       title: 'Sitting an exam with us?',
       text: 'Book your exam or read what to expect on the day.',
-      links: [{ label: 'Book an exam', href: '/candidates/' }, { label: 'Exam day guidelines', href: '/#day' }],
+      links: [{ label: 'Book an exam', href: '/book-an-exam/' }, { label: 'Exam day guidelines', href: '/exam-day-guidelines/' }],
     } },
     { type: 'faq', props: {
       kicker: 'FAQ',
@@ -222,7 +223,7 @@ export const pages: Record<string, SectionConfig[]> = {
       kicker: 'Already running for Greenwich',
       title: 'University of Greenwich UK',
       text: 'We run computer and paper-based exams across several campuses. That includes candidate registration, payment collection and live attendance in the portal.',
-      buttons: [{ label: 'See our work with the University of Greenwich', href: '/university-of-greenwich/' }],
+      buttons: [{ label: 'See our work with the University of Greenwich', href: '/university-of-greenwich-uk/' }],
       image: 'em_campus',
     } },
     { type: 'faq', props: {
@@ -297,6 +298,7 @@ export const pages: Record<string, SectionConfig[]> = {
       links: [{ label: 'Book an exam', href: '/book-an-exam/' }, { label: 'Exam day guidelines', href: '/exam-day-guidelines/' }],
     } },
   ],
+  ...morePages,
   ...Object.fromEntries(
     news.map((n) => [
       `news/${n.slug}`,
@@ -306,7 +308,7 @@ export const pages: Record<string, SectionConfig[]> = {
 };
 
 // Pages that go live. Everything else 404s; add a key of `pages` here to publish it.
-export const published = ['about-us', 'services', 'exam-management', 'contact'];
+export const published = ['about-us', 'services', 'exam-management', 'contact', ...Object.keys(morePages)];
 
 // Title tag and meta description per published page (SEO brief). The home page is set in app/layout.tsx.
 export const meta: Record<string, { title: string; description: string }> = {
@@ -326,4 +328,5 @@ export const meta: Record<string, { title: string; description: string }> = {
     title: 'Contact International Testing Alliance | Karachi and Dubai',
     description: 'Get in touch with ITA about exam delivery, invigilation or venues. Offices in Karachi and Dubai. A real person reads every message.',
   },
+  ...moreMeta,
 };
