@@ -23,15 +23,15 @@ export const audiences: Record<AudienceKey, {
     tab: 'Candidates',
     heading: 'Sit your exam close to home, in a properly run centre.',
     text: 'Register, pay and download your Statement of Entry online, then sit in one of our venues across Pakistan or in Dubai.',
-    cta: 'Book your exam', href: '/candidates/',
+    cta: 'Book your exam', href: '/book-an-exam/',
     image: 'hero_cand', alt: 'A candidate sitting an exam at an ITA centre',
   },
 };
 
 export const quickLinks = [
-  { title: 'Find a centre', text: 'Nine cities in Pakistan, plus Dubai.', href: '/centres/', icon: 'centre' },
-  { title: 'Book an exam', text: 'Register, pay online and download your SOE.', href: '/candidates/', icon: 'book' },
-  { title: 'Exam day guide', text: 'What to bring and when to arrive.', href: '/#day', icon: 'guide' },
+  { title: 'Find a centre', text: 'Nine cities in Pakistan, plus Dubai.', href: '/exam-venues/', icon: 'centre' },
+  { title: 'Book an exam', text: 'Register, pay online and download your SOE.', href: '/book-an-exam/', icon: 'book' },
+  { title: 'Exam day guide', text: 'What to bring and when to arrive.', href: '/exam-day-guidelines/', icon: 'guide' },
 ] as const;
 
 // `word` replaces the count-up for a figure that is not a number

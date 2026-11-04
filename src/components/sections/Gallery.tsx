@@ -1,12 +1,15 @@
 'use client';
 import { useRef, useState, type PointerEvent } from 'react';
 import { gallery } from '@/data/home';
+import type { ImageKey } from '@/data/images';
 import { img } from '@/data/images';
 import { H2, Kicker, Rise, Wrap } from '../ui';
 
 const arrow = <path d="M1 5.5h12M8.5 1l4.5 4.5L8.5 10" fill="none" stroke="currentColor" strokeWidth="1.5" />;
 
-export default function Gallery() {
+type Props = { kicker?: string; title?: string; text?: string; items?: [ImageKey, string, string][] }; // [image, caption, label]
+
+export default function Gallery({ kicker = 'Our centres', title = 'Real rooms. Real people.', text = 'Drag or scroll through photographs from ITA venues.', items = gallery }: Props) {
   const track = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; left: number } | null>(null);
   const [progress, setProgress] = useState(0);
@@ -32,9 +35,9 @@ export default function Gallery() {
     <section className="overflow-hidden py-24 md:py-32">
       <Wrap className="flex flex-wrap items-end justify-between gap-6">
         <Rise>
-          <Kicker>Our centres</Kicker>
-          <H2>Real rooms. Real people.</H2>
-          <p className="mt-3 text-[15px] text-body">Drag or scroll through photographs from ITA venues.</p>
+          <Kicker>{kicker}</Kicker>
+          <H2>{title}</H2>
+          <p className="mt-3 text-[15px] text-body">{text}</p>
         </Rise>
         <div className="flex gap-2">
           <button aria-label="Scroll back" onClick={() => by(-1)} className="flex h-12 w-12 items-center justify-center rounded-full border border-blue text-blue hover:bg-tint">
@@ -47,7 +50,7 @@ export default function Gallery() {
       </Wrap>
       <div ref={track} tabIndex={0} aria-label="Photo gallery, scroll sideways" onScroll={onScroll} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerLeave={up}
         className="gal mt-10 flex cursor-grab gap-5 overflow-x-auto px-6 pb-4 md:px-[max(48px,calc((100vw-1520px)/2+56px))]">
-        {gallery.map(([image, title, place], n) => (
+        {items.map(([image, title, place], n) => (
           <figure key={image} className={`flex-none select-none ${n % 3 === 0 ? 'w-[78vw] md:w-[560px]' : 'w-[64vw] md:w-[380px]'}`}>
             <div className="h-[300px] overflow-hidden md:h-[400px]">
               <img loading="lazy" decoding="async" src={img(image)} alt={title} draggable={false} className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" style={{ filter: 'saturate(.9)' }} />

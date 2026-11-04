@@ -30,7 +30,9 @@ function along(pts: number[][], u: number) {
   return pts[0];
 }
 
-export default function Hall() {
+type Props = { kicker?: string; title?: string; intro?: string };
+
+export default function Hall({ kicker = 'Inside a sitting', title = 'Watch a session run, desk by desk.', intro = 'A replay of a 48-candidate paper, drawn from the seating plan and session log we keep for every sitting. Illustrative data.' }: Props) {
   const [ref, seen] = useInView<HTMLElement>(0.35);
   const [t, setT] = useState(0);
   const [playing, setPlaying] = useState(true);
@@ -79,9 +81,9 @@ export default function Hall() {
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise className="max-w-[720px]">
-            <Kicker>Inside a sitting</Kicker>
-            <H2>Watch a session run, desk by desk.</H2>
-            <p className="mt-4 text-[16px] text-body">A replay of a 48-candidate paper, drawn from the seating plan and session log we keep for every sitting. Illustrative data.</p>
+            <Kicker>{kicker}</Kicker>
+            <H2>{title}</H2>
+            <p className="mt-4 text-[16px] text-body">{intro}</p>
           </Rise>
           <div className="flex gap-2">
             <button onClick={() => setPlaying(!playing)} disabled={t >= 100}
