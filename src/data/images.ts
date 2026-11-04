@@ -37,6 +37,14 @@ const files = {
   em_professional: 'em-professional.jpg',
   hero_awarding: 'hero-awarding.jpg',
   ibcc_registered: 'ibcc-registered.png',
+  inv_walk: 'inv-walk.jpg',
+  corridor: 'corridor.jpg',
+  uae_pair: 'uae-pair.jpg',
+  partner_talk: 'partner-talk.jpg',
+  uae_pro: 'uae-pro.jpg',
+  qr_counter: 'qr-counter.jpg',
+  campus_arch: 'campus-arch.jpg',
+  qr_phone: 'qr-phone.jpg',
 
   // stock photos
   s_dubai1: 's_dubai1.jpg',
