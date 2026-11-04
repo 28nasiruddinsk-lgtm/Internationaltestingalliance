@@ -28,6 +28,9 @@ import Points from './Points';
 import Faq from './Faq';
 import Lists from './Lists';
 import Verify from './Verify';
+import Feature from './Feature';
+import Steps from './Steps';
+import Rows from './Rows';
 
 const registry = {
   hero: Hero,
@@ -59,6 +62,9 @@ const registry = {
   faq: Faq,
   lists: Lists,
   verify: Verify,
+  feature: Feature,
+  steps: Steps,
+  rows: Rows,
 };
 
 export type SectionType = keyof typeof registry;

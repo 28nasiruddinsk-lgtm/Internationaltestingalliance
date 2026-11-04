@@ -67,7 +67,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       title: 'Prefer to use your own campus?',
       text: 'We bring our team, our procedures and our records to your premises, as we do for NCC Education sittings.',
       buttons: [{ label: 'Request a venue', href: '/contact/' }],
-      image: 'centre_gems',
+      image: 'corridor',
     } },
     faq([
       ['How are papers kept secure at the venue?', 'They stay in locked storage until the session, only authorised staff can reach them and every handover is recorded.'],
@@ -179,7 +179,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'When something doesn’t go to plan',
       title: 'Calm on the spot, logged with the time.',
       tint: true,
-      image: 'exam', alt: 'An invigilator at the front of an exam hall',
+      image: 'inv_walk', alt: 'An invigilator walking between candidates in an exam hall',
       paragraphs: [
         'A candidate feels unwell. A phone buzzes inside a bag. The fire alarm goes off.',
         'Our invigilators deal with it on the spot, following your protocols, and the venue supervisor makes the call when one is needed. Every incident is logged with the time and goes into your session report.',
@@ -225,10 +225,10 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'University of Greenwich UK',
       title: 'University of Greenwich UK exams in Pakistan',
       intro: 'One standard across every campus, from registration to the final record.',
-      image: 'em_campus', alt: 'Students outside a university campus building', cover: true,
+      image: 'em_campus', alt: 'Students outside a university campus building', light: true,
       buttons: [{ label: 'Register for your exam', href: portal }, bringAndGuide],
     } },
-    { type: 'points', props: {
+    { type: 'feature', props: {
       kicker: 'What we do for Greenwich',
       title: 'The university sets and marks the papers. We take care of the rest.',
       intro: 'We deliver University of Greenwich UK exams in Pakistan across several campuses and locations, so a student in one city sits their exam exactly the way a student in another city does.',
@@ -240,17 +240,16 @@ export const morePages: Record<string, SectionConfig[]> = {
         ['Live attendance', 'The university’s team sees who has arrived as the session runs, followed by a prompt report.'],
       ],
     } },
-    { type: 'model', props: {
+    { type: 'steps', props: {
       kicker: 'Sitting a Greenwich exam?',
       title: 'If you’re sitting a Greenwich exam',
-      steps: [
+      dark: true,
+      image: 'hero_cand', alt: 'A candidate sitting an exam at an ITA centre',
+      items: [
         ['Register and pay', 'Sign in to the ITA portal, choose your exam and pay online.'],
         ['Download your Statement of Entry', 'You’ll need it with your original CNIC or passport to enter the hall.'],
         ['Read the exam day guidelines', 'They tell you what to bring and when to arrive.'],
       ],
-      highlight: 0,
-      quote: '',
-      tint: true,
       link: { label: 'Go to the portal', href: portal },
     } },
     { type: 'split', props: {
@@ -273,7 +272,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       ['Does ITA mark my exam?', 'No. We run the sitting. Marking and results come from the University of Greenwich.'],
       ['Are the exams on paper or on computer?', 'We run both. Your university will tell you which applies to your exam.'],
     ]),
-    band('Running Greenwich programmes at your campus?', 'Tell us where your students sit and when. We’ll come back with a plan.', 'Discuss a partnership', '/become-a-partner/', 'hero_awarding'),
+    band('Running Greenwich programmes at your campus?', 'Tell us where your students sit and when. We’ll come back with a plan.', 'Discuss a partnership', '/become-a-partner/', 'campus_arch'),
   ],
 
   'city-and-guilds': [
@@ -284,7 +283,8 @@ export const morePages: Record<string, SectionConfig[]> = {
       image: 'hall', alt: 'An ITA exam hall set for a sitting', cover: true,
       buttons: [{ label: 'Book your exam', href: '/book-an-exam/' }, bringAndGuide],
     } },
-    { type: 'points', props: {
+    { type: 'feature', props: {
+      left: true,
       kicker: 'What we do for City & Guilds',
       title: 'City & Guilds sets, marks and issues. We deliver.',
       intro: 'We run City & Guilds sessions in Pakistan to its standardised protocols, then send a complete report as soon as each sitting ends.',
@@ -295,26 +295,24 @@ export const morePages: Record<string, SectionConfig[]> = {
         ['Reporting straight after the sitting', 'Attendance, incidents and evidence in one record.'],
       ],
     } },
-    { type: 'model', props: {
+    { type: 'steps', props: {
       kicker: 'For candidates',
       title: 'If you’re sitting a City & Guilds exam',
-      steps: [
+      items: [
         ['Book your exam', 'Register through the ITA portal or through your centre, as your course tells you.'],
         ['Keep your Statement of Entry', 'Bring it with your original CNIC or passport.'],
         ['Read the exam day guidelines', 'They tell you what to bring and when to arrive.'],
       ],
-      highlight: 0,
-      quote: '',
-      tint: true,
       link: { label: 'Book an exam', href: '/book-an-exam/' },
     } },
-    { type: 'split', props: {
+    { type: 'mosaic', props: {
       kicker: 'On the day',
       title: 'Knowing the morning takes the worry out of it.',
-      image: 'briefing', alt: 'Candidates being briefed before a City & Guilds sitting',
-      paragraphs: [
-        'Arrive by the reporting time on your Statement of Entry.',
-        'After screening and an ID check, you’ll leave your phone and bag in storage and take your numbered seat. The invigilator will brief the room before the papers are opened.',
+      text: 'Arrive by the reporting time on your Statement of Entry. After screening and an ID check, you’ll leave your phone and bag in storage and take your numbered seat. The invigilator will brief the room before the papers are opened.',
+      images: [
+        ['briefing', 'The briefing before the papers are opened'],
+        ['verify', 'ID check at the desk'],
+        ['exam', 'Your numbered seat'],
       ],
     } },
     { type: 'strip', props: {
@@ -338,38 +336,34 @@ export const morePages: Record<string, SectionConfig[]> = {
       image: 'n_ncc', alt: 'The ITA team marking the NCC Education partnership',
       buttons: [{ label: 'Book your exam', href: '/book-an-exam/' }, bringAndGuide],
     } },
-    { type: 'points', props: {
+    { type: 'cards', props: {
       kicker: 'What we do for NCC Education',
       title: 'On your premises or ours, with the same record.',
       intro: 'NCC Education candidates often sit at the college where they study. We bring our team and our procedures to those premises, or host the sitting at one of our venues, and keep an independent record of every session either way.',
-      image: 'centre_room', alt: 'An exam room set with numbered desks',
+      dark: true,
       items: [
-        ['On your premises or ours', 'Candidates sit where it suits them best.'],
-        ['Impartial supervision', 'Our invigilators have no stake in the candidates’ results.'],
-        ['A record for every sitting', 'Attendance, incidents and evidence, kept independently.'],
+        { title: 'On your premises or ours', text: 'Candidates sit where it suits them best.', image: 'centre_room', alt: 'An exam room set with numbered desks' },
+        { title: 'Impartial supervision', text: 'Our invigilators have no stake in the candidates’ results.', image: 'svc_inv', alt: 'ITA invigilators supervising a hall' },
+        { title: 'A record for every sitting', text: 'Attendance, incidents and evidence, kept independently.', image: 'portal', alt: 'The ITA partner portal' },
       ],
     } },
-    { type: 'model', props: {
+    { type: 'steps', props: {
       kicker: 'For candidates',
       title: 'If you’re sitting an NCC Education exam',
-      steps: [
+      image: 'invigilators', alt: 'ITA staff at a check-in desk',
+      items: [
         ['Book your sitting', 'Through your college or by contacting our team.'],
         ['Confirm your venue', 'It may be your college or an ITA venue.'],
         ['Read the exam day guidelines', 'They tell you what to bring and when to arrive.'],
       ],
-      highlight: 0,
-      quote: '',
-      tint: true,
       link: { label: 'Contact our team', href: '/contact/' },
     } },
-    { type: 'split', props: {
+    { type: 'band', props: {
       kicker: 'On the day',
       title: 'Even at your own college, the room will feel different.',
-      image: 'invigilators', alt: 'An invigilator checking a candidate in',
-      paragraphs: [
-        'Our staff will check your ID at the door, store your phone and bag and seat you by number.',
-        'It’s the same routine at every venue, which is what makes the result fair.',
-      ],
+      text: 'Our staff will check your ID at the door, store your phone and bag and seat you by number. It’s the same routine at every venue, which is what makes the result fair.',
+      buttons: [bringAndGuide],
+      image: 'verify',
     } },
     { type: 'strip', props: {
       title: 'For NCC Education partner colleges',
@@ -397,7 +391,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       title: 'The whole journey, end to end',
       items: [
         { title: 'Planning', text: 'We agree sessions, venues and schedules with the GEMS Pathways team.', image: 's_meet4', alt: 'ITA planning a sitting with a partner' },
-        { title: 'Candidate coordination', text: 'We keep candidates informed about when and where they sit and what to bring.', image: 'verify', alt: 'Candidates at the registration desk' },
+        { title: 'Candidate coordination', text: 'We keep candidates informed about when and where they sit and what to bring.', image: 'qr_phone', alt: 'A candidate holding their Statement of Entry QR code on a phone' },
         { title: 'Invigilation', text: 'Trained and impartial invigilators supervise every session.', image: 'svc_inv', alt: 'Invigilators supervising a GEMS sitting' },
         { title: 'Secure delivery', text: 'Papers stay sealed and logged from arrival to collection, in line with international assessment standards.', image: 'board', alt: 'A session board in an ITA exam room' },
       ],
@@ -433,27 +427,25 @@ export const morePages: Record<string, SectionConfig[]> = {
       image: 'hero_cand', alt: 'A candidate sitting an exam at an ITA centre',
       buttons: [{ label: 'Go to the portal', href: portal }],
     } },
-    { type: 'model', props: {
+    { type: 'steps', props: {
       kicker: 'How it works',
       title: 'Three steps to exam day',
-      steps: [
+      image: 'qr_counter', alt: 'A candidate showing their Statement of Entry on a phone at the desk',
+      link: { label: 'Go to the portal', href: portal },
+      items: [
         ['Create your account', 'Enter your details once, then sign in securely whenever you need to.'],
         ['Choose your exam and pay', 'Pick your awarding body and exam, then pay online.'],
         ['Download your Statement of Entry', 'This is your SOE. Bring it on the day with your original CNIC or passport.'],
       ],
-      highlight: 2,
-      quote: '',
     } },
-    { type: 'cards', props: {
+    { type: 'rows', props: {
       kicker: 'Your awarding body',
       title: 'Choose your awarding body',
-      tint: true,
-      numbered: false,
       items: [
-        { title: 'University of Greenwich UK', text: 'Register and pay through the ITA portal.', image: 'em_campus', alt: 'A university campus', href: '/university-of-greenwich-uk/', cta: 'Greenwich exams' },
-        { title: 'City & Guilds', text: 'Through the ITA portal or your centre.', image: 'hall', alt: 'An ITA exam hall', href: '/city-and-guilds/', cta: 'City & Guilds exams' },
-        { title: 'NCC Education', text: 'Through your college or by contacting our team.', image: 'centre_room', alt: 'An exam room at a partner college', href: '/ncc-education/', cta: 'NCC Education exams' },
-        { title: 'GEMS Pathways', text: 'Your school or our team will confirm your sitting.', image: 'centre_gems', alt: 'A hall set for a GEMS sitting', href: '/gems-pathways/', cta: 'GEMS Pathways exams' },
+        { title: 'University of Greenwich UK', text: 'Register and pay through the ITA portal.', image: 'em_campus', href: '/university-of-greenwich-uk/', cta: 'Greenwich exams' },
+        { title: 'City & Guilds', text: 'Through the ITA portal or your centre.', image: 'hall', href: '/city-and-guilds/', cta: 'City & Guilds exams' },
+        { title: 'NCC Education', text: 'Through your college or by contacting our team.', image: 'centre_room', href: '/ncc-education/', cta: 'NCC Education exams' },
+        { title: 'GEMS Pathways', text: 'Your school or our team will confirm your sitting.', image: 'centre_gems', href: '/gems-pathways/', cta: 'GEMS Pathways exams' },
       ],
     } },
     { type: 'strip', props: {
@@ -614,38 +606,37 @@ export const morePages: Record<string, SectionConfig[]> = {
       image: 's_meet4', alt: 'The ITA team meeting a partner', cover: true,
       buttons: [{ label: 'Start a conversation', href: '#form' }],
     } },
-    { type: 'points', props: {
+    { type: 'cards', props: {
       kicker: 'What you get',
       title: 'What you get as a partner',
-      tint: true,
+      dark: true,
       items: [
-        ['A partner portal', 'Real-time view of registrations, candidate numbers, schedules, attendance and exam activity.'],
-        ['Only what you need', 'Choose individual services or hand us the whole sitting, and plan your budget with confidence.'],
-        ['Priority partner service', 'A dedicated coordinator and quick answers from planning to the final report.'],
-        ['Self-service for candidates', 'They register, pay securely and download their Statement of Entry themselves.'],
-        ['Reach across Pakistan', 'Nine cities, plus partner premises or external venues in places like Quetta, Peshawar and hard-to-reach areas.'],
-        ['Marketing that supports growth', 'We promote your exam body or university on our website and social channels.'],
+        { title: 'A partner portal', text: 'Real-time view of registrations, candidate numbers, schedules, attendance and exam activity.' },
+        { title: 'Only what you need', text: 'Choose individual services or hand us the whole sitting, and plan your budget with confidence.' },
+        { title: 'Priority partner service', text: 'A dedicated coordinator and quick answers from planning to the final report.' },
+        { title: 'Self-service for candidates', text: 'They register, pay securely and download their Statement of Entry themselves.' },
+        { title: 'Reach across Pakistan', text: 'Nine cities, plus partner premises or external venues in places like Quetta, Peshawar and hard-to-reach areas.' },
+        { title: 'Marketing that supports growth', text: 'We promote your exam body or university on our website and social channels.' },
       ],
     } },
-    { type: 'model', props: {
+    { type: 'steps', props: {
       kicker: 'Getting started',
       title: 'How partnerships start',
-      steps: [
+      image: 's_team2', alt: 'The ITA team planning a first sitting with a partner',
+      link: { label: 'Start a conversation', href: '#form' },
+      items: [
         ['You tell us about your exams', 'What you run, where and how many candidates.'],
         ['We talk it through', 'Our team calls you to understand your protocols and needs.'],
         ['We agree the plan', 'Venues, schedules, staffing and reporting, set with your team.'],
         ['We run your first sitting', 'Then send you the full record.'],
       ],
-      highlight: 0,
-      arrows: true,
-      quote: '',
     } },
     { type: 'split', props: {
       kicker: 'Who we already work with',
       title: 'Real partners, real sittings.',
       paragraphs: ['Every one of them sees the same standard: their rules, our team and a full record afterwards.'],
       chips: partners,
-      image: 'em_campus', alt: 'A partner university campus',
+      image: 'partner_talk', alt: 'A partner meeting with the ITA team',
     } },
     { type: 'contactForm', props: {
       id: 'form',
@@ -675,13 +666,13 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'UAE and Dubai',
       title: 'Exams and invigilation in the UAE',
       intro: 'The same independent exam delivery we run in Pakistan, from our office in Dubai Marina.',
-      image: 's_dubai1', alt: 'Students walking through a campus in Dubai', cover: true,
+      image: 'uae_pair', alt: 'Two colleagues walking through a business district in the UAE', cover: true,
       buttons: [{ label: 'Talk to our Dubai team', href: '/contact/' }, { label: 'Book an exam', href: '/book-an-exam/' }],
     } },
     { type: 'split', props: {
       kicker: 'Our Dubai office',
       title: 'A real team nearby you can meet.',
-      image: 's_team2', alt: 'The ITA team planning a sitting',
+      image: 'uae_pro', alt: 'A professional outside an office tower in the UAE',
       paragraphs: [
         'Our UAE work is run from Level 21, Al Habtoor Business Tower in Dubai Marina.',
         `It’s where partners in the UAE meet us to plan sittings, and where our team coordinates exams across the Emirates. Phone: ${site.phones.Dubai}.`,
@@ -709,6 +700,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       title: 'Licensing and approvals',
       intro: 'Formally registered, formally recognised. Here is what backs every sitting we run.',
       light: true,
+      image: 'campus_arch', alt: 'A stone archway opening onto a university quad',
     } },
     { type: 'cards', props: {
       kicker: 'Registrations and approvals',
