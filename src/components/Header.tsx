@@ -50,9 +50,9 @@ export default function Header() {
                 {open === n.label && (
                   <div className="absolute left-0 top-full z-50 min-w-[280px] border-t-[3px] border-blue bg-white py-3 shadow-[0_18px_40px_rgba(14,34,64,.14)]">
                     <ul>
-                      {n.items.map(([label, href]) => (
+                      {n.items.map(([label, href, sub]) => (
                         <li key={href}>
-                          <Link href={href} onClick={() => setOpen(null)} className="block whitespace-nowrap px-5 py-2.5 text-[15px] text-ink hover:bg-tint hover:text-blue">{label}</Link>
+                          <Link href={href} onClick={() => setOpen(null)} className={`block whitespace-nowrap py-2.5 pr-5 hover:bg-tint hover:text-blue ${sub ? 'pl-9 text-[14px] text-body' : 'pl-5 text-[15px] text-ink'}`}>{sub && <span aria-hidden="true" className="mr-2 text-blue">↳</span>}{label}</Link>
                         </li>
                       ))}
                     </ul>
@@ -93,9 +93,9 @@ export default function Header() {
                   </svg>
                 </summary>
                 <ul className="mb-3 border-l-[3px] border-blue pl-4">
-                  {n.items.map(([label, href]) => (
+                  {n.items.map(([label, href, sub]) => (
                     <li key={href}>
-                      <Link href={href} onClick={() => setMenu(false)} className="block py-2 text-[15px] text-body hover:text-blue">{label}</Link>
+                      <Link href={href} onClick={() => setMenu(false)} className={`block py-2 text-body hover:text-blue ${sub ? 'pl-4 text-[14px]' : 'text-[15px]'}`}>{sub && <span aria-hidden="true" className="mr-2 text-blue">↳</span>}{label}</Link>
                     </li>
                   ))}
                 </ul>

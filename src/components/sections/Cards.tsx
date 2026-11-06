@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Card } from '@/data/profile';
 import { img } from '@/data/images';
+import Logo from '../Logo';
 import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 type Props = {
@@ -18,7 +19,7 @@ type Props = {
 };
 
 export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark, names, contain, id }: Props) {
-  const cols = items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
+  const cols = items.length === 2 ? 'lg:grid-cols-2' : items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
   const sub = dark ? 'text-white/75' : 'text-body';
   return (
     <section id={id} className={`scroll-mt-24 py-24 md:py-32 ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
@@ -32,6 +33,7 @@ export default function Cards({ kicker, title, intro, items, tint, numbered = tr
           {items.map((c, n) => (
             <Rise key={c.title} delay={n * 70} className="h-full">
               <div className={`relative flex h-full flex-col border-t-[3px] p-6 ${dark ? 'border-sky bg-white/5' : 'border-blue bg-white'}`}>
+                {c.logo && <Logo k={c.logo} className="-mx-6 -mt-6 mb-5 !rounded-none !border-0 !border-b !border-line" />}
                 {c.image && (
                   <div className={`-mx-6 -mt-6 mb-5 h-[200px] overflow-hidden ${contain ? 'bg-tint p-4' : ''}`}>
                     <img loading="lazy" decoding="async" src={img(c.image)} alt={c.alt ?? `${c.title} at an ITA exam venue`} className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'}`} />

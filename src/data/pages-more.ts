@@ -28,25 +28,12 @@ export const morePages: Record<string, SectionConfig[]> = {
       title: 'What a candidate sees on exam day.',
       text: 'Drag or scroll from the entrance to the exam desk.',
       items: [
-        ['entrance', '1. The entrance. Walk-through screening before anyone reaches the hall.', 'Entrance'],
+        ['entrance', '1. The entrance. One managed entry and walk-through screening.', 'Entrance'],
         ['verify', '2. The check-in desk. Photo ID and QR checked against the candidate list.', 'Registration'],
-        ['signage', '3. Storage. Phones, bags and notes stay in a supervised area.', 'Storage'],
+        ['signage', '3. Storage. A supervised area for phones and bags, and a locked cabinet for papers. Every handover is recorded.', 'Storage'],
         ['board', '4. The session board. Exam name, start and end times where everyone can see them.', 'Exam room'],
-        ['row', '5. The desk. Numbered rows at the right spacing, with the code of conduct on display.', 'Seating'],
+        ['n_cctv', '5. The hall. CCTV across the exam zones and numbered desks set the same way in every city.', 'Exam hall'],
       ],
-    } },
-    { type: 'lists', props: {
-      kicker: 'Venue standard',
-      title: 'What every venue has',
-      tint: true,
-      image: 'n_cctv', alt: 'A CCTV camera mounted on the wall of an ITA exam venue',
-      columns: [['', [
-        'Controlled access. One managed entrance and an identity check for every candidate.',
-        'CCTV oversight. Cameras across the exam zones.',
-        'Secure storage. Papers are locked away before and after the session, and only authorised staff can reach them.',
-        'Chain of custody. Every handover of papers and materials is recorded.',
-        'The same set-up everywhere. Seating, signs and rules follow one standard in every city.',
-      ]]],
     } },
     { type: 'split', props: {
       kicker: 'Close to your candidates',
@@ -69,14 +56,8 @@ export const morePages: Record<string, SectionConfig[]> = {
       buttons: [{ label: 'Request a venue', href: '/contact/' }],
       image: 'corridor',
     } },
-    faq([
-      ['How are papers kept secure at the venue?', 'They stay in locked storage until the session, only authorised staff can reach them and every handover is recorded.'],
-      ['Can exams run on our own premises?', 'Yes. Our team runs the sitting on your premises with the same checks and records.'],
-      ['Do you run computer-based exams?', 'Yes. We run paper and computer-based exams.'],
-      ['Which cities do you work in?', 'Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad and Gilgit, plus other locations through partner premises or external venues.'],
-    ]),
     related('/exam-venues/'),
-    band('Tell us where your candidates are.', 'The city, the date and how many candidates. We’ll come back with a venue plan.', 'Request a venue', '/contact/'),
+    band('Tell us where your candidates are.', 'Share the cities and rough numbers, and we’ll suggest the nearest venues or set up on your premises.', 'Request a venue', '/contact/'),
   ],
 
   'technology-driven-solutions': [
@@ -107,22 +88,10 @@ export const morePages: Record<string, SectionConfig[]> = {
       title: 'One place for everything about your exams',
       paragraphs: [
         'Manage candidate registrations, check candidate numbers, review schedules and follow attendance and exam activity as it happens.',
-        'When the sitting ends, the full record is waiting for you there.',
+        'When the sitting ends, the full record is waiting for you there. Candidates have their own portal too.',
       ],
+      link: { label: 'Book an exam', href: '/book-an-exam/' },
       image: 'portal', alt: 'The ITA partner portal', contain: true,
-    } },
-    { type: 'model', props: {
-      kicker: 'Candidate portal',
-      title: 'Simpler for candidates',
-      intro: 'Less admin for candidates means fewer calls and emails for you.',
-      steps: [
-        ['Sign up', 'Create an account and sign in securely.'],
-        ['Register and pay', 'Register for the exam and pay online.'],
-        ['Download the SOE', 'Download the Statement of Entry and bring it on the day.'],
-      ],
-      highlight: 2,
-      quote: '',
-      tint: true,
     } },
     { type: 'verify' },
     { type: 'model', props: {
@@ -139,7 +108,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       arrows: true,
       dark: true,
       quote: '',
-      note: 'Our policies cover safeguarding, code of conduct and confidentiality, exam security, incident reporting and staff performance evaluation.',
+      link: { label: 'See our policies', href: '/compliance-security/' },
     } },
     { type: 'split', props: {
       kicker: 'People behind the tools',
@@ -148,12 +117,6 @@ export const morePages: Record<string, SectionConfig[]> = {
       paragraphs: ['Trained invigilators use these tools in every room. The technology simply makes sure their work can be checked afterwards.'],
       link: { label: 'Meet our invigilators', href: '/professional-invigilation/' },
     } },
-    faq([
-      ['How do you verify candidates?', 'Every candidate goes through screening, a photo ID check and a QR check before entering the exam room.'],
-      ['Can we see what happened in the room?', 'Yes. Attendance, incident logs and evidence come back in one record and are available in your partner portal.'],
-      ['How can an employer check a certificate?', 'They enter the number printed under the QR code in Verify a result. We match it against the awarding body’s record.'],
-      ['Do you run computer-based tests?', 'Yes. We run paper and computer-based exams with the same checks and records.'],
-    ]),
     related('/technology-driven-solutions/'),
     band('Ask us how it would work for your exam.', 'Tell us what you’re running and where. We’ll show you how the checks, the portal and the reporting would work for your sessions.', 'Talk to our team', '/contact/'),
   ],
@@ -185,11 +148,9 @@ export const morePages: Record<string, SectionConfig[]> = {
         'Our invigilators deal with it on the spot, following your protocols, and the venue supervisor makes the call when one is needed. Every incident is logged with the time and goes into your session report.',
       ],
     } },
-    { type: 'model', props: {
+    { type: 'pull', props: {
       kicker: 'Why independence matters',
-      title: 'Who is checking whom?',
-      intro: 'When the people who teach a candidate also supervise the exam, it’s hard to call the result impartial. Our invigilators have no connection to the candidates and no stake in how they score. Your results stand up to scrutiny because the person watching the room has nothing to gain.',
-      dark: true,
+      text: 'Our invigilators have no connection to the candidates and no stake in how they score. The person watching the room has nothing to gain.',
     } },
     { type: 'split', props: {
       kicker: 'The same standard in every city',
@@ -204,137 +165,186 @@ export const morePages: Record<string, SectionConfig[]> = {
       title: 'Paper, computer-based or on your premises',
       text: 'We invigilate paper and computer-based exams, at our venues or on your own premises.',
     } },
-    { type: 'split', props: {
-      kicker: 'Already supervising for',
-      title: 'Four awarding bodies trust our invigilators.',
-      paragraphs: ['Every sitting runs to the awarding body’s own rules, with the same team standard behind it.'],
-      chips: partners,
-    } },
     faq([
       ['What is exam invigilation?', 'It means supervising an exam so it is fair and secure. The invigilator checks candidates in, watches the room, handles problems and records what happened.'],
-      ['Are your invigilators connected to the candidates?', 'No. They have no link to the candidates and no stake in the results.'],
-      ['What happens if a candidate breaks the rules?', 'The invigilator deals with it on the spot, following your protocols. The incident is logged with the time and included in your session report.'],
-      ['Do you provide invigilation in the UAE?', 'Yes. We have an office in Dubai and work across the UAE.'],
     ]),
     related('/professional-invigilation/'),
-    band('Need invigilators for your next exam?', 'Tell us the date, the city and how many candidates. We’ll take it from there.', 'Request invigilators', '/contact/'),
+    band('Need invigilators for your next exam?', 'Tell us the date and how many rooms you need covered. We’ll brief a team for it.', 'Request invigilators', '/contact/'),
+  ],
+
+  'awarding-bodies': [
+    { type: 'pageHeader', props: {
+      kicker: 'Awarding bodies',
+      title: 'The awarding bodies we deliver for',
+      intro: 'Four awarding bodies trust us with their exams in Pakistan. Each one sets its own rules, and we apply them the same way in every room.',
+      image: 'hall_rows', alt: 'Rows of numbered desks in an ITA exam hall', cover: true,
+    } },
+    { type: 'cards', props: {
+      kicker: 'Who we deliver for',
+      title: 'Four awarding bodies, one standard',
+      numbered: false,
+      tint: true,
+      items: [
+        { logo: 'greenwich', title: 'University of Greenwich UK', text: 'Computer and paper-based exams across several campuses, with registration, payment and live attendance in the portal.', href: '/university-of-greenwich-uk/', cta: 'Greenwich exams' },
+        { logo: 'cg', title: 'City & Guilds', text: 'Sessions run to City & Guilds protocols, with a full report straight after each sitting.', href: '/city-and-guilds/', cta: 'City & Guilds exams' },
+        { logo: 'ncc', title: 'NCC Education', text: 'An independent record of every sitting, including sessions on partner premises.', href: '/ncc-education/', cta: 'NCC Education exams' },
+        { logo: 'gems', title: 'GEMS Pathways', text: 'The whole exam operation, from planning and candidate coordination to invigilation and secure delivery.', href: '/gems-pathways/', cta: 'GEMS Pathways exams' },
+      ],
+    } },
+    { type: 'cards', props: {
+      kicker: 'How we deliver',
+      title: 'One standard for every awarding body',
+      dark: true,
+      items: [
+        { title: 'Standardised venues', text: 'The same set-up in every city.' },
+        { title: 'Trained invigilators', text: 'The same briefing and the same procedures in every room.' },
+        { title: 'Candidate checks', text: 'Every candidate verified before the paper is opened.' },
+        { title: 'Full session reporting', text: 'One record back to the awarding body after every sitting.' },
+      ],
+    } },
+    { type: 'strip', props: {
+      title: 'Sitting an exam?',
+      text: 'Choose your awarding body on the booking page, or read what to expect on the day.',
+      links: [{ label: 'Book an exam', href: '/book-an-exam/' }, bringAndGuide],
+    } },
+    band('Looking for a delivery partner in Pakistan?', 'Tell us about your qualifications and where your candidates are. We’ll show you how we would run them.', 'Discuss a partnership', '/become-a-partner/'),
   ],
 
   'university-of-greenwich-uk': [
     { type: 'pageHeader', props: {
-      kicker: 'University of Greenwich UK',
+      kicker: 'Awarding bodies',
+      logo: 'greenwich',
       title: 'University of Greenwich UK exams in Pakistan',
-      intro: 'One standard across every campus, from registration to the final record.',
-      image: 'em_campus', alt: 'Students outside a university campus building', light: true,
-      buttons: [{ label: 'Register for your exam', href: portal }, bringAndGuide],
+      intro: 'One standard across every campus, from the day you register to the final record.',
+      image: 'exam_sitting', alt: 'Candidates sitting a supervised exam in an ITA hall', cover: true,
+      buttons: [{ label: 'Go to the portal', href: portal }, bringAndGuide],
+    } },
+    { type: 'split', props: {
+      kicker: 'About the University of Greenwich',
+      title: 'More than 130 years of teaching',
+      paragraphs: [
+        'The University of Greenwich has been teaching for more than 130 years, from historic campuses in London and Kent. It holds a Gold award in the UK’s Teaching Excellence Framework, and around a third of its students come from outside the UK.',
+        'In Pakistan, its degrees are taught through partner institutions.',
+      ],
+      links: [{ label: 'Visit the University of Greenwich website', href: 'https://www.gre.ac.uk/' }],
     } },
     { type: 'feature', props: {
       kicker: 'What we do for Greenwich',
-      title: 'The university sets and marks the papers. We take care of the rest.',
-      intro: 'We deliver University of Greenwich UK exams in Pakistan across several campuses and locations, so a student in one city sits their exam exactly the way a student in another city does.',
+      title: 'The university sets and marks the papers. We run everything around them.',
+      intro: 'We work across several campuses, so a student in one city sits their exam exactly the way a student in another city does.',
       image: 'about_campus', alt: 'Students walking out of a University of Greenwich building',
       items: [
         ['Paper and computer-based exams', 'Delivered to the university’s own procedures.'],
-        ['Registration and payment', 'Students register and pay online through the ITA portal.'],
-        ['Statement of Entry', 'Each student downloads it before exam day.'],
-        ['Live attendance', 'The university’s team sees who has arrived as the session runs, followed by a prompt report.'],
-      ],
-    } },
-    { type: 'steps', props: {
-      kicker: 'Sitting a Greenwich exam?',
-      title: 'If you’re sitting a Greenwich exam',
-      dark: true,
-      image: 'hero_cand', alt: 'A candidate sitting an exam at an ITA centre',
-      items: [
-        ['Register and pay', 'Sign in to the ITA portal, choose your exam and pay online.'],
-        ['Download your Statement of Entry', 'You’ll need it with your original CNIC or passport to enter the hall.'],
-        ['Read the exam day guidelines', 'They tell you what to bring and when to arrive.'],
-      ],
-      link: { label: 'Go to the portal', href: portal },
-    } },
-    { type: 'split', props: {
-      kicker: 'On the day',
-      title: 'What your exam morning looks like',
-      image: 'verify', alt: 'A candidate’s ID being checked at the desk',
-      paragraphs: [
-        'You’ll go through screening at the entrance and then a photo ID and QR check at the desk.',
-        'An invigilator will show you to your numbered seat and explain the rules before the papers are opened. If anything feels wrong during the exam, raise your hand and tell them straight away.',
+        ['Registration and payment', 'Online, through the ITA portal.'],
+        ['Statement of Entry', 'Downloaded by each student before exam day.'],
+        ['Live attendance and prompt reports', 'The university’s team sees who has arrived as the session runs.'],
       ],
     } },
     { type: 'strip', props: {
-      title: 'For the university’s partner campuses',
-      text: 'Whether candidates sit at one campus or several, the checks, the venue standards and the reporting are the same. Your team gets one record for every sitting.',
-      links: [{ label: 'How we run exam management', href: '/exam-management/' }],
+      title: 'How to book',
+      text: 'Greenwich students register and pay through the ITA portal, then download their Statement of Entry.',
+      links: [{ label: 'Go to the portal', href: portal }, bringAndGuide],
     } },
-    faq([
-      ['How do I register for my Greenwich exam?', 'Register and pay through the ITA portal, then download your Statement of Entry.'],
-      ['What do I bring on the day?', 'Your original CNIC or passport and your Statement of Entry.'],
-      ['Does ITA mark my exam?', 'No. We run the sitting. Marking and results come from the University of Greenwich.'],
-      ['Are the exams on paper or on computer?', 'We run both. Your university will tell you which applies to your exam.'],
-    ]),
-    band('Running Greenwich programmes at your campus?', 'Tell us where your students sit and when. We’ll come back with a plan.', 'Discuss a partnership', '/become-a-partner/', 'campus_arch'),
+    faq([['Are Greenwich exams on paper or on computer?', 'We run both. Your university will tell you which applies to your exam.']]),
+    band('Running Greenwich programmes at your campus?', 'Tell us where your students sit and when. We’ll plan the sittings across every campus.', 'Discuss a partnership', '/become-a-partner/', 'campus_arch'),
   ],
 
   'city-and-guilds': [
     { type: 'pageHeader', props: {
-      kicker: 'City & Guilds',
+      kicker: 'Awarding bodies',
+      logo: 'cg',
       title: 'City & Guilds exams in Pakistan',
       intro: 'City & Guilds writes the rules. We follow them to the letter, in every room.',
       image: 'hall', alt: 'An ITA exam hall set for a sitting', cover: true,
       buttons: [{ label: 'Book your exam', href: '/book-an-exam/' }, bringAndGuide],
     } },
+    { type: 'split', props: {
+      kicker: 'About City & Guilds',
+      title: 'Founded in London in 1878',
+      paragraphs: [
+        'City & Guilds today awards technical and vocational qualifications in more than 40 countries.',
+        'It has been authorised by IBCC to operate in Pakistan, where it offers academic and vocational qualifications including the International Foundation Programme.',
+      ],
+      links: [{ label: 'Visit the City & Guilds website', href: 'https://www.cityandguilds.com/' }],
+    } },
     { type: 'feature', props: {
       left: true,
       kicker: 'What we do for City & Guilds',
       title: 'City & Guilds sets, marks and issues. We deliver.',
-      intro: 'We run City & Guilds sessions in Pakistan to its standardised protocols, then send a complete report as soon as each sitting ends.',
+      intro: 'We run City & Guilds sessions to its standardised protocols and send a complete report as soon as each sitting ends.',
       image: 'exam_sitting', alt: 'A supervised sitting at an ITA centre',
       items: [
         ['Protocol-led delivery', 'Every session follows City & Guilds’ own procedures.'],
-        ['Trained invigilators', 'Impartial staff supervise from the first paper to the last.'],
+        ['Trained invigilators', 'From the first paper opened to the last script sealed.'],
         ['Reporting straight after the sitting', 'Attendance, incidents and evidence in one record.'],
       ],
     } },
-    { type: 'steps', props: {
-      kicker: 'For candidates',
-      title: 'If you’re sitting a City & Guilds exam',
+    { type: 'cards', props: {
+      kicker: 'Related pages',
+      title: 'Two related pages',
+      numbered: false,
+      tint: true,
       items: [
-        ['Book your exam', 'Register through the ITA portal or through your centre, as your course tells you.'],
-        ['Keep your Statement of Entry', 'Bring it with your original CNIC or passport.'],
-        ['Read the exam day guidelines', 'They tell you what to bring and when to arrive.'],
-      ],
-      link: { label: 'Book an exam', href: '/book-an-exam/' },
-    } },
-    { type: 'mosaic', props: {
-      kicker: 'On the day',
-      title: 'Knowing the morning takes the worry out of it.',
-      text: 'Arrive by the reporting time on your Statement of Entry. After screening and an ID check, you’ll leave your phone and bag in storage and take your numbered seat. The invigilator will brief the room before the papers are opened.',
-      images: [
-        ['briefing', 'The briefing before the papers are opened'],
-        ['verify', 'ID check at the desk'],
-        ['exam', 'Your numbered seat'],
+        { logo: 'cg', title: 'International Foundation Programme', text: 'Taking the Foundation Programme? Registration, resits and exam windows have their own page.', href: '/international-foundation-program/', cta: 'Foundation Programme exams' },
+        { logo: 'gems', title: 'GEMS Pathways', text: 'GEMS Pathways is City & Guilds’ official representative in Pakistan, and we manage the exam operation for its programmes too.', href: '/gems-pathways/', cta: 'GEMS Pathways exams' },
       ],
     } },
     { type: 'strip', props: {
-      title: 'For City & Guilds centres',
-      text: 'We work as an independent delivery partner. We don’t teach or grade your candidates, so our only job is to apply City & Guilds’ rules the same way every time and give you a clear record of each sitting.',
-      links: [{ label: 'See our services', href: '/services/' }],
+      title: 'How to book',
+      text: 'Book through the ITA portal or through your centre, as your course tells you.',
+      links: [{ label: 'Book an exam', href: '/book-an-exam/' }, bringAndGuide],
     } },
-    faq([
-      ['How do I book a City & Guilds exam or resit?', 'Through the ITA portal or your centre, as your course tells you.'],
-      ['What do I bring on the day?', 'Your original CNIC or passport and your Statement of Entry.'],
-      ['Does ITA mark my exam?', 'No. City & Guilds marks the exam and issues the results.'],
-    ]),
-    band('Need City & Guilds sessions run in your city?', 'Tell us the city, the date and how many candidates. We’ll come back with a plan.', 'Discuss a partnership', '/become-a-partner/'),
+    faq([['Is City & Guilds recognised in Pakistan?', 'Yes. City & Guilds is authorised by IBCC to operate in Pakistan.']]),
+    band('Are you a City & Guilds centre?', 'Tell us your qualifications and sitting dates. We’ll run them to City & Guilds protocols and send you the record.', 'Discuss a partnership', '/become-a-partner/'),
+  ],
+
+  'international-foundation-program': [
+    { type: 'pageHeader', props: {
+      kicker: 'City & Guilds',
+      logo: 'cg',
+      title: 'International Foundation Programme exams',
+      intro: 'Your Foundation Programme exams, run calmly and fairly, with everything you need in one portal.',
+      image: 'exam', alt: 'Candidates sitting an exam in an ITA hall', cover: true,
+      buttons: [{ label: 'Go to the portal', href: portal }, bringAndGuide],
+    } },
+    { type: 'split', props: {
+      kicker: 'About the programme',
+      title: 'Awarded by City & Guilds',
+      paragraphs: ['The International Foundation Programme is awarded by City & Guilds, which sets and marks the exams. We run the sittings in Pakistan and keep a full record of each one.'],
+      link: { label: 'More about City & Guilds exams', href: '/city-and-guilds/' },
+    } },
+    { type: 'model', props: {
+      kicker: 'For candidates',
+      title: 'Registering and resits',
+      dark: true,
+      steps: [
+        ['First sitting or resit', 'Register and pay through the ITA portal, then download your Statement of Entry.'],
+        ['Exam windows', 'The current dates are always listed in the portal.'],
+      ],
+      highlight: 0,
+      quote: '',
+      link: { label: 'Go to the portal', href: portal },
+    } },
+    band('Offering the Foundation Programme at your school or college?', 'Tell us how many students and where. We’ll plan the sittings with you.', 'Discuss a partnership', '/become-a-partner/'),
   ],
 
   'ncc-education': [
     { type: 'pageHeader', props: {
-      kicker: 'NCC Education',
+      kicker: 'Awarding bodies',
+      logo: 'ncc',
       title: 'NCC Education exams, with a record you can verify',
-      intro: 'Your college, your candidates, our independent record of exactly what happened.',
+      intro: 'Your college, your candidates, and our independent record of exactly what happened.',
       image: 'n_ncc', alt: 'The ITA team marking the NCC Education partnership',
-      buttons: [{ label: 'Book your exam', href: '/book-an-exam/' }, bringAndGuide],
+      buttons: [{ label: 'Contact our team', href: '/contact/' }, bringAndGuide],
+    } },
+    { type: 'split', props: {
+      kicker: 'About NCC Education',
+      title: 'Founded in 1966, based in Manchester',
+      paragraphs: [
+        'NCC Education began as part of the UK’s National Computing Centre.',
+        'Its IT and business qualifications run from Level 3 to Level 5 and can lead into degree study at UK and international universities.',
+      ],
+      links: [{ label: 'Visit the NCC Education website', href: 'https://www.nccedu.com/' }],
     } },
     { type: 'cards', props: {
       kicker: 'What we do for NCC Education',
@@ -343,79 +353,53 @@ export const morePages: Record<string, SectionConfig[]> = {
       dark: true,
       items: [
         { title: 'On your premises or ours', text: 'Candidates sit where it suits them best.', image: 'centre_room', alt: 'An exam room set with numbered desks' },
-        { title: 'Impartial supervision', text: 'Our invigilators have no stake in the candidates’ results.', image: 'svc_inv', alt: 'ITA invigilators supervising a hall' },
+        { title: 'The same checks everywhere', text: 'A college hall runs exactly like an ITA venue on exam day.', image: 'svc_inv', alt: 'ITA invigilators supervising a hall' },
         { title: 'A record for every sitting', text: 'Attendance, incidents and evidence, kept independently.', image: 'portal', alt: 'The ITA partner portal' },
       ],
     } },
-    { type: 'steps', props: {
-      kicker: 'For candidates',
-      title: 'If you’re sitting an NCC Education exam',
-      image: 'invigilators', alt: 'ITA staff at a check-in desk',
-      items: [
-        ['Book your sitting', 'Through your college or by contacting our team.'],
-        ['Confirm your venue', 'It may be your college or an ITA venue.'],
-        ['Read the exam day guidelines', 'They tell you what to bring and when to arrive.'],
-      ],
-      link: { label: 'Contact our team', href: '/contact/' },
-    } },
-    { type: 'band', props: {
-      kicker: 'On the day',
-      title: 'Even at your own college, the room will feel different.',
-      text: 'Our staff will check your ID at the door, store your phone and bag and seat you by number. It’s the same routine at every venue, which is what makes the result fair.',
-      buttons: [bringAndGuide],
-      image: 'verify',
-    } },
     { type: 'strip', props: {
-      title: 'For NCC Education partner colleges',
-      text: 'We handle exam day so your teaching staff can focus on teaching. You receive an independent record of every sitting, which supports the integrity of your results.',
-      links: [{ label: 'Become a partner', href: '/become-a-partner/' }],
+      title: 'How to book',
+      text: 'NCC Education candidates book through their college or by contacting our team.',
+      links: [{ label: 'Contact our team', href: '/contact/' }, bringAndGuide],
     } },
-    faq([
-      ['How do I book an NCC Education exam with ITA?', 'Through your college or by contacting our team.'],
-      ['Can the exam take place at my college?', 'Yes. We run sittings on partner premises with the same checks and records as our own venues.'],
-      ['Does ITA mark my exam?', 'No. NCC Education marks the exam and issues the results.'],
-    ]),
-    band('Running NCC Education programmes?', 'Tell us where your candidates sit and when. We’ll come back with a plan.', 'Discuss a partnership', '/become-a-partner/'),
+    band('Running NCC Education programmes?', 'Tell us where your candidates sit, on your premises or ours, and we’ll plan the sittings around your timetable.', 'Discuss a partnership', '/become-a-partner/'),
   ],
 
   'gems-pathways': [
     { type: 'pageHeader', props: {
-      kicker: 'GEMS Pathways',
+      kicker: 'Awarding bodies',
+      logo: 'gems',
       title: 'GEMS Pathways exams in Pakistan',
       intro: 'From the first plan to the last sealed script, we run the exam process for GEMS Pathways in Pakistan.',
       image: 'centre_gems', alt: 'An ITA hall set for the GEMS scholarship programme', cover: true,
       buttons: [{ label: 'Contact our team', href: '/contact/' }, bringAndGuide],
     } },
+    { type: 'split', props: {
+      kicker: 'About GEMS Pathways',
+      title: 'City & Guilds’ official representative in Pakistan',
+      paragraphs: [
+        'GEMS Pathways is part of GEMS Middle East in the UAE.',
+        'It offers City & Guilds programmes in areas such as business, IT, health and social care, engineering, finance and hospitality, along with teacher training.',
+      ],
+      links: [{ label: 'Visit the GEMS Pathways website', href: 'https://gemspathway.com.pk/' }, { label: 'City & Guilds exams', href: '/city-and-guilds/' }],
+    } },
     { type: 'cards', props: {
       kicker: 'What we do for GEMS Pathways',
-      title: 'The whole journey, end to end',
+      title: 'The whole exam operation, end to end',
+      dark: true,
       items: [
         { title: 'Planning', text: 'We agree sessions, venues and schedules with the GEMS Pathways team.', image: 's_meet4', alt: 'ITA planning a sitting with a partner' },
-        { title: 'Candidate coordination', text: 'We keep candidates informed about when and where they sit and what to bring.', image: 'qr_phone', alt: 'A candidate holding their Statement of Entry QR code on a phone' },
-        { title: 'Invigilation', text: 'Trained and impartial invigilators supervise every session.', image: 'svc_inv', alt: 'Invigilators supervising a GEMS sitting' },
+        { title: 'Candidate coordination', text: 'We keep candidates informed about when and where they sit.', image: 'qr_phone', alt: 'A candidate holding their Statement of Entry QR code on a phone' },
+        { title: 'Invigilation', text: 'Trained invigilators supervise every session.', image: 'svc_inv', alt: 'Invigilators supervising a GEMS sitting' },
         { title: 'Secure delivery', text: 'Papers stay sealed and logged from arrival to collection, in line with international assessment standards.', image: 'board', alt: 'A session board in an ITA exam room' },
       ],
     } },
     { type: 'strip', props: {
-      title: 'If you’re sitting a GEMS Pathways exam',
-      text: 'Your school or our team will confirm your exam date, venue and reporting time. Read the exam day guidelines before you come so you know what to bring and when to arrive.',
-      links: [bringAndGuide, { label: 'Contact our team', href: '/contact/' }],
+      title: 'For candidates',
+      text: 'Your school, your centre or our team will confirm your exam date, venue and reporting time.',
+      links: [{ label: 'Contact our team', href: '/contact/' }, bringAndGuide],
     } },
-    { type: 'split', props: {
-      kicker: 'On the day',
-      title: 'A clear picture of the morning.',
-      image: 'briefing', alt: 'Candidates being briefed before a sitting',
-      paragraphs: [
-        'You’ll be checked in at the door, asked to leave your phone and bag in storage and shown to your numbered seat.',
-        'The invigilator will explain the rules before the papers are opened. If anything worries you during the exam, raise your hand.',
-      ],
-    } },
-    faq([
-      ['Who runs GEMS Pathways exams in Pakistan?', 'ITA manages the examination operations, from planning and candidate coordination to invigilation and secure delivery.'],
-      ['Does ITA mark my exam?', 'No. We run the sitting. Marking and results stay with the awarding body.'],
-      ['What do I bring on the day?', 'Your original CNIC or passport and any entry document you’ve been given.'],
-    ]),
-    band('Want your exams run end to end?', 'Tell us what you run, where and when. We’ll come back with a plan.', 'Discuss a partnership', '/become-a-partner/'),
+    band('Delivering GEMS Pathways programmes at your centre?', 'Share your sitting dates and we’ll take care of the whole exam operation.', 'Discuss a partnership', '/become-a-partner/'),
   ],
 
   'book-an-exam': [
@@ -442,10 +426,10 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'Your awarding body',
       title: 'Choose your awarding body',
       items: [
-        { title: 'University of Greenwich UK', text: 'Register and pay through the ITA portal.', image: 'em_campus', href: '/university-of-greenwich-uk/', cta: 'Greenwich exams' },
-        { title: 'City & Guilds', text: 'Through the ITA portal or your centre.', image: 'hall', href: '/city-and-guilds/', cta: 'City & Guilds exams' },
-        { title: 'NCC Education', text: 'Through your college or by contacting our team.', image: 'centre_room', href: '/ncc-education/', cta: 'NCC Education exams' },
-        { title: 'GEMS Pathways', text: 'Your school or our team will confirm your sitting.', image: 'centre_gems', href: '/gems-pathways/', cta: 'GEMS Pathways exams' },
+        { title: 'University of Greenwich UK', text: 'Register and pay through the ITA portal.', logo: 'greenwich', href: '/university-of-greenwich-uk/', cta: 'Greenwich exams' },
+        { title: 'City & Guilds', text: 'Through the ITA portal or your centre. Including the International Foundation Programme.', logo: 'cg', href: '/city-and-guilds/', cta: 'City & Guilds exams', extra: { label: 'Foundation Programme exams', href: '/international-foundation-program/' } },
+        { title: 'NCC Education', text: 'Through your college or by contacting our team.', logo: 'ncc', href: '/ncc-education/', cta: 'NCC Education exams' },
+        { title: 'GEMS Pathways', text: 'Your school or our team will confirm your sitting.', logo: 'gems', href: '/gems-pathways/', cta: 'GEMS Pathways exams' },
       ],
     } },
     { type: 'strip', props: {
@@ -455,9 +439,8 @@ export const morePages: Record<string, SectionConfig[]> = {
     } },
     faq([
       ['How do I register for a resit?', 'The same way as a first sitting: through the ITA portal, unless your college or school books it for you.'],
-      ['Where do I find my Statement of Entry?', 'In your portal account once your registration and payment are complete.'],
       ['What do I bring on the day?', 'Your original CNIC or passport and your Statement of Entry.'],
-      ['What if I arrive late?', 'Arrive by the reporting time on your Statement of Entry. Latecomers may not be let in once the exam has started.'],
+      ['Does ITA mark my exam?', 'No. We run the sitting. Marking and results come from your awarding body.'],
     ]),
     { type: 'strip', props: {
       title: 'Need help?',
@@ -536,9 +519,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       ]]],
     } },
     faq([
-      ['Can I bring my phone?', 'You can bring it to the venue, but it goes into storage before you enter the room.'],
       ['What if I forget my SOE?', 'You can show it on your phone at the desk before your phone goes into storage. Your original ID is still required.'],
-      ['Can I leave early?', 'Not in the first hour. After that, only with the invigilator’s approval.'],
     ]),
     { type: 'strip', props: {
       title: 'Need help?',
@@ -557,7 +538,12 @@ export const morePages: Record<string, SectionConfig[]> = {
     { type: 'cards', props: {
       kicker: 'Controls',
       title: 'Four controls in every sitting',
-      items: p.controls.map((c, n) => ({ ...c, image: (['verify', 'row', 'exam_sitting', 'portal'] as ImageKey[])[n] })),
+      items: p.controls.map((c, n) => ({
+        ...c,
+        image: (['verify', 'row', 'exam_sitting', 'portal'] as ImageKey[])[n],
+        href: ['/technology-driven-solutions/', '/exam-venues/', '/professional-invigilation/', '/technology-driven-solutions/'][n],
+        cta: ['Technology and QA', 'Secure venues', 'Professional invigilation', 'Technology and QA'][n],
+      })),
       outro: 'We act as a neutral layer between the institution and the awarding body, with an auditable record for every sitting.',
     } },
     { type: 'lists', props: {
@@ -567,28 +553,14 @@ export const morePages: Record<string, SectionConfig[]> = {
       tint: true,
       columns: [['', ['Safeguarding', 'Code of conduct and confidentiality', 'Exam security', 'Incident reporting', 'Staff performance evaluation']]],
     } },
-    { type: 'split', props: {
-      kicker: 'The people we put in the room',
-      title: 'Security depends on people as much as procedures.',
-      image: 'briefing', alt: 'A staff briefing before a session',
-      paragraphs: [
-        'Every member of venue staff goes through role checks and induction and signs our safeguarding and confidentiality commitments.',
-        'After each session, the venue supervisor reviews readiness, conduct, communication, security and safety.',
-      ],
-    } },
     { type: 'strip', props: {
       title: 'Confidentiality',
       text: 'Candidate records and exam materials are seen only by the staff who need them for the sitting. Partners and candidates use secure sign-in to reach their portal accounts.',
     } },
-    { type: 'cards', props: {
-      kicker: 'Registered and recognised',
-      title: 'Formal recognition behind the controls',
-      numbered: false,
-      contain: true,
-      items: [
-        { tag: 'IBCC registration', title: `Ref. ${site.ibccRef}`, text: 'Registered with the Inter Boards Coordination Commission.', image: 'ibcc_registered', alt: 'Officially registered with IBCC', href: '/licensing-and-approvals/', cta: 'Licensing and approvals' },
-        { tag: 'Pakistan Bar Council', title: 'Approved agency listing', text: 'Lists ITS, our parent company, among approved agencies for foreign law examinations (September 2026).', image: 'n_pbc', alt: 'Pakistan Bar Council building', href: '/licensing-and-approvals/', cta: 'Licensing and approvals' },
-      ],
+    { type: 'strip', props: {
+      title: 'Registered and recognised',
+      text: 'IBCC registered. Our parent company ITS is listed by the Pakistan Bar Council for foreign law examinations.',
+      links: [{ label: 'Licensing and approvals', href: '/licensing-and-approvals/' }],
     } },
     { type: 'strip', props: {
       title: 'Raising a concern',
@@ -631,13 +603,7 @@ export const morePages: Record<string, SectionConfig[]> = {
         ['We run your first sitting', 'Then send you the full record.'],
       ],
     } },
-    { type: 'split', props: {
-      kicker: 'Who we already work with',
-      title: 'Real partners, real sittings.',
-      paragraphs: ['Every one of them sees the same standard: their rules, our team and a full record afterwards.'],
-      chips: partners,
-      image: 'partner_talk', alt: 'A partner meeting with the ITA team',
-    } },
+    { type: 'logos', props: { kicker: 'Who we already work with' } },
     { type: 'contactForm', props: {
       id: 'form',
       kicker: 'Get in touch',
@@ -688,10 +654,9 @@ export const morePages: Record<string, SectionConfig[]> = {
     } },
     faq([
       ['Do you provide exam invigilation in Dubai?', 'Yes. Our Dubai team arranges trained and impartial invigilators for sittings in Dubai and across the UAE.'],
-      ['Can exams run on our own premises in the UAE?', 'Yes. We run sittings on partner premises with the same checks and records as our own venues.'],
       ['Is the process the same as in Pakistan?', 'Yes. The same procedures, identity checks and session reports apply wherever we work.'],
     ]),
-    band('Running exams in the UAE?', 'Tell us the city, the date and how many candidates. Our Dubai team will come back with a plan.', 'Talk to our Dubai team', '/contact/'),
+    band('Running exams in the UAE?', 'Meet our team at Dubai Marina to plan your first sitting.', 'Talk to our Dubai team', '/contact/'),
   ],
 
   'licensing-and-approvals': [
@@ -724,7 +689,6 @@ export const morePages: Record<string, SectionConfig[]> = {
       quote: '',
       tint: true,
     } },
-    { type: 'milestones', props: { kicker: 'Our progress', title: 'How we got here' } },
     { type: 'strip', props: {
       title: 'Controls behind the paperwork',
       text: 'Registration means little without the controls behind it. Documented procedures, a recorded chain of custody, incident reporting and quality checks run in every sitting.',
@@ -738,8 +702,10 @@ export const moreMeta: Record<string, { title: string; description: string }> = 
   'exam-venues': { title: 'Exam Centers and Secure Exam Venues in Pakistan | ITA', description: 'Secure exam centres in nine cities across Pakistan, with controlled entry, CCTV and locked storage for papers. Paper and computer-based exams.' },
   'technology-driven-solutions': { title: 'Technology-Driven Exam Solutions in Pakistan and UAE | ITA', description: 'Digital ID and QR checks, incident reporting, session logs and a partner portal that shows what happened in every exam. Pakistan and the UAE.' },
   'professional-invigilation': { title: 'Professional Invigilation Services in Pakistan | ITA', description: 'Trained and impartial exam invigilators for universities and awarding bodies in Pakistan and the UAE. Paper and computer-based exams, run to your rules.' },
+  'awarding-bodies': { title: 'Awarding Bodies We Deliver For | ITA Pakistan', description: 'ITA delivers exams in Pakistan for University of Greenwich UK, City & Guilds, NCC Education and GEMS Pathways, to one standard in every room.' },
+  'international-foundation-program': { title: 'International Foundation Program Exams in Pakistan | ITA', description: 'Sitting the City & Guilds International Foundation Programme in Pakistan? Register, book a resit and download your Statement of Entry through the ITA portal.' },
   'university-of-greenwich-uk': { title: 'University of Greenwich Exams in Pakistan | ITA', description: 'Sitting a University of Greenwich UK exam in Pakistan? ITA runs paper and computer-based exams across several campuses. Register, pay and get your Statement of Entry online.' },
-  'city-and-guilds': { title: 'City & Guilds Exam Center in Pakistan | ITA', description: 'Take your City & Guilds exam in Pakistan with ITA. Sessions run to City & Guilds protocols, with trained invigilators and a full report after every sitting.' },
+  'city-and-guilds': { title: 'City & Guilds Exam Center in Pakistan | ITA', description: 'Take your City & Guilds exam in Pakistan with ITA, including the International Foundation Programme. Sessions run to City & Guilds protocols, with a full report after every sitting.' },
   'ncc-education': { title: 'NCC Education Exams in Pakistan | ITA', description: 'ITA runs NCC Education exams in Pakistan, at our venues or on your college’s premises, with an independent record of every sitting.' },
   'gems-pathways': { title: 'GEMS Pathways Exams in Pakistan | ITA', description: 'ITA manages GEMS Pathways examinations in Pakistan, from planning and candidate coordination to invigilation and secure exam delivery.' },
   'book-an-exam': { title: 'Book an Exam and Resit Registration | ITA Portal', description: 'Book your exam or resit with ITA. Register, pay online and download your Statement of Entry from the ITA portal in a few minutes.' },
@@ -748,4 +714,16 @@ export const moreMeta: Record<string, { title: string; description: string }> = 
   'become-a-partner': { title: 'Become an Exam Centre Partner | ITA Pakistan and UAE', description: 'Partner with ITA for independent exam delivery. A dedicated coordinator, a partner portal and only the services you need, across Pakistan and the UAE.' },
   uae: { title: 'Exam Centre and Invigilation in Dubai and the UAE | ITA', description: 'Independent exam delivery and invigilation in the UAE, run from our Dubai Marina office. The same checks and records as every ITA sitting.' },
   'licensing-and-approvals': { title: 'Licensing and Approvals | IBCC Registered | ITA', description: 'ITA’s registrations and approvals, including IBCC registration and the Pakistan Bar Council listing of our parent company ITS for foreign law examinations.' },
+};
+
+// Breadcrumb trail per page after Home, ending with the page itself: [name, path]. Pages not listed sit under Home.
+const ab: [string, string] = ['Awarding bodies', 'awarding-bodies'];
+const cg: [string, string] = ['City & Guilds', 'city-and-guilds'];
+export const trails: Record<string, [string, string][]> = {
+  'awarding-bodies': [ab],
+  'university-of-greenwich-uk': [ab, ['University of Greenwich UK', 'university-of-greenwich-uk']],
+  'city-and-guilds': [ab, cg],
+  'ncc-education': [ab, ['NCC Education', 'ncc-education']],
+  'gems-pathways': [ab, ['GEMS Pathways', 'gems-pathways']],
+  'international-foundation-program': [ab, cg, ['International Foundation Programme', 'international-foundation-program']],
 };

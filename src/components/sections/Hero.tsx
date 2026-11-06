@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { audiences, type AudienceKey } from '@/data/home';
 import { img } from '@/data/images';
 import { site } from '@/data/site';
+import { bodies, bodyKeys } from '@/data/partners';
+import Logo from '../Logo';
 import { Arrow } from '../ui';
 
 export default function Hero() {
@@ -25,11 +27,18 @@ export default function Hero() {
               ))}
             </div>
             <div key={key} className="swap">
-              <h1 className="mt-6 font-serif text-[26px] leading-[1.15] md:text-[36px]">{a.heading}</h1>
-              {/* TODO: line pending client confirmation (SEO brief) */}
-              <p className="mt-3 text-[16px] font-semibold text-white">An IBCC-registered testing service in Pakistan and the UAE.</p>
-              <p className="mt-3 max-w-[500px] text-[16px] leading-[1.65] text-white/85">{a.text}</p>
-              <div className="mt-6 flex flex-wrap items-center gap-6">
+              <h1 className="mt-9 font-serif text-[26px] leading-[1.15] md:text-[36px]">{a.heading}</h1>
+              {key === 'bodies' && (
+                <ul className="mt-7 grid max-w-[480px] grid-cols-4 gap-2" aria-label="Awarding bodies we deliver for">
+                  {bodyKeys.map((k) => (
+                    <li key={k}>
+                      <Link href={bodies[k].href} className="block h-full opacity-95 transition-opacity hover:opacity-100"><Logo k={k} box="h-5 md:h-6" className="h-full !rounded-lg !p-2" /></Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="mt-7 max-w-[500px] text-[16px] leading-[1.65] text-white/85">{a.text}</p>
+              <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link href={a.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-blue hover:bg-tint">
                   {a.cta} <Arrow />
                 </Link>
@@ -38,9 +47,10 @@ export default function Hero() {
                 </a>
               </div>
             </div>
-            <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-6 text-[13px] text-white/85">
+            <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-12 text-[13px] text-white/85">
               <span className="border-r border-white/30 pr-5">
-                IBCC registration<br /><b className="font-semibold text-white">Ref. {site.ibccRef}</b>
+                {/* TODO: line pending client confirmation (SEO brief) */}
+                IBCC-registered testing service<br /><b className="font-semibold text-white">Ref. {site.ibccRef}</b>
               </span>
               <span>A subsidiary of<br /><b className="font-semibold text-white">International Testing Services</b></span>
             </div>

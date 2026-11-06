@@ -8,6 +8,7 @@ type Props = {
   title: string;
   paragraphs: string[];
   link?: { label: string; href: string };
+  links?: { label: string; href: string }[]; // extra links; http(s) ones open in a new tab
   tint?: boolean;
   image?: ImageKey; // photo on the left, text on the right
   alt?: string;
@@ -16,7 +17,7 @@ type Props = {
 };
 
 // Heading on the left, text on the right (the home page About layout)
-export default function Split({ kicker, title, paragraphs, link, tint, image, alt = '', facts, chips }: Props) {
+export default function Split({ kicker, title, paragraphs, link, links, tint, image, alt = '', facts, chips }: Props) {
   const body = (
     <>
       {paragraphs.map((p, i) => (
@@ -39,10 +40,18 @@ export default function Split({ kicker, title, paragraphs, link, tint, image, al
           ))}
         </dl>
       )}
-      {link && (
-        <Link href={link.href} className="group mt-7 inline-flex items-center gap-2 text-[15px] font-semibold text-blue">
-          {link.label} <Arrow />
-        </Link>
+      {[...(link ? [link] : []), ...(links ?? [])].length > 0 && (
+        <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3">
+          {[...(link ? [link] : []), ...(links ?? [])].map((l) => l.href.startsWith('http') ? (
+            <a key={l.href} href={l.href} target="_blank" rel="noopener" className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">
+              {l.label} <Arrow /><span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          ) : (
+            <Link key={l.href} href={l.href} className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">
+              {l.label} <Arrow />
+            </Link>
+          ))}
+        </div>
       )}
     </>
   );

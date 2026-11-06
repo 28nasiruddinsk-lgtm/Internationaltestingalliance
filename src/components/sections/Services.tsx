@@ -8,9 +8,10 @@ type Props = {
   title?: string;
   detailed?: boolean; // Services page: longer text, a labelled link and no "All services" link
   exclude?: string; // href of the current service page, to show only the others
+  link?: { label: string; href: string }; // one link under the cards
 };
 
-export default function Services({ kicker = 'Our services', title = 'Take one service, or hand us the whole sitting.', detailed, exclude }: Props) {
+export default function Services({ kicker = 'Our services', title = 'Take one service, or hand us the whole sitting.', detailed, exclude, link }: Props) {
   const list = services.filter((s) => s.href !== exclude);
   return (
     <section className="bg-tint py-24 md:py-32">
@@ -39,6 +40,11 @@ export default function Services({ kicker = 'Our services', title = 'Take one se
             </Rise>
           ))}
         </div>
+        {link && (
+          <Link href={link.href} className="group mt-10 inline-flex items-center gap-2 text-[15px] font-semibold text-blue">
+            {link.label} <Arrow />
+          </Link>
+        )}
       </Wrap>
     </section>
   );

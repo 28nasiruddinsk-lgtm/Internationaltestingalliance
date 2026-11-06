@@ -1,7 +1,8 @@
 // Copy from the ITA Company Profile 2026
+import type { BodyKey } from './partners';
 import type { ImageKey } from './images';
 
-export type Card = { title: string; text: string; tag?: string; image?: ImageKey; alt?: string; href?: string; cta?: string };
+export type Card = { title: string; text: string; tag?: string; image?: ImageKey; alt?: string; href?: string; cta?: string; logo?: BodyKey };
 
 export const offers: Card[] = [
   { title: 'Partner portal', text: 'Real-time visibility of registrations, candidate numbers, schedules, attendance and examination activity, from registration to final reporting.' },
