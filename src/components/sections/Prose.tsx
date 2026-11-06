@@ -1,6 +1,7 @@
 import type { ImageKey } from '@/data/images';
 import { img } from '@/data/images';
-import { H2, Kicker, Rise, Wrap } from '../ui';
+import Link from 'next/link';
+import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 export type ProseProps = {
   kicker?: string;
@@ -11,9 +12,10 @@ export type ProseProps = {
   alt?: string;
   tint?: boolean;
   contain?: boolean;
+  link?: { label: string; href: string };
 };
 
-export default function Prose({ kicker, title, paragraphs, points, image, alt = '', tint, contain }: ProseProps) {
+export default function Prose({ kicker, title, paragraphs, points, image, alt = '', tint, contain, link }: ProseProps) {
   return (
     <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
       <Wrap className={`grid gap-12 ${image ? 'lg:grid-cols-2' : ''}`}>
@@ -21,6 +23,11 @@ export default function Prose({ kicker, title, paragraphs, points, image, alt = 
           {kicker && <Kicker>{kicker}</Kicker>}
           <H2>{title}</H2>
           {paragraphs.map((p) => <p key={p} className="mt-5 text-[16px] leading-[1.75] text-body">{p}</p>)}
+          {link && (
+            <Link href={link.href} className="group mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-blue">
+              {link.label} <Arrow />
+            </Link>
+          )}
           {points && (
             <ul className="mt-6 space-y-3 text-[16px] text-body">
               {points.map((p) => (

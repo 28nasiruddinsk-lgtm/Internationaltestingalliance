@@ -1,4 +1,6 @@
 import type { ComponentType } from 'react';
+import { qaNotes } from '@/data/qa';
+import QaMark from '../QaMark';
 import Hero from './Hero';
 import Actions from './Actions';
 import Counters from './Counters';
@@ -31,6 +33,8 @@ import Verify from './Verify';
 import Feature from './Feature';
 import Steps from './Steps';
 import Rows from './Rows';
+import Logos from './Logos';
+import Pull from './Pull';
 
 const registry = {
   hero: Hero,
@@ -65,18 +69,30 @@ const registry = {
   feature: Feature,
   steps: Steps,
   rows: Rows,
+  logos: Logos,
+  pull: Pull,
 };
 
 export type SectionType = keyof typeof registry;
 export type SectionConfig = { type: SectionType; props?: Record<string, unknown> };
 
 // Pages are lists of section configs (data/pages.ts); each type maps to a component here.
-export function Sections({ list }: { list: SectionConfig[] }) {
+// `path` picks the page's revision notes, shown only with ?qa in the address.
+export function Sections({ list, path }: { list: SectionConfig[]; path?: string }) {
+  const notes = [...(path !== undefined ? qaNotes[path] ?? [] : [])];
+  const noteFor = (s: SectionConfig) => {
+    const label = (s.props?.kicker ?? s.props?.title) as string | undefined;
+    const i = notes.findIndex(([m]) => {
+      const [type, name] = m.split(':');
+      return type === s.type && (name === undefined || name === label || name === s.props?.title);
+    });
+    return i < 0 ? undefined : notes.splice(i, 1)[0][1];
+  };
   return (
     <>
       {list.map((s, i) => {
         const Section = registry[s.type] as ComponentType<Record<string, unknown>>;
-        return <Section key={`${s.type}-${i}`} {...s.props} />;
+        return <QaMark key={`${s.type}-${i}`} note={noteFor(s)}><Section {...s.props} /></QaMark>;
       })}
     </>
   );

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { ImageKey } from '@/data/images';
 import { img } from '@/data/images';
+import type { BodyKey } from '@/data/partners';
+import Logo from '../Logo';
 import { Arrow, Kicker, Rise, Wrap } from '../ui';
 
 type Props = {
@@ -14,15 +16,23 @@ type Props = {
   cover?: boolean; // image fills the whole header behind the text
   buttons?: { label: string; href: string }[]; // first is a white pill, the rest underlined links
   flip?: boolean; // mirror a cover photo so its subject sits right of the text
+  logo?: BodyKey; // awarding body logo on a white tile beside the H1
 };
 
-export default function PageHeader({ title, intro, kicker, headline, image, alt = '', light, cover, buttons, flip }: Props) {
+export default function PageHeader({ title, intro, kicker, headline, image, alt = '', light, cover, buttons, flip, logo }: Props) {
   const tone = light ? 'bg-tint text-ink' : 'bg-navy text-white';
   const sub = light ? 'text-body' : 'text-white/85';
   const text = (
     <div>
       {kicker && <Kicker light={!light}>{kicker}</Kicker>}
-      <h1 className="mt-5 max-w-[860px] font-serif text-[28px] leading-[1.15] md:text-[42px]">{title}</h1>
+      {logo ? (
+        <div className="mt-5 flex flex-wrap items-center gap-5 md:flex-nowrap md:gap-7">
+          <Logo k={logo} box="h-9 md:h-12" className="w-[200px] flex-none md:w-[220px]" />
+          <h1 className="max-w-[760px] font-serif text-[28px] leading-[1.15] md:text-[42px]">{title}</h1>
+        </div>
+      ) : (
+        <h1 className="mt-5 max-w-[860px] font-serif text-[28px] leading-[1.15] md:text-[42px]">{title}</h1>
+      )}
       {headline && <p className="mt-6 max-w-[620px] font-serif text-[20px] leading-[1.3] md:text-[24px]">{headline}</p>}
       {intro && <p className={`mt-5 max-w-[620px] text-[17px] leading-[1.7] ${sub}`}>{intro}</p>}
       {buttons && (

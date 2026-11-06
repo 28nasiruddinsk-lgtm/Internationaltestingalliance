@@ -10,7 +10,7 @@ export default function Faq({ kicker, title, items }: Props) {
     mainEntity: items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
   };
   return (
-    <section className="py-24 md:py-32">
+    <section className="bg-tint py-24 md:py-32">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Wrap className="grid gap-12 lg:grid-cols-12">
         <Rise className="lg:col-span-4">
