@@ -9,7 +9,7 @@ export const site = {
   // registration cards under the home hero buttons; both are held at ITS group level
   approvals: [
     { body: 'IBCC', color: '#0B4CA1', title: 'IBCC Certificate of Registration', ref: 'Reg No. IBCC/RC-1/Impl-2/2025/758' },
-    { body: 'Pakistan Bar Council', color: '#7A1430', title: 'Directorate of Legal Education', ref: 'September 2026 directive' },
+    { body: 'Pakistan Bar Council', color: '#7A1430', title: 'Directorate of Legal Education', ref: 'Ref IBCC/RC-1/Impl-2/2025' },
   ],
   announcement: 'Pakistan Bar Council lists ITS, our parent company, among approved agencies for foreign law examinations, September 2026',
   // header: an entry with `items` opens a dropdown; one with only `href` is a plain link
