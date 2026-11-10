@@ -65,6 +65,7 @@ export default function Actions() {
               </span>
               <span className="mt-4 font-serif text-[18px] text-ink">{l.title}</span>
               <span className="mt-1.5 text-[16px] leading-relaxed text-body">{l.text}</span>
+              {'note' in l && <span className="mt-2 text-[13px] font-semibold text-muted">{l.note}</span>}
               <span className="mt-auto flex items-center gap-2 pt-5 text-[14px] font-semibold text-blue">Open <Arrow /></span>
             </Link>
           ))}
