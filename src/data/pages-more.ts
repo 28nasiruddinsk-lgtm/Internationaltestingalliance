@@ -659,6 +659,59 @@ export const morePages: Record<string, SectionConfig[]> = {
     band('Running exams in the UAE?', 'Meet our team at Dubai Marina to plan your first sitting.', 'Talk to our Dubai team', '/contact/'),
   ],
 
+  'privacy-policy': [
+    { type: 'pageHeader', props: {
+      kicker: 'Privacy policy',
+      title: 'Privacy notice',
+      intro: 'How International Testing Alliance collects, uses and protects the personal information on its safeguarding self-declaration form.',
+      light: true,
+    } },
+    { type: 'doc', props: {
+      blocks: [
+        { h: 'Privacy Notice for This Form', p: [
+          'ITA will use information on this form to assess suitability for work involving children and adults at risk and to manage safeguarding risks. Access is limited to authorized recruitment, safeguarding, and decision-making personnel. Before collecting or sharing criminal-record or other sensitive information, ITA must provide a complete privacy notice stating the applicable legal basis, purpose, recipients, retention period, security arrangements, and available rights under the law that applies.',
+          'Applicants may request access to or correction of their personal information through examination@intltestingalliance.com or +44 7401 137464. Do not send original identity documents or unnecessary sensitive data. Privacy contact: +44 7401 137464, 0322 8490221.',
+        ] },
+        { h: '1. Who We Are and Purpose of Processing', p: [
+          'International Testing Alliance (ITA) collects and processes the personal data provided on this form to assess your suitability for roles involving contact with children or adults at risk, to manage safeguarding risks, and to fulfill our legal, regulatory, and operational duty of care during ITA-administered examinations and services.',
+        ] },
+        { h: '2. Personal Data We Collect', list: [
+          'Identity & Contact Information: Full legal name, official staff/venue ID, work location/province, phone number, and email address.',
+          'Sensitive & Criminal Background Information: Self-declared history of criminal convictions, cautions, warnings, pending proceedings, disciplinary findings, or misconduct investigations relating to child or adult safeguarding.',
+        ] },
+        { h: '3. Lawful Basis for Processing', p: ['We process your personal data under the following legal bases:'], list: [
+          'Legitimate Interests & Legal Obligations: Fulfilling our duty to ensure a safe environment for examinees, candidates, and staff during ITA activities.',
+          'Substantial Public Interest / Statutory Duty: Processing sensitive safeguarding and background information to prevent harm, exploitation, or abuse of children and adults at risk in accordance with applicable local, national, and international safeguarding standards.',
+        ] },
+        { h: '4. Data Access and Confidentiality', p: [
+          'Access to your declaration and any accompanying disclosure is strictly restricted. Only authorized recruitment leads, the ITA Safeguarding Lead (and designated deputy), and relevant senior decision-makers will have access to this information on a strict "need-to-know" basis.',
+        ] },
+        { h: '5. Sharing and International Transfers', p: ['ITA will not share your personal data with unauthorized third parties. Information may only be shared where lawful, necessary, and proportionate with:'], list: [
+          'Designated law enforcement or statutory safeguarding authorities if a legal duty arises or an immediate safety risk exists.',
+          'Authorized regulatory bodies or background-check providers (where legally mandated for your role).',
+        ] },
+        { h: '6. Storage, Security, and Retention', list: [
+          'Your completed form is transmitted through secure, access-controlled channels and stored separately from general human resources or examination management files.',
+          'ITA does not retain self-declaration records longer than necessary. Records are kept for the duration of your engagement with ITA plus a standard six-year post-engagement retention period in line with our document retention schedule, after which they are securely deleted or anonymized.',
+          'Please do not attach original identity documents or unrequested sensitive personal data.',
+        ] },
+        { h: '7. Your Privacy Rights', p: ['Subject to applicable local privacy laws, you have the right to:'], list: [
+          'Request access to the personal data ITA holds about you.',
+          'Request correction or updating of inaccurate or incomplete personal information.',
+          'Inquire about how your data is processed, stored, and protected.',
+        ] },
+        { h: 'How to Contact Us & Submit Securely', list: [
+          'Secure Form Submission Route: Submit your completed Form A via encrypted email to examination@intltestingalliance.com (using subject line: Confidential - Form A Submission) or deliver it in a sealed envelope marked "Strictly Confidential - Safeguarding Lead Only" at your local examination center lead office.',
+          'Privacy & Data Protection Inquiries: For privacy queries, access requests, or corrections, contact our Privacy Team:',
+        ], sub: [
+          'Email: examination@intltestingalliance.com',
+          'Phone (UK/International): +44 7401 137464',
+          'Phone (Pakistan Local): 0322 8490221',
+        ] },
+      ],
+    } },
+  ],
+
   'licensing-and-approvals': [
     { type: 'pageHeader', props: {
       kicker: 'Licensing and approvals',
@@ -699,6 +752,7 @@ export const morePages: Record<string, SectionConfig[]> = {
 };
 
 export const moreMeta: Record<string, { title: string; description: string }> = {
+  'privacy-policy': { title: 'Privacy Policy | International Testing Alliance', description: 'How International Testing Alliance collects, uses, stores and protects personal information, who can see it and how to request access or correction.' },
   'exam-venues': { title: 'Exam Centers and Secure Exam Venues in Pakistan | ITA', description: 'Secure exam centres in nine cities across Pakistan, with controlled entry, CCTV and locked storage for papers. Paper and computer-based exams.' },
   'technology-driven-solutions': { title: 'Technology-Driven Exam Solutions in Pakistan and UAE | ITA', description: 'Digital ID and QR checks, incident reporting, session logs and a partner portal that shows what happened in every exam. Pakistan and the UAE.' },
   'professional-invigilation': { title: 'Professional Invigilation Services in Pakistan | ITA', description: 'Trained and impartial exam invigilators for universities and awarding bodies in Pakistan and the UAE. Paper and computer-based exams, run to your rules.' },

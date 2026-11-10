@@ -17,7 +17,7 @@ export default function Hero() {
     <section className="relative bg-white">
       <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)]">
         <div className="relative z-10 bg-navy text-white">
-          <div className="flex h-full flex-col px-6 pb-24 pt-12 md:px-12 lg:pl-[max(48px,calc((100vw-1520px)/2+56px))] lg:pr-14 lg:pt-12">
+          <div className="flex h-full flex-col px-6 pb-28 pt-12 md:px-12 lg:pb-32 lg:pl-[max(48px,calc((100vw-1520px)/2+56px))] lg:pr-14 lg:pt-12">
             <div className="flex max-w-full gap-1 self-start overflow-x-auto rounded-full border border-white/40 p-1 [scrollbar-width:none]" role="tablist" aria-label="Choose who you are">
               {entries.map(([k, v]) => (
                 <button key={k} role="tab" aria-selected={key === k} onClick={() => setKey(k)}
@@ -47,13 +47,21 @@ export default function Hero() {
                 </a>
               </div>
             </div>
-            <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-12 text-[13px] text-white/85">
-              <span className="border-r border-white/30 pr-5">
-                {/* TODO: line pending client confirmation (SEO brief) */}
-                IBCC-registered testing service<br /><b className="font-semibold text-white">Ref. {site.ibccRef}</b>
-              </span>
-              <span>A subsidiary of<br /><b className="font-semibold text-white">International Testing Services</b></span>
-            </div>
+            <ul className="mt-auto grid max-w-[560px] gap-3 pt-10 sm:grid-cols-2" aria-label="Registrations and approvals">
+              {site.approvals.map((a) => (
+                <li key={a.body}>
+                  <Link href="/licensing-and-approvals/" className="block h-full rounded-2xl border border-white/15 bg-white/[.06] p-4 transition-colors hover:border-white/35 hover:bg-white/10">
+                    <span className="flex items-center justify-between gap-3">
+                      <span className="rounded-md bg-white px-2.5 py-1 text-[13px] font-bold" style={{ color: a.color }}>{a.body}</span>
+                      <span className="text-[11px] font-semibold tracking-[.12em] text-sky">ITS GROUP</span>
+                    </span>
+                    <span className="mt-3 block text-[14px] font-semibold leading-snug text-white">{a.title}</span>
+                    <span className="mt-3 block text-[10.5px] font-semibold tracking-[.14em] text-sky/90">REFERENCE</span>
+                    <span className="mt-0.5 block text-[13px] text-white/85">{a.ref}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="relative h-[300px] overflow-hidden bg-navy lg:h-auto lg:min-h-[440px]">

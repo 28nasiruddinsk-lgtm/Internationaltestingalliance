@@ -7,8 +7,8 @@ export const audiences: Record<AudienceKey, {
 }> = {
   bodies: {
     tab: 'Awarding bodies',
-    heading: 'Your examinations, delivered independently and to your protocols.',
-    text: 'We verify every candidate, run every session and send you a complete record afterwards. We never teach, mark or grade.',
+    heading: 'Examinations delivered independently and in line with your protocols.',
+    text: 'We verify every candidate, run every session from start to finish and deliver one consolidated record afterwards. No teaching. No marking. No influence over the outcome.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
     image: 'hero_awarding', alt: 'A historic university building with students walking through its courtyard',
   },
@@ -30,7 +30,7 @@ export const audiences: Record<AudienceKey, {
 
 export const quickLinks = [
   { title: 'Find a centre', text: 'Nine cities in Pakistan, plus Dubai.', href: '/exam-venues/', icon: 'centre' },
-  { title: 'Book an exam', text: 'Register, pay online and download your SOE.', href: '/book-an-exam/', icon: 'book' },
+  { title: 'Book an exam', text: 'Register, pay securely and download your Statement of Entry (SOE).', note: 'Reg. No. IBCC/RC-1/Impl-2/2025/758', href: '/book-an-exam/', icon: 'book' },
   { title: 'Exam day guide', text: 'What to bring and when to arrive.', href: '/exam-day-guidelines/', icon: 'guide' },
 ] as const;
 

@@ -35,6 +35,7 @@ import Steps from './Steps';
 import Rows from './Rows';
 import Logos from './Logos';
 import Pull from './Pull';
+import Doc from './Doc';
 
 const registry = {
   hero: Hero,
@@ -71,6 +72,7 @@ const registry = {
   rows: Rows,
   logos: Logos,
   pull: Pull,
+  doc: Doc,
 };
 
 export type SectionType = keyof typeof registry;
