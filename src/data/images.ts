@@ -45,6 +45,7 @@ const files = {
   qr_counter: 'qr-counter.jpg',
   campus_arch: 'campus-arch.jpg',
   qr_phone: 'qr-phone.jpg',
+  ab_students: 'ab-students.jpg',
 
   // stock photos
   s_dubai1: 's_dubai1.jpg',

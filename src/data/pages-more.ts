@@ -11,8 +11,8 @@ const band = (title: string, text: string, label: string, href: string, image?: 
 const related = (exclude: string): SectionConfig => ({ type: 'services', props: { kicker: 'Keep exploring', title: 'Related services', exclude } });
 const partners = ['NCC Education', 'City & Guilds', 'University of Greenwich UK', 'GEMS Pathways'];
 const bringAndGuide = { label: 'Exam day guidelines', href: '/exam-day-guidelines/' };
-// TODO: point at the live candidate portal address once the client supplies it
-const portal = '/contact/';
+// candidate registration on the ITA portal
+const portal = 'https://portal.intltestingalliance.com/register';
 
 export const morePages: Record<string, SectionConfig[]> = {
   'exam-venues': [
@@ -177,7 +177,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'Awarding bodies',
       title: 'The awarding bodies we deliver for',
       intro: 'Four awarding bodies trust us with their exams in Pakistan. Each one sets its own rules, and we apply them the same way in every room.',
-      image: 'hall_rows', alt: 'Rows of numbered desks in an ITA exam hall', cover: true,
+      image: 'ab_students', alt: 'Students studying together on the lawn outside a university building', cover: true,
     } },
     { type: 'cards', props: {
       kicker: 'Who we deliver for',
