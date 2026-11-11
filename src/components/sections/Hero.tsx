@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { audiences, type AudienceKey } from '@/data/home';
 import { img } from '@/data/images';
 import { site } from '@/data/site';
-import { bodies, bodyKeys } from '@/data/partners';
-import Logo from '../Logo';
 import { Arrow } from '../ui';
 
 export default function Hero() {
@@ -28,15 +26,6 @@ export default function Hero() {
             </div>
             <div key={key} className="swap">
               <h1 className="mt-9 font-serif text-[26px] leading-[1.15] md:text-[36px]">{a.heading}</h1>
-              {key === 'bodies' && (
-                <ul className="mt-7 grid max-w-[480px] grid-cols-4 gap-2" aria-label="Awarding bodies we deliver for">
-                  {bodyKeys.map((k) => (
-                    <li key={k}>
-                      <Link href={bodies[k].href} className="block h-full opacity-95 transition-opacity hover:opacity-100"><Logo k={k} box="h-5 md:h-6" className="h-full !rounded-lg !p-2" /></Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
               <p className="mt-7 max-w-[500px] text-[16px] leading-[1.65] text-white/85">{a.text}</p>
               <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link href={a.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-blue hover:bg-tint">
@@ -47,13 +36,13 @@ export default function Hero() {
                 </a>
               </div>
             </div>
-            <ul className="mt-auto grid max-w-[560px] gap-3 pt-10 sm:grid-cols-2" aria-label="Registrations and approvals">
+            <ul className="mt-auto grid max-w-[560px] gap-3 pt-10 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" aria-label="Registrations and approvals">
               {site.approvals.map((a) => (
                 <li key={a.body}>
                   <Link href="/licensing-and-approvals/" className="block h-full rounded-2xl border border-white/15 bg-white/[.06] p-4 transition-colors hover:border-white/35 hover:bg-white/10">
-                    <span className="flex items-center justify-between gap-3">
-                      <span className="rounded-md bg-white px-2.5 py-1 text-[13px] font-bold" style={{ color: a.color }}>{a.body}</span>
-                      <span className="text-[11px] font-semibold tracking-[.12em] text-sky">ITS GROUP</span>
+                    <span className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                      <span className="whitespace-nowrap rounded-md bg-white px-2.5 py-1 text-[13px] font-bold" style={{ color: a.color }}>{a.body}</span>
+                      <span className="whitespace-nowrap text-[11px] font-semibold tracking-[.12em] text-sky">ITS GROUP</span>
                     </span>
                     <span className="mt-3 block text-[14px] font-semibold leading-snug text-white">{a.title}</span>
                     <span className="mt-3 block text-[10.5px] font-semibold tracking-[.14em] text-sky/90">REFERENCE</span>
