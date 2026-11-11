@@ -1,7 +1,7 @@
 import { milestones } from '@/data/profile';
 import { H2, Kicker, Rise, Wrap } from '../ui';
 
-export default function Milestones({ kicker = 'Our progress', title = 'Built with purpose. Recognised through progress.', limit }: { kicker?: string; title?: string; limit?: number }) {
+export default function Milestones({ kicker = 'Our progress', title = 'Built with purpose. Recognised through progress.', intro, limit }: { kicker?: string; title?: string; intro?: string; limit?: number }) {
   const list = milestones.slice(0, limit);
   return (
     <section className="py-24 md:py-32">
@@ -9,6 +9,7 @@ export default function Milestones({ kicker = 'Our progress', title = 'Built wit
         <Rise className="max-w-[720px]">
           <Kicker>{kicker}</Kicker>
           <H2>{title}</H2>
+          {intro && <p className="mt-4 text-[16px] leading-[1.7] text-body">{intro}</p>}
         </Rise>
         <div className={`mt-14 grid gap-8 ${list.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-5'} md:gap-5`}>
           {list.map((m, n) => (

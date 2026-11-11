@@ -26,7 +26,8 @@ export default function Hero() {
             </div>
             <div key={key} className="swap">
               <h1 className="mt-9 font-serif text-[26px] leading-[1.15] md:text-[36px]">{a.heading}</h1>
-              <p className="mt-7 max-w-[500px] text-[16px] leading-[1.65] text-white/85">{a.text}</p>
+              {a.lead && <p className="mt-5 max-w-[520px] text-[17px] font-semibold leading-[1.5] text-white">{a.lead}</p>}
+              <p className={`${a.lead ? 'mt-4' : 'mt-7'} max-w-[500px] text-[16px] leading-[1.65] text-white/85`}>{a.text}</p>
               <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link href={a.href} className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-blue hover:bg-tint">
                   {a.cta} <Arrow />

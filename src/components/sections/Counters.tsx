@@ -49,7 +49,7 @@ export default function Counters() {
           {stats.map((s, k) => (
             <div key={s.label} className="group relative bg-white p-8 transition-colors hover:bg-[#F7FAFE]">
               <div className="flex min-h-[48px] items-baseline gap-1 font-serif text-[40px] leading-none text-blue tabular-nums md:min-h-[56px] md:text-[46px]">
-                {s.word ? <span className="text-[30px] md:text-[34px]">{s.word}</span> : <Count to={s.value} run={seen} delay={k * 180} />}
+                {s.word ? <span className={s.word.length > 5 ? 'text-[30px] md:text-[34px]' : ''}>{s.word}</span> : <Count to={s.value} run={seen} delay={k * 180} />}
                 <span className="text-[24px] text-navy">{s.suffix}</span>
               </div>
               <div className="mt-5 h-[3px] w-full bg-line">

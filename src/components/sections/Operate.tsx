@@ -7,6 +7,8 @@ import { H2, Kicker, Rise, Wrap } from '../ui';
 
 const byCode = Object.fromEntries(countries.map((c) => [c.code, c]));
 const markets = map.mk as Record<string, string>;
+// markets too small to draw as a shape at this scale get a dot at their real position
+const dots: Record<string, [number, number]> = { BHR: [470, 386] };
 
 // Callout label anchors: dot = geographic point, off = box top-left offset (×S)
 const S = 2.3;
@@ -49,6 +51,12 @@ export default function Operate({ start = 'PAK', kicker = 'Where we work', title
                   onClick={() => setSel(code)} onMouseEnter={() => setHover(code)} onMouseLeave={() => setHover(null)}>
                   <title>{name}</title>
                 </path>
+              ))}
+              {Object.entries(dots).map(([code, [cx, cy]]) => (
+                <circle key={code} cx={cx} cy={cy} r={5} fill={fill(code)} stroke="#fff" strokeWidth="1.2" className="cursor-pointer" style={{ transition: 'fill .2s' }}
+                  onClick={() => setSel(code)} onMouseEnter={() => setHover(code)} onMouseLeave={() => setHover(null)}>
+                  <title>{byCode[code]?.name}</title>
+                </circle>
               ))}
               {countries.map(({ code, name }) => {
                 const L = labels[code];

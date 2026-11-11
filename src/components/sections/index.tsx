@@ -36,6 +36,7 @@ import Rows from './Rows';
 import Logos from './Logos';
 import Pull from './Pull';
 import Doc from './Doc';
+import Delivery from './Delivery';
 
 const registry = {
   hero: Hero,
@@ -73,6 +74,7 @@ const registry = {
   logos: Logos,
   pull: Pull,
   doc: Doc,
+  delivery: Delivery,
 };
 
 export type SectionType = keyof typeof registry;
