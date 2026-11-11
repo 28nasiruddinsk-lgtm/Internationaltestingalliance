@@ -3,8 +3,8 @@
 // ponytail: delete this file and the QaMark wrapper once the client signs the revisions off
 export const qaNotes: Record<string, [match: string, note: string][]> = {
   '': [
-    ['hero', 'Logos added under the headline in the Awarding bodies tab (names until the logo files arrive)'],
-    ['intro', 'Removed: “We play no part in teaching or in marking.”'],
+    ['hero', 'New heading and text; IBCC and Pakistan Bar Council boxes under the buttons'],
+    ['intro', 'New text for the About ITA paragraphs'],
     ['logos', 'New: “Delivering for” logo strip under Where we work'],
   ],
   'about-us': [

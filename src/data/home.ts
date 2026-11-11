@@ -44,18 +44,19 @@ export const stats: { value: number; suffix: string; word?: string; label: strin
 
 // `detail` and `cta` are the longer card text and link used on the Services page
 export const services: { title: string; text: string; detail: string; cta: string; image: ImageKey; alt: string; href: string }[] = [
-  { title: 'Exam management', text: 'Scheduling, venue preparation, candidate checks and post-session reporting.', image: 's_sheet14', href: '/exam-management/',
+  // headings, text and order follow the ITA Company Profile
+  { title: 'Exam Management', text: 'We handle scheduling, venue preparation, candidate checks, and post-session reporting.', image: 's_sheet14', href: '/exam-management/',
     detail: 'We plan the sitting with you, prepare the venue, check every candidate in and send back the report.', cta: 'See exam management',
     alt: 'Exam answer sheet being completed' },
-  { title: 'Professional invigilation', text: 'Trained, impartial staff supervise every session from start to finish.', image: 's_teacher11', href: '/professional-invigilation/',
-    detail: 'Trained and impartial invigilators who supervise from the first paper opened to the last script sealed.', cta: 'See invigilation',
-    alt: 'An invigilator helping candidates during an exam' },
-  { title: 'Secure venues', text: 'Controlled access, CCTV oversight and secure storage of materials.', image: 'n_cctv', href: '/exam-venues/',
+  { title: 'Secure Venues', text: 'We ensure controlled access, CCTV oversight, and secure storage at all locations.', image: 'n_cctv', href: '/exam-venues/',
     detail: 'Controlled entry, CCTV across the exam zones and locked storage for papers in every city we work in.', cta: 'See our venues',
     alt: 'CCTV camera monitoring a venue' },
-  { title: 'Technology and quality assurance', text: 'Digital ID and QR verification, incident reporting and a full audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
+  { title: 'Technology & Quality Assurance', text: 'Digital ID and QR checks support verification; incident reports and session logs provide audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
     detail: 'Digital ID and QR checks at the door. Incident reports and session logs that leave a clear audit trail.', cta: 'See how it works',
     alt: 'Digital technology and quality assurance' },
+  { title: 'Professional Invigilation', text: 'Trained personnel supervise exam sessions impartially.', image: 's_teacher11', href: '/professional-invigilation/',
+    detail: 'Trained and impartial invigilators who supervise from the first paper opened to the last script sealed.', cta: 'See invigilation',
+    alt: 'An invigilator helping candidates during an exam' },
 ];
 
 export const parties = [
