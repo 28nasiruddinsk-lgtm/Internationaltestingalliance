@@ -3,11 +3,12 @@ import type { ImageKey } from './images';
 export type AudienceKey = 'bodies' | 'uni' | 'cand';
 
 export const audiences: Record<AudienceKey, {
-  tab: string; heading: string; text: string; cta: string; href: string; image: ImageKey; alt: string;
+  tab: string; heading: string; lead?: string; text: string; cta: string; href: string; image: ImageKey; alt: string;
 }> = {
   bodies: {
     tab: 'Awarding bodies',
-    heading: 'Examinations delivered independently and in line with your protocols.',
+    heading: 'We deliver examinations independently and according to your protocols.',
+    lead: 'Secure, independent and technology-enabled examination delivery solutions for a trusted global education ecosystem.',
     text: 'We verify every candidate, run every session from start to finish and deliver one consolidated record afterwards. No teaching. No marking. No influence over the outcome.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
     image: 'hero_awarding', alt: 'A historic university building with students walking through its courtyard',
@@ -37,9 +38,9 @@ export const quickLinks = [
 // `word` replaces the count-up for a figure that is not a number
 export const stats: { value: number; suffix: string; word?: string; label: string; text: string }[] = [
   { value: 9, suffix: '', label: 'Core markets', text: 'Pakistan, Iraq, UAE, Saudi Arabia, Egypt, Bahrain, Malaysia, Uzbekistan and the UK' },
-  { value: 9, suffix: '', label: 'Cities in Pakistan', text: 'Karachi to Gilgit, with venues confirmed for each sitting' },
-  { value: 4, suffix: '', label: 'International awarding bodies', text: 'NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways' },
-  { value: 24, suffix: 'h', label: 'Report turnaround', text: 'Full session record to the awarding body within a day' },
+  { value: 9, suffix: '', label: 'Cities in Pakistan', text: 'Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad and Gilgit' },
+  { value: 4, suffix: '', label: 'Awarding bodies and Universities', text: 'NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways' },
+  { value: 24, suffix: '', word: '24/7', label: 'Consolidated reporting', text: 'Attendance data, incident logs and supporting evidence delivered in one consolidated record.' },
 ];
 
 // `detail` and `cta` are the longer card text and link used on the Services page
@@ -48,15 +49,22 @@ export const services: { title: string; text: string; detail: string; cta: strin
   { title: 'Exam Management', text: 'We handle scheduling, venue preparation, candidate checks, and post-session reporting.', image: 's_sheet14', href: '/exam-management/',
     detail: 'We plan the sitting with you, prepare the venue, check every candidate in and send back the report.', cta: 'See exam management',
     alt: 'Exam answer sheet being completed' },
-  { title: 'Secure Venues', text: 'We ensure controlled access, CCTV oversight, and secure storage at all locations.', image: 'n_cctv', href: '/exam-venues/',
+  { title: 'Secure Venues', text: 'We ensure controlled access, CCTV oversight, and secure storage at all locations.', image: 'hall', href: '/exam-venues/',
     detail: 'Controlled entry, CCTV across the exam zones and locked storage for papers in every city we work in.', cta: 'See our venues',
-    alt: 'CCTV camera monitoring a venue' },
+    alt: 'An ITA exam hall set with numbered rows' },
   { title: 'Technology & Quality Assurance', text: 'Digital ID and QR checks support verification; incident reports and session logs provide audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
     detail: 'Digital ID and QR checks at the door. Incident reports and session logs that leave a clear audit trail.', cta: 'See how it works',
     alt: 'Digital technology and quality assurance' },
   { title: 'Professional Invigilation', text: 'Trained personnel supervise exam sessions impartially.', image: 's_teacher11', href: '/professional-invigilation/',
     detail: 'Trained and impartial invigilators who supervise from the first paper opened to the last script sealed.', cta: 'See invigilation',
     alt: 'An invigilator helping candidates during an exam' },
+];
+
+// independence slide of the company profile: who does what in a sitting
+export const delivery: [num: string, name: string, role: string, points: string[]][] = [
+  ['01', 'Institution', 'Sets exam protocols', ['Confirms candidate requirements', 'Provides institutional guidance']],
+  ['02', 'International Testing Alliance', 'Administers the examination', ['Applies agreed procedures', 'Verifies candidates and examination conditions', 'Manages venues and invigilation', 'Records and reports session evidence']],
+  ['03', 'Awarding Body', 'Controls assessment', ['Receives session evidence', 'Sets assessment and examination requirements', 'Maintains academic standards', 'Determines marking, grading & results', 'Receives documented session evidence']],
 ];
 
 export const parties = [

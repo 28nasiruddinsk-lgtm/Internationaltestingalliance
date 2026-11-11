@@ -5,12 +5,13 @@ import type { ImageKey } from './images';
 export type Card = { title: string; text: string; tag?: string; image?: ImageKey; alt?: string; href?: string; cta?: string; logo?: BodyKey };
 
 export const offers: Card[] = [
-  { title: 'Partner portal', text: 'Real-time visibility of registrations, candidate numbers, schedules, attendance and examination activity, from registration to final reporting.' },
-  { title: 'Value-led delivery', text: 'A flexible model: choose the services you need and plan examination budgets with confidence.' },
-  { title: 'Priority partner service', text: 'Dedicated coordination, responsive support and priority handling from initial planning to post-session reporting.' },
-  { title: 'Candidate self-service', text: 'Candidates register, pay securely and download their Statement of Entry (SOE) without manual intervention.' },
-  { title: 'Equal access, nationwide reach', text: 'Delivery across Pakistan on partner premises or external venues, including Quetta, Peshawar, Gilgit and hard-to-reach areas.' },
-  { title: 'Marketing that supports growth', text: 'We promote your examination body or university across our website and social media channels.' },
+  // company profile slide 6
+  { title: 'Partner Portal', text: 'A dedicated partner portal providing real-time visibility of registrations, candidate numbers, schedules, attendance and examination activity, giving institutions greater control from registration to final reporting.' },
+  { title: 'Value-Led Delivery', text: 'More value. Better control of costs. A flexible delivery model that allows partners to choose the services they require and plan examination budgets with confidence.' },
+  { title: 'Priority Partner Service', text: 'Providing dedicated coordination, responsive support, and priority handling for partner requirements from initial planning to post-session reporting.' },
+  { title: 'Candidate Self-Service', text: 'Candidates can register, pay securely and download their Statement of Entry (SOE) through a simple self-service process, reducing manual intervention, administrative effort and delays.' },
+  { title: 'Equal Access & Nationwide Reach', text: 'Examination delivery across Pakistan using partner premises or external venues, covering key regions like Quetta, Peshawar, Gilgit as well as hard-to-reach areas. We are fully equipped to expand operations in new locations to meet partner needs.' },
+  { title: 'Marketing That Supports Growth', text: 'We extend your reach by actively promoting your examination body or university across our website and social media channels, helping drive awareness and candidate engagement.' },
 ];
 
 export const controls: Card[] = [
@@ -69,11 +70,12 @@ export const growth: Card[] = [
 ];
 
 export const milestones = [
-  { date: 'April 2025', title: 'ITA established', text: 'ITA is established within the ITS group.' },
-  { date: 'June 2025', title: 'IBCC registration', text: 'Registered with the Inter Boards Coordination Commission (IBCC).' },
-  { date: 'July 2025', title: 'IBCC notification', text: 'IBCC issues its formal notification for examination delivery.' },
-  { date: 'September 2026', title: 'Pakistan Bar Council', text: 'The Pakistan Bar Council lists ITS among approved agencies for foreign law examinations.' },
-  { date: 'Today', title: 'Delivering for four awarding bodies', text: 'NCC Education, City & Guilds, University of Greenwich UK and GEMS Pathways.' },
+  // company profile slide 23
+  { date: 'April 2025', title: 'ITA Established', text: 'ITA is established as part of the ITS Group, creating a dedicated platform for examination and assessment delivery.' },
+  { date: 'June 2025', title: 'IBCC Registration', text: 'Registered with the Inter Boards Coordination Commission as an approved examination delivery partner.' },
+  { date: 'July 2025', title: 'IBCC Notification', text: 'Formal notification issued by IBCC, confirming ITA’s recognition for examination delivery.' },
+  { date: 'September 2026', title: 'Pakistan Bar Council Recognition', text: 'Recognized among the approved agencies for foreign Law examination delivery.' },
+  { date: '2026', title: 'Expanding Assessment Delivery', text: 'Continuing to build partnerships with universities, awarding bodies and professional institutions globally.' },
 ];
 
 export const pillars: Card[] = [
