@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Libre_Caslon_Text, Open_Sans } from 'next/font/google';
-import Progress from '@/components/Progress';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { organizationSchema, site, siteUrl } from '@/data/site';
@@ -31,7 +30,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only z-[80] bg-white px-4 py-2 text-blue focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
           Skip to content
         </a>
-        <Progress />
         <Header />
         <main id="main">{children}</main>
         <Footer />
