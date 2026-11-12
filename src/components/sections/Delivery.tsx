@@ -39,9 +39,6 @@ export default function Delivery() {
             );
           })}
         </ol>
-        <Rise delay={300} className="mx-auto mt-14 max-w-[820px] border-y border-line py-7 text-center">
-          <p className="font-serif text-[20px] italic leading-snug text-navy md:text-[26px]">“No teaching. No marking. No influence over the outcome.”</p>
-        </Rise>
       </Wrap>
     </section>
   );

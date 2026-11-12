@@ -10,6 +10,20 @@ export const day: [time: string, title: string, text: string, image: ImageKey][]
   ['Same day', 'Report sent', 'Attendance, incident logs and evidence go to the awarding body in one record.', 's_meet4'],
 ];
 
+// home "Our Candidate Journey": the client's ten steps, numbered rather than timed
+export const journey: [step: string, title: string, text: string, image: ImageKey][] = [
+  ['01', 'Venue Readiness Check', 'Ensuring the examination venue, facilities, equipment and seating arrangements are fully prepared before the examination begins.', 'hall'],
+  ['02', 'Test Day Staff & Supervisor Arrival', 'Ensuring all test-day staff and supervisors arrive on time, complete their assigned responsibilities and are briefed on examination procedures.', 'invigilators'],
+  ['03', 'Candidate Arrival & Registration', 'Welcoming candidates, confirming their attendance and guiding them through the registration process.', 'entrance'],
+  ['04', 'Three-Way Candidate Verification', 'Verifying candidate identities through a three-way checking process to ensure accuracy, authenticity and examination security.', 'verify'],
+  ['05', 'Candidate ID Scanning & QR Code Verification', 'Scanning candidate identification and QR codes to validate registration details and confirm examination eligibility.', 'qr_scan'],
+  ['06', 'Candidate Allocation & Seating According to Candidate/Centre Numbers', 'Directing candidates to their designated seats based on their assigned candidate and centre numbers to ensure an organised examination environment.', 'hall_rows'],
+  ['07', 'Examination Commencement, Monitoring & Supervision', 'Ensuring the examination starts as scheduled while supervisors monitor candidates, maintain examination integrity and oversee compliance with examination regulations.', 'inv_walk'],
+  ['08', 'Examination Completion & Submission', 'Managing the examination closing process, ensuring candidates complete their assessments and successfully submit their responses.', 'exam_sitting'],
+  ['09', 'Candidate Exit & Venue Clearance', 'Supervising the orderly departure of candidates and ensuring the examination venue is properly cleared after the session.', 'corridor'],
+  ['10', 'Post-Examination Reporting & Reconciliation', 'Reviewing attendance, examination records and incident reports while completing the necessary post-examination documentation and reconciliation.', 'board'],
+];
+
 // film chapters: start second, title, caption (TODO: real film)
 export const filmChapters: [number, string, string][] = [
   [0, 'Doors and screening', 'Walk-through screening at the entrance'],

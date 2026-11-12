@@ -9,7 +9,7 @@ export const audiences: Record<AudienceKey, {
     tab: 'Awarding bodies',
     heading: 'We deliver examinations independently and according to your protocols.',
     lead: 'Secure, independent and technology-enabled examination delivery solutions for a trusted global education ecosystem.',
-    text: 'We verify every candidate, run every session from start to finish and deliver one consolidated record afterwards. No teaching. No marking. No influence over the outcome.',
+    text: 'We verify every candidate, run every session from start to finish and deliver one consolidated record afterwards.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
     image: 'hero_awarding', alt: 'A historic university building with students walking through its courtyard',
   },
@@ -31,7 +31,7 @@ export const audiences: Record<AudienceKey, {
 
 export const quickLinks = [
   { title: 'Find a centre', text: 'Nine cities in Pakistan, plus Dubai.', href: '/exam-venues/', icon: 'centre' },
-  { title: 'Book an exam', text: 'Register, pay securely and download your Statement of Entry (SOE).', note: 'Reg. No. IBCC/RC-1/Impl-2/2025/758', href: '/book-an-exam/', icon: 'book' },
+  { title: 'Book an exam', text: 'Register, pay securely and download your Statement of Entry (SOE).', href: '/book-an-exam/', icon: 'book' },
   { title: 'Exam day guide', text: 'What to bring and when to arrive.', href: '/exam-day-guidelines/', icon: 'guide' },
 ] as const;
 

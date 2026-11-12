@@ -1,5 +1,6 @@
 import type { SectionConfig } from '@/components/sections';
 import { news } from './news';
+import { journey } from './sitting';
 import * as p from './profile';
 import { moreMeta, morePages } from './pages-more';
 
@@ -13,13 +14,12 @@ export const home: SectionConfig[] = [
     title: 'Four Pillars Support Our Exam Delivery',
     intro: 'Four connected capabilities help protect the integrity of every exam, avoid conflict of interest and give institutions confidence at every stage of delivery.',
   } },
-  { type: 'cards', props: { kicker: 'What ITA offers', title: 'One Partner. One Portal. Every Candidate, Everywhere.', intro: 'What sets ITA apart is not only how we deliver exams, but how easily partners and candidates can access, manage and monitor the entire journey.', items: p.offers, tint: true } },
+  { type: 'cards', props: { kicker: 'What ITA offers', title: 'One Partner. One Portal. Every Candidate, Everywhere.', intro: 'What sets ITA apart is not only how we deliver exams, but how easily partners and candidates can access, manage and monitor the entire journey.', items: p.offers, tint: true, joined: true } },
   { type: 'delivery' },
   { type: 'structure' },
-  { type: 'film' },
-  { type: 'hall' },
-  { type: 'day' },
-  { type: 'gallery' },
+  { type: 'day', props: { kicker: 'From arrival to final report', title: 'Our Candidate Journey', intro: 'Every step of an ITA sitting, from venue readiness to post-examination reporting.', items: journey, steps: true } },
+  { type: 'hall', props: { title: 'Checks, Briefing and Live Supervision' } },
+  { type: 'gallery', props: { title: 'Glimpses of ITA Examination Sessions.' } },
   { type: 'operate' },
   { type: 'logos', props: { detailed: true } },
   { type: 'milestones', props: { title: 'Built with Purpose. Recognized through Progress.', intro: 'Key milestones in the development of ITA and its examination delivery capability.' } },
