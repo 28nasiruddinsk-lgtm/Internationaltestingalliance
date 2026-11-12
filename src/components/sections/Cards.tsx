@@ -16,13 +16,14 @@ type Props = {
   names?: { label: string; list: string[] }; // a row of name tags under the cards, e.g. partners
   contain?: boolean; // show whole images, e.g. certificates
   id?: string;
+  joined?: boolean; // follows a section with the same background, so skip most of the top padding
 };
 
-export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark, names, contain, id }: Props) {
+export default function Cards({ kicker, title, intro, items, tint, numbered = true, outro, dark, names, contain, id, joined }: Props) {
   const cols = items.length === 2 ? 'lg:grid-cols-2' : items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
   const sub = dark ? 'text-white/75' : 'text-body';
   return (
-    <section id={id} className={`scroll-mt-24 py-24 md:py-32 ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
+    <section id={id} className={`scroll-mt-24 ${joined ? 'pb-24 pt-4 md:pb-32 md:pt-6' : 'py-24 md:py-32'} ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
       <Wrap>
         <Rise className="max-w-[720px]">
           {kicker && <Kicker light={dark}>{kicker}</Kicker>}
