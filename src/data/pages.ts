@@ -145,7 +145,7 @@ export const pages: Record<string, SectionConfig[]> = {
       title: 'Exam management, from the first call to the final report',
       intro: 'You set the rules. We take care of everything that has to happen so a few hours in an exam room can be trusted.',
       image: 'em_candidate', alt: 'A candidate writing an exam while an invigilator supervises', cover: true, flip: true,
-      buttons: [{ label: 'Plan a sitting', href: '/contact/' }, { label: 'See an exam day', href: '/#day' }],
+      buttons: [{ label: 'Plan a sitting', href: '/contact/' }, { label: 'See the candidate journey', href: '/#day' }],
     } },
     { type: 'model', props: {
       kicker: 'How we work',
@@ -160,7 +160,7 @@ export const pages: Record<string, SectionConfig[]> = {
       highlight: 4,
       arrows: true,
       quote: 'Your protocols stay the reference point at every step.',
-      link: { label: 'Watch an exam day, hour by hour', href: '/#day' },
+      link: { label: 'See our candidate journey, step by step', href: '/#day' },
     } },
     prose({
       kicker: 'After the session',
