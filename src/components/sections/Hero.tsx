@@ -59,14 +59,14 @@ export default function Hero() {
             <img key={k} src={img(v.image)} alt={v.alt} className="absolute inset-0 h-full w-full object-cover"
               style={{ opacity: key === k ? 1 : 0, transform: key === k ? 'scale(1)' : 'scale(1.04)', transition: 'opacity .9s ease, transform 1.4s cubic-bezier(.2,.7,.2,1)' }} />
           ))}
-          <a href="#film" className="group absolute bottom-24 left-6 flex items-center gap-4 rounded-full bg-white/95 py-2 pl-2 pr-6 text-ink shadow-[0_10px_30px_rgba(14,34,64,.25)] hover:bg-white">
+          <a href="#day" className="group absolute bottom-24 left-6 flex items-center gap-4 rounded-full bg-white/95 py-2 pl-2 pr-6 text-ink shadow-[0_10px_30px_rgba(14,34,64,.25)] hover:bg-white">
             <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-blue">
               <span className="pulse absolute inset-0 rounded-full bg-blue/40" />
-              <svg width="14" height="16" aria-hidden="true" className="relative ml-1"><path d="M0 0l14 8-14 8z" fill="#fff" /></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" className="relative"><path d="M8 1v13M2 8l6 6 6-6" fill="none" stroke="#fff" strokeWidth="2" /></svg>
             </span>
             <span>
-              <span className="block text-[12px] text-muted">Film · 21 seconds</span>
-              <span className="block text-[15px] font-semibold">Watch a sitting at ITA</span>
+              <span className="block text-[12px] text-muted">10 steps · arrival to final report</span>
+              <span className="block text-[15px] font-semibold">Our candidate journey</span>
             </span>
           </a>
         </div>
