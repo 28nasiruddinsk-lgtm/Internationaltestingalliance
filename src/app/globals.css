@@ -39,5 +39,3 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
   html { scroll-behavior: auto; }
 }
 
-/* ITA node pulse once the corporate structure orbit settles */
-@keyframes orbit-ripple { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(2); } }
