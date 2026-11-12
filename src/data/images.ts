@@ -46,6 +46,7 @@ const files = {
   campus_arch: 'campus-arch.jpg',
   qr_phone: 'qr-phone.jpg',
   ab_students: 'ab-students.jpg',
+  secure_venue: 'secure-venue.webp',
 
   // stock photos
   s_dubai1: 's_dubai1.jpg',
