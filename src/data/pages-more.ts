@@ -216,7 +216,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       logo: 'greenwich',
       title: 'University of Greenwich UK exams in Pakistan',
       intro: 'One standard across every campus, from the day you register to the final record.',
-      image: 'exam_sitting', alt: 'Candidates sitting a supervised exam in an ITA hall', cover: true,
+      image: 'ab_greenwich', alt: 'Students on the lawn at the University of Greenwich campus', cover: true,
       buttons: [{ label: 'Go to the portal', href: portal }, bringAndGuide],
     } },
     { type: 'split', props: {
@@ -255,7 +255,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       logo: 'cg',
       title: 'City & Guilds exams in Pakistan',
       intro: 'City & Guilds writes the rules. We follow them to the letter, in every room.',
-      image: 'hall', alt: 'An ITA exam hall set for a sitting', cover: true,
+      image: 'ab_cg', alt: 'The City & Guilds of London Art School building', cover: true,
       buttons: [{ label: 'Book your exam', href: '/book-an-exam/' }, bringAndGuide],
     } },
     { type: 'split', props: {
@@ -304,7 +304,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       logo: 'cg',
       title: 'International Foundation Programme exams',
       intro: 'Your Foundation Programme exams, run calmly and fairly, with everything you need in one portal.',
-      image: 'exam', alt: 'Candidates sitting an exam in an ITA hall', cover: true,
+      image: 'ab_ifp', alt: 'A bright university entrance hall with blue seating', cover: true,
       buttons: [{ label: 'Go to the portal', href: portal }, bringAndGuide],
     } },
     { type: 'split', props: {
@@ -334,7 +334,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       logo: 'ncc',
       title: 'NCC Education exams, with a record you can verify',
       intro: 'Your college, your candidates, and our independent record of exactly what happened.',
-      image: 'n_ncc', alt: 'The ITA team marking the NCC Education partnership',
+      image: 'ab_ncc', alt: 'Students on campus steps reviewing their notes',
       buttons: [{ label: 'Contact our team', href: '/contact/' }, bringAndGuide],
     } },
     { type: 'split', props: {
@@ -371,7 +371,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       logo: 'gems',
       title: 'GEMS Pathways exams in Pakistan',
       intro: 'From the first plan to the last sealed script, we run the exam process for GEMS Pathways in Pakistan.',
-      image: 'centre_gems', alt: 'An ITA hall set for the GEMS scholarship programme', cover: true,
+      image: 'ab_gems', alt: 'A smiling student holding books on campus', cover: true,
       buttons: [{ label: 'Contact our team', href: '/contact/' }, bringAndGuide],
     } },
     { type: 'split', props: {

@@ -47,6 +47,11 @@ const files = {
   qr_phone: 'qr-phone.jpg',
   ab_students: 'ab-students.jpg',
   secure_venue: 'secure-venue.webp',
+  ab_ncc: 'ab-ncc.jpg',
+  ab_greenwich: 'ab-greenwich.jpg',
+  ab_cg: 'ab-cg.jpg',
+  ab_ifp: 'ab-ifp.jpg',
+  ab_gems: 'ab-gems.jpg',
 
   // stock photos
   s_dubai1: 's_dubai1.jpg',

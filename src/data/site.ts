@@ -19,7 +19,7 @@ export const site = {
     { label: 'Awarding bodies', items: [['All awarding bodies', '/awarding-bodies/'], ['University of Greenwich UK', '/university-of-greenwich-uk/'], ['City & Guilds', '/city-and-guilds/'], ['International Foundation Programme', '/international-foundation-program/', true], ['NCC Education', '/ncc-education/'], ['GEMS Pathways', '/gems-pathways/']] },
     { label: 'Candidates', items: [['Book an exam', '/book-an-exam/'], ['Exam day guidelines', '/exam-day-guidelines/']] },
     { label: 'News', href: '/news-events/' },
-    { label: 'Contact', href: '/contact/' },
+    { label: 'Contact Us', href: '/contact/' },
   ] as { label: string; href?: string; items?: [label: string, href: string, sub?: boolean][] }[],
   footer: [
     { title: 'ITA', links: [['About us', '/about-us/'], ['Our board and management', '/our-board-and-management/'], ['Licensing and approvals', '/licensing-and-approvals/'], ['UAE and Dubai', '/uae/'], ['News and events', '/news-events/'], ['Careers', '/careers/'], ['Become a partner', '/become-a-partner/'], ['Contact us', '/contact/']] },
