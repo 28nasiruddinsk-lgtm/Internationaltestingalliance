@@ -5,7 +5,7 @@ import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 export default function News({ limit = 4 }: { limit?: number }) {
   return (
-    <section id="news" className="bg-tint py-24 md:py-32">
+    <section id="news" className="bg-tint py-16 md:py-20">
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise>

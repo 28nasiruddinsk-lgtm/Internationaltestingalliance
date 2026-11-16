@@ -15,7 +15,7 @@ export default function Logos({ kicker, title, dark = true, detailed }: Props) {
   const head = kicker ?? (detailed ? 'Partners' : 'Delivering for');
   const heading = title ?? (detailed ? 'The Same Delivery Standard for Every Awarding Body' : undefined);
   return (
-    <section className={`${detailed ? 'py-24 md:py-32' : 'py-16 md:py-20'} ${dark ? 'bg-navy text-white' : 'bg-tint'}`}>
+    <section className={`${detailed ? 'py-16 md:py-20' : 'py-16 md:py-20'} ${dark ? 'bg-navy text-white' : 'bg-tint'}`}>
       <Wrap>
         <Rise className={heading ? 'max-w-[720px]' : ''}>
           <Kicker light={dark}>{head}</Kicker>

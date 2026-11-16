@@ -4,7 +4,7 @@ import { H2, Kicker, Rise, Wrap } from '../ui';
 export default function Milestones({ kicker = 'Our progress', title = 'Built with purpose. Recognised through progress.', intro, limit }: { kicker?: string; title?: string; intro?: string; limit?: number }) {
   const list = milestones.slice(0, limit);
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap>
         <Rise className="max-w-[720px]">
           <Kicker>{kicker}</Kicker>

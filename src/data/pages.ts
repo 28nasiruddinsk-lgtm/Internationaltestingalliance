@@ -5,25 +5,25 @@ import { journey } from './sitting';
 import * as p from './profile';
 import { moreMeta, morePages } from './pages-more';
 
-// Homepage section order
+// Homepage section order. Commented-out sections are hidden here because they also appear on inner pages.
 export const home: SectionConfig[] = [
   { type: 'hero' },
   { type: 'actions' },
-  { type: 'counters' },
+  // { type: 'counters' },
   { type: 'intro' },
-  { type: 'services', props: {
-    title: 'Four Pillars Support Our Exam Delivery',
-    intro: 'Four connected capabilities help protect the integrity of every exam, avoid conflict of interest and give institutions confidence at every stage of delivery.',
-  } },
-  { type: 'cards', props: { kicker: 'What ITA offers', title: 'One Partner. One Portal. Every Candidate, Everywhere.', intro: 'What sets ITA apart is not only how we deliver exams, but how easily partners and candidates can access, manage and monitor the entire journey.', items: p.offers, tint: true, joined: true } },
+  // { type: 'services', props: {
+  // title: 'Four Pillars Support Our Exam Delivery',
+  // intro: 'Four connected capabilities help protect the integrity of every exam, avoid conflict of interest and give institutions confidence at every stage of delivery.',
+  // } },
+  { type: 'cards', props: { kicker: 'What ITA offers', title: 'One Partner. One Portal. Every Candidate, Everywhere.', intro: 'What sets ITA apart is not only how we deliver exams, but how easily partners and candidates can access, manage and monitor the entire journey.', items: p.offers, tint: true } },
   { type: 'delivery' },
   { type: 'structure' },
   { type: 'day', props: { kicker: 'From arrival to final report', title: 'Our Candidate Journey', intro: 'Every step of an ITA sitting, from venue readiness to post-examination reporting.', items: journey, steps: true } },
-  { type: 'hall', props: { title: 'Checks, Briefing and Live Supervision' } },
-  { type: 'gallery', props: { title: 'Glimpses of ITA Examination Sessions.' } },
-  { type: 'operate' },
-  { type: 'logos', props: { detailed: true } },
-  { type: 'milestones', props: { title: 'Built with Purpose. Recognized through Progress.', intro: 'Key milestones in the development of ITA and its examination delivery capability.' } },
+  // { type: 'hall', props: { title: 'Checks, Briefing and Live Supervision' } },
+  // { type: 'gallery', props: { title: 'Glimpses of ITA Examination Sessions.' } },
+  // { type: 'operate' },
+  // { type: 'logos', props: { detailed: true } },
+  // { type: 'milestones', props: { title: 'Built with Purpose. Recognized through Progress.', intro: 'Key milestones in the development of ITA and its examination delivery capability.' } },
   { type: 'news' },
   { type: 'contact' },
 ];

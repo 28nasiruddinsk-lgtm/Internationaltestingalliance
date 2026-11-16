@@ -41,7 +41,7 @@ export default function ContactForm({
   }
 
   return (
-    <section id={id} className={`scroll-mt-24 py-20 md:py-24 ${tint ? 'bg-tint' : ''}`}>
+    <section id={id} className={`scroll-mt-24 py-14 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       <Wrap className="grid gap-14 lg:grid-cols-12">
         <Rise className={direct ? 'lg:col-span-7' : 'lg:col-span-8'}>
           {kicker && <Kicker>{kicker}</Kicker>}

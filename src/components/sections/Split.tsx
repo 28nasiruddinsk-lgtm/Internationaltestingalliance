@@ -58,7 +58,7 @@ export default function Split({ kicker, title, paragraphs, link, links, tint, im
 
   if (image) {
     return (
-      <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
+      <section className={`py-16 md:py-20 ${tint ? 'bg-tint' : ''}`}>
         <Wrap className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <Rise className="relative pb-5 pl-5">
             <div className="absolute bottom-0 left-0 h-2/3 w-2/3 bg-blue" />
@@ -77,7 +77,7 @@ export default function Split({ kicker, title, paragraphs, link, links, tint, im
   }
 
   return (
-    <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
+    <section className={`py-16 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       <Wrap className="grid gap-12 lg:grid-cols-12">
         <Rise className="lg:col-span-5">
           {kicker && <Kicker>{kicker}</Kicker>}

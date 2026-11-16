@@ -25,7 +25,7 @@ export default function Model({ kicker = 'Independence', title = 'Three parties,
   const [ref, seen] = useInView<HTMLDivElement>(0.3);
   const edge = `${50 / steps.length}%`; // line runs from the first circle's centre to the last
   return (
-    <section className={`py-24 md:py-32 ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
+    <section className={`py-16 md:py-20 ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
       <Wrap>
         <Rise className="mx-auto max-w-[760px] text-center">
           <div className="inline-block"><Kicker light={dark}>{kicker}</Kicker></div>

@@ -9,7 +9,7 @@ type Props = { kicker?: string; title: string; intro?: string; items: Row[] };
 // Full-width linked rows: logo tile, name, one line, link. Fills blue on hover.
 export default function Rows({ kicker, title, intro, items }: Props) {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap>
         <Rise className="max-w-[720px]">
           {kicker && <Kicker>{kicker}</Kicker>}

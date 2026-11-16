@@ -4,7 +4,7 @@ import { H2, Kicker, Rise, Wrap } from '../ui';
 // Who does what in a sitting: institution → ITA → awarding body (company profile, independence slide)
 export default function Delivery() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap>
         <Rise className="mx-auto max-w-[760px] text-center">
           <div className="inline-block"><Kicker>Independence</Kicker></div>

@@ -32,7 +32,7 @@ export default function Gallery({ kicker = 'Our centres', title = 'Real rooms. R
   const by = (dir: number) => track.current!.scrollBy({ left: dir * track.current!.clientWidth * 0.6, behavior: 'smooth' });
 
   return (
-    <section className="overflow-hidden py-24 md:py-32">
+    <section className="overflow-hidden py-16 md:py-20">
       <Wrap className="flex flex-wrap items-end justify-between gap-6">
         <Rise>
           <Kicker>{kicker}</Kicker>

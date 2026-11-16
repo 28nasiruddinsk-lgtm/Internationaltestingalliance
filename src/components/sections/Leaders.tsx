@@ -46,7 +46,7 @@ export default function Leaders({ featured, kicker, title }: Props) {
   }
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap>
         <Rise className="max-w-[720px]">
           <Kicker>{kicker ?? 'Leadership'}</Kicker>

@@ -36,7 +36,7 @@ export default function Counters() {
   }, []);
   const seen = inView || late;
   return (
-    <section ref={ref} className="bg-tint pb-24 pt-20 md:pb-32 md:pt-24">
+    <section ref={ref} className="bg-tint pb-16 pt-14 md:pb-20 md:pt-16">
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise className="max-w-[640px]">

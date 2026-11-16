@@ -77,7 +77,7 @@ export default function Hall({ kicker = 'Inside a sitting', title = 'Watch a ses
   const [ix, iy] = deskXY(3, 2);
 
   return (
-    <section ref={ref} className="bg-tint py-24 md:py-32">
+    <section ref={ref} className="bg-tint py-16 md:py-20">
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise className="max-w-[720px]">

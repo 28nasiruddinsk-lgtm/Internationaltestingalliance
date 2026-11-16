@@ -54,7 +54,7 @@ export default function Lists({ kicker, title, intro, columns, tint, marks, imag
   );
 
   return (
-    <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
+    <section className={`py-16 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       {image ? (
         <Wrap className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">{head}{lists}{panel}</div>

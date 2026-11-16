@@ -22,7 +22,7 @@ export default function Verify({
   }
 
   return (
-    <section id="verify" className="py-24 md:py-32">
+    <section id="verify" className="py-16 md:py-20">
       <Wrap className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <Rise>
           <Kicker>{kicker}</Kicker>

@@ -56,7 +56,7 @@ export default function PageHeader({ title, intro, kicker, headline, image, alt 
       <section className="relative overflow-hidden bg-navy text-white">
         <img src={img(image)} alt={alt} className={`absolute inset-0 h-full w-full object-cover ${flip ? '-scale-x-100' : ''}`} />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/20" />
-        <Wrap className="relative py-28 md:py-44">
+        <Wrap className="relative py-20 md:py-28">
           <div className="max-w-[680px]">{text}</div>
         </Wrap>
       </section>
@@ -64,7 +64,7 @@ export default function PageHeader({ title, intro, kicker, headline, image, alt 
   }
 
   return (
-    <section className={`${tone} py-20 md:py-28`}>
+    <section className={`${tone} py-14 md:py-20`}>
       <Wrap className={image ? 'grid items-center gap-12 lg:grid-cols-2' : ''}>
         {text}
         {image && (

@@ -23,7 +23,7 @@ export default function Cards({ kicker, title, intro, items, tint, numbered = tr
   const cols = items.length === 2 ? 'lg:grid-cols-2' : items.length % 3 === 0 ? 'lg:grid-cols-3' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4';
   const sub = dark ? 'text-white/75' : 'text-body';
   return (
-    <section id={id} className={`scroll-mt-24 ${joined ? 'pb-24 pt-4 md:pb-32 md:pt-6' : 'py-24 md:py-32'} ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
+    <section id={id} className={`scroll-mt-24 ${joined ? 'pb-16 pt-2 md:pb-20 md:pt-4' : 'py-16 md:py-20'} ${dark ? 'bg-navy text-white' : tint ? 'bg-tint' : ''}`}>
       <Wrap>
         <Rise className="max-w-[720px]">
           {kicker && <Kicker light={dark}>{kicker}</Kicker>}

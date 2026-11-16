@@ -35,7 +35,7 @@ export default function Points({ kicker, title, intro, items, tint, image, alt =
   );
 
   return (
-    <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
+    <section className={`py-16 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       {image ? (
         <Wrap className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <Rise className="relative pb-5 pr-5 lg:col-span-5">

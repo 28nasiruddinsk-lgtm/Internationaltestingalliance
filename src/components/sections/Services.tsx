@@ -15,7 +15,7 @@ type Props = {
 export default function Services({ kicker = 'Our services', title = 'Take one service, or hand us the whole sitting.', detailed, exclude, link, intro }: Props) {
   const list = services.filter((s) => s.href !== exclude);
   return (
-    <section className="bg-tint py-24 md:py-32">
+    <section className="bg-tint py-16 md:py-20">
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise>

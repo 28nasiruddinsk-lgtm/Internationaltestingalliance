@@ -9,7 +9,7 @@ const FACTS = ['IBCC-registered', '9+ cities across Pakistan', 'Conflict-free ex
 
 export default function Structure() {
   return (
-    <section className="bg-tint py-24 md:py-32">
+    <section className="bg-tint py-16 md:py-20">
       <Wrap>
         <Rise className="mx-auto max-w-[760px] text-center">
           <div className="inline-block"><Kicker>Corporate structure</Kicker></div>

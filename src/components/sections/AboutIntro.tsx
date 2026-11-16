@@ -4,7 +4,7 @@ import { H2, Kicker, Rise, Wrap } from '../ui';
 
 export default function AboutIntro() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap className="grid gap-12 lg:grid-cols-12">
         <Rise className="lg:col-span-5">
           <Kicker>Who we are</Kicker>

@@ -10,7 +10,7 @@ const offices: { city: string; country: string; address: string; phone: string; 
 // TODO: real office photos and embedded maps once the client supplies them
 export default function Offices() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap>
         <Rise className="max-w-[720px]">
           <Kicker>Our offices</Kicker>

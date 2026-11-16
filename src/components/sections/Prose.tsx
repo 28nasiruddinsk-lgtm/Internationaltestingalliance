@@ -17,7 +17,7 @@ export type ProseProps = {
 
 export default function Prose({ kicker, title, paragraphs, points, image, alt = '', tint, contain, link }: ProseProps) {
   return (
-    <section className={`py-24 md:py-32 ${tint ? 'bg-tint' : ''}`}>
+    <section className={`py-16 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       <Wrap className={`grid gap-12 ${image ? 'lg:grid-cols-2' : ''}`}>
         <Rise className={image ? '' : 'max-w-[820px]'}>
           {kicker && <Kicker>{kicker}</Kicker>}

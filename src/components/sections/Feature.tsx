@@ -15,7 +15,7 @@ type Props = {
 // A wide photo with a white card overlapping it
 export default function Feature({ kicker, title, intro, items, image, alt = '', left }: Props) {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap className="relative">
         <div className={`h-[300px] overflow-hidden md:h-[620px] lg:w-[72%] ${left ? 'lg:ml-auto' : ''}`}>
           <img loading="lazy" decoding="async" src={img(image)} alt={alt} className="h-full w-full object-cover" />

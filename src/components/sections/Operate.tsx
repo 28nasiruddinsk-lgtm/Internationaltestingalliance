@@ -35,7 +35,7 @@ export default function Operate({ start = 'PAK', kicker = 'Centres across the gl
     code === sel ? '#0B4CA1' : code === hover ? '#B9C0C8' : '#CCD0D5';
 
   return (
-    <section id="operate" className="bg-tint py-24 md:py-32">
+    <section id="operate" className="bg-tint py-16 md:py-20">
       <Wrap>
         <Rise>
           <Kicker>{kicker}</Kicker>

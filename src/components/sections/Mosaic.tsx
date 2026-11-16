@@ -12,7 +12,7 @@ type Props = {
 // One large photo and two stacked beside it, captions on a dark fade
 export default function Mosaic({ kicker, title, text, images }: Props) {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <Wrap>
         <Rise className="max-w-[720px]">
           {kicker && <Kicker>{kicker}</Kicker>}

@@ -18,7 +18,7 @@ type Props = {
 export default function Steps({ kicker, title, intro, items, image, alt = '', dark, link }: Props) {
   const sub = dark ? 'text-white/75' : 'text-body';
   return (
-    <section className={`py-24 md:py-32 ${dark ? 'bg-navy text-white' : 'bg-tint'}`}>
+    <section className={`py-16 md:py-20 ${dark ? 'bg-navy text-white' : 'bg-tint'}`}>
       <Wrap className={`grid gap-14 ${image ? 'lg:grid-cols-12 lg:gap-20' : ''}`}>
         <div className={image ? 'lg:col-span-7' : 'max-w-[900px]'}>
           <Rise>
