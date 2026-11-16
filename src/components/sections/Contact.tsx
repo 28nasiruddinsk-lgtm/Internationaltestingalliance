@@ -7,13 +7,20 @@ import { Arrow, H2, Kicker, Wrap } from '../ui';
 const fields = [['name', 'Your name', 'text'], ['org', 'Organisation', 'text'], ['email', 'Work email', 'email'], ['country', 'Country', 'text']] as const;
 const box = 'mt-1.5 h-12 w-full border border-white/30 bg-white px-3 text-[15px] font-normal text-ink';
 
-export default function Contact() {
+type Props = { kicker?: string; title?: string; text?: string; message?: boolean }; // `message` adds a message box and a candidate option (Contact page)
+
+export default function Contact({
+  kicker = 'Work with us',
+  title = 'Talk to us about your next sitting.',
+  text = 'Tell us about your candidates and locations. Our partnerships team replies within one working day.',
+  message,
+}: Props) {
   const [sent, setSent] = useState(false);
 
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const d = new FormData(e.currentTarget);
-    openMail('Partnership enquiry', [['Name', d.get('name')], ['Organisation', d.get('org')], ['Email', d.get('email')], ['Country', d.get('country')], ['Represents', d.get('who')]]);
+    openMail(message ? 'Website enquiry' : 'Partnership enquiry', [['Name', d.get('name')], ['Organisation', d.get('org')], ['Email', d.get('email')], ['Country', d.get('country')], ['Represents', d.get('who')], ...(message ? [['Message', d.get('message')] as [string, FormDataEntryValue | null]] : [])]);
     setSent(true);
   }
 
@@ -21,10 +28,10 @@ export default function Contact() {
     <section id="work" className="bg-blue py-24 text-white md:py-32">
       <Wrap className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Kicker light>Work with us</Kicker>
-          <H2>Talk to us about your next sitting.</H2>
+          <Kicker light>{kicker}</Kicker>
+          <H2>{title}</H2>
           <p className="mt-5 max-w-[440px] text-[16px] leading-[1.7] text-white/85">
-            Tell us about your candidates and locations. Our partnerships team replies within one working day.
+            {text}
           </p>
           <div className="mt-8 space-y-1 text-[15px]">
             <a href={`mailto:${site.email}`} className="block underline">{site.email}</a>
@@ -58,8 +65,15 @@ export default function Contact() {
                   <option>An awarding body</option>
                   <option>A university</option>
                   <option>A training provider</option>
+                  {message && <option>A candidate</option>}
                 </select>
               </label>
+              {message && (
+                <label className="block text-[13.5px] font-semibold sm:col-span-2">
+                  Message
+                  <textarea name="message" required rows={5} className="mt-1.5 w-full border border-white/30 bg-white p-3 text-[15px] font-normal text-ink outline-none focus:border-sky" />
+                </label>
+              )}
               <button className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-white px-7 text-[15px] font-semibold text-blue hover:bg-tint sm:col-span-2 sm:justify-self-start">
                 Send enquiry <Arrow />
               </button>

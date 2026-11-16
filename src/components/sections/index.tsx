@@ -37,6 +37,7 @@ import Logos from './Logos';
 import Pull from './Pull';
 import Doc from './Doc';
 import Delivery from './Delivery';
+import Leaders from './Leaders';
 
 const registry = {
   hero: Hero,
@@ -75,6 +76,7 @@ const registry = {
   pull: Pull,
   doc: Doc,
   delivery: Delivery,
+  leaders: Leaders,
 };
 
 export type SectionType = keyof typeof registry;

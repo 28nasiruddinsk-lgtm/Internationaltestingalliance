@@ -26,7 +26,7 @@ const labels: Record<string, { dot: [number, number]; off: [number, number] }> =
 
 type Props = { start?: string; kicker?: string; title?: string };
 
-export default function Operate({ start = 'PAK', kicker = 'Where we work', title = 'Centres in Pakistan and Dubai. Candidates across nine markets.' }: Props) {
+export default function Operate({ start = 'PAK', kicker = 'Centres across the globe', title = 'Centres in Pakistan and Dubai. Candidates across nine markets.' }: Props) {
   const [sel, setSel] = useState(start);
   const [hover, setHover] = useState<string | null>(null);
   const c = byCode[sel];

@@ -6,9 +6,9 @@ export type NewsItem = { slug: string; date: string; title: string; image: Image
 export const news: NewsItem[] = [
   {
     slug: 'ncc-education-partnership', date: 'October 2026', image: 'n_ncc',
-    title: 'ITA and NCC Education strengthen partnership ahead of November examination sessions in Pakistan',
+    title: 'ITA and NCC Education strengthen partnership for examination sessions in Pakistan',
     body: [
-      "The meeting centred on strengthening the partnership, with a focus on preparations to conduct NCC Education's examination sessions in Pakistan from mid-November.",
+      "The meeting centred on strengthening the partnership, with a focus on preparations to conduct NCC Education's examination sessions in Pakistan from mid-November 2026.",
       'It marks a milestone in a shared commitment to professionally managed assessments and rigorous examination standards.',
       "Discussions also explored broader collaboration on forthcoming projects and Pakistan's evolving education reform agenda.",
     ],

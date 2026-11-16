@@ -5,14 +5,14 @@ import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 export default function News({ limit = 4 }: { limit?: number }) {
   return (
-    <section id="news" className="py-24 md:py-32">
+    <section id="news" className="bg-tint py-24 md:py-32">
       <Wrap>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Rise>
             <Kicker>News and announcements</Kicker>
             <H2>Latest from ITA</H2>
           </Rise>
-          <Link href="/news/" className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">All news <Arrow /></Link>
+          {limit < news.length && <Link href="/news-events/" className="group inline-flex items-center gap-2 text-[15px] font-semibold text-blue">All news <Arrow /></Link>}
         </div>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {news.slice(0, limit).map((n, k) => (

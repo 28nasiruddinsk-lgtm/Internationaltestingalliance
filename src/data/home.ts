@@ -9,9 +9,9 @@ export const audiences: Record<AudienceKey, {
     tab: 'Awarding bodies',
     heading: 'We deliver examinations independently and according to your protocols.',
     lead: 'Secure, independent and technology-enabled examination delivery solutions for a trusted global education ecosystem.',
-    text: 'We verify every candidate, run every session from start to finish and deliver one consolidated record afterwards.',
+    text: 'We verify every candidate, run every session from start to finish, and deliver one consolidated record afterwards.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
-    image: 'hero_awarding', alt: 'A historic university building with students walking through its courtyard',
+    image: 'invigilators', alt: 'ITA invigilators in blue vests registering a candidate at an exam centre',
   },
   uni: {
     tab: 'Universities',
@@ -30,7 +30,7 @@ export const audiences: Record<AudienceKey, {
 };
 
 export const quickLinks = [
-  { title: 'Find a centre', text: 'Nine cities in Pakistan, plus Dubai.', href: '/exam-venues/', icon: 'centre' },
+  { title: 'Find a centre', text: '9+ cities in Pakistan, plus Dubai.', href: '/exam-venues/', icon: 'centre' },
   { title: 'Book an exam', text: 'Register, pay securely and download your Statement of Entry (SOE).', href: '/book-an-exam/', icon: 'book' },
   { title: 'Exam day guide', text: 'What to bring and when to arrive.', href: '/exam-day-guidelines/', icon: 'guide' },
 ] as const;
@@ -52,7 +52,7 @@ export const services: { title: string; text: string; detail: string; cta: strin
   { title: 'Secure Venues', text: 'We ensure controlled access, CCTV oversight, and secure storage at all locations.', image: 'secure_venue', href: '/exam-venues/',
     detail: 'Controlled entry, CCTV across the exam zones and locked storage for papers in every city we work in.', cta: 'See our venues',
     alt: 'Candidates sitting a written exam at spaced desks in a supervised hall' },
-  { title: 'Technology & Quality Assurance', text: 'Digital ID and QR checks support verification; incident reports and session logs provide audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
+  { title: 'Technology & Quality Assurance', text: 'Digital ID and QR checks support verification; incident reports and session logs provide an audit trail.', image: 'n_tech', href: '/technology-driven-solutions/',
     detail: 'Digital ID and QR checks at the door. Incident reports and session logs that leave a clear audit trail.', cta: 'See how it works',
     alt: 'Digital technology and quality assurance' },
   { title: 'Professional Invigilation', text: 'Trained personnel supervise exam sessions impartially.', image: 's_teacher11', href: '/professional-invigilation/',
@@ -64,7 +64,7 @@ export const services: { title: string; text: string; detail: string; cta: strin
 export const delivery: [num: string, name: string, role: string, points: string[]][] = [
   ['01', 'Institution', 'Sets exam protocols', ['Confirms candidate requirements', 'Provides institutional guidance']],
   ['02', 'International Testing Alliance', 'Administers the examination', ['Applies agreed procedures', 'Verifies candidates and examination conditions', 'Manages venues and invigilation', 'Records and reports session evidence']],
-  ['03', 'Awarding Body', 'Controls assessment', ['Receives session evidence', 'Sets assessment and examination requirements', 'Maintains academic standards', 'Determines marking, grading & results', 'Receives documented session evidence']],
+  ['03', 'Awarding Body', 'Controls assessment', ['Sets assessment and examination requirements', 'Maintains academic standards', 'Determines marking, grading & results', 'Receives documented session evidence']],
 ];
 
 export const parties = [

@@ -37,7 +37,7 @@ export const morePages: Record<string, SectionConfig[]> = {
     } },
     { type: 'split', props: {
       kicker: 'Close to your candidates',
-      title: 'Nine cities, one standard.',
+      title: '9+ cities, one standard.',
       paragraphs: [
         'Candidates sit close to home, in rooms run to the same standard.',
         'When you need us somewhere else, such as Quetta, Peshawar or a hard-to-reach area, we set up in partner premises or an external venue.',
@@ -587,7 +587,7 @@ export const morePages: Record<string, SectionConfig[]> = {
         { title: 'Only what you need', text: 'Choose individual services or hand us the whole sitting, and plan your budget with confidence.' },
         { title: 'Priority partner service', text: 'A dedicated coordinator and quick answers from planning to the final report.' },
         { title: 'Self-service for candidates', text: 'They register, pay securely and download their Statement of Entry themselves.' },
-        { title: 'Reach across Pakistan', text: 'Nine cities, plus partner premises or external venues in places like Quetta, Peshawar and hard-to-reach areas.' },
+        { title: 'Reach across Pakistan', text: '9+ cities, plus partner premises or external venues in places like Quetta, Peshawar and hard-to-reach areas.' },
         { title: 'Marketing that supports growth', text: 'We promote your exam body or university on our website and social channels.' },
       ],
     } },
@@ -749,6 +749,17 @@ export const morePages: Record<string, SectionConfig[]> = {
     } },
     band('Need a copy of a document for your records?', 'Tell us which one and why, and our team will send it to you.', 'Contact us', '/contact/'),
   ],
+  'our-board-and-management': [
+    { type: 'pageHeader', props: {
+      kicker: 'Our board and management',
+      title: 'Our board and management',
+      intro: 'The leadership behind International Testing Alliance and the ITS group, and what guides the way we deliver every examination.',
+      light: true,
+    } },
+    { type: 'leaders', props: { featured: true } },
+    { type: 'leaders' },
+    band('Want to meet our team?', 'Tell us about your examinations and our leadership team will be glad to talk.', 'Contact us', '/contact/'),
+  ],
 };
 
 export const moreMeta: Record<string, { title: string; description: string }> = {
@@ -768,6 +779,7 @@ export const moreMeta: Record<string, { title: string; description: string }> = 
   'become-a-partner': { title: 'Become an Exam Centre Partner | ITA Pakistan and UAE', description: 'Partner with ITA for independent exam delivery. A dedicated coordinator, a partner portal and only the services you need, across Pakistan and the UAE.' },
   uae: { title: 'Exam Centre and Invigilation in Dubai and the UAE | ITA', description: 'Independent exam delivery and invigilation in the UAE, run from our Dubai Marina office. The same checks and records as every ITA sitting.' },
   'licensing-and-approvals': { title: 'Licensing and Approvals | IBCC Registered | ITA', description: 'ITA’s registrations and approvals, including IBCC registration and the Pakistan Bar Council listing of our parent company ITS for foreign law examinations.' },
+  'our-board-and-management': { title: 'Our Board and Management | International Testing Alliance', description: 'Meet the leadership of International Testing Alliance and the ITS group, and read their messages on integrity, quality and trust in examinations.' },
 };
 
 // Breadcrumb trail per page after Home, ending with the page itself: [name, path]. Pages not listed sit under Home.

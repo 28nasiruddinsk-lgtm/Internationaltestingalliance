@@ -67,7 +67,7 @@ export default function Header() {
           </nav>
           <div className="ml-auto flex items-center gap-2 xl:ml-6">
             <a href={site.portal} className="hidden whitespace-nowrap rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue hover:bg-tint md:inline-block">
-              Partner portal
+              Become a partner
             </a>
             <Link href="/book-an-exam/" className="hidden whitespace-nowrap rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-navy sm:inline-block">
               Book an exam
@@ -106,7 +106,7 @@ export default function Header() {
             ))}
             <div className="flex flex-wrap gap-3 py-5">
               <Link href="/book-an-exam/" onClick={() => setMenu(false)} className="rounded-full bg-blue px-5 py-2.5 text-[14px] font-semibold text-white">Book an exam</Link>
-              <a href={site.portal} className="rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue">Partner portal</a>
+              <a href={site.portal} className="rounded-full border border-blue px-5 py-2.5 text-[14px] font-semibold text-blue">Become a partner</a>
               <Link href="/contact/" onClick={() => setMenu(false)} className="rounded-full border border-line px-5 py-2.5 text-[14px] font-semibold text-ink">Contact us</Link>
             </div>
           </Wrap>

@@ -41,11 +41,11 @@ export default function Hero() {
               {site.approvals.map((a) => (
                 <li key={a.body}>
                   <Link href="/licensing-and-approvals/" className="block h-full rounded-2xl border border-white/15 bg-white/[.06] p-4 transition-colors hover:border-white/35 hover:bg-white/10">
-                    <span className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                    <span className="flex flex-col items-start gap-2">
                       <span className="whitespace-nowrap rounded-md bg-white px-2.5 py-1 text-[13px] font-bold" style={{ color: a.color }}>{a.body}</span>
                       <span className="whitespace-nowrap text-[11px] font-semibold tracking-[.12em] text-sky">ITS GROUP</span>
                     </span>
-                    <span className="mt-3 block text-[14px] font-semibold leading-snug text-white">{a.title}</span>
+                    <span className="mt-3 block min-h-[2.75em] text-[14px] font-semibold leading-snug text-white">{a.title}</span>
                     <span className="mt-3 block text-[10.5px] font-semibold tracking-[.14em] text-sky/90">REFERENCE</span>
                     <span className="mt-0.5 block text-[13px] text-white/85">{a.ref}</span>
                   </Link>

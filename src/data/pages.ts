@@ -1,5 +1,6 @@
 import type { SectionConfig } from '@/components/sections';
 import { news } from './news';
+import { site } from './site';
 import { journey } from './sitting';
 import * as p from './profile';
 import { moreMeta, morePages } from './pages-more';
@@ -85,7 +86,7 @@ export const pages: Record<string, SectionConfig[]> = {
     }),
     { type: 'strip', props: {
       title: 'Where we work',
-      text: 'We work in nine cities across Pakistan, from Karachi to Gilgit, and from our office in Dubai.',
+      text: 'We work in 9+ cities across Pakistan, from Karachi to Gilgit, and from our office in Dubai.',
       links: [{ label: 'See our venues', href: '/exam-venues/' }],
     } },
     { type: 'operate' },
@@ -181,7 +182,7 @@ export const pages: Record<string, SectionConfig[]> = {
       title: 'Questions we often hear',
       items: [
         ['What is exam management?', 'It’s everything around the exam itself: planning, venues, staff, candidate checks, paper custody and reporting. You focus on the exam and we handle the rest.'],
-        ['Can you run exams in more than one city?', 'Yes. We work in nine cities across Pakistan and set up elsewhere when you need us.'],
+        ['Can you run exams in more than one city?', 'Yes. We work in 9+ cities across Pakistan and set up elsewhere when you need us.'],
         ['Do you follow our rules or yours?', 'Yours. Your awarding body’s or institution’s protocols are the reference at every step.'],
       ],
     } },
@@ -204,7 +205,7 @@ export const pages: Record<string, SectionConfig[]> = {
     { type: 'contact' },
   ],
   centres: [
-    header('Centres', 'Standardised venues in nine Pakistani cities, plus Dubai.', 'Our centres'),
+    header('Centres', 'Standardised venues in 9+ Pakistani cities, plus Dubai.', 'Our centres'),
     { type: 'gallery' },
     { type: 'operate' },
   ],
@@ -223,10 +224,16 @@ export const pages: Record<string, SectionConfig[]> = {
     cards({ kicker: 'In-house governance', title: 'ITA develops its operating policies and forms in-house', intro: 'Policy areas: safeguarding, code of conduct and confidentiality, exam security, incident reporting, and staff performance evaluation.', items: p.governanceSteps, tint: true }),
     { type: 'milestones' },
   ],
-  news: [header('News', 'Updates from ITA.', 'News and announcements'), { type: 'news', props: { limit: 99 } }],
+  'news-events': [header('News and events', 'Partnerships, approvals and milestones from ITA.', 'News and announcements'), { type: 'news', props: { limit: 99 } }],
   contact: [
-    { type: 'pageHeader', props: { title: 'Contact us', intro: 'A real person reads every message. Tell us what you need and we’ll get back to you.', light: true } },
-    { type: 'contactForm' },
+    { type: 'pageHeader', props: {
+      kicker: 'Contact us',
+      title: 'Contact us',
+      intro: 'A real person reads every message. Tell us what you need and we’ll get back to you.',
+      image: 's_team2', alt: 'The ITA team reviewing a sitting plan with a partner',
+      buttons: [{ label: 'Send a message', href: '#work' }, { label: `Call ${site.phones.Pakistan}`, href: `tel:${site.phones.Pakistan.replace(/\s/g, '')}` }],
+    } },
+    { type: 'contact', props: { kicker: 'Send us a message', title: 'Tell us what you need.', text: 'Awarding bodies, universities, training providers and candidates all reach the same team. We reply within one working day.', message: true } },
     { type: 'offices' },
     { type: 'strip', props: {
       title: 'Sitting an exam?',
@@ -244,7 +251,7 @@ export const pages: Record<string, SectionConfig[]> = {
 };
 
 // Pages that go live. Everything else 404s; add a key of `pages` here to publish it.
-export const published = ['about-us', 'services', 'exam-management', 'contact', ...Object.keys(morePages)];
+export const published = ['about-us', 'services', 'exam-management', 'contact', 'news-events', ...news.map((n) => `news/${n.slug}`), ...Object.keys(morePages)];
 
 // Title tag and meta description per published page (SEO brief). The home page is set in app/layout.tsx.
 export const meta: Record<string, { title: string; description: string }> = {
@@ -264,5 +271,10 @@ export const meta: Record<string, { title: string; description: string }> = {
     title: 'Contact International Testing Alliance | Karachi and Dubai',
     description: 'Get in touch with ITA about exam delivery, invigilation or venues. Offices in Karachi and Dubai. A real person reads every message.',
   },
+  'news-events': {
+    title: 'News and Events | International Testing Alliance',
+    description: 'Partnerships, approvals and milestones from International Testing Alliance in Pakistan and the UAE.',
+  },
+  ...Object.fromEntries(news.map((n) => [`news/${n.slug}`, { title: `${n.title} | ITA`, description: n.body[0] }])),
   ...moreMeta,
 };
