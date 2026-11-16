@@ -11,7 +11,7 @@ export const audiences: Record<AudienceKey, {
     lead: 'Secure, independent and technology-enabled examination delivery solutions for a trusted global education ecosystem.',
     text: 'We verify every candidate, run every session from start to finish, and deliver one consolidated record afterwards.',
     cta: 'Discuss a partnership', href: '/awarding-bodies/',
-    image: 'invigilators', alt: 'ITA invigilators in blue vests registering a candidate at an exam centre',
+    image: 'hero_awarding', alt: 'A historic university building with students walking through its courtyard',
   },
   uni: {
     tab: 'Universities',
