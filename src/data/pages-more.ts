@@ -760,6 +760,72 @@ export const morePages: Record<string, SectionConfig[]> = {
     { type: 'leaders' },
     band('Want to meet our team?', 'Tell us about your examinations and our leadership team will be glad to talk.', 'Contact us', '/contact/'),
   ],
+  careers: [
+    { type: 'pageHeader', props: {
+      kicker: 'Careers',
+      title: 'Careers at ITA',
+      intro: 'Every fair exam needs calm, careful people in the room. Could that be you?',
+      image: 'invigilators', alt: 'ITA venue staff in their vests before a session',
+      buttons: [{ label: 'See open roles', href: '#roles' }],
+    } },
+    { type: 'split', props: {
+      kicker: 'What the work is like',
+      title: 'An exam day, from the inside',
+      paragraphs: [
+        'An exam day starts early. You arrive before the candidates, help set up the hall and join the briefing. Then the doors open, and for the next few hours your job is to keep the room fair, quiet and safe for everyone in it.',
+        'It’s work that matters to people. For many candidates, that one sitting decides their next step in education or their career.',
+      ],
+      image: 'briefing', alt: 'A venue supervisor briefing ITA staff before a session',
+    } },
+    { type: 'cards', props: {
+      id: 'roles',
+      tint: true,
+      kicker: 'Venue staff roles',
+      title: 'Three roles on every exam day',
+      intro: 'These are freelance, session-based roles in Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad and Gilgit.',
+      items: [
+        { title: 'Invigilator', text: 'Check candidates in, explain the rules, walk the room and note anything unusual. Good for people who are observant, patient and comfortable being firm when they need to be.', image: 'inv_walk', alt: 'An invigilator walking between exam desks', href: '#apply', cta: 'Apply' },
+        { title: 'Venue supervisor', text: 'Open the venue, brief the team and make the call when something unexpected happens. Good for people who have led a team or managed exam days before.', image: 'svc_inv', alt: 'A venue supervisor overseeing an exam hall', href: '#apply', cta: 'Apply' },
+        { title: 'Materials and records', text: 'Keep papers sealed and counted, track attendance and hand over the session record. Good for people who are careful with detail.', image: 's_sheet14', alt: 'Exam papers being checked and counted', href: '#apply', cta: 'Apply' },
+      ],
+    } },
+    { type: 'points', props: {
+      kicker: 'What you can expect from us',
+      title: 'Prepared from day one',
+      intro: 'All venue staff go through role checks and sign our safeguarding and confidentiality commitments before they start.',
+      items: [
+        ['Induction', 'An induction before your first sitting, so you know exactly what your role involves.'],
+        ['Briefing', 'A briefing before every session from the venue supervisor.'],
+        ['Flexible work', 'Choose the sessions and cities that suit you.'],
+        ['Feedback', 'Feedback after each sitting, so you keep getting better at the job.'],
+      ],
+    } },
+    { type: 'strip', props: {
+      title: 'Working at our offices',
+      text: 'We also hire for operations, partnerships and administration in Karachi and Dubai from time to time. If you’d like to be considered, send us your CV and tell us what you’re looking for.',
+      links: [{ label: 'Email your CV to info@intltestingalliance.com', href: `mailto:${site.email}?subject=CV%20for%20office%20roles` }],
+    } },
+    { type: 'contactForm', props: {
+      id: 'apply',
+      kicker: 'Apply',
+      title: 'Apply for a venue staff role',
+      direct: false,
+      subject: 'Venue staff application',
+      button: 'Send my application',
+      thanks: 'Thank you for applying. Our team will be in touch if your profile matches upcoming sessions in your city.',
+      fields: [['name', 'Full name', 'text'], ['phone', 'Phone', 'tel'], ['email', 'Email', 'email'], ['city', 'City', 'text']],
+      choices: [
+        ['role', 'Role you’re applying for', ['Invigilator', 'Venue supervisor', 'Materials and records']],
+        ['experience', 'Have you worked at exam sessions before?', ['Yes', 'No']],
+      ],
+      messageLabel: 'Tell us a little about yourself',
+      note: 'Your email app will open with your application ready to send. Please attach your CV (PDF or Word) to that email before sending.',
+    } },
+    faq([
+      ['Do I need experience to become an invigilator?', 'No. Experience helps, but every new invigilator goes through our induction before their first sitting.'],
+      ['Is this full-time work?', 'Venue staff roles are freelance and session-based. You choose the sessions you’re available for.'],
+    ]),
+  ],
 };
 
 export const moreMeta: Record<string, { title: string; description: string }> = {
@@ -780,6 +846,7 @@ export const moreMeta: Record<string, { title: string; description: string }> = 
   uae: { title: 'Exam Centre and Invigilation in Dubai and the UAE | ITA', description: 'Independent exam delivery and invigilation in the UAE, run from our Dubai Marina office. The same checks and records as every ITA sitting.' },
   'licensing-and-approvals': { title: 'Licensing and Approvals | IBCC Registered | ITA', description: 'ITA’s registrations and approvals, including IBCC registration and the Pakistan Bar Council listing of our parent company ITS for foreign law examinations.' },
   'our-board-and-management': { title: 'Our Board and Management | International Testing Alliance', description: 'Meet the leadership of International Testing Alliance and the ITS group, and read their messages on integrity, quality and trust in examinations.' },
+  careers: { title: 'Careers at International Testing Alliance | ITA', description: 'Join ITA as an invigilator, venue supervisor or records officer for exam sessions in nine cities across Pakistan. Flexible, session-based work with full induction.' },
 };
 
 // Breadcrumb trail per page after Home, ending with the page itself: [name, path]. Pages not listed sit under Home.

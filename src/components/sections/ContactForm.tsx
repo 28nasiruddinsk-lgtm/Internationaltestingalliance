@@ -18,6 +18,8 @@ type Props = {
   tint?: boolean;
   direct?: boolean; // email and phone column beside the form
   id?: string;
+  messageLabel?: string;
+  note?: string; // a line above the button, e.g. what to attach
 };
 
 const FIELDS: Field[] = [['name', 'Your name', 'text'], ['org', 'Organisation', 'text'], ['email', 'Email', 'email'], ['country', 'Country', 'text']];
@@ -26,7 +28,7 @@ const box = 'mt-1.5 h-12 w-full border border-line bg-white px-3 text-[16px] fon
 
 export default function ContactForm({
   kicker, title = 'Send us a message', intro, fields = FIELDS, choices = CHOICES, button = 'Send message',
-  thanks = 'Your message is with our team and we’ll reply within one working day.', subject = 'Website enquiry', tint, direct = true, id,
+  thanks = 'Your message is with our team and we’ll reply within one working day.', subject = 'Website enquiry', tint, direct = true, id, messageLabel = 'Message', note,
 }: Props) {
   const [sent, setSent] = useState(false);
 
@@ -34,7 +36,7 @@ export default function ContactForm({
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const d = new FormData(e.currentTarget);
-    openMail(subject, [...fields, ...choices, ['message', 'Message']].map(([name, label]) => [label, d.get(name)]));
+    openMail(subject, [...fields, ...choices, ['message', messageLabel]].map(([name, label]) => [label, d.get(name)]));
     setSent(true);
   }
 
@@ -67,9 +69,10 @@ export default function ContactForm({
                 </label>
               ))}
               <label className="block text-[14px] font-semibold text-ink sm:col-span-2">
-                Message
+                {messageLabel}
                 <textarea name="message" required rows={5} className={`${box} h-auto py-3`} />
               </label>
+              {note && <p className="text-[14px] leading-relaxed text-body sm:col-span-2">{note}</p>}
               <button className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-blue px-7 text-[15px] font-semibold text-white hover:bg-navy sm:col-span-2 sm:justify-self-start">
                 {button} <Arrow />
               </button>
