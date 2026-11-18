@@ -6,7 +6,7 @@ import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 type Props = { kicker?: string; title?: string; text?: string };
 
 // Certificate check request. No public results database yet, so the number goes to our team by email.
-// ponytail: swap the mail hand-off for a live lookup once the awarding bodies' records are connected
+// Swap the mail hand-off for a live lookup once the awarding bodies' records are connected
 export default function Verify({
   kicker = 'Verify a result',
   title = 'Results anyone can check',

@@ -1,6 +1,6 @@
 // QA notes for the 5 Nov 2026 revisions brief. Open any page with ?qa in the address to see them.
 // Each note is matched to a section by `type`, or `type:kicker` (falling back to the title) when the type repeats.
-// ponytail: delete this file and the QaMark wrapper once the client signs the revisions off
+// Delete this file and the QaMark wrapper once the client signs the revisions off
 export const qaNotes: Record<string, [match: string, note: string][]> = {
   '': [
     ['hero', 'New heading and text; IBCC and Pakistan Bar Council boxes under the buttons'],
