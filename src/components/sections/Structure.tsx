@@ -21,9 +21,9 @@ export default function Structure() {
           <div className="grid overflow-hidden rounded-3xl shadow-[0_30px_60px_rgba(14,34,64,.22)] md:grid-cols-2">
             {SIDES.map((s, n) => (
               <article key={s.code} className={`relative overflow-hidden ${s.bg} px-8 py-12 text-white md:px-14 md:py-16 ${n ? 'pt-16 md:pl-20' : 'pb-16 md:pr-20'}`}>
-                <span aria-hidden="true" className="pointer-events-none absolute -bottom-10 right-4 font-serif text-[180px] leading-none text-white/[.07] md:text-[220px]">{s.code}</span>
+                <span aria-hidden="true" className="pointer-events-none absolute -bottom-10 right-4 font-serif text-[120px] leading-none text-white/[.07] md:text-[220px]">{s.code}</span>
                 <span className={`text-[12px] font-bold uppercase tracking-[.14em] ${n ? 'text-white/80' : 'text-sky'}`}>{s.role}</span>
-                <div className="mt-4 font-serif text-[56px] leading-none md:text-[72px]">{s.code}</div>
+                <div className="mt-3 font-serif text-[40px] leading-none md:text-[72px]">{s.code}</div>
                 <h3 className="mt-3 text-[18px] font-semibold">{s.name}</h3>
                 <p className="relative mt-4 max-w-[420px] text-[15.5px] leading-relaxed text-white/85">{s.text}</p>
               </article>

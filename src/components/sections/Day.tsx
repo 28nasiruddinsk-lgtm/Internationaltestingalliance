@@ -39,20 +39,20 @@ export default function Day({
           <H2>{title}</H2>
           <p className="mt-4 text-[16px] text-white/70">{intro}</p>
         </Rise>
-        <div className="mt-12 grid gap-10 lg:grid-cols-[360px_1fr]">
-          <ol>
+        <div className="mt-8 grid gap-6 lg:mt-12 lg:grid-cols-[360px_1fr] lg:gap-10">
+          <ol className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] lg:block lg:overflow-visible lg:pb-0">
             {day.map(([t, h], n) => (
-              <li key={t}>
+              <li key={t} className="flex-none">
                 <button onClick={() => { setActive(n); setAuto(false); }}
-                  className={`group flex w-full items-baseline gap-5 border-l-[3px] py-3.5 pl-5 text-left transition-colors ${n === active ? 'border-sky bg-white/[.06]' : 'border-white/15 hover:border-white/40'}`}>
-                  <span className={`${steps ? 'w-8' : 'w-[72px]'} flex-none text-[14px] font-semibold tabular-nums ${n === active ? 'text-sky' : 'text-white/70'}`}>{t}</span>
-                  <span className={`font-serif text-[18px] ${n === active ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>{h}</span>
+                  aria-label={h} className={`group flex items-baseline rounded-full border px-4 py-2 text-left transition-colors lg:w-full lg:gap-5 lg:rounded-none lg:border-0 lg:border-l-[3px] lg:py-3.5 lg:pl-5 ${n === active ? 'border-sky bg-white/[.06]' : 'border-white/15 hover:border-white/40'}`}>
+                  <span className={`${steps ? 'lg:w-8' : 'lg:w-[72px]'} flex-none text-[14px] font-semibold tabular-nums ${n === active ? 'text-sky' : 'text-white/70'}`}>{t}</span>
+                  <span className={`hidden font-serif text-[18px] lg:inline ${n === active ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>{h}</span>
                 </button>
               </li>
             ))}
           </ol>
           <div>
-            <div className="relative h-[300px] overflow-hidden md:h-[420px]">
+            <div className="relative h-[240px] overflow-hidden sm:h-[300px] md:h-[420px]">
               {day.map(([t, , , image], n) => (
                 <img loading="lazy" decoding="async" key={t} src={img(image)} alt="" className="absolute inset-0 h-full w-full object-cover"
                   style={{ opacity: n === active ? 1 : 0, transition: 'opacity .8s ease', filter: 'saturate(.9)' }} />
