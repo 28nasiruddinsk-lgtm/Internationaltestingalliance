@@ -1,9 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { useState, type FormEvent } from 'react';
 import { quickLinks } from '@/data/home';
 import { site } from '@/data/site';
-import { openMail } from '@/lib/mailto';
+import { Honeypot, useSend } from '@/lib/useSend';
 import { Arrow, Wrap } from '../ui';
 
 const icons = {
@@ -14,19 +13,12 @@ const icons = {
 
 const input = 'h-11 min-w-0 flex-1 rounded-full bg-transparent px-4 text-[15px] text-ink outline-none placeholder:text-muted';
 
-// Email enquiry box. Opens the visitor's mail app (static site, no server).
+// Quick question box, emailed to the ITA inbox.
 function ContactCell() {
-  const [sent, setSent] = useState(false);
-
-  function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const d = new FormData(e.currentTarget);
-    openMail('Website enquiry', [['Question', d.get('question')], ['Reply to', d.get('email')]]);
-    setSent(true);
-  }
+  const { onSubmit, busy, sent, viaApp, error } = useSend('Website enquiry', (d) => [['Question', d.get('question')], ['Reply to', d.get('email')]]);
 
   return (
-    <form onSubmit={submit} className="border-b border-line p-8 lg:border-b-0 lg:border-r" style={{ borderTop: '3px solid #0B4CA1' }}>
+    <form onSubmit={onSubmit} className="border-b border-line p-8 lg:border-b-0 lg:border-r" style={{ borderTop: '3px solid #0B4CA1' }}>
       <div className="flex items-center gap-3">
         <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue text-white">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
@@ -36,15 +28,16 @@ function ContactCell() {
         <label htmlFor="cq-email" className="font-serif text-[20px] text-ink">Contact us</label>
       </div>
       <p className="mt-3 text-[14px] text-body">Send a question by email and our team will reply.</p>
+      <Honeypot />
       <div className="mt-4 rounded-full border border-line bg-tint p-1 focus-within:border-blue">
         <input id="cq-email" name="email" type="email" required placeholder="Your email address" autoComplete="email" className={`${input} w-full`} />
       </div>
       <div className="mt-2 flex rounded-full border border-line bg-tint p-1 focus-within:border-blue">
         <input name="question" required aria-label="Your question" placeholder="Your question" className={input} />
-        <button className="h-11 rounded-full bg-blue px-6 text-[14px] font-semibold text-white hover:bg-navy">Send</button>
+        <button disabled={busy} className="h-11 rounded-full bg-blue px-6 text-[14px] font-semibold text-white hover:bg-navy disabled:opacity-60">{busy ? 'Sending…' : 'Send'}</button>
       </div>
-      <p role="status" className="mt-3 min-h-[1.2em] text-[12.5px] text-muted">
-        {sent ? 'Your email app should open with the message ready to send.' : `Or write to ${site.email}`}
+      <p role="status" className={`mt-3 min-h-[1.2em] text-[12.5px] ${error ? 'text-red-700' : 'text-muted'}`}>
+        {error || (sent ? (viaApp ? 'Your email app should open with the message ready to send.' : 'Thank you. Your question has been sent and our team will reply.') : `Or write to ${site.email}`)}
       </p>
     </form>
   );

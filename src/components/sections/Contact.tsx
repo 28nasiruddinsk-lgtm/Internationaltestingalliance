@@ -1,7 +1,6 @@
 'use client';
-import { useState, type FormEvent } from 'react';
 import { site } from '@/data/site';
-import { openMail } from '@/lib/mailto';
+import { Honeypot, useSend } from '@/lib/useSend';
 import { Arrow, H2, Kicker, Wrap } from '../ui';
 
 const fields = [['name', 'Your name', 'text'], ['org', 'Organisation', 'text'], ['email', 'Work email', 'email'], ['country', 'Country', 'text']] as const;
@@ -15,17 +14,13 @@ export default function Contact({
   text = 'Tell us about your candidates and locations. Our partnerships team replies within one working day.',
   message,
 }: Props) {
-  const [sent, setSent] = useState(false);
-
-  function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const d = new FormData(e.currentTarget);
-    openMail(message ? 'Website enquiry' : 'Partnership enquiry', [['Name', d.get('name')], ['Organisation', d.get('org')], ['Email', d.get('email')], ['Country', d.get('country')], ['Represents', d.get('who')], ...(message ? [['Message', d.get('message')] as [string, FormDataEntryValue | null]] : [])]);
-    setSent(true);
-  }
+  const { onSubmit, busy, sent, viaApp, error } = useSend(message ? 'Website enquiry' : 'Partnership enquiry', (d) => [
+    ['Name', d.get('name')], ['Organisation', d.get('org')], ['Email', d.get('email')], ['Country', d.get('country')], ['Represents', d.get('who')],
+    ...(message ? [['Message', d.get('message')] as [string, FormDataEntryValue | null]] : []),
+  ]);
 
   return (
-    <section id="work" className="bg-blue py-24 text-white md:py-32">
+    <section id="work" className="bg-blue py-16 text-white md:py-20">
       <Wrap className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Kicker light>{kicker}</Kicker>
@@ -49,10 +44,10 @@ export default function Contact({
           {sent ? (
             <div className="swap border-l-[3px] border-sky bg-white/10 p-8" role="status">
               <div className="font-serif text-[22px]">Thank you.</div>
-              <p className="mt-2 text-white/85">Your email app should open with the enquiry ready to send.</p>
+              <p className="mt-2 text-white/85">{viaApp ? 'Your email app should open with the enquiry ready to send.' : 'Your enquiry has been sent. Our team replies within one working day.'}</p>
             </div>
           ) : (
-            <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
+            <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
               {fields.map(([name, label, type]) => (
                 <label key={name} className="block text-[13.5px] font-semibold">
                   {label}
@@ -74,8 +69,10 @@ export default function Contact({
                   <textarea name="message" required rows={5} className="mt-1.5 w-full border border-white/30 bg-white p-3 text-[15px] font-normal text-ink outline-none focus:border-sky" />
                 </label>
               )}
-              <button className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-white px-7 text-[15px] font-semibold text-blue hover:bg-tint sm:col-span-2 sm:justify-self-start">
-                Send enquiry <Arrow />
+              <Honeypot />
+              {error && <p role="alert" className="text-[14px] font-semibold text-white sm:col-span-2">{error}</p>}
+              <button disabled={busy} className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-white px-7 text-[15px] font-semibold text-blue hover:bg-tint disabled:opacity-60 sm:col-span-2 sm:justify-self-start">
+                {busy ? 'Sending…' : 'Send enquiry'} <Arrow />
               </button>
             </form>
           )}

@@ -1,7 +1,6 @@
 'use client';
-import { useState, type FormEvent } from 'react';
 import { site } from '@/data/site';
-import { openMail } from '@/lib/mailto';
+import { Honeypot, useSend } from '@/lib/useSend';
 import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 type Field = [name: string, label: string, type: string];
@@ -20,6 +19,7 @@ type Props = {
   id?: string;
   messageLabel?: string;
   note?: string; // a line above the button, e.g. what to attach
+  file?: string; // label for an optional CV upload (PDF or Word, sent as an attachment)
 };
 
 const FIELDS: Field[] = [['name', 'Your name', 'text'], ['org', 'Organisation', 'text'], ['email', 'Email', 'email'], ['country', 'Country', 'text']];
@@ -28,17 +28,9 @@ const box = 'mt-1.5 h-12 w-full border border-line bg-white px-3 text-[16px] fon
 
 export default function ContactForm({
   kicker, title = 'Send us a message', intro, fields = FIELDS, choices = CHOICES, button = 'Send message',
-  thanks = 'Your message is with our team and we’ll reply within one working day.', subject = 'Website enquiry', tint, direct = true, id, messageLabel = 'Message', note,
+  thanks = 'Your message is with our team and we’ll reply within one working day.', subject = 'Website enquiry', tint, direct = true, id, messageLabel = 'Message', note, file,
 }: Props) {
-  const [sent, setSent] = useState(false);
-
-  // a static site has no server, so the message is handed to the visitor's mail app
-  function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const d = new FormData(e.currentTarget);
-    openMail(subject, [...fields, ...choices, ['message', messageLabel]].map(([name, label]) => [label, d.get(name)]));
-    setSent(true);
-  }
+  const { onSubmit, busy, sent, viaApp, error } = useSend(subject, (d) => [...fields, ...choices, ['message', messageLabel]].map(([name, label]) => [label, d.get(name)]));
 
   return (
     <section id={id} className={`scroll-mt-24 py-14 md:py-20 ${tint ? 'bg-tint' : ''}`}>
@@ -50,10 +42,10 @@ export default function ContactForm({
           {sent ? (
             <div className="swap mt-8 border-l-[3px] border-blue bg-white p-8" role="status">
               <div className="font-serif text-[22px] text-ink">Thank you.</div>
-              <p className="mt-2 text-body">{thanks} If your email app did not open, write to {site.email}.</p>
+              <p className="mt-2 text-body">{thanks}{viaApp && ` If your email app did not open, write to ${site.email}.`}</p>
             </div>
           ) : (
-            <form onSubmit={submit} className="mt-8 grid gap-4 sm:grid-cols-2">
+            <form onSubmit={onSubmit} className="mt-8 grid gap-4 sm:grid-cols-2">
               {fields.map(([name, label, type]) => (
                 <label key={name} className="block text-[14px] font-semibold text-ink">
                   {label}
@@ -72,9 +64,18 @@ export default function ContactForm({
                 {messageLabel}
                 <textarea name="message" required rows={5} className={`${box} h-auto py-3`} />
               </label>
+              {file && (
+                <label className="block text-[14px] font-semibold text-ink sm:col-span-2">
+                  {file}
+                  <input name="cv" type="file" accept=".pdf,.doc,.docx" className="mt-1.5 block w-full text-[15px] font-normal text-body file:mr-4 file:rounded-full file:border-0 file:bg-tint file:px-5 file:py-2.5 file:font-semibold file:text-blue" />
+                  <span className="mt-1 block text-[13px] font-normal text-muted">PDF or Word, up to 5 MB.</span>
+                </label>
+              )}
               {note && <p className="text-[14px] leading-relaxed text-body sm:col-span-2">{note}</p>}
-              <button className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-blue px-7 text-[15px] font-semibold text-white hover:bg-navy sm:col-span-2 sm:justify-self-start">
-                {button} <Arrow />
+              <Honeypot />
+              {error && <p role="alert" className="text-[14px] font-semibold text-red-700 sm:col-span-2">{error}</p>}
+              <button disabled={busy} className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-blue px-7 text-[15px] font-semibold text-white hover:bg-navy disabled:opacity-60 sm:col-span-2 sm:justify-self-start">
+                {busy ? 'Sending…' : button} <Arrow />
               </button>
             </form>
           )}

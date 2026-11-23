@@ -819,7 +819,7 @@ export const morePages: Record<string, SectionConfig[]> = {
         ['experience', 'Have you worked at exam sessions before?', ['Yes', 'No']],
       ],
       messageLabel: 'Tell us a little about yourself',
-      note: 'Your email app will open with your application ready to send. Please attach your CV (PDF or Word) to that email before sending.',
+      file: 'Upload your CV',
     } },
     faq([
       ['Do I need experience to become an invigilator?', 'No. Experience helps, but every new invigilator goes through our induction before their first sitting.'],

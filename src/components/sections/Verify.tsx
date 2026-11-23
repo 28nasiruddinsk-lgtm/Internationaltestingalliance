@@ -1,6 +1,5 @@
 'use client';
-import { useState, type FormEvent } from 'react';
-import { openMail } from '@/lib/mailto';
+import { Honeypot, useSend } from '@/lib/useSend';
 import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
 type Props = { kicker?: string; title?: string; text?: string };
@@ -12,14 +11,7 @@ export default function Verify({
   title = 'Results anyone can check',
   text = 'Employers and universities can check a certificate. Enter the number printed under its QR code and we match it against the awarding body’s own record.',
 }: Props) {
-  const [sent, setSent] = useState(false);
-
-  function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const d = new FormData(e.currentTarget);
-    openMail('Verify a result', [['Certificate number', d.get('number')], ['Reply to', d.get('email')]]);
-    setSent(true);
-  }
+  const { onSubmit, busy, sent, viaApp, error } = useSend('Verify a result', (d) => [['Certificate number', d.get('number')], ['Reply to', d.get('email')]]);
 
   return (
     <section id="verify" className="py-16 md:py-20">
@@ -30,7 +22,7 @@ export default function Verify({
           <p className="mt-5 max-w-[560px] text-[16px] leading-[1.75] text-body">{text}</p>
         </Rise>
         <Rise delay={120}>
-          <form onSubmit={submit} className="border-t-[3px] border-blue bg-navy p-8 text-white shadow-[0_24px_60px_rgba(14,34,64,.18)] md:p-10">
+          <form onSubmit={onSubmit} className="border-t-[3px] border-blue bg-navy p-8 text-white shadow-[0_24px_60px_rgba(14,34,64,.18)] md:p-10">
             <div className="flex items-center gap-4">
               {/* QR mark */}
               <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" className="flex-none text-sky">
@@ -40,7 +32,7 @@ export default function Verify({
             </div>
             {sent ? (
               <p role="status" className="swap mt-6 text-[16px] leading-[1.7] text-white/85">
-                Thank you. Your email app should open with the number ready to send, and we’ll reply once we’ve checked it against the awarding body’s record.
+                Thank you. {viaApp ? 'Your email app should open with the number ready to send, and we’ll' : 'Your request has been sent. We’ll'} reply once we’ve checked it against the awarding body’s record.
               </p>
             ) : (
               <>
@@ -52,8 +44,10 @@ export default function Verify({
                   Your email
                   <input name="email" type="email" required className="mt-1.5 h-12 w-full border border-white/25 bg-white/10 px-3 text-[16px] text-white outline-none focus:border-sky" />
                 </label>
-                <button className="group mt-6 inline-flex h-12 items-center gap-3 rounded-full bg-white px-7 text-[15px] font-semibold text-blue hover:bg-tint">
-                  Verify a result <Arrow />
+                <Honeypot />
+                {error && <p role="alert" className="mt-4 text-[14px] text-red-300">{error}</p>}
+                <button disabled={busy} className="group mt-6 inline-flex h-12 items-center gap-3 rounded-full bg-white px-7 text-[15px] font-semibold text-blue hover:bg-tint disabled:opacity-60">
+                  {busy ? 'Sending…' : 'Verify a result'} <Arrow />
                 </button>
               </>
             )}

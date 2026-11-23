@@ -4,3 +4,5 @@ out
 next-env.d.ts
 AGENTS.md
 tsconfig.tsbuildinfo
+public/api/mail-config.php
+mail-config.php
