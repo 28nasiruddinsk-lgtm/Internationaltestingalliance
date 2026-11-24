@@ -35,3 +35,20 @@ jobs:
           path: out
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Build for the live domain (served from the root) and keep it as a downloadable zip for FTP upload.
+  live-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build || npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ita-live-site
+          path: out
+          retention-days: 30
