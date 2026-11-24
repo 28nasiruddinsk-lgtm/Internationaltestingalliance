@@ -3,7 +3,7 @@ import { site } from '@/data/site';
 import { Honeypot, useSend } from '@/lib/useSend';
 import { Arrow, H2, Kicker, Rise, Wrap } from '../ui';
 
-type Field = [name: string, label: string, type: string];
+type Field = [name: string, label: string, type: string, optional?: boolean];
 type Choice = [name: string, label: string, options: string[]];
 type Props = {
   kicker?: string;
@@ -46,10 +46,10 @@ export default function ContactForm({
             </div>
           ) : (
             <form onSubmit={onSubmit} className="mt-8 grid gap-4 sm:grid-cols-2">
-              {fields.map(([name, label, type]) => (
+              {fields.map(([name, label, type, optional]) => (
                 <label key={name} className="block text-[14px] font-semibold text-ink">
-                  {label}
-                  <input name={name} type={type} required={type !== 'tel'} className={box} />
+                  {label}{optional && <span className="font-normal text-muted"> (optional)</span>}
+                  <input name={name} type={type} required={!optional} className={box} />
                 </label>
               ))}
               {choices.map(([name, label, options]) => (

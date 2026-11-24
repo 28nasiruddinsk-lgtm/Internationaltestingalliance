@@ -5,6 +5,7 @@ import { site } from './site';
 
 // Service, awarding body, candidate and company pages (content brief pages 4 to 17)
 
+const prose = (props: Record<string, unknown>): SectionConfig => ({ type: 'prose', props });
 const faq = (items: string[][]): SectionConfig => ({ type: 'faq', props: { kicker: 'FAQ', title: 'Questions we often hear', items } });
 const band = (title: string, text: string, label: string, href: string, image?: ImageKey): SectionConfig =>
   ({ type: 'band', props: { title, text, buttons: [{ label, href }], image } });
@@ -612,7 +613,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       subject: 'Partnership enquiry',
       button: 'Send my details',
       thanks: 'Our partnerships team will contact you within one working day.',
-      fields: [['name', 'Your name', 'text'], ['org', 'Organisation', 'text'], ['email', 'Work email', 'email'], ['phone', 'Phone', 'tel'], ['country', 'Country', 'text']],
+      fields: [['name', 'Your name', 'text'], ['org', 'Organisation', 'text'], ['email', 'Work email', 'email'], ['phone', 'Phone', 'tel', true], ['country', 'Country', 'text']],
       choices: [
         ['type', 'Type of organisation', ['Awarding body or exam board', 'University', 'College', 'School', 'Training provider']],
         ['services', 'Which services interest you', ['All of them', 'Exam management', 'Secure venues', 'Technology and quality assurance', 'Professional invigilation']],
@@ -762,67 +763,128 @@ export const morePages: Record<string, SectionConfig[]> = {
   careers: [
     { type: 'pageHeader', props: {
       kicker: 'Careers',
-      title: 'Careers at ITA',
-      intro: 'Every fair exam needs calm, careful people in the room. Could that be you?',
+      title: 'Join the International Testing Alliance test-day team',
+      intro: 'Invigilator recruitment notice, 2026–27 examination cycle.',
       image: 'invigilators', alt: 'ITA venue staff in their vests before a session',
-      buttons: [{ label: 'See open roles', href: '#roles' }],
+      buttons: [{ label: 'Apply now', href: '#apply' }],
     } },
     { type: 'split', props: {
-      kicker: 'What the work is like',
-      title: 'An exam day, from the inside',
+      kicker: 'About us',
+      title: 'Every test day depends on the people in the room',
       paragraphs: [
-        'An exam day starts early. You arrive before the candidates, help set up the hall and join the briefing. Then the doors open, and for the next few hours your job is to keep the room fair, quiet and safe for everyone in it.',
-        'It’s work that matters to people. For many candidates, that one sitting decides their next step in education or their career.',
+        'International Testing Alliance (ITA) delivers secure, fair and well-run examinations for candidates across Pakistan.',
+        'Every test day depends on the people in the room, and we are building a dependable pool of invigilators to support our 2027 sessions, both paper-based and online.',
       ],
       image: 'briefing', alt: 'A venue supervisor briefing ITA staff before a session',
     } },
+    prose({
+      kicker: 'The role',
+      title: 'You are the face of the exam hall',
+      paragraphs: ['As an ITA invigilator you will:'],
+      points: [
+        'Set up the venue and check that candidates, ID and seating match the session list',
+        'Read out instructions exactly as provided and keep strict timing',
+        'Watch the room throughout, report any irregularity, and follow the incident procedure',
+        'Handle exam materials securely, from collection to hand-back',
+        'Support candidates of all ages, including school students and young adults, with courtesy and patience',
+        'Work alongside the venue supervisor and fellow invigilators as one team',
+      ],
+      image: 'inv_walk', alt: 'An invigilator walking between exam desks',
+      tint: true,
+    }),
     { type: 'cards', props: {
       id: 'roles',
-      tint: true,
-      kicker: 'Venue staff roles',
-      title: 'Three roles on every exam day',
-      intro: 'These are freelance, session-based roles in Karachi, Hyderabad, Lahore, Islamabad, Rawalpindi, Gujranwala, Multan, Faisalabad and Gilgit.',
+      kicker: 'Who should apply',
+      title: 'What we value',
+      intro: 'Minimum education: completed 14 years of education (or an equivalent transcript).',
+      numbered: false,
       items: [
-        { title: 'Invigilator', text: 'Check candidates in, explain the rules, walk the room and note anything unusual. Good for people who are observant, patient and comfortable being firm when they need to be.', image: 'inv_walk', alt: 'An invigilator walking between exam desks', href: '#apply', cta: 'Apply' },
-        { title: 'Venue supervisor', text: 'Open the venue, brief the team and make the call when something unexpected happens. Good for people who have led a team or managed exam days before.', image: 'svc_inv', alt: 'A venue supervisor overseeing an exam hall', href: '#apply', cta: 'Apply' },
-        { title: 'Materials and records', text: 'Keep papers sealed and counted, track attendance and hand over the session record. Good for people who are careful with detail.', image: 's_sheet14', alt: 'Exam papers being checked and counted', href: '#apply', cta: 'Apply' },
+        { title: 'Reliability', text: 'You turn up on time and stay focused through long sessions.' },
+        { title: 'Attention to detail', text: 'You follow written procedures precisely.' },
+        { title: 'Teamwork', text: 'You communicate clearly and help colleagues.' },
+        { title: 'Composure', text: 'You stay calm and fair when something unexpected happens.' },
+        { title: 'Digital confidence', text: 'You are comfortable with email, online forms and a web portal.' },
+        { title: 'Experience (preferred)', text: 'Teaching, examination or work with young people.' },
+      ],
+    } },
+    prose({
+      kicker: 'Documents required',
+      title: 'What shortlisted applicants provide',
+      paragraphs: ['Shortlisted applicants will be asked to provide:'],
+      points: [
+        'Copy of CNIC (front and back)',
+        'Education certificate or transcript',
+        'Police character certificate or verification from the local police station (applicants obtain this themselves; ITA does not issue a request letter)',
+        'Active bank account details for payment',
+        'Signed contract and confidentiality agreement (issued after selection)',
+      ],
+      tint: true,
+    }),
+    { type: 'steps', props: {
+      kicker: 'How selection works',
+      title: 'Five steps to your first assignment',
+      image: 'svc_inv', alt: 'ITA invigilators supervising an exam hall',
+      items: [
+        ['Apply', 'Apply through the ITA staff portal or the online form on this page.'],
+        ['Screening', 'We review your profile and availability.'],
+        ['Interview', 'An interview with the ITA operations team.'],
+        ['Onboarding', 'Contract, NDA, ID and payment details.'],
+        ['Training', 'Training and a short assessment before your first assignment.'],
       ],
     } },
     { type: 'points', props: {
-      kicker: 'What you can expect from us',
-      title: 'Prepared from day one',
-      intro: 'All venue staff go through role checks and sign our safeguarding and confidentiality commitments before they start.',
+      kicker: 'Working with ITA',
+      title: 'Training, assignments and terms',
+      tint: true,
       items: [
-        ['Induction', 'An induction before your first sitting, so you know exactly what your role involves.'],
-        ['Briefing', 'A briefing before every session from the venue supervisor.'],
-        ['Flexible work', 'Choose the sessions and cities that suit you.'],
-        ['Feedback', 'Feedback after each sitting, so you keep getting better at the job.'],
+        ['Training', 'Training is compulsory for all selected invigilators and is conducted online, followed by an assessment. All candidates, regardless of their city, are required to attend the live online training sessions.'],
+        ['Availability and assignments', 'You will be asked to submit your availability through a short form. Assignments are made by city and session, and a reserve list is kept so that exam days are always fully staffed. Being on the reserve list does not guarantee a shift but gives you priority for replacements.'],
+        ['Pay and terms', 'Paid at an hourly or per-session rate, with payment made on a 60-day schedule. Engagement is freelance and does not create an employment relationship.'],
+        ['Equal opportunity', 'ITA welcomes applications from all sections of the community and selects on merit, suitability and availability.'],
       ],
-    } },
-    { type: 'strip', props: {
-      title: 'Working at our offices',
-      text: 'We also hire for operations, partnerships and administration in Karachi and Dubai from time to time. If you’d like to be considered, send us your CV and tell us what you’re looking for.',
-      links: [{ label: 'Email your CV to info@intltestingalliance.com', href: `mailto:${site.email}?subject=CV%20for%20office%20roles` }],
     } },
     { type: 'contactForm', props: {
       id: 'apply',
       kicker: 'Apply',
-      title: 'Apply for a venue staff role',
+      title: 'Test day staff application form',
+      intro: 'Freelance invigilators and venue staff, 2027 cycle. Please complete every field; fields not marked optional are required.',
       direct: false,
       subject: 'Venue staff application',
       button: 'Send my application',
       thanks: 'Thank you for applying. Our team will be in touch if your profile matches upcoming sessions in your city.',
-      fields: [['name', 'Full name', 'text'], ['phone', 'Phone', 'tel'], ['email', 'Email', 'email'], ['city', 'City', 'text']],
-      choices: [
-        ['role', 'Role you’re applying for', ['Invigilator', 'Venue supervisor', 'Materials and records']],
-        ['experience', 'Have you worked at exam sessions before?', ['Yes', 'No']],
+      fields: [
+        ['name', 'Full name (as on CNIC)', 'text'],
+        ['guardian', 'Father’s / husband’s name', 'text'],
+        ['dob', 'Date of birth', 'date'],
+        ['cnic', 'CNIC number', 'text'],
+        ['nationality', 'Nationality', 'text'],
+        ['phone', 'Mobile number', 'tel'],
+        ['whatsapp', 'WhatsApp number (if different)', 'tel', true],
+        ['email', 'Email address', 'email'],
+        ['address', 'Current residential address', 'text'],
+        ['city', 'City and district', 'text'],
+        ['permanent', 'Permanent address (if different)', 'text', true],
+        ['preferred', 'Preferred city of work', 'text'],
+        ['heard', 'How did you hear about this opportunity?', 'text', true],
       ],
-      messageLabel: 'Tell us a little about yourself',
+      choices: [
+        ['role', 'Role applied for', ['Invigilator', 'Supervisor', 'Other']],
+        ['gender', 'Gender', ['Prefer not to say', 'Female', 'Male']],
+        ['before', 'Have you worked with ITA before?', ['No', 'Yes']],
+        ['education', 'Highest education completed', ['Matric / O Level', 'Intermediate / A Level', 'Bachelor’s', 'Master’s or other']],
+      ],
+      messageLabel: 'Education and experience: degree or programme, institution, year completed and total years of education, plus any exam, teaching or youth work (and your previous ITA role, if any)',
       file: 'Upload your CV',
     } },
+    { type: 'strip', props: {
+      title: 'Questions about joining?',
+      text: `Call +92 322 8490221 or +44 7401 137464, or email ${site.email}.`,
+      links: [{ label: 'Email our team', href: `mailto:${site.email}?subject=Test-day%20team%20enquiry` }],
+    } },
     faq([
-      ['Do I need experience to become an invigilator?', 'No. Experience helps, but every new invigilator goes through our induction before their first sitting.'],
-      ['Is this full-time work?', 'Venue staff roles are freelance and session-based. You choose the sessions you’re available for.'],
+      ['Do I need experience to become an invigilator?', 'Experience in teaching, examinations or work with young people is preferred but not required. Every selected invigilator completes compulsory online training and a short assessment before their first assignment.'],
+      ['What is the minimum education?', 'You need to have completed 14 years of education, or hold an equivalent transcript.'],
+      ['Is this full-time work?', 'No. Engagement is freelance and session-based, and does not create an employment relationship. You submit your availability and are assigned by city and session.'],
     ]),
   ],
 };
@@ -845,7 +907,7 @@ export const moreMeta: Record<string, { title: string; description: string }> = 
   uae: { title: 'Exam Centre and Invigilation in Dubai and the UAE | ITA', description: 'Independent exam delivery and invigilation in the UAE, run from our Dubai Marina office. The same checks and records as every ITA sitting.' },
   'licensing-and-approvals': { title: 'Licensing and Approvals | IBCC Registered | ITA', description: 'ITA’s registrations and approvals, including IBCC registration and the Pakistan Bar Council listing of our parent company ITS for foreign law examinations.' },
   'our-board-and-management': { title: 'Our Board and Management | International Testing Alliance', description: 'Meet the leadership of International Testing Alliance and the ITS group, and read their messages on integrity, quality and trust in examinations.' },
-  careers: { title: 'Careers at International Testing Alliance | ITA', description: 'Join ITA as an invigilator, venue supervisor or records officer for exam sessions in nine cities across Pakistan. Flexible, session-based work with full induction.' },
+  careers: { title: 'Careers at International Testing Alliance | ITA', description: 'Join the ITA test-day team as an invigilator or supervisor for the 2026–27 examination cycle in Pakistan. Freelance, session-based work with compulsory online training.' },
 };
 
 // Breadcrumb trail per page after Home, ending with the page itself: [name, path]. Pages not listed sit under Home.

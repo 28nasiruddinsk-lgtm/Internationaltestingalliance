@@ -18,19 +18,19 @@ export default function Rows({ kicker, title, intro, items }: Props) {
         </Rise>
         <ul className="mt-12 border-b border-line">
           {items.map((r) => (
-              <li key={r.href} className="group relative grid items-center gap-5 border-t border-line py-5 transition-colors hover:bg-blue sm:grid-cols-[200px_1fr_auto] sm:px-5">
-                <Logo k={r.logo} box="h-9" className="w-[200px]" />
+              <li key={r.href} className="group relative grid grid-cols-[96px_1fr] items-center gap-x-4 gap-y-3 border-t border-line py-5 transition-colors sm:grid-cols-[200px_1fr_auto] sm:gap-5 sm:px-5 sm:hover:bg-blue">
+                <Logo k={r.logo} box="h-6 sm:h-9" className="w-[96px] !p-2 sm:w-[200px] sm:!p-6" />
                 <div>
-                  <h3 className="font-serif text-[22px] text-ink group-hover:text-white md:text-[26px]">{r.title}</h3>
-                  <p className="mt-1 text-[16px] text-body group-hover:text-white/85">{r.text}</p>
+                  <h3 className="font-serif text-[19px] leading-snug text-ink sm:text-[22px] sm:group-hover:text-white md:text-[26px]">{r.title}</h3>
+                  <p className="mt-1 text-[15px] text-body sm:text-[16px] sm:group-hover:text-white/85">{r.text}</p>
                   {r.extra && (
-                    <Link href={r.extra.href} className="relative z-10 mt-2 inline-flex items-center gap-2 text-[15px] font-semibold text-blue underline-offset-4 hover:underline group-hover:text-white">
-                      {r.extra.label} <Arrow />
+                    <Link href={r.extra.href} className="relative z-10 mt-2 inline-block text-[15px] font-semibold text-blue underline-offset-4 hover:underline sm:group-hover:text-white">
+                      {r.extra.label} <span className="inline-block align-middle"><Arrow /></span>
                     </Link>
                   )}
                 </div>
                 {/* the main link covers the whole row; the extra link sits above it */}
-                <Link href={r.href} className="inline-flex items-center gap-2 whitespace-nowrap text-[15px] font-semibold text-blue after:absolute after:inset-0 group-hover:text-white">
+                <Link href={r.href} className="col-start-2 inline-flex items-center gap-2 whitespace-nowrap text-[15px] font-semibold text-blue after:absolute after:inset-0 sm:col-start-auto sm:group-hover:text-white">
                   {r.cta} <Arrow />
                 </Link>
               </li>
