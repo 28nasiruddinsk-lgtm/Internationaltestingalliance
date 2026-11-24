@@ -127,7 +127,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'Professional invigilation',
       title: 'Professional exam invigilation with no stake in the result',
       intro: 'The person watching the room has nothing to gain from the result. That’s the whole point.',
-      image: 'svc_inv', alt: 'ITA invigilators in vests supervising an exam hall', cover: true,
+      image: 'svc_inv', alt: 'An ITA exam invigilator in a vest posting the session notices on a board', cover: true,
       buttons: [{ label: 'Request invigilators', href: '/contact/' }, { label: 'Talk to our team', href: '/contact/' }],
     } },
     { type: 'cards', props: {
@@ -354,7 +354,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       dark: true,
       items: [
         { title: 'On your premises or ours', text: 'Candidates sit where it suits them best.', image: 'centre_room', alt: 'An exam room set with numbered desks' },
-        { title: 'The same checks everywhere', text: 'A college hall runs exactly like an ITA venue on exam day.', image: 'svc_inv', alt: 'ITA invigilators supervising a hall' },
+        { title: 'The same checks everywhere', text: 'A college hall runs exactly like an ITA venue on exam day.', image: 'svc_inv', alt: 'An ITA exam invigilator in a vest posting the session notices on a board' },
         { title: 'A record for every sitting', text: 'Attendance, incidents and evidence, kept independently.', image: 'portal', alt: 'The ITA partner portal' },
       ],
     } },
@@ -391,7 +391,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       items: [
         { title: 'Planning', text: 'We agree sessions, venues and schedules with the GEMS Pathways team.', image: 's_meet4', alt: 'ITA planning a sitting with a partner' },
         { title: 'Candidate coordination', text: 'We keep candidates informed about when and where they sit.', image: 'qr_phone', alt: 'A candidate holding their Statement of Entry QR code on a phone' },
-        { title: 'Invigilation', text: 'Trained invigilators supervise every session.', image: 'svc_inv', alt: 'Invigilators supervising a GEMS sitting' },
+        { title: 'Invigilation', text: 'Trained invigilators supervise every session.', image: 'svc_inv', alt: 'An ITA exam invigilator in a vest posting the session notices on a board' },
         { title: 'Secure delivery', text: 'Papers stay sealed and logged from arrival to collection, in line with international assessment standards.', image: 'board', alt: 'A session board in an ITA exam room' },
       ],
     } },
@@ -823,7 +823,7 @@ export const morePages: Record<string, SectionConfig[]> = {
     { type: 'steps', props: {
       kicker: 'How selection works',
       title: 'Five steps to your first assignment',
-      image: 'svc_inv', alt: 'ITA invigilators supervising an exam hall',
+      image: 'svc_inv', alt: 'An ITA exam invigilator in a vest posting the session notices on a board',
       items: [
         ['Apply', 'Apply through the ITA staff portal or the online form on this page.'],
         ['Screening', 'We review your profile and availability.'],
