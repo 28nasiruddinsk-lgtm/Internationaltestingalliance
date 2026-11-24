@@ -34,9 +34,9 @@ export default function Header() {
       )}
       <header className="sticky top-0 z-50 bg-white">
       <div className="border-b border-line">
-        <Wrap className="flex h-[80px] items-center">
+        <Wrap className="flex h-[76px] items-center sm:h-[84px]">
           <Link href="/" aria-label="International Testing Alliance home">
-            <img src={img('logo')} alt={site.name} className="h-8 max-w-none sm:h-10" />
+            <img src={img('logo')} alt={site.name} className="h-[54px] w-auto max-w-none sm:h-[64px]" />
           </Link>
           <nav className="ml-auto hidden items-center xl:flex" aria-label="Main" onKeyDown={(e) => { if (e.key === 'Escape') setOpen(null); }}>
             {site.nav.map((n) => n.items ? (
@@ -81,7 +81,7 @@ export default function Header() {
         </Wrap>
       </div>
       {menu && (
-        <div className="max-h-[calc(100vh-80px)] overflow-y-auto border-b border-line bg-white xl:hidden">
+        <div className="max-h-[calc(100vh-84px)] overflow-y-auto border-b border-line bg-white xl:hidden">
           <Wrap className="py-3">
             {site.nav.map((n) => n.items ? (
               <details key={n.label} className="group border-b border-line">

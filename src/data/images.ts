@@ -1,6 +1,6 @@
 const files = {
-  logo: 'logo.png',
-  logoW: 'logoW.png',
+  logo: 'logo-ita.png',
+  logoW: 'logo-ita-white.png',
   portal: 'portal.jpg',
 
   // ITA centre photos

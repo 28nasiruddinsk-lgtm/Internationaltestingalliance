@@ -74,7 +74,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'Identity',
       title: 'Three checks before anyone sits down',
       items: [
-        { title: 'Screening', text: 'Every candidate walks through screening at the entrance.', image: 'entrance', alt: 'Walk-through screening at an ITA venue entrance' },
+        { title: 'Screening', text: 'Every candidate walks through screening at the entrance.', image: 'entrance', alt: 'Candidates walking through a bright university corridor towards the stairs' },
         { title: 'Photo ID', text: 'Their identity document is checked against the registration.', image: 'verify', alt: 'Staff checking a candidate’s photo ID' },
         { title: 'QR check', text: 'The code on their Statement of Entry is scanned and matched to the candidate list.', image: 'qr_scan', alt: 'A QR code being scanned at registration' },
       ],

@@ -38,7 +38,7 @@ export const organizationSchema = {
   name: site.name,
   alternateName: 'ITA',
   url: siteUrl,
-  logo: `${siteUrl}/images/logo.png`,
+  logo: `${siteUrl}/images/logo-ita.png`,
   email: site.email,
   telephone: site.phones.Pakistan,
   parentOrganization: { '@type': 'Organization', name: 'International Testing Services (ITS)' },

@@ -9,7 +9,7 @@ export default function Footer() {
       <Wrap className="pb-10 pt-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <img loading="lazy" decoding="async" src={img('logoW')} alt={site.name} className="h-10" />
+            <img loading="lazy" decoding="async" src={img('logoW')} alt={site.name} className="h-20 w-auto" />
             <p className="mt-5 max-w-[320px] text-[14px] leading-relaxed">
               Independent examination delivery and invigilation. A subsidiary of International Testing Services.
             </p>
