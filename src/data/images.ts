@@ -5,7 +5,7 @@ const files = {
 
   // ITA centre photos
   hall: 'hall.jpg',
-  entrance: 'entrance.jpg',
+  entrance: 'candidates-walk.jpg',
   verify: 'verify.jpg',
   briefing: 'briefing.jpg',
   board: 'board.jpg',
@@ -20,7 +20,7 @@ const files = {
   qr_scan: 'qr-scan.webp',
   svc_exam: 'svc-exam-mgmt.webp',
   svc_venue: 'svc-venue.webp',
-  svc_inv: 'svc-invigilation.webp',
+  svc_inv: 'invigilator-board.webp',
   svc_qr: 'svc-qr.webp',
   hero_cand: 'hero-candidate.jpg',
   hero_uni: 'hero-university.jpg',
