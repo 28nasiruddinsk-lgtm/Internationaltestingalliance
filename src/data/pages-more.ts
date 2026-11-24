@@ -415,7 +415,6 @@ export const morePages: Record<string, SectionConfig[]> = {
       kicker: 'How it works',
       title: 'Three steps to exam day',
       image: 'qr_counter', alt: 'A candidate showing their Statement of Entry on a phone at the desk',
-      link: { label: 'Go to the portal', href: portal },
       items: [
         ['Create your account', 'Enter your details once, then sign in securely whenever you need to.'],
         ['Choose your exam and pay', 'Pick your awarding body and exam, then pay online.'],

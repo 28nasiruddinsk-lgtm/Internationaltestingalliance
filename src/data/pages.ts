@@ -245,7 +245,7 @@ export const pages: Record<string, SectionConfig[]> = {
   ...Object.fromEntries(
     news.map((n) => [
       `news/${n.slug}`,
-      [header(n.title, undefined, n.date), prose({ title: 'Details', paragraphs: n.body, image: n.image })],
+      [header(n.title, undefined, n.date), { type: 'article', props: { image: n.image, alt: n.alt, graphic: n.graphic, body: n.body } }],
     ]),
   ),
 };

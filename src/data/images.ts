@@ -83,6 +83,8 @@ const files = {
   n_pbc: 'n_pbc.png',
   n_ibccr: 'n_ibccr.png',
   n_ibccb: 'n_ibccb.png',
+  n_ibcc_visit: 'n_ibcc_visit.webp',
+  n_waen: 'n_waen.webp',
 } as const;
 
 export type ImageKey = keyof typeof files;
