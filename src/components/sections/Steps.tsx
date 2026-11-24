@@ -36,7 +36,7 @@ export default function Steps({ kicker, title, intro, items, image, alt = '', da
                   </span>
                   <div className="pt-2">
                     <h3 className={`font-serif text-[21px] ${dark ? 'text-white' : 'text-ink'}`}>{t}</h3>
-                    <p className={`mt-2 max-w-[560px] text-[16px] leading-relaxed ${sub}`}>{text}</p>
+                    {text && <p className={`mt-2 max-w-[560px] text-[16px] leading-relaxed ${sub}`}>{text}</p>}
                   </div>
                 </li>
               </Rise>

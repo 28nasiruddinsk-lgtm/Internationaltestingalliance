@@ -763,14 +763,13 @@ export const morePages: Record<string, SectionConfig[]> = {
   careers: [
     { type: 'pageHeader', props: {
       kicker: 'Careers',
-      title: 'Join the International Testing Alliance test-day team',
-      intro: 'Invigilator recruitment notice, 2026–27 examination cycle.',
+      title: 'Join the International Testing Alliance Test-Day Team',
+      intro: 'Invigilator Recruitment Notice, 2026–27 Examination Cycle',
       image: 'invigilators', alt: 'ITA venue staff in their vests before a session',
       buttons: [{ label: 'Apply now', href: '#apply' }],
     } },
     { type: 'split', props: {
-      kicker: 'About us',
-      title: 'Every test day depends on the people in the room',
+      title: 'About Us',
       paragraphs: [
         'International Testing Alliance (ITA) delivers secure, fair and well-run examinations for candidates across Pakistan.',
         'Every test day depends on the people in the room, and we are building a dependable pool of invigilators to support our 2027 sessions, both paper-based and online.',
@@ -778,9 +777,8 @@ export const morePages: Record<string, SectionConfig[]> = {
       image: 'briefing', alt: 'A venue supervisor briefing ITA staff before a session',
     } },
     prose({
-      kicker: 'The role',
-      title: 'You are the face of the exam hall',
-      paragraphs: ['As an ITA invigilator you will:'],
+      title: 'The Role',
+      paragraphs: ['As an ITA invigilator you are the face of the exam hall. You will:'],
       points: [
         'Set up the venue and check that candidates, ID and seating match the session list',
         'Read out instructions exactly as provided and keep strict timing',
@@ -794,8 +792,7 @@ export const morePages: Record<string, SectionConfig[]> = {
     }),
     { type: 'cards', props: {
       id: 'roles',
-      kicker: 'Who should apply',
-      title: 'What we value',
+      title: 'Who Should Apply',
       intro: 'Minimum education: completed 14 years of education (or an equivalent transcript).',
       numbered: false,
       items: [
@@ -808,8 +805,7 @@ export const morePages: Record<string, SectionConfig[]> = {
       ],
     } },
     prose({
-      kicker: 'Documents required',
-      title: 'What shortlisted applicants provide',
+      title: 'Documents Required',
       paragraphs: ['Shortlisted applicants will be asked to provide:'],
       points: [
         'Copy of CNIC (front and back)',
@@ -821,33 +817,29 @@ export const morePages: Record<string, SectionConfig[]> = {
       tint: true,
     }),
     { type: 'steps', props: {
-      kicker: 'How selection works',
-      title: 'Five steps to your first assignment',
+      title: 'How Selection Works',
       image: 'svc_inv', alt: 'An ITA exam invigilator in a vest posting the session notices on a board',
       items: [
-        ['Apply', 'Apply through the ITA staff portal or the online form on this page.'],
-        ['Screening', 'We review your profile and availability.'],
-        ['Interview', 'An interview with the ITA operations team.'],
-        ['Onboarding', 'Contract, NDA, ID and payment details.'],
-        ['Training', 'Training and a short assessment before your first assignment.'],
+        ['Apply through the ITA staff portal or the online form on this page', ''],
+        ['Screening of your profile and availability', ''],
+        ['Interview with the ITA operations team', ''],
+        ['Onboarding: contract, NDA, ID and payment details', ''],
+        ['Training and a short assessment before your first assignment', ''],
       ],
     } },
     { type: 'points', props: {
-      kicker: 'Working with ITA',
-      title: 'Training, assignments and terms',
       tint: true,
       items: [
         ['Training', 'Training is compulsory for all selected invigilators and is conducted online, followed by an assessment. All candidates, regardless of their city, are required to attend the live online training sessions.'],
-        ['Availability and assignments', 'You will be asked to submit your availability through a short form. Assignments are made by city and session, and a reserve list is kept so that exam days are always fully staffed. Being on the reserve list does not guarantee a shift but gives you priority for replacements.'],
-        ['Pay and terms', 'Paid at an hourly or per-session rate, with payment made on a 60-day schedule. Engagement is freelance and does not create an employment relationship.'],
-        ['Equal opportunity', 'ITA welcomes applications from all sections of the community and selects on merit, suitability and availability.'],
+        ['Availability and Assignments', 'You will be asked to submit your availability through a short form. Assignments are made by city and session, and a reserve list is kept so that exam days are always fully staffed. Being on the reserve list does not guarantee a shift but gives you priority for replacements.'],
+        ['Pay and Terms', 'Paid at an hourly or per-session rate, with payment made on a 60-day schedule. Engagement is freelance and does not create an employment relationship.'],
+        ['Equal Opportunity', 'ITA welcomes applications from all sections of the community and selects on merit, suitability and availability.'],
       ],
     } },
     { type: 'contactForm', props: {
       id: 'apply',
-      kicker: 'Apply',
-      title: 'Test day staff application form',
-      intro: 'Freelance invigilators and venue staff, 2027 cycle. Please complete every field; fields not marked optional are required.',
+      title: 'Test Day Staff Application Form',
+      intro: 'International Testing Alliance (ITA) | Freelance Invigilators and Venue Staff | 2027 Cycle. Please complete every section. Incomplete forms cannot be shortlisted.',
       direct: false,
       subject: 'Venue staff application',
       button: 'Send my application',
@@ -877,15 +869,10 @@ export const morePages: Record<string, SectionConfig[]> = {
       file: 'Upload your CV',
     } },
     { type: 'strip', props: {
-      title: 'Questions about joining?',
-      text: `Call +92 322 8490221 or +44 7401 137464, or email ${site.email}.`,
-      links: [{ label: 'Email our team', href: `mailto:${site.email}?subject=Test-day%20team%20enquiry` }],
+      title: 'Contact',
+      text: `+92 322 8490221 · +44 7401 137464 · ${site.email}`,
+      links: [{ label: site.email, href: `mailto:${site.email}?subject=Test-day%20team%20enquiry` }],
     } },
-    faq([
-      ['Do I need experience to become an invigilator?', 'Experience in teaching, examinations or work with young people is preferred but not required. Every selected invigilator completes compulsory online training and a short assessment before their first assignment.'],
-      ['What is the minimum education?', 'You need to have completed 14 years of education, or hold an equivalent transcript.'],
-      ['Is this full-time work?', 'No. Engagement is freelance and session-based, and does not create an employment relationship. You submit your availability and are assigned by city and session.'],
-    ]),
   ],
 };
 
