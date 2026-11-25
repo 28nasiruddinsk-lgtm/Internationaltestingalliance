@@ -22,7 +22,7 @@ export default function Header() {
         <div className="bg-navy text-[13px] text-white">
           <Wrap className="flex min-h-[40px] items-center gap-4 py-2">
             <span className="flex-none rounded-full bg-blue px-3 py-0.5 text-[12px] font-semibold">Announcement</span>
-            <Link href="/news-events/" className="group truncate hover:underline">
+            <Link href={site.announcementHref} className="group truncate hover:underline">
               {site.announcement} <Arrow className="ml-1" />
             </Link>
             <button aria-label="Dismiss announcement" onClick={() => setAnnounce(false)}
