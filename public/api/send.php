@@ -63,6 +63,8 @@ if (!empty($_FILES['cv']) && ($_FILES['cv']['error'] ?? UPLOAD_ERR_NO_FILE) !== 
   $attachment = ['name' => $name, 'type' => $types[$ext], 'data' => (string) file_get_contents($file['tmp_name'])];
 }
 
+if ($subject === 'Venue staff application' && !$attachment) reply(400, ['ok' => false, 'error' => 'Please attach your CV (PDF or Word)']);
+
 $body = "New $subject from the website\r\n\r\n" . implode("\r\n", $lines)
   . "\r\n\r\nSent " . gmdate('j M Y, H:i') . " UTC from " . ($_SERVER['HTTP_REFERER'] ?? 'the website');
 

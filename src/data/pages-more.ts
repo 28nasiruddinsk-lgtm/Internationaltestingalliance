@@ -838,7 +838,7 @@ export const morePages: Record<string, SectionConfig[]> = {
     } },
     { type: 'contactForm', props: {
       id: 'apply',
-      title: 'Test Day Staff Application Form',
+      title: 'Invigilator Application Form',
       intro: 'International Testing Alliance (ITA) | Freelance Invigilators and Venue Staff | 2027 Cycle. Please complete every section. Incomplete forms cannot be shortlisted.',
       direct: false,
       subject: 'Venue staff application',
@@ -856,17 +856,17 @@ export const morePages: Record<string, SectionConfig[]> = {
         ['address', 'Current residential address', 'text'],
         ['city', 'City and district', 'text'],
         ['permanent', 'Permanent address (if different)', 'text', true],
-        ['preferred', 'Preferred city of work', 'text'],
         ['heard', 'How did you hear about this opportunity?', 'text', true],
       ],
       choices: [
         ['role', 'Role applied for', ['Invigilator', 'Supervisor', 'Other']],
+        ['preferred', 'Preferred city of work', ['Abbottabad', 'Bahawalpur', 'Burewala', 'Chakwal', 'Dera Ghazi Khan', 'Faisalabad', 'Ghotki', 'Gilgit', 'Gujranwala', 'Gujrat', 'Gwadar', 'Hassanabdal', 'Hyderabad', 'Islamabad', 'Jhang', 'Jhelum', 'Karachi', 'Kharian', 'Lahore', 'Larkana', 'Mandi Bahauddin', 'Mardan', 'Mirpur', 'Multan', 'Muridke', 'Murree', 'Muzaffarabad', 'Muzaffargarh', 'Nowshera', 'Peshawar', 'Petaro', 'Quetta', 'Rahim Yar Khan / Sadiqabad', 'Rashidabad', 'Rawalakot', 'Sahiwal', 'Sargodha', 'Sheikhupura', 'Sialkot', 'Sukkur', 'Taxila', 'Wah Cantt']],
         ['gender', 'Gender', ['Prefer not to say', 'Female', 'Male']],
         ['before', 'Have you worked with ITA before?', ['No', 'Yes']],
         ['education', 'Highest education completed', ['Matric / O Level', 'Intermediate / A Level', 'Bachelor’s', 'Master’s or other']],
       ],
       messageLabel: 'Education and experience: degree or programme, institution, year completed and total years of education, plus any exam, teaching or youth work (and your previous ITA role, if any)',
-      file: 'Upload your CV',
+      file: 'Upload your CV (required)',
     } },
     { type: 'strip', props: {
       title: 'Contact',

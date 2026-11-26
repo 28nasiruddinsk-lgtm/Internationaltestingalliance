@@ -35,7 +35,7 @@ export default function ContactForm({
   return (
     <section id={id} className={`scroll-mt-24 py-14 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       <Wrap className="grid gap-14 lg:grid-cols-12">
-        <Rise className={direct ? 'lg:col-span-7' : 'lg:col-span-8'}>
+        <Rise className={direct ? 'lg:col-span-7' : 'lg:col-span-8 lg:col-start-3'}>
           {kicker && <Kicker>{kicker}</Kicker>}
           <H2 className={kicker ? '' : '!mt-0'}>{title}</H2>
           {intro && <p className="mt-4 text-[16px] leading-[1.7] text-body">{intro}</p>}
@@ -55,7 +55,8 @@ export default function ContactForm({
               {choices.map(([name, label, options]) => (
                 <label key={name} className="block text-[14px] font-semibold text-ink sm:col-span-2">
                   {label}
-                  <select name={name} className={box}>
+                  <select name={name} required defaultValue="" className={box}>
+                    <option value="" disabled>Select…</option>
                     {options.map((o) => <option key={o}>{o}</option>)}
                   </select>
                 </label>
@@ -67,7 +68,7 @@ export default function ContactForm({
               {file && (
                 <label className="block text-[14px] font-semibold text-ink sm:col-span-2">
                   {file}
-                  <input name="cv" type="file" accept=".pdf,.doc,.docx" className="mt-1.5 block w-full text-[15px] font-normal text-body file:mr-4 file:rounded-full file:border-0 file:bg-tint file:px-5 file:py-2.5 file:font-semibold file:text-blue" />
+                  <input name="cv" type="file" required accept=".pdf,.doc,.docx" className="mt-1.5 block w-full text-[15px] font-normal text-body file:mr-4 file:rounded-full file:border-0 file:bg-tint file:px-5 file:py-2.5 file:font-semibold file:text-blue" />
                   <span className="mt-1 block text-[13px] font-normal text-muted">PDF or Word, up to 5 MB.</span>
                 </label>
               )}

@@ -22,7 +22,7 @@ export const audiences: Record<AudienceKey, {
   },
   cand: {
     tab: 'Candidates',
-    heading: 'Sit your exam close to home, in a properly run centre.',
+    heading: 'Quality Examination Centres, Closer to Home.',
     text: 'Register, pay and download your Statement of Entry online, then sit in one of our venues across Pakistan or in Dubai.',
     cta: 'Book your exam', href: '/book-an-exam/',
     image: 'hero_cand', alt: 'A candidate sitting an exam at an ITA centre',
